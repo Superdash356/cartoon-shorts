@@ -12,6 +12,9 @@ on:
       rate:
         description: "Speech rate, e.g. +0% or +8%"
         default: "+0%"
+      alts:
+        description: "Extra voices to try (space separated, blank = none)"
+        default: ""
 
 permissions:
   contents: write
@@ -27,7 +30,7 @@ jobs:
           D="shorts/${{ inputs.short }}"
           if [ -f "$D/lines.json" ]; then
             python scripts/tts_lines.py "$D/lines.json" "$D"
-            for v in en-US-AndrewNeural en-US-BrianNeural; do mkdir -p "$D/alt_$v" && python scripts/tts_lines.py "$D/lines.json" "$D/alt_$v" "$v"; done
+            for v in ${{ inputs.alts }}; do mkdir -p "$D/alt_$v" && python scripts/tts_lines.py "$D/lines.json" "$D/alt_$v" "$v"; done
           else
             python scripts/tts.py "$D/voice.txt" "$D" "${{ inputs.voice }}" "${{ inputs.rate }}"
           fi

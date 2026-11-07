@@ -15,20 +15,19 @@ OUT = sys.argv[4]
 N = ns(DUR)
 
 
-def W(w, n=0):
-    l = [x["start"] for x in words if "".join(c for c in x["word"].lower() if c.isalpha() or c == "'") == w]
-    return l[n] if n < len(l) else l[-1]
+def WI(i):
+    return words[min(i, len(words) - 1)]["start"]
 
 
 VOICE_END = words[-1]["end"]
-END_CARD = VOICE_END + 0.25
-cut = lambda w, n=0: W(w, n) - 0.12
-T_CHAT, T_APP, T_ONE = cut("the"), cut("so"), cut("one")
+END_CARD = WI(98) - 0.1
+cut = lambda i: WI(i) - 0.1
+T_CHAT, T_APP, T_ONE = cut(31), cut(43), cut(73)
 F = I.m2f
 r = rng(7)
 
 # ---------------------------------------------------------------- music
-BPM = 112
+BPM = 124
 B = 60 / BPM  # beat
 music = np.zeros((2, N))
 PROG = [("C", [48, 55, 60, 64, 67], 36), ("Am", [45, 57, 60, 64, 69], 33), ("F", [41, 53, 57, 60, 65], 29), ("G", [43, 55, 59, 62, 67], 31)]
@@ -63,6 +62,10 @@ def bar_section(t0, bars, uke=True, bass=True, drums=True, mel=False, vel=1.0):
 
 # intro to the chat: full groove with a glock hook
 bar_section(0.0, int(np.ceil(T_CHAT / (4 * B))), mel=True)
+music[:, ns(T_CHAT):] *= 0.0
+# "Bro.": music stops dead for a beat
+b0, b1 = ns(WI(22) - 0.12), ns(WI(23) + 0.05)
+music[:, b0:b1] *= 0.0
 # chat flood: groove drops out, nervous plucks double in speed
 tc = T_CHAT
 k = 0
@@ -137,57 +140,68 @@ def ding(t, vel=0.35):
     place(sfx, pan(I.glock(F(91), vel * 0.7, r, 1.0), -0.1), t + 0.07)
 
 
-# the four step out and walk to their cars
-for i in range(6):
-    step(0.35 + i * 0.32, 0.16)
-# four car doors, one after another on "office"
+# hook: four door slams on "Four neighbours", a whoosh into the office, clock ticks then a bell hit on "time"
 for k in range(4):
     tq = tt(0.2)
-    place(sfx, pan(lp(r.standard_normal(len(tq)), 300) * np.exp(-tq / 0.04) * 0.5 + np.sin(2 * np.pi * 70 * tq) * np.exp(-tq / 0.05) * 0.4, -0.6 + 0.4 * k), W("office") + 0.05 + 0.14 * k)
-# clock tick on "nine"
-for k in range(3):
-    pop(W("nine") - 0.3 + 0.25 * k, 2600, 0.12)
-# four cars out of the gate
+    place(sfx, pan(lp(r.standard_normal(len(tq)), 300) * np.exp(-tq / 0.04) * 0.5 + np.sin(2 * np.pi * 70 * tq) * np.exp(-tq / 0.05) * 0.4, -0.6 + 0.4 * k), 0.02 + 0.09 * k)
+whoosh(cut(2) + 0.05, 0.3, 0.35)
 for k in range(4):
-    car_by(cut("four", 1) + 0.25 + k * 0.32, 0.7, -0.7, 1.3, 0.35)
-# signal: brakes in, a friendly double honk on "wave", then again at the next signal
+    pop(cut(4) + 0.05 + 0.1 * k, 2800, 0.16)
+place(sfx, pan(I.glock(F(88), 0.6, r, 1.2), 0.0), WI(5) - 0.03)
+place(sfx, pan(I.glock(F(76), 0.5, r, 1.2), 0.0), WI(5) - 0.03)
+# "Four. Different. Cars.": a car whooshes past on each word
+for i in (6, 7, 8):
+    car_by(WI(i) + 0.15, 0.8, -0.8, 0.9, 0.45)
+# signal: brakes, friendly double honk on "wave", again on "red light"
 for k in range(4):
     tq = tt(0.35)
-    place(sfx, pan(bp(r.standard_normal(len(tq)), 2500, 6000) * np.exp(-tq / 0.12) * 0.08, -0.6 + 0.4 * k), cut("every") + 0.1 + 0.08 * k)
-honk(W("wave") - 0.05, 430, 0.12, 0.45, -0.3); honk(W("wave") + 0.12, 430, 0.12, 0.45, -0.3)
-honk(W("signal") - 0.05, 470, 0.1, 0.35, 0.3); honk(W("signal") + 0.1, 470, 0.1, 0.35, 0.3)
-# chat flood: buzzes and pops, faster and faster
+    place(sfx, pan(bp(r.standard_normal(len(tq)), 2500, 6000) * np.exp(-tq / 0.12) * 0.08, -0.6 + 0.4 * k), cut(9) + 0.1 + 0.08 * k)
+honk(WI(13) - 0.05, 430, 0.12, 0.45, -0.3); honk(WI(13) + 0.12, 430, 0.12, 0.45, -0.3)
+honk(WI(20) - 0.05, 470, 0.1, 0.35, 0.3); honk(WI(20) + 0.1, 470, 0.1, 0.35, 0.3)
+# "Bro.": record scratch + vinyl stop on the music
+tq = tt(0.28)
+place(sfx, bp(r.standard_normal(len(tq)), 600, 5000) * np.sin(2 * np.pi * (14 - 30 * tq) * tq) * np.exp(-tq / 0.12) * 0.6, WI(22) - 0.12)
+# chat flood
 whoosh(T_CHAT + 0.05, 0.4, 0.5)
 n_msg = 15
 for k in range(n_msg):
-    tk = T_CHAT + (W("home") - 0.2 - T_CHAT) * (k / n_msg) ** (1 / 1.6)
+    tk = T_CHAT + (WI(42) - 0.1 - T_CHAT) * (k / n_msg) ** (1 / 1.6)
     pop(tk, 700 + 90 * (k % 5), 0.28, 0.4 if k % 2 else -0.4)
     if k % 3 == 0:
         buzz(tk + 0.02, 0.35)
-pop(W("sixty"), 1200, 0.4)
-# app reveal: whoosh in, dings on each screen
-whoosh(T_APP + 0.05, 0.5, 0.45)
-ding(T_APP + 0.15)
-ding(W("everyone", 0) - 0.1)
-pop(W("ready") + 0.05, 1400, 0.35)
-ding(W("and") - 0.1)
+pop(WI(35), 1200, 0.4)
+# app: whoosh + phone rise, iOS-ish push swishes between screens, a notification ping, sticker slams, a tap, a success chime
+whoosh(T_APP + 0.1, 0.55, 0.5)
+ding(WI(46))
+for i in (47, 54):
+    whoosh(WI(i) - 0.05, 0.25, 0.25)
+ding(WI(51) - 0.15)
+tq = tt(0.15)
+for i in (52, 72):
+    place(sfx, lp(r.standard_normal(len(tq)), 900) * np.exp(-tq / 0.03) * 0.7 + np.sin(2 * np.pi * 90 * tq) * np.exp(-tq / 0.06) * 0.6, WI(i) - 0.04)
+pop(WI(55) - 0.02, 1500, 0.4)
+for j, m in enumerate([79, 84, 88]):
+    place(sfx, pan(I.glock(F(m), 0.4, r, 0.9), 0.1), WI(55) + 0.25 + 0.06 * j)
+whoosh(WI(66) - 0.05, 0.3, 0.3)
+car_by(WI(70) + 0.2, -0.3, 0.3, 1.2, 0.25)
 whoosh(T_ONE + 0.02, 0.4, 0.35, up=False)
-# one car out, friendly single honk at the guard
+# one car out, honk at the guard
 car_by(T_ONE + 0.8, -0.5, 0.6, 1.8, 0.4)
-honk(W("friends") + 0.15, 520, 0.1, 0.35)
-# parking: a little brake squeak
+honk(WI(78) + 0.1, 520, 0.1, 0.35)
+# parking squeak
 tq = tt(0.4)
-place(sfx, np.sin(2 * np.pi * (1900 + 300 * np.sin(2 * np.pi * 7 * tq)) * tq) * np.exp(-tq / 0.15) * 0.05, cut("three") + 1.3)
-# Sharma ji: a door bang and running steps
+place(sfx, np.sin(2 * np.pi * (1900 + 300 * np.sin(2 * np.pi * 7 * tq)) * tq) * np.exp(-tq / 0.15) * 0.05, cut(80) + 1.0)
+# Sharma ji: door bang and running steps
 tq = tt(0.25)
-place(sfx, pan(lp(r.standard_normal(len(tq)), 400) * np.exp(-tq / 0.05) * 0.6, 0.4), cut("sharma") + 0.15)
-t = cut("sharma") + 0.3
+place(sfx, pan(lp(r.standard_normal(len(tq)), 400) * np.exp(-tq / 0.05) * 0.6, 0.4), cut(85) + 0.15)
+t = cut(85) + 0.3
 while t < END_CARD - 0.2:
     step(t, 0.22)
     t += 0.19
-# map card pop
-pop(W("everyone", 2) - 0.15, 1000, 0.4)
+pop(WI(93) - 0.15, 1000, 0.4)
 whoosh(END_CARD + 0.05, 0.4, 0.4)
+tq = tt(0.15)
+place(sfx, lp(r.standard_normal(len(tq)), 900) * np.exp(-tq / 0.03) * 0.7, WI(99) - 0.04)
 
 # ---------------------------------------------------------------- mix
 vo = np.zeros((2, N))

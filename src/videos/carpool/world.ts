@@ -9,7 +9,7 @@ import { NOINK } from "../bridge/ink";
 import { Actor, Fx, Pool } from "../bridge/cast";
 import { bodyFront, bodySide, fxContact, Expr, Outfit, Pen, SKINS } from "../bridge/toon";
 import {
-  CAR_COL, DOOR_Z, WAIT_X, FPS, GATE_X, HOUSE_X, HOUSE_Z, LANE_Z, LEAD, LOT, PARK_Z, SIGNAL_LANES, STOP_X, CarPose, ShotId, V3, W,
+  CAR_COL, CLOCK, DOOR_Z, WAIT_X, WI, FPS, GATE_X, HOUSE_X, HOUSE_Z, LANE_Z, LEAD, LOT, PARK_Z, SIGNAL_LANES, STOP_X, CarPose, ShotId, V3, W,
   camAt, carsAt, clamp01, lotCar, shotAt, signalCars, smooth,
 } from "./story";
 
@@ -37,15 +37,19 @@ const asphalt = () => ctex("asphalt", 512, 512, (g, r) => {
   for (let i = 0; i < 2600; i++) { const v = 80 + r() * 40; g.fillStyle = `rgba(${v},${v},${v + 6},0.35)`; g.fillRect(r() * 512, r() * 512, 2 + r() * 3, 2 + r() * 3); }
   for (let i = 0; i < 8; i++) { g.fillStyle = "rgba(40,40,46,0.12)"; g.beginPath(); g.ellipse(r() * 512, r() * 512, 30 + r() * 60, 18 + r() * 30, r() * 3, 0, 7); g.fill(); }
 });
-const clockTex = () => ctex("clock9", 256, 256, (g) => {
-  const p = new Pen(g);
-  g.fillStyle = "#fffaf0"; g.beginPath(); g.arc(128, 128, 112, 0, 7); g.fill();
-  g.lineWidth = 14; g.strokeStyle = "#241726"; g.stroke();
-  for (let k = 0; k < 12; k++) { const a = (k / 12) * Math.PI * 2; g.lineWidth = k % 3 ? 5 : 10; g.beginPath(); g.moveTo(128 + 84 * Math.sin(a), 128 - 84 * Math.cos(a)); g.lineTo(128 + 98 * Math.sin(a), 128 - 98 * Math.cos(a)); g.stroke(); }
-  g.lineCap = "round"; g.lineWidth = 14; g.beginPath(); g.moveTo(128, 128); g.lineTo(62, 128); g.stroke();  // hour hand at 9
-  g.lineWidth = 9; g.beginPath(); g.moveTo(128, 128); g.lineTo(128, 42); g.stroke();                        // minute hand at 12
-  g.fillStyle = "#c8423a"; g.beginPath(); g.arc(128, 128, 12, 0, 7); g.fill();
-  void p;
+const clockTex = () => ctex("clockFace", 512, 512, (g) => {
+  g.fillStyle = "#c8423a"; g.beginPath(); g.arc(256, 256, 252, 0, 7); g.fill();          // red rim
+  g.fillStyle = "#fffaf0"; g.beginPath(); g.arc(256, 256, 214, 0, 7); g.fill();
+  g.lineWidth = 16; g.strokeStyle = "#241726"; g.beginPath(); g.arc(256, 256, 214, 0, 7); g.stroke();
+  g.lineCap = "round";
+  for (let k = 0; k < 60; k++) {
+    const a = (k / 60) * Math.PI * 2, big = k % 5 === 0;
+    g.lineWidth = big ? 14 : 5; g.beginPath();
+    g.moveTo(256 + (big ? 160 : 182) * Math.sin(a), 256 - (big ? 160 : 182) * Math.cos(a)); g.lineTo(256 + 196 * Math.sin(a), 256 - 196 * Math.cos(a)); g.stroke();
+  }
+  g.fillStyle = "#241726"; g.font = "bold 64px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+  for (const [n, a] of [[12, 0], [3, 90], [6, 180], [9, 270]] as [number, number][]) { const r = (a * Math.PI) / 180; g.fillText(String(n), 256 + 122 * Math.sin(r), 258 - 122 * Math.cos(r)); }
+  g.fillStyle = "#3d6db5"; g.font = "bold 26px sans-serif"; g.fillText("OFFICE TIME", 256, 340);
 });
 const officeTex = () => facadeHD("office", 30, 13, { wall: "#e8e1d2", shutter: "#3b6fa0" });
 
@@ -94,6 +98,7 @@ export class CarpoolWorld {
   private fog = new THREE.Fog("#bccbec", 25, 420);
   private clouds: THREE.Mesh[] = [];
   private redLamps: THREE.MeshBasicMaterial[] = [];
+  private hourHand!: THREE.Mesh; private minHand!: THREE.Mesh; private secHand!: THREE.Mesh;
   private frustum = new THREE.Frustum(); private m4 = new THREE.Matrix4(); private sph = new THREE.Sphere(); private v = new THREE.Vector3();
 
   constructor() {
@@ -146,10 +151,19 @@ export class CarpoolWorld {
     const booth = lam("booth", () => ({ color: "#f0e2bf" })), boothRoof = lam("boothRoof", () => ({ color: "#3d6db5" }));
     b.add(boxGeo(V(37.0, 0, -9.0), V(38.6, 2.5, -6.0)), booth);
     b.add(boxGeo(V(36.8, 2.5, -9.2), V(38.8, 2.7, -5.8)), boothRoof);
-    b.add(boxGeo(V(38.6, 0.9, -7.9), V(38.62, 1.8, -6.6)), lam("boothWin", () => ({ color: "#3b4a5c" })));
-    const clock = new THREE.Mesh(new THREE.CircleGeometry(0.34, 40), new THREE.MeshBasicMaterial({ map: clockTex(), color: 0xe8e8e8 }));
-    clock.position.set(38.67, 2.1, -7.5); clock.rotation.y = Math.PI / 2; clock.layers.set(NOINK); R.add(clock);
-    b.add(boxGeo(V(38.6, 1.72, -7.88), V(38.65, 2.48, -7.12)), lam("clockBack", () => ({ color: "#3a2e2a" })));
+      b.add(boxGeo(V(38.6, 0.7, -8.6), V(38.62, 1.05, -8.0)), lam("boothWin2", () => ({ color: "#3b4a5c" })));
+    const clock = new THREE.Group(); clock.position.set(CLOCK.x, CLOCK.y, CLOCK.z); clock.rotation.y = Math.PI / 2; R.add(clock);
+    const face = new THREE.Mesh(new THREE.CircleGeometry(CLOCK.r, 64), new THREE.MeshBasicMaterial({ map: clockTex(), color: 0xeeeeee }));
+    face.layers.set(NOINK); clock.add(face);
+    const handMat = new THREE.MeshBasicMaterial({ color: "#241726" }), secMat = new THREE.MeshBasicMaterial({ color: "#e0392b" });
+    const hand = (len: number, w: number, m: THREE.Material, z: number) => {
+      const g2 = new THREE.PlaneGeometry(w, len); g2.translate(0, len / 2 - len * 0.12, 0);
+      const h = new THREE.Mesh(g2, m); h.position.z = z; h.layers.set(NOINK); clock.add(h); return h;
+    };
+    this.hourHand = hand(CLOCK.r * 0.5, 0.06, handMat, 0.01); this.minHand = hand(CLOCK.r * 0.78, 0.04, handMat, 0.02); this.secHand = hand(CLOCK.r * 0.85, 0.015, secMat, 0.03);
+    const cap = new THREE.Mesh(new THREE.CircleGeometry(0.04, 20), secMat); cap.position.z = 0.04; cap.layers.set(NOINK); clock.add(cap);
+    b.add(boxGeo(V(38.6, CLOCK.y - CLOCK.r - 0.06, CLOCK.z - CLOCK.r - 0.06), V(38.66, CLOCK.y + CLOCK.r + 0.06, CLOCK.z + CLOCK.r + 0.06)), lam("clockBack", () => ({ color: "#3a2e2a" })));
+
     // colony name board over the gate
     const board = new THREE.Mesh(new THREE.PlaneGeometry(6.6, 1.0), new THREE.MeshBasicMaterial({ map: ctex("colonyBoard", 1024, 155, (g) => {
       g.fillStyle = "#2f6a43"; g.fillRect(0, 0, 1024, 155); g.strokeStyle = "#f2c94c"; g.lineWidth = 10; g.strokeRect(8, 8, 1008, 139);
@@ -188,6 +202,11 @@ export class CarpoolWorld {
     b.add(quad(V(ox0, 0, oz + 6), V(ox1, 0, oz + 6), V(ox1, 13, oz + 6), V(ox0, 13, oz + 6)), offFront);
     b.add(boxGeo(V(ox0, 0, oz - 6), V(ox1, 13, oz + 5.98)), offSide);
     b.add(boxGeo(V(ox0 - 0.3, 13, oz - 6.3), V(ox1 + 0.3, 13.6, oz + 6.3)), lam("officeCap", () => ({ color: "#3d6db5" })));
+    const sign = new THREE.Mesh(new THREE.PlaneGeometry(16, 2.2), new THREE.MeshBasicMaterial({ map: ctex("officeSign", 1024, 141, (g) => {
+      g.fillStyle = "#141414"; g.fillRect(0, 0, 1024, 141); g.fillStyle = "#F2CF5B"; g.fillRect(0, 128, 1024, 13);
+      g.fillStyle = "#ffffff"; g.font = "bold 92px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("PRESTIGE TECH PARK", 512, 66);
+    }), color: 0xe8e8e8 }));
+    sign.position.set((ox0 + ox1) / 2, 11.6, oz + 6.05); sign.layers.set(NOINK); R.add(sign);
     flat(126, 152, -23.5, -7.2, 0.008, road, 6);
     for (const x of [130, 133, 136, 139, 142]) flat(x - 0.07, x + 0.07, -18.6, -12.2, 0.016, white, 1);
     flat(130, 142, -18.7, -18.55, 0.016, white, 1);
@@ -229,7 +248,7 @@ export class CarpoolWorld {
     for (const m of this.clouds) m.lookAt(cam.position.x, m.position.y, cam.position.z);
 
     // ---- cars ----
-    const poses: CarPose[] = id === "signal" || id === "signal2" ? signalCars(t) : id === "lot" ? [lotCar(t)] : carsAt(id, t);
+    const poses: CarPose[] = id === "signal" || id === "signal2" || id === "bro" ? signalCars(t) : id === "lot" ? [lotCar(t)] : carsAt(id, t);
     const carOf: THREE.Group[] = [], usedN = CAR_COL.map(() => 0);
     for (const l of this.cars) for (const c of l) c.visible = false;
     poses.forEach((p, i) => {
@@ -256,6 +275,14 @@ export class CarpoolWorld {
       person(who, wp.x, wp.y, wp.z, PEOPLE[who], "front", { mode: "sit", expr: this.riderExpr(id, t, who, ci), wave: this.waveOf(id, t, who) }, false, 0.92);
     }));
     this.stageWalkers(id, t, f, person);
+    // ---- clock: 8:58 ticking, minute hand snaps to 12 on "time" with an overshoot wobble ----
+    {
+      const tt0 = WI(5) - 0.06, d = t - tt0;
+      const minA = d < 0 ? -12 - 1.5 * Math.floor(Math.max(0, t - WI(4) + 0.4) * 4) : 6 * Math.exp(-d / 0.08) * Math.cos(d * 60);
+      const hourA = -90 + minA / 12;
+      this.minHand.rotation.z = (-minA * Math.PI) / 180; this.hourHand.rotation.z = (-hourA * Math.PI) / 180;
+      this.secHand.rotation.z = -(Math.floor(t * 8) / 8) * Math.PI * 2 * 1.5;
+    }
     // ---- red light ----
     for (const m of this.redLamps) m.color.setRGB(2.4, 0.15, 0.1);
 
@@ -288,16 +315,18 @@ export class CarpoolWorld {
   }
 
   private riderExpr(id: ShotId, t: number, who: number, _ci: number): Expr {
-    if (id === "signal" || id === "signal2") return t > W("wave") - LEAD ? (who % 2 ? "smile" : "grin") : "neutral";
+    if (id === "bro") return t > WI(22) - LEAD ? "stern" : "grin";
+    if (id === "signal" || id === "signal2") return t > WI(13) - LEAD ? (who % 2 ? "smile" : "grin") : "neutral";
     if (id === "onecar" || id === "lot") return who % 2 ? "laugh" : "grin";
     if (id === "late") return who === 2 ? "smile_closed" : "grin";
-    if (id === "where") return t > W("everyone", 2) - LEAD ? "laugh" : "grin";
+    if (id === "where") return t > WI(93) - LEAD ? "laugh" : "grin";
     if (id === "gate") return "neutral";
     return "neutral";
   }
   private waveOf(id: ShotId, t: number, who: number): number | undefined {
-    if ((id === "signal" || id === "signal2") && t > W("wave") - LEAD) return Math.sin(t * 9 + who * 1.7);
-    if (id === "onecar" && who === 0 && t > W("four", 2) - LEAD) return Math.sin(t * 8);
+    if ((id === "signal" || id === "signal2") && t > WI(13) - LEAD) return Math.sin(t * 9 + who * 1.7);
+    if (id === "bro") return Math.sin(t * 10);
+    if (id === "onecar" && who === 0 && t > WI(77) - LEAD) return Math.sin(t * 8);
     return undefined;
   }
 
@@ -317,12 +346,12 @@ export class CarpoolWorld {
     }
     if (id === "gate" || id === "onecar" || id === "clock") {
       // the guard by his booth, saluting each passing car (raised hand), once for the one car
-      const sal = id === "gate" ? (Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined) : id === "onecar" && t > W("car", 1) - 0.2 ? 0.6 : undefined;
+      const sal = id === "gate" ? (Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined) : id === "onecar" && t > WI(76) - 0.2 ? 0.6 : undefined;
       person(9, 37.4, 0, -5.4, GUARD, "front", { mode: "stand", expr: id === "onecar" ? "smile_closed" : "stern", wave: sal });
     }
     if (id === "late" || id === "where") {
       // Sharma ji (house 3) bursts out of his door and jogs for the waiting car
-      const t0 = W("sharma") - 0.25, u = Math.max(0, t - t0);
+      const t0 = WI(85) - 0.25, u = Math.max(0, t - t0);
       const sx = HOUSE_X[3], from: V3 = [sx - 1.2, 0, DOOR_Z + 0.2], to: V3 = [WAIT_X + 2.3, 0, LANE_Z - 1.5];
       const k = clamp01(u / 5.6), x = from[0] + (to[0] - from[0]) * k, z = from[2] + (to[2] - from[2]) * smooth(Math.min(1, k * 1.8));
       person(3, x, 0, z, PEOPLE[3], "side", { mode: "march", phase: (u * 2.6) % 1, stride: 1.25, expr: "nervous" }, true);

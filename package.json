@@ -6,22 +6,23 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "remotion": "4.0.541",
-    "@remotion/cli": "4.0.541",
-    "@remotion/three": "4.0.541",
-    "@remotion/bundler": "4.0.541",
-    "@remotion/renderer": "4.0.541",
-    "three": "0.170.0",
     "@react-three/fiber": "8.18.0",
     "@react-three/postprocessing": "2.19.1",
+    "@remotion/bundler": "4.0.541",
+    "@remotion/cli": "4.0.541",
+    "@remotion/fonts": "^4.0.541",
+    "@remotion/renderer": "4.0.541",
+    "@remotion/three": "4.0.541",
     "postprocessing": "6.36.7",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "remotion": "4.0.541",
+    "three": "0.170.0"
   },
   "devDependencies": {
-    "typescript": "5.9.3",
-    "@types/three": "0.170.0",
+    "@types/node": "22.19.0",
     "@types/react": "18.3.27",
-    "@types/node": "22.19.0"
+    "@types/three": "0.170.0",
+    "typescript": "5.9.3"
   }
 }

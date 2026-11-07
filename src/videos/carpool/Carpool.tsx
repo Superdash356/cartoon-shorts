@@ -12,7 +12,9 @@ import { InkPass, noInkFallback } from "../bridge/ink";
 import { LensBlur } from "../bridge/lensblur";
 import { GradeEffect, GRADES, GRADE_STRENGTH, gradeFor } from "../bridge/grade";
 import { CarpoolWorld } from "./world";
-import { FPS, TOTAL, END_CARD, W, shotAt, dofAt, ShotId } from "./story";
+import { FPS, TOTAL, END_CARD, WI, shotAt, dofAt, ShotId } from "./story";
+import { AppSequence } from "./AppSequence";
+import { Captions } from "./Captions";
 
 export const CARPOOL_FRAMES = TOTAL;
 const Composer = EffectComposer as unknown as React.FC<{ multisampling: number; children?: React.ReactNode }>;
@@ -60,7 +62,7 @@ const Inner: React.FC<{ id: ShotId }> = ({ id }) => {
 
 // ---------------- 2D overlays ----------------
 const GREEN = "#3f9a3a", YELLOW = "#f6cf4a", INK = "#141414";
-const font = "'Poppins', 'Inter', 'Helvetica Neue', Arial, sans-serif";
+const font = "Manrope, 'Helvetica Neue', Arial, sans-serif";
 
 /** the carpool group chat flooding before anyone leaves home; a counter races to 60 */
 const CHAT = [
@@ -75,9 +77,9 @@ const ChatOverlay: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) => {
   const pop = spring({ frame: f - Math.round(t0 * fps), fps, config: { damping: 14, stiffness: 160 } });
   const out = interpolate(t, [t1 - 0.25, t1], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   // bubbles arrive faster and faster (ease-in): all 15 by the word "home"
-  const n = Math.min(CHAT.length, Math.floor(CHAT.length * Math.pow(Math.max(0, u) / Math.max(0.1, W("home") - t0 - 0.2), 1.6)) + 1);
-  const count = Math.min(60, Math.round(60 * Math.pow(Math.min(1, Math.max(0, u) / Math.max(0.1, W("sixty") - t0 + 0.4)), 1.3)));
-  const shake = t > W("messages") - 0.1 && t < W("messages") + 0.25 ? Math.sin(f * 2.7) * 6 : 0;
+  const n = Math.min(CHAT.length, Math.floor(CHAT.length * Math.pow(Math.max(0, u) / Math.max(0.1, WI(42) - t0 - 0.1), 1.6)) + 1);
+  const count = Math.min(60, Math.round(60 * Math.pow(Math.min(1, Math.max(0, u) / Math.max(0.1, WI(35) - t0 + 0.3)), 1.3)));
+  const shake = t > WI(36) - 0.1 && t < WI(36) + 0.25 ? Math.sin(f * 2.7) * 6 : 0;
   return (
     <AbsoluteFill style={{ background: `rgba(15,25,20,${0.35 * out})`, alignItems: "center", justifyContent: "center", opacity: out }}>
       <div style={{ width: 760, height: 1380, borderRadius: 90, background: "#111", padding: 22, transform: `scale(${0.6 + 0.4 * pop}) translateX(${shake}px) rotate(${(1 - pop) * -6}deg)`,
@@ -86,11 +88,11 @@ const ChatOverlay: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) => {
           <div style={{ background: "#1f6b4a", color: "#fff", padding: "54px 36px 26px", display: "flex", alignItems: "center", gap: 22 }}>
             <div style={{ width: 82, height: 82, borderRadius: 41, background: YELLOW, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 40, fontWeight: 800, color: INK }}>CC</div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 40, fontWeight: 700 }}>Colony Carpool</div>
+              <div style={{ fontSize: 40, fontWeight: 800 }}>Colony Carpool</div>
               <div style={{ fontSize: 28, opacity: 0.85 }}>Rohan, Priya, Arjun, Sharma ji</div>
             </div>
             <div style={{ minWidth: 92, height: 92, borderRadius: 46, background: "#e5483a", color: "#fff", fontSize: 44, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center",
-              transform: `scale(${1 + (t > W("sixty") - 0.1 && t < W("sixty") + 0.3 ? 0.35 : 0)})` }}>{count}</div>
+              transform: `scale(${1 + (t > WI(35) - 0.1 && t < WI(35) + 0.3 ? 0.35 : 0)})` }}>{count}</div>
           </div>
           <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "18px 26px", gap: 14, overflow: "hidden" }}>
             {CHAT.slice(0, n).map(([who, msg], i) => {
@@ -110,23 +112,6 @@ const ChatOverlay: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) => {
   );
 };
 
-/** the real app screens (cropped store screenshots), one per beat: roster -> ready -> live map */
-const AppOverlay: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) => {
-  const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;
-  const beats: [string, number][] = [["home", t0], ["ready", W("everyone", 0) - 0.15], ["map", W("and", 0) - 0.15]];
-  const i = beats.reduce((k, b, j) => (t >= b[1] ? j : k), 0);
-  const [img, b0] = beats[i];
-  const s = spring({ frame: f - Math.round(b0 * fps), fps, config: { damping: 15, stiffness: 170 } });
-  const bg = interpolate(t, [t0, t0 + 0.2, t1 - 0.2, t1], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const zoom = 1 + 0.03 * (t - b0);
-  return (
-    <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(178,214,96,${0.85 * bg}), rgba(52,140,52,${0.92 * bg}))`, alignItems: "center", justifyContent: "center" }}>
-      <Img src={staticFile(`carpool/${img}.png`)} style={{ height: 1800, borderRadius: 36, opacity: bg, transform: `translateY(${(1 - s) * 260}px) scale(${(0.86 + 0.14 * s) * zoom})`,
-        boxShadow: "0 30px 80px rgba(0,0,0,.35)" }} />
-    </AbsoluteFill>
-  );
-};
-
 /** the live map, small, popping in on "everyone can see exactly where" */
 const MapCard: React.FC<{ t0: number }> = ({ t0 }) => {
   const f = useCurrentFrame(), { fps } = useVideoConfig();
@@ -142,18 +127,17 @@ const MapCard: React.FC<{ t0: number }> = ({ t0 }) => {
 };
 
 const EndCard: React.FC<{ t0: number }> = ({ t0 }) => {
-  const f = useCurrentFrame(), { fps } = useVideoConfig();
-  const s = spring({ frame: f - Math.round(t0 * fps), fps, config: { damping: 14, stiffness: 140 } });
-  const s2 = spring({ frame: f - Math.round((t0 + 0.35) * fps), fps, config: { damping: 14, stiffness: 140 } });
-  const op = interpolate(f / fps, [t0, t0 + 0.2], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;
+  const s = spring({ frame: f - Math.round(t0 * fps), fps, config: { damping: 12, stiffness: 150 } });
+  const s2 = spring({ frame: f - Math.round(WI(99) * fps), fps, config: { damping: 11, stiffness: 200 } });
+  const op = interpolate(t, [t0, t0 + 0.12], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
-    <AbsoluteFill style={{ background: "linear-gradient(180deg, #b6db63 0%, #4fae46 55%, #2f7f34 100%)", opacity: op, alignItems: "center", justifyContent: "center", fontFamily: font }}>
-      <div style={{ transform: `scale(${0.7 + 0.3 * s})`, display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <div style={{ fontSize: 150, fontWeight: 800, color: "#fff", letterSpacing: -3, textShadow: "0 6px 0 #2b6a2b" }}>sahyatri<span style={{ color: YELLOW }}>.</span></div>
-        <div style={{ marginTop: 18, fontSize: 58, fontWeight: 700, color: INK, background: YELLOW, padding: "14px 40px", borderRadius: 26, border: `6px solid ${INK}`, transform: `rotate(-2deg) scale(${s2})` }}>
-          Share the daily commute
-        </div>
-        <div style={{ marginTop: 60, fontSize: 44, color: "#fff", fontWeight: 600, opacity: s2 }}>Community Carpool · App Store &amp; Google Play</div>
+    <AbsoluteFill style={{ background: "radial-gradient(120% 70% at 50% 30%, #b7dc68 0%, #5AAE45 45%, #2C6424 100%)", opacity: op, alignItems: "center", justifyContent: "center", fontFamily: font }}>
+      <div style={{ transform: `scale(${0.6 + 0.4 * s})`, display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div style={{ fontSize: 180, fontWeight: 800, color: "#fff", letterSpacing: -7 }}>sahyatri<span style={{ color: YELLOW }}>.</span></div>
+        <div style={{ marginTop: 10, fontSize: 84, fontWeight: 800, color: INK, background: YELLOW, padding: "10px 46px", borderRadius: 28, border: `7px solid ${INK}`, boxShadow: `10px 10px 0 ${INK}`,
+          transform: `rotate(-3deg) scale(${s2})`, letterSpacing: -2 }}>Carpool, sorted.</div>
+        <div style={{ marginTop: 80, fontSize: 46, color: "#fff", fontWeight: 700, opacity: s2 }}>Community Carpool · iOS &amp; Android</div>
       </div>
     </AbsoluteFill>
   );
@@ -170,10 +154,11 @@ export const CarpoolShort: React.FC = () => {
         </ThreeCanvas>
       )}
       {s.id === "chat" && <ChatOverlay t0={s.a / FPS} t1={s.b / FPS} />}
-      {s.id === "app" && <AppOverlay t0={s.a / FPS} t1={s.b / FPS} />}
-      {s.id === "where" && f / FPS > W("everyone", 2) - 0.2 && <MapCard t0={W("everyone", 2) - 0.2} />}
+      {s.id === "app" && <AppSequence t0={s.a / FPS} t1={s.b / FPS} />}
+      {s.id === "where" && f / FPS > WI(93) - 0.2 && <MapCard t0={WI(93) - 0.2} />}
       {s.id === "end" && <EndCard t0={END_CARD} />}
-      <Audio src={staticFile("carpool/voice.wav")} />
+      {s.id !== "end" && <Captions y={s.id === "app" ? 95 : s.id === "chat" ? 110 : 1240} size={s.id === "app" ? 84 : 96} />}
+      <Audio src={staticFile("carpool/voice2.wav")} />
     </AbsoluteFill>
   );
 };

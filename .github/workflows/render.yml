@@ -1,0 +1,88 @@
+name: Render short
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition:
+        description: "Remotion composition id"
+        default: "BridgeShort"
+      scale:
+        description: "1 = 1080x1920, 1.3333 = 1440x2560"
+        default: "1"
+      chunks:
+        description: "Parallel chunks (max 20 on free runners)"
+        default: "20"
+      from:
+        description: "First frame (blank = start)"
+        default: ""
+      to:
+        description: "Last frame (blank = end)"
+        default: ""
+      audio:
+        description: "Audio file in the repo to mux in (blank = none)"
+        default: ""
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Fetch Kenney CC0 kits
+        run: ./scripts/fetch-kenney.sh
+      - uses: actions/upload-artifact@v4
+        with: { name: kenney, path: public/bridge/kenney, retention-days: 1 }
+      - id: plan
+        run: node scripts/plan-chunks.mjs "${{ inputs.composition }}" "${{ inputs.chunks }}" "${{ inputs.from }}" "${{ inputs.to }}"
+
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with: { name: kenney, path: public/bridge/kenney }
+      - name: Render frames ${{ matrix.range }}
+        run: |
+          npx remotion render src/index.ts "${{ inputs.composition }}" "out/chunk_${{ matrix.idx }}.mp4" \
+            --frames=${{ matrix.range }} --scale=${{ inputs.scale }} --gl=swangle \
+            --codec=h264 --crf=16 --muted --concurrency=1 --timeout=600000
+      - uses: actions/upload-artifact@v4
+        with: { name: "chunk_${{ matrix.idx }}", path: "out/chunk_${{ matrix.idx }}.mp4", retention-days: 2 }
+
+  assemble:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { pattern: "chunk_*", path: chunks, merge-multiple: true }
+      - name: Join chunks and add audio
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+          ls chunks/*.mp4 | sort | sed "s#^#file '$PWD/#; s#\$#'#" > list.txt
+          ffmpeg -hide_banner -loglevel error -f concat -safe 0 -i list.txt -c copy video.mp4
+          if [ -n "${{ inputs.audio }}" ] && [ -f "${{ inputs.audio }}" ]; then
+            ffmpeg -hide_banner -loglevel error -i video.mp4 -i "${{ inputs.audio }}" -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 256k -shortest final.mp4
+          else
+            mv video.mp4 final.mp4
+          fi
+          ffprobe -v error -show_entries format=duration:stream=width,height,nb_frames -of compact final.mp4
+      - uses: actions/upload-artifact@v4
+        with: { name: "${{ inputs.composition }}-final", path: final.mp4, retention-days: 30 }

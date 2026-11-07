@@ -1,0 +1,30 @@
+name: Generate voice
+
+on:
+  workflow_dispatch:
+    inputs:
+      short:
+        description: "Folder under shorts/ (needs voice.txt)"
+        default: "carpool"
+      voice:
+        description: "edge-tts voice"
+        default: "en-IN-PrabhatNeural"
+      rate:
+        description: "Speech rate, e.g. +0% or +8%"
+        default: "+0%"
+
+permissions:
+  contents: write
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q edge-tts && sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+      - run: python scripts/tts.py "shorts/${{ inputs.short }}/voice.txt" "shorts/${{ inputs.short }}" "${{ inputs.voice }}" "${{ inputs.rate }}"
+      - name: Commit voice files
+        run: |
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          git add shorts/${{ inputs.short }}/voice.wav shorts/${{ inputs.short }}/words.json
+          git commit -m "Voice for ${{ inputs.short }} (${{ inputs.voice }} ${{ inputs.rate }})" && git push

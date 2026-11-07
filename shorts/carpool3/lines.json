@@ -1,28 +1,150 @@
 {
-  "voice": "en-US-AndrewNeural",
-  "lines": [
-    {"text": "This guy bought a brand new car, just to sit next to his neighbour at every red light.", "rate": "+14%", "pitch": "-3Hz", "volume": "+10%", "gap": 0.2},
-    {"text": "Every morning, Rohan and Arjun leave the same colony, at the same time, in two different cars.", "rate": "+22%", "pitch": "+0Hz", "gap": 0.15},
-    {"text": "First signal, they wave.", "rate": "+16%", "pitch": "+2Hz", "gap": 0.08},
-    {"text": "Second signal, thumbs up.", "rate": "+16%", "pitch": "+4Hz", "gap": 0.08},
-    {"text": "By the fifth signal, they've completely run out of greetings.", "rate": "+20%", "pitch": "+6Hz", "gap": 0.2},
-    {"text": "This went on for two years.", "rate": "+2%", "pitch": "-8Hz", "volume": "+10%", "gap": 0.25},
-    {"text": "Then one day, Rohan rolls down his window and asks,", "rate": "+22%", "pitch": "+0Hz", "gap": 0.05},
-    {"text": "bro, where do you even work?", "rate": "+10%", "pitch": "+10Hz", "volume": "+12%", "gap": 0.22},
-    {"text": "Same office.", "rate": "+6%", "pitch": "-4Hz", "gap": 0.1},
-    {"text": "Same floor.", "rate": "+6%", "pitch": "-2Hz", "gap": 0.1},
-    {"text": "Same team.", "rate": "+0%", "pitch": "-8Hz", "volume": "+15%", "gap": 0.25},
-    {"text": "They had been in the same meetings for two years. Cameras off.", "rate": "+20%", "pitch": "+2Hz", "gap": 0.22},
-    {"text": "So they started a carpool group with two more neighbours.", "rate": "+22%", "pitch": "+0Hz", "gap": 0.1},
-    {"text": "Sixty messages later, nobody knew who was driving, and Sharma ji's two minutes had become forty.", "rate": "+28%", "pitch": "+4Hz", "gap": 0.15},
-    {"text": "Group, dead. Four cars again.", "rate": "+6%", "pitch": "-6Hz", "volume": "+10%", "gap": 0.25},
-    {"text": "Turns out, carpools never fail because of the car.", "rate": "+12%", "pitch": "-2Hz", "gap": 0.08},
-    {"text": "They fail because of the planning.", "rate": "+4%", "pitch": "-6Hz", "volume": "+10%", "gap": 0.22},
-    {"text": "So they let an app do the boring part.", "rate": "+18%", "pitch": "+0Hz", "gap": 0.1},
-    {"text": "A roster picks today's driver. One tap says you're ready. And everyone watches the car arrive. Live.", "rate": "+24%", "pitch": "+2Hz", "gap": 0.2},
-    {"text": "Now it's one car, four friends, and three very bored parking spots.", "rate": "+20%", "pitch": "+2Hz", "gap": 0.15},
-    {"text": "Sharma ji is still late though. But now, everyone can see exactly where.", "rate": "+18%", "pitch": "+0Hz", "gap": 0.25},
-    {"text": "If you wave at your neighbour every morning, the app's called Sahyatri.", "rate": "+16%", "pitch": "-2Hz", "gap": 0.1},
-    {"text": "Check it out. Link in bio.", "rate": "+10%", "pitch": "-4Hz", "volume": "+10%", "gap": 0.3}
-  ]
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "This guy bought a brand new car, just to sit next to his neighbour at every red light.",
+   "rate": "+22%",
+   "pitch": "-3Hz",
+   "volume": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "Every morning, Rohan and Arjun leave the same colony, at the same time, in two different cars.",
+   "rate": "+30%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "First signal, they wave.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Second signal, thumbs up.",
+   "rate": "+24%",
+   "pitch": "+4Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Fifth signal, they've run out of greetings.",
+   "rate": "+28%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "This went on for two years.",
+   "rate": "+10%",
+   "pitch": "-8Hz",
+   "volume": "+10%",
+   "gap": 0.25
+  },
+  {
+   "text": "One day, Rohan rolls down the window,",
+   "rate": "+30%",
+   "pitch": "+0Hz",
+   "gap": 0.05
+  },
+  {
+   "text": "bro, where do you even work?",
+   "rate": "+18%",
+   "pitch": "+10Hz",
+   "volume": "+12%",
+   "gap": 0.22
+  },
+  {
+   "text": "Same office.",
+   "rate": "+14%",
+   "pitch": "-4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Same floor.",
+   "rate": "+14%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Same team.",
+   "rate": "+8%",
+   "pitch": "-8Hz",
+   "volume": "+15%",
+   "gap": 0.25
+  },
+  {
+   "text": "Same meetings. Two years. Cameras off.",
+   "rate": "+28%",
+   "pitch": "+2Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So they made a carpool group.",
+   "rate": "+30%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Sixty messages later, nobody knew who was driving, and Sharma ji's two minutes had become forty.",
+   "rate": "+36%",
+   "pitch": "+4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Group, dead. Four cars again.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "volume": "+10%",
+   "gap": 0.25
+  },
+  {
+   "text": "Turns out, carpools never fail because of the car.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "They fail because of the planning.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "volume": "+10%",
+   "gap": 0.22
+  },
+  {
+   "text": "So they let an app do the boring part.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "A roster picks today's driver. One tap says you're ready. And everyone watches the car arrive. Live.",
+   "rate": "+32%",
+   "pitch": "+2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Now it's one car, four friends, and three very bored parking spots.",
+   "rate": "+28%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Sharma ji is still late though. But now, everyone can see exactly where.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "If you wave at your neighbour every morning, the app's called Sahyatri.",
+   "rate": "+24%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Check it out. Link in bio.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "volume": "+10%",
+   "gap": 0.3
+  }
+ ]
 }

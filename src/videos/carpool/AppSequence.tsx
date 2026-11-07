@@ -7,7 +7,7 @@ import React from "react";
 import { AbsoluteFill, Easing, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { loadFont } from "@remotion/fonts";
 import { HomeScreen, LiveMapScreen, NotificationCard, RideScreen, RosterScreen, Icon, mock, tokens } from "../../sahyatri-ui";
-import { WI } from "./story";
+import { CUE } from "./story";
 
 const { colors, palette, fontFamily, device } = tokens;
 for (const [w, f] of [["400", "Regular"], ["500", "Medium"], ["600", "SemiBold"], ["700", "Bold"], ["800", "ExtraBold"]] as const) {
@@ -79,9 +79,9 @@ export const AppSequence: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) =>
   const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;
   const beats: Beat[] = [
     { id: "home", t0 },
-    { id: "roster", t0: WI(47) - 0.12 },
-    { id: "ride", t0: WI(54) - 0.15 },
-    { id: "map", t0: WI(66) - 0.12 },
+    { id: "roster", t0: CUE.roster - 0.12 },
+    { id: "ride", t0: CUE.tap - 0.45 },
+    { id: "map", t0: CUE.watch - 0.12 },
   ];
   const bi = beats.reduce((k, b, j) => (t >= b.t0 ? j : k), 0);
   const cur = beats[bi], prev = bi > 0 ? beats[bi - 1] : null;
@@ -100,12 +100,12 @@ export const AppSequence: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) =>
       case "roster": return { z: 1 + 0.05 * clampI(u, [0, 1.5], [0, 1]), fx: 195, fy: 422 };
       case "ride": {
         // push toward the button while tapping, then onto the green "ready" notice on "knows"
-        const zIn = clampI(t, [WI(54) - 0.15, WI(55)], [1, 1.32]);
-        const zNotice = clampI(t, [WI(62), WI(63)], [0, 1]);
+        const zIn = clampI(t, [CUE.tap - 0.45, CUE.tap], [1, 1.32]);
+        const zNotice = clampI(t, [CUE.ready - 0.3, CUE.ready], [0, 1]);
         return { z: zIn + 0.12 * zNotice, fx: 195, fy: 560 + 40 * zNotice };
       }
       case "map": {
-        const live = clampI(t, [WI(72) - 0.12, WI(72) + 0.05], [0, 1]);
+        const live = clampI(t, [CUE.live - 0.12, CUE.live + 0.05], [0, 1]);
         return { z: 1 + 0.03 * clampI(u, [0, 1.5], [0, 1]) + 0.55 * live, fx: 195 + 120 * live, fy: 422 - 330 * live };
       }
     }
@@ -120,14 +120,14 @@ export const AppSequence: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) =>
       case "roster":
         return <RosterScreen {...mock.roster} illustrationSrc={staticFile("carpool/calendar-roster.webp")} timeMs={ms(b)} scrollY={clampI(t, [b.t0 + 0.5, b.t0 + 1.6], [0, 60])} />;
       case "ride": {
-        const pressT = WI(55) - 0.02, pressed = clampI(t, [pressT - 0.08, pressT], [0, 1]) * (1 - clampI(t, [pressT + 0.08, pressT + 0.25], [0, 1]));
+        const pressT = CUE.tap + 0.05, pressed = clampI(t, [pressT - 0.08, pressT], [0, 1]) * (1 - clampI(t, [pressT + 0.08, pressT + 0.25], [0, 1]));
         const ready = t > pressT + 0.25;
         return ready
           ? <RideScreen {...mock.rideReady} timeMs={Math.max(0, (t - pressT - 0.25) * 1000) + 600} />
           : <RideScreen {...mock.ride} timeMs={ms(b)} readyPressed={pressed} />;
       }
       case "map": {
-        const p = clampI(t, [b.t0, WI(73) - 0.1], [0.1, 0.4], Easing.inOut(Easing.sin));
+        const p = clampI(t, [b.t0, t1 - 0.1], [0.1, 0.4], Easing.inOut(Easing.sin));
         const km = Math.max(0.1, 1.1 - (p - 0.1) * 3.2);
         return <LiveMapScreen {...mock.liveMap} driverTitle={`Arjun is ${km.toFixed(1)} km away`} map={mock.morningMap(p, -40, 40)} timeMs={ms(b)} />;
       }
@@ -150,21 +150,21 @@ export const AppSequence: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) =>
             <Device>
               {prev && tr < 1 ? <div style={{ position: "absolute", inset: 0, ...prevStyle }}>{screen(prev)}</div> : null}
               <div style={{ position: "absolute", inset: 0, ...curStyle, boxShadow: !isMap && tr < 1 ? "-12px 0 30px rgba(0,0,0,.15)" : undefined }}>{screen(cur)}</div>
-              {cur.id === "ride" ? <Tap x={tapPos.x} y={tapPos.y} t={t} t0={WI(55) - 0.02} /> : null}
+              {cur.id === "ride" ? <Tap x={tapPos.x} y={tapPos.y} t={t} t0={CUE.tap + 0.05} /> : null}
             </Device>
           </div>
         </div>
       </AbsoluteFill>
       {/* the driver notification drops in over the roster on "driver" */}
-      {cur.id === "roster" && t > WI(51) - 0.2 ? (
-        <div style={{ position: "absolute", left: 540, top: 380, transform: `translate(-50%, ${(1 - spring({ frame: Math.round((t - WI(51) + 0.2) * fps), fps, config: { damping: 15, stiffness: 160 } })) * -500}px) scale(2.25)`, transformOrigin: "50% 0%" }}>
+      {cur.id === "roster" && t > CUE.driver - 0.2 ? (
+        <div style={{ position: "absolute", left: 540, top: 380, transform: `translate(-50%, ${(1 - spring({ frame: Math.round((t - CUE.driver + 0.2) * fps), fps, config: { damping: 15, stiffness: 160 } })) * -500}px) scale(2.25)`, transformOrigin: "50% 0%" }}>
           <div style={{ borderRadius: 20, overflow: "hidden", boxShadow: "0 18px 40px rgba(0,0,0,.25)" }}>
             <NotificationCard {...mock.notifications.driverAssigned} title="Arjun is driving today" body="Morning ride · 08:15 · Honda City" when="Just now" width={360} />
           </div>
         </div>
       ) : null}
-      {cur.id === "roster" ? <Sticker text="NO DEBATE" icon="checkmark-circle" t={t} t0={WI(52) - 0.05} x={540} y={1520} rot={-5} /> : null}
-      {cur.id === "map" ? <Sticker text="LIVE" icon="navigate" t={t} t0={WI(72) - 0.05} x={760} y={1580} rot={6} /> : null}
+      {cur.id === "roster" ? <Sticker text="NO DEBATE" icon="checkmark-circle" t={t} t0={CUE.driver + 0.25} x={540} y={1520} rot={-5} /> : null}
+      {cur.id === "map" ? <Sticker text="LIVE" icon="navigate" t={t} t0={CUE.live - 0.05} x={760} y={1580} rot={6} /> : null}
     </AbsoluteFill>
   );
 };

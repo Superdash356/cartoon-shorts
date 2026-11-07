@@ -15,14 +15,18 @@ OUT = sys.argv[4]
 N = ns(DUR)
 
 
-def WI(i):
-    return words[min(i, len(words) - 1)]["start"]
+def WL(L, k=0):
+    l = [x["start"] for x in words if x["line"] == L]
+    return l[min(k, len(l) - 1)]
 
 
 VOICE_END = words[-1]["end"]
-END_CARD = WI(98) - 0.1
-cut = lambda i: WI(i) - 0.1
-T_CHAT, T_APP, T_ONE = cut(31), cut(43), cut(73)
+END_CARD = WL(21) - 0.1
+cut = lambda L, k=0: WL(L, k) - 0.1
+T_CHAT, T_DEAD, T_MSG, T_APP, T_ONE = cut(13), cut(14), cut(15), cut(17), cut(19)
+CUE = dict(wave=WL(2, 3), thumbs=WL(3, 2), outOf=WL(4, 3), years=WL(5), bro=WL(7), office=WL(8), floor=WL(9), team=WL(10), cameras=WL(11, 4),
+           sixty=WL(13), tap=WL(18, 6), ready=WL(18, 9), watch=WL(18, 10), live=WL(18, 16), roster=WL(18, 1), driver=WL(18, 4),
+           one=WL(19, 2), four=WL(19, 4), three=WL(19, 8), sharma=WL(20), everyone=WL(20, 8), name=WL(21, 9), check=WL(22))
 F = I.m2f
 r = rng(7)
 
@@ -60,33 +64,38 @@ def bar_section(t0, bars, uke=True, bass=True, drums=True, mel=False, vel=1.0):
                     place(music, pan(I.glock(F(m), 0.3 * vel, r, 1.2), 0.15), tb + (b8 % 4) * B)
 
 
-# intro to the chat: full groove with a glock hook
-bar_section(0.0, int(np.ceil(T_CHAT / (4 * B))), mel=True)
+# story groove from the top to the chat; it stops for "This went on for two years" and for "bro"
+bar_section(0.0, int(np.ceil(T_CHAT / (4 * B))), mel=True, vel=0.95)
 music[:, ns(T_CHAT):] *= 0.0
-# "Bro.": music stops dead for a beat
-b0, b1 = ns(WI(22) - 0.12), ns(WI(23) + 0.05)
-music[:, b0:b1] *= 0.0
-# chat flood: groove drops out, nervous plucks double in speed
-tc = T_CHAT
+for t0, t1 in [(cut(5), WL(6) - 0.05), (CUE["bro"] - 0.12, WL(8) - 0.15)]:
+    music[:, ns(t0):ns(t1)] *= 0.0
+# chat flood: nervous plucks, faster and faster
 k = 0
-while tc + k * B / 2 < T_APP - 0.2:
-    t = tc + k * B / 2
+while T_CHAT + k * B / 2 < T_DEAD - 0.1:
+    t = T_CHAT + k * B / 2
     place(music, pan(I.pluck(F([72, 71, 72, 74][k % 4] + (k // 8) * 2), 0.22, r, 0.3, 0.8), 0.3 if k % 2 else -0.3), t)
     if k % 2 == 0:
         place(music, I.pluck(F(36 + (k // 8) * 2), 0.4, r, 0.35, 0.2), t)
-    k += 1 if t < T_APP - 1.8 else 2
-# app reveal: warm pad + bright groove back in, a lift
-place(music, I.pad([F(60), F(64), F(67), F(72)], T_ONE - T_APP + 0.5, 0.55, r, att=0.15, rel=0.5, warm=1600), T_APP)
+    k += 1
+# "Group, dead.": sad trombone wah-wah-wah-waaah (descending, wobbling)
+for j, (m, d) in enumerate([(67, 0.32), (66, 0.32), (65, 0.32), (64, 1.1)]):
+    tq = tt(d)
+    fr = F(m) * (1 + 0.02 * np.sin(2 * np.pi * 5.5 * tq) * (tq > 0.15))
+    y = sum(np.sin(2 * np.pi * np.cumsum(fr * h) / SR) / h ** 1.2 for h in range(1, 7))
+    y = lp(y, 1600) * np.minimum(1, tq / 0.04) * np.minimum(1, (d - tq) / 0.08) * 0.28
+    place(music, pan(y, 0.1), T_DEAD + 0.05 + 0.34 * j)
+# the message: soft warm pad, almost nothing else
+place(music, I.pad([F(57), F(60), F(64)], T_APP - T_MSG + 0.3, 0.45, r, att=0.4, rel=0.6, warm=1200), T_MSG + 0.1)
+# app reveal: lift + groove back in until the CTA
+place(music, I.pad([F(60), F(64), F(67), F(72)], T_ONE - T_APP + 0.5, 0.5, r, att=0.15, rel=0.5, warm=1600), T_APP)
+gstart = len(music[0])
 bar_section(T_APP, int(np.ceil((END_CARD - T_APP) / (4 * B))) + 1, mel=True, vel=1.05)
 e0 = ns(END_CARD - 0.08)
-music[:, e0:] *= np.concatenate([np.linspace(1, 0, ns(0.1)), np.zeros(max(0, N - e0 - ns(0.1)))])[: N - e0]  # stop under the end sting
-# end sting: C major chord + glock arpeggio
+music[:, e0:] *= np.concatenate([np.linspace(1, 0.35, ns(0.1)), np.full(max(0, N - e0 - ns(0.1)), 0.35)])[: N - e0]
+# end: a bright sting on the app name
 for j, m in enumerate([60, 64, 67, 72, 76, 79, 84]):
-    place(music, pan(I.glock(F(m), 0.4, r, 1.6), -0.5 + j / 6), END_CARD + 0.05 + 0.045 * j)
-for m in [36, 48]:
-    place(music, I.pluck(F(m), 0.7, r, 1.4, 0.3), END_CARD + 0.05)
-place(music, I.pad([F(60), F(64), F(67)], 1.4, 0.5, r, att=0.05, rel=0.6, warm=2000), END_CARD + 0.05)
-place(music, I.cymbal(0.4, r, 1.8), END_CARD + 0.05)
+    place(music, pan(I.glock(F(m), 0.4, r, 1.6), -0.5 + j / 6), CUE["name"] - 0.05 + 0.045 * j)
+place(music, I.cymbal(0.4, r, 1.8), CUE["name"] - 0.05)
 
 # ---------------------------------------------------------------- sfx
 sfx = np.zeros((2, N))
@@ -140,68 +149,80 @@ def ding(t, vel=0.35):
     place(sfx, pan(I.glock(F(91), vel * 0.7, r, 1.0), -0.1), t + 0.07)
 
 
-# hook: four door slams on "Four neighbours", a whoosh into the office, clock ticks then a bell hit on "time"
-for k in range(4):
-    tq = tt(0.2)
-    place(sfx, pan(lp(r.standard_normal(len(tq)), 300) * np.exp(-tq / 0.04) * 0.5 + np.sin(2 * np.pi * 70 * tq) * np.exp(-tq / 0.05) * 0.4, -0.6 + 0.4 * k), 0.02 + 0.09 * k)
-whoosh(cut(2) + 0.05, 0.3, 0.35)
-for k in range(4):
-    pop(cut(4) + 0.05 + 0.1 * k, 2800, 0.16)
-place(sfx, pan(I.glock(F(88), 0.6, r, 1.2), 0.0), WI(5) - 0.03)
-place(sfx, pan(I.glock(F(76), 0.5, r, 1.2), 0.0), WI(5) - 0.03)
-# "Four. Different. Cars.": a car whooshes past on each word
-for i in (6, 7, 8):
-    car_by(WI(i) + 0.15, 0.8, -0.8, 0.9, 0.45)
-# signal: brakes, friendly double honk on "wave", again on "red light"
-for k in range(4):
+# hook: a shiny "new car" sparkle, idle hum, brakes at the light
+for j, m in enumerate([84, 88, 91]):
+    place(sfx, pan(I.glock(F(m), 0.25, r, 0.8), 0.3), 0.15 + 0.07 * j)
+for k in range(2):
     tq = tt(0.35)
-    place(sfx, pan(bp(r.standard_normal(len(tq)), 2500, 6000) * np.exp(-tq / 0.12) * 0.08, -0.6 + 0.4 * k), cut(9) + 0.1 + 0.08 * k)
-honk(WI(13) - 0.05, 430, 0.12, 0.45, -0.3); honk(WI(13) + 0.12, 430, 0.12, 0.45, -0.3)
-honk(WI(20) - 0.05, 470, 0.1, 0.35, 0.3); honk(WI(20) + 0.1, 470, 0.1, 0.35, 0.3)
-# "Bro.": record scratch + vinyl stop on the music
+    place(sfx, pan(bp(r.standard_normal(len(tq)), 2500, 6000) * np.exp(-tq / 0.12) * 0.08, -0.3 + 0.6 * k), 0.05 + 0.1 * k)
+# leaving the colony: two cars roll past
+car_by(cut(1) + 1.6, 0.7, -0.7, 1.4, 0.35)
+car_by(cut(1) + 3.6, 0.7, -0.7, 1.4, 0.35)
+# greetings: honk-honk, a ding on the thumbs up, an awkward cricket on "out of greetings"
+honk(CUE["wave"] - 0.05, 430, 0.12, 0.45, -0.3); honk(CUE["wave"] + 0.12, 430, 0.12, 0.45, -0.3)
+ding(CUE["thumbs"])
+for k in range(3):
+    tq = tt(0.12)
+    place(sfx, pan(np.sin(2 * np.pi * 4300 * tq) * (np.sin(2 * np.pi * 45 * tq) > 0) * np.exp(-tq / 0.05) * 0.06, 0.5), CUE["outOf"] + 0.25 + 0.3 * k)
+# two years: fast clock ticking + whoosh
+for k in range(14):
+    pop(cut(5) + 0.05 + k * 0.07, 2800 + 200 * (k % 2), 0.12)
+whoosh(cut(5) + 0.1, 0.9, 0.35)
+# window rolls down, record scratch on "bro"
+tq = tt(0.6)
+place(sfx, lp(r.standard_normal(len(tq)), 500) * (0.5 + 0.5 * np.sin(2 * np.pi * 30 * tq)) * 0.1, WL(6, 3))
 tq = tt(0.28)
-place(sfx, bp(r.standard_normal(len(tq)), 600, 5000) * np.sin(2 * np.pi * (14 - 30 * tq) * tq) * np.exp(-tq / 0.12) * 0.6, WI(22) - 0.12)
+place(sfx, bp(r.standard_normal(len(tq)), 600, 5000) * np.sin(2 * np.pi * (14 - 30 * tq) * tq) * np.exp(-tq / 0.12) * 0.6, CUE["bro"] - 0.12)
+# same office / floor / team: three hits, the last one biggest
+for i, (tm, v) in enumerate([(CUE["office"], 0.45), (CUE["floor"], 0.55), (CUE["team"], 0.8)]):
+    tq = tt(0.4)
+    place(sfx, (np.sin(2 * np.pi * 55 * tq) * np.exp(-tq / 0.12) + lp(r.standard_normal(len(tq)), 1200) * np.exp(-tq / 0.03) * 0.5) * v, tm - 0.03)
+# meeting: call join chime, "camera off" bloop
+for j, m in enumerate([76, 81]):
+    place(sfx, pan(I.glock(F(m), 0.3, r, 0.7), 0.0), cut(10) + 0.25 + 0.1 * j)
+pop(CUE["cameras"] - 0.03, 500, 0.45)
 # chat flood
 whoosh(T_CHAT + 0.05, 0.4, 0.5)
 n_msg = 15
 for k in range(n_msg):
-    tk = T_CHAT + (WI(42) - 0.1 - T_CHAT) * (k / n_msg) ** (1 / 1.6)
+    tk = T_CHAT + (T_DEAD - 0.6 - T_CHAT) * (k / n_msg) ** (1 / 1.6)
     pop(tk, 700 + 90 * (k % 5), 0.28, 0.4 if k % 2 else -0.4)
     if k % 3 == 0:
         buzz(tk + 0.02, 0.35)
-pop(WI(35), 1200, 0.4)
-# app: whoosh + phone rise, iOS-ish push swishes between screens, a notification ping, sticker slams, a tap, a success chime
+pop(CUE["sixty"], 1200, 0.4)
+# group dead: four cars again
+for k in range(4):
+    car_by(T_DEAD + 0.4 + k * 0.35, 0.7, -0.7, 1.2, 0.3)
+# app: whoosh in, screen swishes, notification ping, sticker slam, tap, success chime
 whoosh(T_APP + 0.1, 0.55, 0.5)
-ding(WI(46))
-for i in (47, 54):
-    whoosh(WI(i) - 0.05, 0.25, 0.25)
-ding(WI(51) - 0.15)
+ding(T_APP + 0.25)
+whoosh(CUE["roster"] - 0.15, 0.25, 0.25)
+ding(CUE["driver"] - 0.15)
 tq = tt(0.15)
-for i in (52, 72):
-    place(sfx, lp(r.standard_normal(len(tq)), 900) * np.exp(-tq / 0.03) * 0.7 + np.sin(2 * np.pi * 90 * tq) * np.exp(-tq / 0.06) * 0.6, WI(i) - 0.04)
-pop(WI(55) - 0.02, 1500, 0.4)
+for tm in (CUE["driver"] + 0.25, CUE["live"]):
+    place(sfx, lp(r.standard_normal(len(tq)), 900) * np.exp(-tq / 0.03) * 0.7 + np.sin(2 * np.pi * 90 * tq) * np.exp(-tq / 0.06) * 0.6, tm - 0.04)
+whoosh(CUE["tap"] - 0.45, 0.25, 0.25)
+pop(CUE["tap"] + 0.05, 1500, 0.4)
 for j, m in enumerate([79, 84, 88]):
-    place(sfx, pan(I.glock(F(m), 0.4, r, 0.9), 0.1), WI(55) + 0.25 + 0.06 * j)
-whoosh(WI(66) - 0.05, 0.3, 0.3)
-car_by(WI(70) + 0.2, -0.3, 0.3, 1.2, 0.25)
+    place(sfx, pan(I.glock(F(m), 0.4, r, 0.9), 0.1), CUE["tap"] + 0.3 + 0.06 * j)
+whoosh(CUE["watch"] - 0.1, 0.3, 0.3)
+car_by(CUE["watch"] + 0.8, -0.3, 0.3, 1.2, 0.25)
+# payoff
 whoosh(T_ONE + 0.02, 0.4, 0.35, up=False)
-# one car out, honk at the guard
 car_by(T_ONE + 0.8, -0.5, 0.6, 1.8, 0.4)
-honk(WI(78) + 0.1, 520, 0.1, 0.35)
-# parking squeak
+honk(CUE["four"] + 0.1, 520, 0.1, 0.35)
 tq = tt(0.4)
-place(sfx, np.sin(2 * np.pi * (1900 + 300 * np.sin(2 * np.pi * 7 * tq)) * tq) * np.exp(-tq / 0.15) * 0.05, cut(80) + 1.0)
-# Sharma ji: door bang and running steps
+place(sfx, np.sin(2 * np.pi * (1900 + 300 * np.sin(2 * np.pi * 7 * tq)) * tq) * np.exp(-tq / 0.15) * 0.05, CUE["three"] + 1.0)
 tq = tt(0.25)
-place(sfx, pan(lp(r.standard_normal(len(tq)), 400) * np.exp(-tq / 0.05) * 0.6, 0.4), cut(85) + 0.15)
-t = cut(85) + 0.3
+place(sfx, pan(lp(r.standard_normal(len(tq)), 400) * np.exp(-tq / 0.05) * 0.6, 0.4), CUE["sharma"] + 0.05)
+t = CUE["sharma"] + 0.2
 while t < END_CARD - 0.2:
     step(t, 0.22)
     t += 0.19
-pop(WI(93) - 0.15, 1000, 0.4)
+pop(CUE["everyone"] - 0.15, 1000, 0.4)
 whoosh(END_CARD + 0.05, 0.4, 0.4)
 tq = tt(0.15)
-place(sfx, lp(r.standard_normal(len(tq)), 900) * np.exp(-tq / 0.03) * 0.7, WI(99) - 0.04)
+place(sfx, lp(r.standard_normal(len(tq)), 900) * np.exp(-tq / 0.03) * 0.7, CUE["check"] - 0.04)
 
 # ---------------------------------------------------------------- mix
 vo = np.zeros((2, N))
@@ -221,6 +242,11 @@ music_wet *= dbg((vl - 13) - integrated(music_wet))
 sfx *= dbg((vl - 9) - integrated(sfx))
 mix = vo + music_wet * duck[None, :] + sfx
 mix *= dbg(-14.5 - integrated(mix))
+for _ in range(3):  # soft limiter (tanh knee at -1.5 dBFS), then re-trim loudness toward -14
+    ceil = dbg(-1.5)
+    mix = np.tanh(mix / ceil) * ceil
+    mix *= dbg(min(2.0, -14.0 - integrated(mix)))
+mix = np.tanh(mix / dbg(-1.5)) * dbg(-1.5)
 pk = true_peak(mix)  # dBTP
 if pk > -1.0:
     mix *= dbg(-1.0 - pk)

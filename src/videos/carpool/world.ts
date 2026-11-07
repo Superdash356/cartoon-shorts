@@ -9,7 +9,7 @@ import { NOINK } from "../bridge/ink";
 import { Actor, Fx, Pool } from "../bridge/cast";
 import { bodyFront, bodySide, fxContact, Expr, Outfit, Pen, SKINS } from "../bridge/toon";
 import {
-  CAR_COL, CLOCK, DOOR_Z, WAIT_X, WI, FPS, GATE_X, HOUSE_X, HOUSE_Z, LANE_Z, LEAD, LOT, PARK_Z, SIGNAL_LANES, STOP_X, CarPose, ShotId, V3, W,
+  CAR_COL, CLOCK, CUE, DOOR_Z, WAIT_X, WI, FPS, GATE_X, HOUSE_X, HOUSE_Z, LANE_Z, LEAD, LOT, PARK_Z, SIGNAL_LANES, STOP_X, CarPose, ShotId, V3, W,
   camAt, carsAt, clamp01, lotCar, shotAt, signalCars, smooth,
 } from "./story";
 
@@ -248,7 +248,8 @@ export class CarpoolWorld {
     for (const m of this.clouds) m.lookAt(cam.position.x, m.position.y, cam.position.z);
 
     // ---- cars ----
-    const poses: CarPose[] = id === "signal" || id === "signal2" || id === "bro" ? signalCars(t) : id === "lot" ? [lotCar(t)] : carsAt(id, t);
+    const SIG = ["signal", "signal2", "bro", "hook", "sig1", "sig2", "sig5", "ask", "lonely"];
+    const poses: CarPose[] = SIG.includes(id) ? signalCars(t, id === "hook" || id === "lonely") : id === "lot" ? [lotCar(t)] : carsAt(id, t);
     const carOf: THREE.Group[] = [], usedN = CAR_COL.map(() => 0);
     for (const l of this.cars) for (const c of l) c.visible = false;
     poses.forEach((p, i) => {
@@ -275,13 +276,13 @@ export class CarpoolWorld {
       person(who, wp.x, wp.y, wp.z, PEOPLE[who], "front", { mode: "sit", expr: this.riderExpr(id, t, who, ci), wave: this.waveOf(id, t, who) }, false, 0.92);
     }));
     this.stageWalkers(id, t, f, person);
-    // ---- clock: 8:58 ticking, minute hand snaps to 12 on "time" with an overshoot wobble ----
+    // ---- clock: ~9:00; on "two years" the hands whirl (time passing), decelerating at the cut ----
     {
-      const tt0 = WI(5) - 0.06, d = t - tt0;
-      const minA = d < 0 ? -12 - 1.5 * Math.floor(Math.max(0, t - WI(4) + 0.4) * 4) : 6 * Math.exp(-d / 0.08) * Math.cos(d * 60);
-      const hourA = -90 + minA / 12;
+      const sh = shotAt(f), u = id === "years" ? (f - sh.a) / FPS : 0, dur = (sh.b - sh.a) / FPS;
+      const spin = id === "years" ? 360 * 7 * (u - (u * u) / (2 * Math.max(0.5, dur) * 1.4)) : 0;
+      const minA = spin, hourA = -90 + spin / 12;
       this.minHand.rotation.z = (-minA * Math.PI) / 180; this.hourHand.rotation.z = (-hourA * Math.PI) / 180;
-      this.secHand.rotation.z = -(Math.floor(t * 8) / 8) * Math.PI * 2 * 1.5;
+      this.secHand.rotation.z = -(Math.floor(t * 8) / 8) * Math.PI * 2 * (id === "years" ? 6 : 1.5);
     }
     // ---- red light ----
     for (const m of this.redLamps) m.color.setRGB(2.4, 0.15, 0.1);
@@ -315,18 +316,26 @@ export class CarpoolWorld {
   }
 
   private riderExpr(id: ShotId, t: number, who: number, _ci: number): Expr {
-    if (id === "bro") return t > WI(22) - LEAD ? "stern" : "grin";
-    if (id === "signal" || id === "signal2") return t > WI(13) - LEAD ? (who % 2 ? "smile" : "grin") : "neutral";
-    if (id === "onecar" || id === "lot") return who % 2 ? "laugh" : "grin";
-    if (id === "late") return who === 2 ? "smile_closed" : "grin";
-    if (id === "where") return t > WI(93) - LEAD ? "laugh" : "grin";
-    if (id === "gate") return "neutral";
-    return "neutral";
+    const duo = who === 0 || who === 2; // Rohan, Arjun
+    switch (id) {
+      case "hook": return who === 0 ? "grin" : "neutral";
+      case "sig1": return duo && t > CUE.wave - LEAD ? "grin" : "neutral";
+      case "sig2": return duo && t > CUE.thumbs - LEAD ? "smile" as Expr : "neutral";
+      case "sig5": return duo ? (t > CUE.outOf - LEAD ? "nervous" : "neutral") : "neutral";
+      case "ask": return who === 0 ? (t > CUE.bro - LEAD ? "grin" : "neutral") : "neutral";
+      case "lonely": return "neutral";
+      case "onecar": case "lot": return who % 2 ? "laugh" : "grin";
+      case "late": return who === 2 ? "smile_closed" as Expr : "grin";
+      case "where": return t > CUE.everyone - LEAD ? "laugh" : "grin";
+      default: return "neutral";
+    }
   }
   private waveOf(id: ShotId, t: number, who: number): number | undefined {
-    if ((id === "signal" || id === "signal2") && t > WI(13) - LEAD) return Math.sin(t * 9 + who * 1.7);
-    if (id === "bro") return Math.sin(t * 10);
-    if (id === "onecar" && who === 0 && t > WI(77) - LEAD) return Math.sin(t * 8);
+    const duo = who === 0 || who === 2;
+    if (id === "sig1" && duo && t > CUE.wave - LEAD) return Math.sin(t * 9 + who * 1.7);
+    if (id === "sig2" && duo && t > CUE.thumbs - LEAD) return 0.9;  // hand up and held: "thumbs up"
+    if (id === "ask" && who === 0 && t > CUE.bro - LEAD) return 0.4 + 0.3 * Math.sin(t * 6);
+    if (id === "onecar" && who === 0 && t > CUE.four - LEAD) return Math.sin(t * 8);
     return undefined;
   }
 
@@ -344,14 +353,14 @@ export class CarpoolWorld {
     if (id === "doors") {
       HOUSE_X.forEach((x, i) => person(i, x, 0, -9.0, PEOPLE[i], "front", { mode: "stand", expr: i === 3 ? "nervous" : "neutral", look: i % 2 ? 1 : -1 }));
     }
-    if (id === "gate" || id === "onecar" || id === "clock") {
+    if (id === "gate" || id === "onecar" || id === "clock" || id === "leave" || id === "dead") {
       // the guard by his booth, saluting each passing car (raised hand), once for the one car
-      const sal = id === "gate" ? (Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined) : id === "onecar" && t > WI(76) - 0.2 ? 0.6 : undefined;
+      const sal = id === "gate" || id === "leave" || id === "dead" ? (Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined) : id === "onecar" && t > CUE.one - 0.2 ? 0.6 : undefined;
       person(9, 37.4, 0, -5.4, GUARD, "front", { mode: "stand", expr: id === "onecar" ? "smile_closed" : "stern", wave: sal });
     }
     if (id === "late" || id === "where") {
       // Sharma ji (house 3) bursts out of his door and jogs for the waiting car
-      const t0 = WI(85) - 0.25, u = Math.max(0, t - t0);
+      const t0 = CUE.sharma - 0.25, u = Math.max(0, t - t0);
       const sx = HOUSE_X[3], from: V3 = [sx - 1.2, 0, DOOR_Z + 0.2], to: V3 = [WAIT_X + 2.3, 0, LANE_Z - 1.5];
       const k = clamp01(u / 5.6), x = from[0] + (to[0] - from[0]) * k, z = from[2] + (to[2] - from[2]) * smooth(Math.min(1, k * 1.8));
       person(3, x, 0, z, PEOPLE[3], "side", { mode: "march", phase: (u * 2.6) % 1, stride: 1.25, expr: "nervous" }, true);

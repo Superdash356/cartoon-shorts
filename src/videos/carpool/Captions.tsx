@@ -16,7 +16,7 @@ const CHUNKS: Chunk[] = (() => {
   if (cur) out.push(cur);
   return out;
 })();
-const BIG = new Set(["four", "bro", "sixty", "sahyatri", "live", "late", "three", "debate", "ready"]);
+const BIG = new Set(["bro", "same", "years", "sixty", "dead", "planning", "sahyatri", "live", "late", "three", "off", "wave", "thumbs"]);
 
 export const Captions: React.FC<{ y: number; size?: number }> = ({ y, size = 96 }) => {
   const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;

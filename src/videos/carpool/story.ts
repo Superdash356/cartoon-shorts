@@ -14,9 +14,17 @@ export const W = (w: string, n = 0) => {
 };
 /** onset (s) of word index i in words.json */
 export const WI = (i: number) => words[Math.min(i, words.length - 1)].start;
+/** onset (s) of word k of narration line L (lines.json order) */
+export const WL = (L: number, k = 0) => { const l = words.filter((w) => w.line === L); return (l[Math.min(k, l.length - 1)] ?? words[words.length - 1]).start; };
+/** story cues (s) */
+export const CUE = {
+  wave: WL(2, 3), thumbs: WL(3, 2), outOf: WL(4, 3), years: WL(5, 0), bro: WL(7, 0), team: WL(10, 0), cameras: WL(11, 4),
+  sixty: WL(13, 0), messages: WL(13, 1), chatEnd: WL(14, 0), app: WL(17, 0), roster: WL(18, 1), driver: WL(18, 4), tap: WL(18, 6), ready: WL(18, 9),
+  watch: WL(18, 10), live: WL(18, 16), one: WL(19, 2), four: WL(19, 4), three: WL(19, 8), sharma: WL(20, 0), but: WL(20, 6), everyone: WL(20, 8), cta: WL(21, 0), name: WL(21, 9), check: WL(22, 0),
+};
 export const WORDS_T = words;
 export const VOICE_END = words[words.length - 1].end;
-export const END_CARD = WI(98) - 0.1; // "Sahyatri. Carpool, sorted." over the end card
+export const END_CARD = WL(21) - 0.1; // CTA over the end card
 export const TOTAL = Math.ceil((VOICE_END + 0.75) * FPS);
 
 export const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
@@ -40,35 +48,39 @@ export const LOT = { x: [131.5, 134.5, 137.5, 140.5], z: -15.5 }; // office bays
 export const CLOCK = { x: 38.68, y: 1.75, z: -7.5, r: 0.55 }; // booth wall clock (face toward +x)
 
 // ---------------- shots ----------------
-export type ShotId = "street" | "office" | "walk" | "clock" | "gate" | "signal" | "signal2" | "bro" | "doors" | "chat" | "app" | "onecar" | "lot" | "late" | "where" | "end";
+export type ShotId = "hook" | "leave" | "sig1" | "sig2" | "sig5" | "years" | "ask" | "office" | "floor" | "meeting" | "doors" | "chat" | "dead" | "lonely"
+  | "app" | "onecar" | "lot" | "late" | "where" | "end"
+  | "street" | "walk" | "clock" | "gate" | "signal" | "signal2" | "bro";
 export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
-/** cut ~3 frames before word i */
-const cw = (i: number) => (i === 0 ? 0 : WI(i) - 0.1);
-// word indices (words.json): 0 Four 2 Same(office) 4 Same(time) 6 Four 7 Different 8 Cars 9 Every 13 wave 17 at(every single red light)
-// 22 Bro 27 They 31 The(group chat) 35 sixty 43 So 46 Sahyatri 47 The(roster) 52 No 54 Tap 58 pickup 63 knows 66 Then 72 Live
-// 73 Now 75 one 77 four 80 three 85 Sharma 91 But 93 everyone 98 Sahyatri
+/** cut ~3 frames before line L (word k) */
+const cl = (L: number, k = 0) => (L === 0 && k === 0 ? 0 : WL(L, k) - 0.1);
 export const SHOTS: Shot[] = [
-  S("street", cw(0), cw(2)),
-  S("office", cw(2), cw(4)),
-  S("clock", cw(4), cw(6)),
-  S("gate", cw(6), cw(9)),
-  S("signal", cw(9), cw(17)),
-  S("signal2", cw(17), cw(22)),
-  S("bro", cw(22), cw(27)),
-  S("doors", cw(27), cw(31)),
-  S("chat", cw(31), cw(43)),
-  S("app", cw(43), cw(73)),
-  S("onecar", cw(73), cw(80)),
-  S("lot", cw(80), cw(85)),
-  S("late", cw(85), cw(91)),
-  S("where", cw(91), END_CARD),
+  S("hook", cl(0), cl(1)),
+  S("leave", cl(1), cl(2)),
+  S("sig1", cl(2), cl(3)),
+  S("sig2", cl(3), cl(4)),
+  S("sig5", cl(4), cl(5)),
+  S("years", cl(5), cl(6)),
+  S("ask", cl(6), cl(8)),
+  S("office", cl(8), cl(9)),
+  S("floor", cl(9), cl(10)),
+  S("meeting", cl(10), cl(12)),
+  S("doors", cl(12), cl(13)),
+  S("chat", cl(13), cl(14)),
+  S("dead", cl(14), cl(15)),
+  S("lonely", cl(15), cl(17)),
+  S("app", cl(17), cl(19)),
+  S("onecar", cl(19), cl(19, 8)),
+  S("lot", cl(19, 8), cl(20)),
+  S("late", cl(20), cl(20, 6)),
+  S("where", cl(20, 6), END_CARD),
   S("end", END_CARD, TOTAL / FPS + 1),
 ];
 SHOTS[SHOTS.length - 1].b = TOTAL;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 /** shots drawn under a full-screen 2D overlay: the 3D layer just needs a soft background */
-export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true };
+export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true };
 
 // ---------------- motion ----------------
 // four neighbours, index i lives in house i; car i is parked in front of house i
@@ -80,15 +92,19 @@ export const WAIT_X = 14.5; // the carpool car waits here for Sharma ji
 export const carsAt = (id: ShotId, t: number): CarPose[] => {
   const parked = (i: number): CarPose => ({ x: HOUSE_X[i] + 2.6, z: PARK_Z, yaw: 0, on: true, riders: [], owner: i });
   switch (id) {
-    case "street": case "doors": return [0, 1, 2, 3].map(parked);
-    case "walk": case "office": case "clock": return [0, 1, 2, 3].map(parked);
-    case "gate": {
+    case "street": case "doors": case "office": case "floor": case "years": case "meeting": return [0, 1, 2, 3].map(parked);
+    case "walk": case "office": case "clock": case "floor": case "years": case "meeting": return [0, 1, 2, 3].map(parked);
+    case "leave": { // Rohan (white) then Arjun (blue), nose to tail out of the gate
+      const tg = shotAt(Math.round(t * FPS)).a / FPS;
+      return [0, 2].map((i, k) => ({ x: GATE_X - 14 + 3.4 * (t - tg) - 7.5 * k, z: LANE_Z, yaw: 0, on: true, riders: [i], owner: i }));
+    }
+    case "gate": case "dead": {
       // nose to tail through the gate: the gate shot shows them already on the lane, rolling out one after another
       const tg = shotAt(Math.round(t * FPS)).a / FPS;
       return [3, 2, 1, 0].map((i, k) => ({ x: GATE_X - 1 + 5.5 * (t - tg) - 6.8 * k, z: LANE_Z, yaw: 0, on: true, riders: [i], owner: i }));
     }
     case "onecar": {
-      const t0 = WI(75) - 0.5, s = Math.max(0, (t - t0)) * 6.5;
+      const t0 = CUE.one - 0.5, s = Math.max(0, (t - t0)) * 6.5;
       return [0, 1, 3].map(parked).concat([{ x: GATE_X - 9 + s, z: LANE_Z, yaw: 0, on: true, riders: [2, 0, 1, 3], owner: POOL_CAR }]);
     }
     case "late": case "where": {
@@ -99,18 +115,18 @@ export const carsAt = (id: ShotId, t: number): CarPose[] => {
     default: return [];
   }
 };
-/** the signal: four cars side by side at the stop line, braking in just after the cut */
-export const signalCars = (t: number): CarPose[] => {
-  const t0 = WI(9) - 0.15;
-  return [0, 1, 2, 3].map((i) => {
-    const u = clamp01((t - t0) / (0.7 + 0.12 * i)), x = STOP_X - 2.3 - (1 - (1 - u) ** 3) * 0 - (1 - u) ** 2 * (6 + i * 1.5) - 0.4 * [0, 1, 0, 1][i];
-    const who = [1, 3, 0, 2][i];
-    return { x, z: SIGNAL_LANES[i], yaw: 0, on: true, riders: [who], owner: who };
+/** the signal: Rohan (white, lane 1.8) next to Arjun (blue, lane 5.4); the other two neighbours in the far lanes */
+export const ROHAN_LANE = 1.8, ARJUN_LANE = 5.4;
+export const signalCars = (t: number, brake = true): CarPose[] => {
+  const t0 = shotAt(Math.round(t * FPS)).a / FPS - 0.2;
+  return [[1, -5.4], [3, -1.8], [0, ROHAN_LANE], [2, ARJUN_LANE]].map(([who, z], i) => {
+    const u = brake ? clamp01((t - t0) / (0.7 + 0.12 * i)) : 1, x = STOP_X - 2.3 - (1 - u) ** 2 * (6 + i * 1.5) - 0.4 * [0, 1, 0, 1][i];
+    return { x, z, yaw: 0, on: true, riders: [who], owner: who };
   });
 };
 /** the carpool car pulling into bay 1 of the office lot */
 export const lotCar = (t: number): CarPose => {
-  const t0 = WI(80) - 0.35, u = glide((t - t0) / 1.6);
+  const t0 = CUE.three - 0.35, u = glide((t - t0) / 1.6);
   return { x: LOT.x[0], z: lerp(-6.5, LOT.z, u), yaw: -Math.PI / 2, on: true, riders: [2, 0, 1, 3], owner: POOL_CAR };
 };
 
@@ -123,10 +139,10 @@ const push = (f: number, f0: number, rate = 0.0025) => Math.exp(-rate * Math.max
 const tf = (s: ShotId) => SHOTS.find((x) => x.id === s)!.a;
 const C = (pos: V3, look: V3, fov = 40, roll = 0): Cam => ({ pos, look, fov, roll });
 /** word punches: a quick zoom-in kick that settles over ~0.25 s (Zack D. style emphasis) */
-export const PUNCH = [0, 2, 4, 5, 6, 7, 8, 22, 26, 35, 52, 72, 75, 77, 80, 85];
+export const PUNCH_T = (): number[] => [WL(0, 4), CUE.wave, CUE.thumbs, CUE.outOf, CUE.years, CUE.bro, WL(8), WL(9), WL(10), CUE.cameras, CUE.sixty, CUE.chatEnd, WL(16, 3), CUE.live, CUE.one, CUE.three, CUE.sharma, CUE.name];
 export const punchAt = (t: number) => {
   let k = 0;
-  for (const i of PUNCH) { const d = t - (WI(i) - 0.03); if (d >= 0 && d < 0.6) k = Math.max(k, Math.exp(-d / 0.09)); }
+  for (const tp of PUNCH_T()) { const d = t - (tp - 0.03); if (d >= 0 && d < 0.6) k = Math.max(k, Math.exp(-d / 0.09)); }
   return k;
 };
 export const camAt = (id: ShotId, f: number): Cam => {
@@ -136,6 +152,34 @@ export const camAt = (id: ShotId, f: number): Cam => {
 const camAt0 = (id: ShotId, f: number): Cam => {
   const t = f / FPS, a = tf(id);
   switch (id) {
+    case "hook": { // diagonal over the two cars at the light: new white car right next to the blue one
+      const L: V3 = [STOP_X - 2.0, 1.25, 3.9];
+      return C(dolly([STOP_X + 8.5, 2.1, 10.8], L, push(f, a, 0.0035)), L, 30, 0);
+    }
+    case "leave": { const L: V3 = [GATE_X - 2, 1.2, -1.2]; return C(dolly([GATE_X + 13, 1.7, 5.5], L, push(f, a, 0.002)), L, 42, 0); }
+    case "sig1": { // front low 3/4 on both drivers: wave
+      const L: V3 = [STOP_X - 2.35, 1.3, 3.8];
+      return C(dolly([STOP_X + 4.4, 1.5, 9.4], L, push(f, a, 0.003)), L, 34, 0.02);
+    }
+    case "sig2": { // the other side, higher: thumbs up
+      const L: V3 = [STOP_X - 2.35, 1.3, 3.6];
+      return C(dolly([STOP_X + 5.8, 2.6, -0.2], L, push(f, a, 0.003)), L, 36, -0.04);
+    }
+    case "sig5": case "ask": case "lonely": { // close on one driver: Arjun out of greetings / Rohan asking / Rohan alone again
+      const z = id === "sig5" ? ARJUN_LANE + 0.42 : ROHAN_LANE + 0.42, L: V3 = [STOP_X - 2.35, 1.3, z];
+      const rate = id === "lonely" ? 0.006 : 0.004;
+      return C(dolly([STOP_X + 1.9, 1.45, z + 1.3], L, push(f, a, rate)), L, 30, id === "lonely" ? 0 : 0.03);
+    }
+    case "years": { // the booth clock, hands spinning: two years
+      const L: V3 = [CLOCK.x, CLOCK.y, CLOCK.z];
+      return C(dolly([CLOCK.x + 2.3, CLOCK.y - 0.25, CLOCK.z + 0.55], L, push(f, a, 0.004)), L, 28, 0.05 * Math.sin((f - a) / 6));
+    }
+    case "floor": { // push into one office window: same floor
+      const L: V3 = [134.5, 7.6, -24];
+      return C(dolly([135.5, 6.6, -12], L, push(f, a, 0.01)), L, 36, 0);
+    }
+    case "meeting": { const L: V3 = [139, 6.5, -24]; return C(dolly([139.3, 1.4, 6], L, push(f, a, 0.001)), L, 50, 0); }
+    case "dead": { const L: V3 = [GATE_X - 2, 1.2, -1.2]; return C(dolly([GATE_X + 13, 1.7, 5.5], L, push(f, a, 0.002)), L, 42, 0); }
     case "street": { // high 3/4 over the lane: four houses, four doors, four parked cars
       const L: V3 = [0, 1.5, -7.5];
       return C(dolly([-27, 5.0, 5], L, push(f, a, 0.003)), L, 42, 0);
@@ -199,7 +243,11 @@ const camAt0 = (id: ShotId, f: number): Cam => {
 export const dofAt = (id: ShotId): { cInf: number; focus?: V3 } => {
   switch (id) {
     case "walk": return { cInf: 9, focus: [-7.4, 1.4, -6] };
-    case "clock": return { cInf: 16 };
+    case "clock": case "years": return { cInf: 16 };
+    case "sig1": return { cInf: 9 };
+    case "sig5": case "ask": case "lonely": return { cInf: 13 };
+    case "floor": return { cInf: 6 };
+    case "meeting": return { cInf: 22 };
     case "bro": return { cInf: 13 };
     case "signal": return { cInf: 11, focus: [STOP_X - 1.2, 1.3, 0] };
     case "doors": return { cInf: 7, focus: [-7, 1.5, -9] };

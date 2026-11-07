@@ -2,3 +2,4 @@ node_modules/
 out/
 public/bridge/kenney/
 *.mp4
+__pycache__/

@@ -1,0 +1,21 @@
+{
+  "voice": "en-US-ChristopherNeural",
+  "lines": [
+    {"text": "Four neighbours.", "rate": "+10%", "pitch": "-4Hz", "volume": "+10%", "gap": 0.05},
+    {"text": "Same office.", "rate": "+18%", "pitch": "-2Hz", "gap": 0.04},
+    {"text": "Same time.", "rate": "+18%", "pitch": "-2Hz", "gap": 0.08},
+    {"text": "Four. Different. Cars.", "rate": "-4%", "pitch": "-8Hz", "volume": "+15%", "gap": 0.22},
+    {"text": "Every single morning, they wave at each other, at every single red light.", "rate": "+24%", "pitch": "+0Hz", "gap": 0.12},
+    {"text": "Bro. You live next door.", "rate": "+6%", "pitch": "+10Hz", "volume": "+15%", "gap": 0.22},
+    {"text": "They tried carpooling once.", "rate": "+22%", "pitch": "-2Hz", "gap": 0.06},
+    {"text": "The group chat hit sixty messages, and nobody knew who was driving.", "rate": "+30%", "pitch": "+4Hz", "gap": 0.18},
+    {"text": "So they got Sahyatri.", "rate": "+8%", "pitch": "-6Hz", "volume": "+15%", "gap": 0.14},
+    {"text": "The roster picks today's driver. No debate.", "rate": "+22%", "pitch": "+0Hz", "gap": 0.08},
+    {"text": "Tap, I'm at the pickup point, and the driver knows you're ready.", "rate": "+24%", "pitch": "+2Hz", "gap": 0.08},
+    {"text": "Then watch the car pull up. Live.", "rate": "+16%", "pitch": "+0Hz", "gap": 0.18},
+    {"text": "Now it's one car, four besties, and three very bored parking spots.", "rate": "+20%", "pitch": "+2Hz", "gap": 0.18},
+    {"text": "Sharma ji is still late though.", "rate": "+12%", "pitch": "-6Hz", "gap": 0.08},
+    {"text": "But now, everyone can see exactly where.", "rate": "+18%", "pitch": "+4Hz", "gap": 0.25},
+    {"text": "Sahyatri. Carpool, sorted.", "rate": "+4%", "pitch": "-6Hz", "volume": "+15%", "gap": 0.3}
+  ]
+}

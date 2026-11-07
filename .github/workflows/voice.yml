@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       short:
-        description: "Folder under shorts/ (needs voice.txt)"
+        description: "Folder under shorts/ (needs voice.txt or lines.json)"
         default: "carpool"
       voice:
         description: "edge-tts voice"
@@ -22,9 +22,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install -q edge-tts && sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
-      - run: python scripts/tts.py "shorts/${{ inputs.short }}/voice.txt" "shorts/${{ inputs.short }}" "${{ inputs.voice }}" "${{ inputs.rate }}"
+      - name: Synthesize
+        run: |
+          D="shorts/${{ inputs.short }}"
+          if [ -f "$D/lines.json" ]; then
+            python scripts/tts_lines.py "$D/lines.json" "$D"
+            for v in en-US-AndrewNeural en-US-BrianNeural; do mkdir -p "$D/alt_$v" && python scripts/tts_lines.py "$D/lines.json" "$D/alt_$v" "$v"; done
+          else
+            python scripts/tts.py "$D/voice.txt" "$D" "${{ inputs.voice }}" "${{ inputs.rate }}"
+          fi
       - name: Commit voice files
         run: |
           git config user.name "github-actions" && git config user.email "actions@github.com"
-          git add shorts/${{ inputs.short }}/voice.wav shorts/${{ inputs.short }}/words.json
+          git add shorts/${{ inputs.short }}
           git commit -m "Voice for ${{ inputs.short }} (${{ inputs.voice }} ${{ inputs.rate }})" && git push

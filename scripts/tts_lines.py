@@ -7,6 +7,13 @@ spec = json.load(open(sys.argv[1])); out = sys.argv[2]
 voice = sys.argv[3] if len(sys.argv) > 3 else spec["voice"]
 SR = 48000
 async def line(i, L):
+    for attempt in range(5):
+        try:
+            return await _line(i, L)
+        except edge_tts.exceptions.NoAudioReceived:
+            print("retry line", i, attempt + 1, flush=True); await asyncio.sleep(3 + 3 * attempt)
+    return await _line(i, {**L, "pitch": "+0Hz", "volume": "+0%"})
+async def _line(i, L):
     c = edge_tts.Communicate(L["text"], voice, rate=L.get("rate", "+0%"), pitch=L.get("pitch", "+0Hz"), volume=L.get("volume", "+0%"), boundary="WordBoundary")
     audio, words = bytearray(), []
     async for ch in c.stream():

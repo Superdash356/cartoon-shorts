@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build one cartoon story short end to end from shorts/<slug>/story.json.
 
-usage: python3 scripts/daily.py <slug> [--from voice|build|render] [--stills]
+usage: python3 scripts/daily.py <slug> [--from voice|build|render | --only voice|build|render] [--stills]
   voice : write lines.json from story.json, run the "Generate voice" GitHub workflow, pull voice.wav + words.json
   build : tighten the voice (story tempo/keepGap), install story/words/voice as the current CarpoolShort, typecheck,
           make the sound mix (audio/story_mix.py), optionally render local preview stills (--stills)
@@ -105,6 +105,7 @@ if __name__ == "__main__":
     slug = sys.argv[1]
     start = sys.argv[sys.argv.index("--from") + 1] if "--from" in sys.argv else "voice"
     steps = ["voice", "build", "render"]
-    for s in steps[steps.index(start):]:
+    todo = [sys.argv[sys.argv.index("--only") + 1]] if "--only" in sys.argv else steps[steps.index(start):]
+    for s in todo:
         print(f"===== {s} =====", flush=True)
         voice(slug) if s == "voice" else build(slug, "--stills" in sys.argv) if s == "build" else render(slug)

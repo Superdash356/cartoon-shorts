@@ -79,6 +79,7 @@ channel builds recurring characters. You MAY add a new small scene/prop/overlay 
 ```bash
 python3 scripts/daily.py <slug>            # voice (GitHub) -> build (tighten, mix) -> render (GitHub, 20 chunks) -> out/<slug>.mp4
 python3 scripts/daily.py <slug> --from build --stills   # rebuild locally + preview stills -> out/<slug>/contact.jpg
+python3 scripts/daily.py <slug> --only voice             # only the voice (GitHub workflow)
 python3 scripts/daily.py <slug> --from render           # only the render
 ```
 - Check `out/<slug>/contact.jpg` (one still per shot) before rendering: subject in frame, captions readable, no

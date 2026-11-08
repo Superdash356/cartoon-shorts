@@ -23,7 +23,7 @@ export type Story = {
   title: string; lines: { text: string }[]; shots: StoryShot[]; cues: Record<string, [number, number]>; punch: [number, number][];
   chat?: { title: string; members: string; count: number; me: string; messages: [string, string][] };
   meeting?: { title: string; highlight: number[]; tiles: [string, string, boolean][] };
-  end: { headline: string; tagline: string; button: string }; captionsBig?: string[];
+  end: { headline: string; tagline: string; button: string }; captionsBig?: string[]; appSticker?: string;
 };
 export const STORY = STORY_JSON as unknown as Story;
 const NEVER = 1e6;
@@ -61,7 +61,10 @@ export const CLOCK = { x: 38.68, y: 1.75, z: -7.5, r: 0.55 }; // booth wall cloc
 // ---------------- shots ----------------
 export type ShotId = "guard" | "hook" | "leave" | "sig1" | "sig2" | "sig5" | "years" | "ask" | "office" | "floor" | "meeting" | "doors" | "chat" | "dead" | "lonely"
   | "app" | "onecar" | "lot" | "late" | "where" | "end"
-  | "street" | "walk" | "clock" | "gate" | "signal" | "signal2" | "bro";
+  | "street" | "walk" | "clock" | "gate" | "signal" | "signal2" | "bro"
+  // the parking-spot war: three cars racing, one car rushing out at a time, the one shaded bay (canopy + "carpools only"
+  // sign) empty / taken by a stranger carpool, Rohan asleep in the lot, three cars at the gate, the pool parking in the bay
+  | "race" | "rushR" | "rushP" | "rushA" | "spot" | "taken" | "strangers" | "sign" | "nap" | "gate3" | "park" | "backseat";
 export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
 /** cut ~3 frames before line L (word k) */
@@ -77,7 +80,10 @@ export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, e
 
 // ---------------- motion ----------------
 // four neighbours, index i lives in house i; car i is parked in front of house i
-export const CAR_COL = ["#f2efe8", "#c8423a", "#3d6db5", "#b9bec6"];
+export const CAR_COL = ["#f2efe8", "#c8423a", "#3d6db5", "#b9bec6", "#f0b429"]; // 4: the strangers' yellow hatchback
+export const STRANGER_CAR = 4;
+/** the one shaded bay (bay 1 of the office lot): canopy over it, "carpools only" sign at its back */
+export const BAY = { x: 131.5, z: -15.5, signZ: -19.05 };
 export const POOL_CAR = 2; // the blue one becomes today's carpool car
 export type CarPose = { x: number; z: number; yaw: number; on: boolean; riders: number[]; owner: number };
 export const WAIT_X = 14.5; // the carpool car waits here for Sharma ji
@@ -105,9 +111,30 @@ export const carsAt = (id: ShotId, t: number): CarPose[] => {
       cars.push({ x: WAIT_X, z: LANE_Z, yaw: 0, on: true, riders: [2, 0, 1], owner: POOL_CAR });
       return cars;
     }
+    case "rushR": case "rushP": case "rushA": { // one car at a time, flooring it out of the gate
+      const k = id === "rushR" ? 0 : id === "rushP" ? 1 : 2, tg = shotAt(Math.round(t * FPS)).a / FPS;
+      return [0, 1, 2, 3].filter((i) => i !== k).map(parked).concat([{ x: GATE_X - 11 + 8.5 * (t - tg), z: LANE_Z, yaw: 0, on: true, riders: [k], owner: k }]);
+    }
+    case "gate3": {
+      const tg = shotAt(Math.round(t * FPS)).a / FPS;
+      return [2, 1, 0].map((i, k) => ({ x: GATE_X - 1 + 5.5 * (t - tg) - 6.8 * k, z: LANE_Z, yaw: 0, on: true, riders: [i], owner: i }));
+    }
+    case "race": { // three neighbours side by side on the main road, jostling for the lead
+      const x0 = raceX(t);
+      return [0, 1, 2].map((i) => ({ x: x0 + [0.5, -0.3, 0.1][i] + 0.6 * Math.sin(t * 2.6 + i * 2.1), z: [1.8, -1.8, -5.4][i], yaw: 0, on: true, riders: [i], owner: i }));
+    }
+    case "taken": case "strangers": case "sign": return [strangerCar()];
+    case "nap": return [strangerCar(), { x: LOT.x[3], z: LOT.z, yaw: -Math.PI / 2, on: true, riders: [0], owner: 0 }];
+    case "park": case "backseat": {
+      const t0 = shotAt(Math.round(t * FPS)).a / FPS + 0.15, u = id === "park" ? glide((t - t0) / 1.8) : 1;
+      return [{ x: BAY.x, z: lerp(-6.5, BAY.z, u), yaw: -Math.PI / 2, on: true, riders: [2, 1, 0], owner: POOL_CAR }];
+    }
     default: return [];
   }
 };
+const strangerCar = (): CarPose => ({ x: BAY.x, z: BAY.z, yaw: -Math.PI / 2, on: true, riders: [4, 5, 6, 7], owner: STRANGER_CAR });
+/** lead x of the race (camera tracks it) */
+export const raceX = (t: number) => 48 + 15 * (t - shotAt(Math.round(t * FPS)).a / FPS);
 /** the signal: Rohan (white, lane 1.8) next to Arjun (blue, lane 5.4); the other two neighbours in the far lanes */
 export const ROHAN_LANE = 1.8, ARJUN_LANE = 5.4;
 export const signalCars = (t: number, brake = true): CarPose[] => {
@@ -234,6 +261,19 @@ const camAt0 = (id: ShotId, f: number): Cam => {
       const L: V3 = [WAIT_X + 0.4, 1.2, LANE_Z];
       return C(dolly([WAIT_X + 5.2, 1.6, 4.2], L, push(f, a, 0.003)), L, 40, 0.04);
     }
+    case "race": { // tracking alongside the three racing cars, low and wide
+      const x = raceX(t), L: V3 = [x - 1.0, 1.0, -1.8];
+      return C(dolly([x + 11, 2.1, 11.5], L, push(f, a, 0.002)), L, 40, 0.03 * Math.sin(t * 5));
+    }
+    case "rushR": case "rushP": case "rushA": { const L: V3 = [GATE_X - 2, 1.2, -1.2]; return C(dolly([GATE_X + 11, 1.5, 5.0], L, push(f, a, 0.003)), L, 40, id === "rushP" ? -0.04 : 0.04); }
+    case "gate3": { const L: V3 = [GATE_X - 2, 1.2, -1.2]; return C(dolly([GATE_X + 13, 1.7, 5.5], L, push(f, a, 0.002)), L, 42, 0); }
+    case "spot": { const L: V3 = [BAY.x, 1.3, BAY.z - 1]; return C(dolly([BAY.x + 6, 2.4, -6.5], L, push(f, a, 0.004)), L, 34, 0); }
+    case "taken": { const L: V3 = [BAY.x + 0.5, 1.3, BAY.z - 0.5]; return C(dolly([BAY.x + 7, 2.6, -5.5], L, push(f, a, 0.003)), L, 38, -0.02); }
+    case "strangers": { const L: V3 = [BAY.x, 1.25, BAY.z - 0.3]; return C(dolly([BAY.x + 0.9, 1.75, -9.6], L, push(f, a, 0.004)), L, 30, 0.03); }
+    case "sign": { const L: V3 = [BAY.x, 2.1, BAY.signZ]; return C(dolly([BAY.x + 1.3, 2.4, -14.2], L, push(f, a, 0.006)), L, 28, 0); }
+    case "nap": { const L: V3 = [LOT.x[3] - 0.4, 1.3, LOT.z - 0.2]; return C(dolly([LOT.x[3] + 3.0, 2.3, -8.5], L, push(f, a, 0.004)), L, 30, 0.02); }
+    case "park": { const L: V3 = [BAY.x, 1.0, -12.5]; return C(dolly([BAY.x + 4, 3.0, -1.5], L, push(f, a, 0.002)), L, 44, 0); }
+    case "backseat": { const L: V3 = [BAY.x - 0.4, 1.25, BAY.z - 1.0]; return C(dolly([BAY.x - 6.5, 1.9, BAY.z - 1.1], L, push(f, a, 0.003)), L, 30, 0); }
     default: return C([4, 4, 10], [0, 3, -12], 50, 0);
   }
 };
@@ -253,6 +293,10 @@ export const dofAt = (id: ShotId): { cInf: number; focus?: V3 } => {
     case "chat": case "app": return { cInf: 22 };
     case "onecar": return { cInf: 10 };
     case "where": return { cInf: 12, focus: [WAIT_X - 0.1, 1.3, LANE_Z] };
+    case "strangers": case "nap": case "backseat": return { cInf: 12 };
+    case "sign": return { cInf: 14 };
+    case "spot": case "taken": case "park": return { cInf: 6 };
+    case "race": return { cInf: 8 };
     default: return { cInf: 0 };
   }
 };

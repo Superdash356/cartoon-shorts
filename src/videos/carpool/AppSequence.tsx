@@ -7,7 +7,7 @@ import React from "react";
 import { AbsoluteFill, Easing, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { loadFont } from "@remotion/fonts";
 import { HomeScreen, LiveMapScreen, NotificationCard, RideScreen, RosterScreen, Icon, mock, tokens } from "../../sahyatri-ui";
-import { CUE as CUE0, hasCue } from "./story";
+import { CUE as CUE0, STORY, hasCue } from "./story";
 
 const { colors, palette, fontFamily, device } = tokens;
 for (const [w, f] of [["400", "Regular"], ["500", "Medium"], ["600", "SemiBold"], ["700", "Bold"], ["800", "ExtraBold"]] as const) {
@@ -166,7 +166,8 @@ export const AppSequence: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) =>
           </div>
         </div>
       ) : null}
-      {cur.id === "roster" ? <Sticker text="NO DEBATE" icon="checkmark-circle" t={t} t0={CUE.driver + 0.25} x={540} y={1520} rot={-5} /> : null}
+      {cur.id === "roster" ? <Sticker text={STORY.appSticker ?? "NO DEBATE"} icon="checkmark-circle" t={t} t0={CUE.driver + 0.25} x={540} y={1520} rot={-5} /> : null}
+      {hasCue("skip") ? <Sticker text="SKIP TODAY" t={t} t0={CUE0.skip - 0.05} x={600} y={1260} rot={5} /> : null}
       {cur.id === "map" ? <Sticker text="LIVE" icon="navigate" t={t} t0={CUE.live - 0.05} x={760} y={1580} rot={6} /> : null}
     </AbsoluteFill>
   );

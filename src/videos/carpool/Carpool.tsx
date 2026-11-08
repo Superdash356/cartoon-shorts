@@ -12,7 +12,7 @@ import { InkPass, noInkFallback } from "../bridge/ink";
 import { LensBlur } from "../bridge/lensblur";
 import { GradeEffect, GRADES, GRADE_STRENGTH, gradeFor } from "../bridge/grade";
 import { CarpoolWorld } from "./world";
-import { FPS, TOTAL, END_CARD, CUE, STORY, hasCue, shotAt, dofAt, ShotId } from "./story";
+import { FPS, TOTAL, END_CARD, CUE, STORY, hasCue, shotAt, dofAt, ShotId, WORDS_T } from "./story";
 import { AppSequence } from "./AppSequence";
 import { Captions } from "./Captions";
 
@@ -193,6 +193,31 @@ const Meeting: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) => {
   );
 };
 
+/** diary stamp: any narration line that opens with "Day <n>" pops a rubber-stamp "DAY n" card for that line */
+const NUM: Record<string, number> = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12,
+  twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, ninety: 90, hundred: 100 };
+const DAYS = STORY.lines.map((l, i) => {
+  const m = /^day\s+([a-z]+|\d+)/i.exec(l.text.trim()), ws = WORDS_T.filter((w) => w.line === i);
+  if (!m || !ws.length) return null;
+  const n = /\d/.test(m[1]) ? Number(m[1]) : NUM[m[1].toLowerCase()];
+  return n ? { n, t0: ws[0].start - 0.08, t1: ws[ws.length - 1].end + 0.15 } : null;
+}).filter((x): x is { n: number; t0: number; t1: number } => !!x);
+const DayStamp: React.FC = () => {
+  const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;
+  const d = DAYS.find((x) => t >= x.t0 && t < x.t1);
+  if (!d) return null;
+  const s = spring({ frame: f - Math.round(d.t0 * fps), fps, config: { damping: 9, stiffness: 260 } });
+  const out = interpolate(t, [d.t1 - 0.15, d.t1], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  return (
+    <AbsoluteFill style={{ alignItems: "flex-start", justifyContent: "flex-start", padding: "170px 70px", opacity: out }}>
+      <div style={{ transform: `rotate(-7deg) scale(${2.2 - 1.2 * s})`, opacity: Math.min(1, s * 1.6), transformOrigin: "30% 50%", fontFamily: font, fontWeight: 800, fontSize: 120,
+        letterSpacing: -3, color: INK, background: YELLOW, border: `9px solid ${INK}`, borderRadius: 26, padding: "4px 40px 10px", boxShadow: `12px 12px 0 ${INK}` }}>
+        DAY {d.n}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 export const CarpoolShort: React.FC = () => {
   const f = useCurrentFrame();
   const s = shotAt(f);
@@ -208,6 +233,7 @@ export const CarpoolShort: React.FC = () => {
       {s.id === "where" && hasCue("everyone") && f / FPS > CUE.everyone - 0.2 && <MapCard t0={CUE.everyone - 0.2} />}
       {s.id === "meeting" && <Meeting t0={s.a / FPS} t1={s.b / FPS} />}
       {s.id === "end" && <EndCard t0={END_CARD} />}
+      {s.id !== "end" && s.id !== "app" && <DayStamp />}
       {s.id !== "end" && <Captions y={s.id === "app" ? 95 : s.id === "chat" || s.id === "meeting" ? 110 : 1240} size={s.id === "app" ? 84 : 96} />}
       <Audio src={staticFile("carpool/voice_current.wav")} />
     </AbsoluteFill>

@@ -9,7 +9,7 @@ import { NOINK } from "../bridge/ink";
 import { Actor, Fx, Pool } from "../bridge/cast";
 import { bodyFront, bodySide, fxContact, Expr, Outfit, Pen, SKINS } from "../bridge/toon";
 import {
-  CAR_COL, CLOCK, CUE, hasCue, DOOR_Z, WAIT_X, WI, FPS, GATE_X, HOUSE_X, HOUSE_Z, LANE_Z, LEAD, LOT, PARK_Z, SIGNAL_LANES, STOP_X, CarPose, ShotId, V3, W,
+  BAY, CAR_COL, CLOCK, CUE, hasCue, DOOR_Z, WAIT_X, WI, FPS, GATE_X, HOUSE_X, HOUSE_Z, LANE_Z, LEAD, LOT, PARK_Z, SIGNAL_LANES, STOP_X, CarPose, ShotId, V3, W,
   camAt, carsAt, clamp01, lotCar, shotAt, signalCars, smooth,
 } from "./story";
 
@@ -19,6 +19,11 @@ export const PEOPLE: Outfit[] = [
   { jacket: "#c25a7a", pants: "#3b3f52", boots: "#5a3b2a", hat: "hair", hair: "#2a1a14", skin: SKINS[1] },                      // 1 rose kurta
   { jacket: "#5d8a3a", pants: "#3a3d33", boots: "#3a2a20", hat: "hair", hair: "#17110e", skin: SKINS[2] },                      // 2 green shirt (today's driver)
   { jacket: "#e0a93a", pants: "#3b3f52", boots: "#4a3426", hat: "hair", hair: "#241a14", skin: SKINS[3], moustache: "#2a1d16", build: "stout" }, // 3 Sharma ji
+  // 4-7: the strangers' carpool in the shaded bay
+  { jacket: "#7a5ab5", pants: "#34384a", boots: "#2a2a30", hat: "hair", hair: "#2a1a14", skin: SKINS[2] },
+  { jacket: "#2f8f8a", pants: "#3b3f52", boots: "#3a2a20", hat: "hair", hair: "#17110e", skin: SKINS[1] },
+  { jacket: "#d0643a", pants: "#3a3d33", boots: "#2a2a30", hat: "cap", cap: "#2f3a5a", skin: SKINS[3] },
+  { jacket: "#f2efe8", pants: "#34384a", boots: "#4a3426", hat: "hair", hair: "#3a2a1e", skin: SKINS[2], moustache: "#2a1d16" },
 ];
 const GUARD: Outfit = { jacket: "#7a7350", pants: "#5d5a3e", boots: "#2a2a24", hat: "cap", cap: "#3f4a6a", skin: SKINS[3], moustache: "#2a1d16", belt: "#3a2a20" };
 const hh = (i: number, s = 0) => { const v = Math.sin(i * 127.1 + s * 311.7) * 43758.5453; return v - Math.floor(v); };
@@ -211,7 +216,17 @@ export class CarpoolWorld {
     for (const x of [130, 133, 136, 139, 142]) flat(x - 0.07, x + 0.07, -18.6, -12.2, 0.016, white, 1);
     flat(130, 142, -18.7, -18.55, 0.016, white, 1);
     for (const x of [134.5, 137.5, 140.5]) flat(x - 0.6, x + 0.6, -13.4, -12.9, 0.017, yellow, 1); // painted "reserved" bars in the empty bays
+    // the one shaded bay: a green canopy on four posts over bay 1, and the sign at its back that nobody reads
+    const canopyM = lam("canopy", () => ({ color: "#3f9a3a" })), postM = lam("canopyPost", () => ({ color: "#d9d6cf" }));
+    for (const x of [BAY.x - 1.35, BAY.x + 1.35]) for (const z of [BAY.z - 2.9, BAY.z + 2.9]) b.add(boxGeo(V(x - 0.07, 0, z - 0.07), V(x + 0.07, 2.75, z + 0.07)), postM);
+    b.add(boxGeo(V(BAY.x - 1.7, 2.75, BAY.z - 3.25), V(BAY.x + 1.7, 2.9, BAY.z + 3.25)), canopyM);
+    b.add(boxGeo(V(BAY.x - 0.05, 0, BAY.signZ - 0.12), V(BAY.x + 0.05, 1.6, BAY.signZ - 0.04)), postM);
     b.build(R);
+    const bsign = new THREE.Mesh(new THREE.PlaneGeometry(2.3, 1.15), new THREE.MeshBasicMaterial({ map: ctex("carpoolSign", 512, 256, (g) => {
+      g.fillStyle = "#1f6b4a"; g.fillRect(0, 0, 512, 256); g.strokeStyle = "#ffffff"; g.lineWidth = 12; g.strokeRect(10, 10, 492, 236);
+      g.fillStyle = "#ffffff"; g.font = "bold 82px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("CARPOOLS", 256, 92); g.fillText("ONLY", 256, 180);
+    }), color: 0xe8e8e8 }));
+    bsign.position.set(BAY.x, 2.05, BAY.signZ); bsign.layers.set(NOINK); R.add(bsign);
 
     // cars (posed per frame): two of each colour, handed out by owner
     this.cars = CAR_COL.map((col) => [0, 1].map(() => { const c = mkCar(col); c.visible = false; R.add(c); return c; }));
@@ -264,7 +279,7 @@ export class CarpoolWorld {
     const person = (who: number, x: number, y: number, z: number, o: Outfit, mode: "front" | "side", opts: Record<string, unknown>, mirror = false, scale = 1) => {
       const d = cam.position.distanceTo(this.v.set(x, y + 1.2, z)) / scale, [w, h, k] = tier(d);
       const lid = lidAt(f, who * 7 + 3), seed = (who * 5 + 3) % 7 + 1;
-      const o2 = { ...opts, light, seed, blink: lid };
+      const o2 = { ...opts, light, seed, blink: opts.sleep ? 1 : lid };
       const key = `${mode}|${who}|${JSON.stringify(o2, (_k, v) => (typeof v === "number" ? q(v) : v))}`;
       places.push({ key, x, y, z, scale, mirror, w, h, k, draw: (p) => (mode === "side" ? bodySide(p, o, o2) : bodyFront(p, o, o2)) });
       if (y < 0.05) fxs.push({ key: "blob|contact|#4b4d70", cw: 128, ch: 128, draw: (p) => fxContact(p, "#4b4d70"), x, y: 0.02, z, w: 0.62 * scale, h: 0.46 * scale });
@@ -273,7 +288,8 @@ export class CarpoolWorld {
     poses.forEach((p, ci) => p.riders.forEach((who, si) => {
       const car = carOf[ci], s = SEATS[si];
       const wp = V(...s).applyAxisAngle(V(0, 1, 0), p.yaw).add(car.position);
-      person(who, wp.x, wp.y, wp.z, PEOPLE[who], "front", { mode: "sit", expr: this.riderExpr(id, t, who, ci), wave: this.waveOf(id, t, who) }, false, 0.92);
+      const sleep = who === 0 && (id === "nap" || id === "backseat" || id === "park");
+      person(who, wp.x, wp.y, wp.z, PEOPLE[who], "front", { mode: "sit", expr: this.riderExpr(id, t, who, ci), wave: this.waveOf(id, t, who), sleep }, false, 0.92);
     }));
     this.stageWalkers(id, t, f, person);
     // ---- clock: ~9:00; on "two years" the hands whirl (time passing), decelerating at the cut ----
@@ -325,6 +341,11 @@ export class CarpoolWorld {
       case "ask": return who === 0 ? (t > CUE.bro - LEAD ? "grin" : "neutral") : "neutral";
       case "lonely": return "neutral";
       case "onecar": case "lot": return who % 2 ? "laugh" : "grin";
+      case "race": case "rushR": case "rushP": case "rushA": case "gate3": return "stern";
+      case "taken": case "strangers": case "sign": return who % 2 ? "laugh" : "smile_closed" as Expr;
+      case "nap": return who === 0 ? "smile_closed" as Expr : "smile";
+      case "park": return who === 0 ? "smile_closed" as Expr : "grin";
+      case "backseat": return who === 0 ? "smile_closed" as Expr : "laugh";
       case "late": return who === 2 ? "smile_closed" as Expr : "grin";
       case "where": return t > CUE.everyone - LEAD ? "laugh" : "grin";
       default: return "neutral";
@@ -353,9 +374,9 @@ export class CarpoolWorld {
     if (id === "doors") {
       HOUSE_X.forEach((x, i) => person(i, x, 0, -9.0, PEOPLE[i], "front", { mode: "stand", expr: i === 3 ? "nervous" : "neutral", look: i % 2 ? 1 : -1 }));
     }
-    if (id === "gate" || id === "onecar" || id === "clock" || id === "leave" || id === "dead" || id === "guard") {
+    if (id === "gate" || id === "onecar" || id === "clock" || id === "leave" || id === "dead" || id === "guard" || id === "gate3" || id === "rushR" || id === "rushP" || id === "rushA") {
       // the guard by his booth, saluting each passing car (raised hand), once for the one car
-      let sal = id === "gate" || id === "leave" || id === "dead" ? (Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined) : id === "onecar" && t > CUE.one - 0.2 ? 0.6 : undefined;
+      let sal = id === "gate" || id === "leave" || id === "dead" || id === "gate3" || id.startsWith("rush") ? (Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined) : id === "onecar" && t > CUE.one - 0.2 ? 0.6 : undefined;
       let ex: Expr = id === "onecar" ? "smile_closed" as Expr : "stern";
       if (id === "guard") {
         // the guard's own arc, from story cues: tired salutes -> snaps -> sly grin (twist) -> one happy salute

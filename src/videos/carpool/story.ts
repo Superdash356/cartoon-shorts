@@ -263,7 +263,7 @@ const camAt0 = (id: ShotId, f: number): Cam => {
     }
     case "race": { // tracking alongside the three racing cars, low and wide
       const x = raceX(t), L: V3 = [x - 1.0, 1.0, -1.8];
-      return C(dolly([x + 11, 2.1, 11.5], L, push(f, a, 0.002)), L, 40, 0.03 * Math.sin(t * 5));
+      return C(dolly([x + 12, 2.6, 6.6], L, push(f, a, 0.002)), L, 40, 0.03 * Math.sin(t * 5));
     }
     case "rushR": case "rushP": case "rushA": { const L: V3 = [GATE_X - 2, 1.2, -1.2]; return C(dolly([GATE_X + 11, 1.5, 5.0], L, push(f, a, 0.003)), L, 40, id === "rushP" ? -0.04 : 0.04); }
     case "gate3": { const L: V3 = [GATE_X - 2, 1.2, -1.2]; return C(dolly([GATE_X + 13, 1.7, 5.5], L, push(f, a, 0.002)), L, 42, 0); }

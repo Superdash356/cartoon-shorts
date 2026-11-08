@@ -532,7 +532,7 @@
   ]
  },
  "meeting": {
-  "title": "Weekly sync \u00b7 47 participants",
+  "title": "Weekly sync · 47 participants",
   "highlight": [
    0,
    2
@@ -591,8 +591,8 @@
   "thumbs"
  ],
  "post": {
-  "title": "He bought a new car just to wave at his neighbour \ud83d\udc80",
-  "caption": "Same office. Same floor. Same team. Two years. \ud83d\ude2d",
+  "title": "He bought a new car just to wave at his neighbour 💀",
+  "caption": "Same office. Same floor. Same team. Two years. 😭",
   "hashtags": [
    "#bengaluru",
    "#officelife",
@@ -600,5 +600,16 @@
    "#animation",
    "#relatable"
   ]
+ },
+ "beats": {
+  "theme": "neighbours who wave at every red light",
+  "setting": "traffic signal on the commute",
+  "conflict": "two neighbours drive separately to the same office for two years",
+  "failedAttempt": "WhatsApp carpool group drowns in 60 messages",
+  "twist": "same office, same floor, same team, cameras off",
+  "lesson": "carpools fail because of the planning, not the car",
+  "appAngle": "roster picks driver, one tap ready, live map",
+  "callback": "Sharma ji still late but everyone can see where",
+  "ctaLine": "If you wave at your neighbour every morning"
  }
 }

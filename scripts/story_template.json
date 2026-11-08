@@ -1,0 +1,57 @@
+{
+ "title": "",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.14,
+ "keepGap": 0.28,
+ "beats": {
+  "theme": "",
+  "setting": "",
+  "conflict": "",
+  "failedAttempt": "",
+  "twist": "",
+  "lesson": "",
+  "appAngle": "",
+  "callback": "",
+  "ctaLine": ""
+ },
+ "lines": [
+  {
+   "text": "",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  }
+ ],
+ "shots": [
+  {
+   "id": "street",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "end",
+   "at": [
+    0,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {},
+ "punch": [],
+ "stopMusic": [],
+ "end": {
+  "headline": "",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [],
+ "post": {
+  "title": "",
+  "caption": "",
+  "hashtags": []
+ }
+}

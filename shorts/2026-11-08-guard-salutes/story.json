@@ -556,5 +556,16 @@
    "#animation",
    "#relatable"
   ]
+ },
+ "beats": {
+  "theme": "gate guard saluting four cars separately",
+  "setting": "colony gate and guard booth",
+  "conflict": "guard salutes four neighbours who all drive to the same tech park",
+  "failedAttempt": "carpool group dies after 47 messages",
+  "twist": "guard reads parking stickers: same tech park",
+  "lesson": "the hard part of carpooling is the deciding",
+  "appAngle": "roster picks who drives, one tap ready, live map",
+  "callback": "one car, one salute, guard's arm happy",
+  "ctaLine": "If your colony guard deserves a break"
  }
 }

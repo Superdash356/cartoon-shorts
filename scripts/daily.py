@@ -62,6 +62,7 @@ def run_workflow(wf, inputs, timeout=3600, ref="main"):
 def voice(slug):
     d = f"shorts/{slug}"
     st = json.load(open(f"{d}/story.json"))
+    sh(f"python3 scripts/check_fresh.py {slug}")  # refuse reused lines/beats/endings
     json.dump({"voice": st["voice"], "lines": st["lines"]}, open(f"{d}/lines.json", "w"), indent=1)
     sh(f"git add {d}/story.json {d}/lines.json && git commit -qm 'Story {slug}' || true", check=False)
     sync(); sh("git push -q")

@@ -21,6 +21,9 @@ on:
       audio:
         description: "Audio file in the repo to mux in (blank = none)"
         default: ""
+      tag:
+        description: "Release tag (blank = <composition>-run<n>)"
+        default: ""
 
 permissions:
   contents: write
@@ -95,7 +98,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TAG="${{ inputs.composition }}-run${{ github.run_number }}"
+          TAG="${{ inputs.tag }}"; [ -z "$TAG" ] && TAG="${{ inputs.composition }}-run${{ github.run_number }}"
           gh release create "$TAG" final.mp4 --title "$TAG" --notes "Frames ${{ inputs.from }}-${{ inputs.to }}, scale ${{ inputs.scale }}" --target "${{ github.sha }}"
           mkdir -p /tmp/r && cp final.mp4 "/tmp/r/$TAG.mp4" && cd /tmp/r
           git init -q -b renders && git config user.name "github-actions" && git config user.email "actions@github.com"

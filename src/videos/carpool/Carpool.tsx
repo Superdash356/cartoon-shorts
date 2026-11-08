@@ -12,7 +12,7 @@ import { InkPass, noInkFallback } from "../bridge/ink";
 import { LensBlur } from "../bridge/lensblur";
 import { GradeEffect, GRADES, GRADE_STRENGTH, gradeFor } from "../bridge/grade";
 import { CarpoolWorld } from "./world";
-import { FPS, TOTAL, END_CARD, CUE, shotAt, dofAt, ShotId } from "./story";
+import { FPS, TOTAL, END_CARD, CUE, STORY, hasCue, shotAt, dofAt, ShotId } from "./story";
 import { AppSequence } from "./AppSequence";
 import { Captions } from "./Captions";
 
@@ -65,20 +65,17 @@ const GREEN = "#3f9a3a", YELLOW = "#f6cf4a", INK = "#141414";
 const font = "Manrope, 'Helvetica Neue', Arial, sans-serif";
 
 /** the carpool group chat flooding before anyone leaves home; a counter races to 60 */
-const CHAT = [
-  ["Rohan", "Who's driving today?"], ["Priya", "Not me, I drove Monday"], ["Rohan", "Monday was a holiday"],
-  ["Sharma ji", "5 min"], ["Arjun", "Leaving at 8:15 sharp"], ["Priya", "8:20?"], ["Rohan", "Who has the car today??"],
-  ["Sharma ji", "2 min"], ["Arjun", "Where is everyone"], ["Priya", "Waiting at the gate"], ["Rohan", "Which gate"],
-  ["Sharma ji", "Coming"], ["Arjun", "I'll just take my car"], ["Priya", "Me too"], ["Rohan", "Same"],
-];
-const NAME_COL: Record<string, string> = { Rohan: "#3f6fb5", Priya: "#c25a7a", Arjun: "#4f8a32", "Sharma ji": "#c98a12" };
+const CHAT: [string, string][] = STORY.chat?.messages ?? [];
+const PAL = ["#3f6fb5", "#c25a7a", "#4f8a32", "#c98a12", "#7a5ab5", "#2f8f8a"];
+const NAME_COL: Record<string, string> = Object.fromEntries([...new Set(CHAT.map((m) => m[0]))].map((n, i) => [n, PAL[i % PAL.length]]));
 const ChatOverlay: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) => {
   const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps, u = t - t0;
   const pop = spring({ frame: f - Math.round(t0 * fps), fps, config: { damping: 14, stiffness: 160 } });
   const out = interpolate(t, [t1 - 0.25, t1], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   // bubbles arrive faster and faster (ease-in): all 15 by the word "home"
-  const n = Math.min(CHAT.length, Math.floor(CHAT.length * Math.pow(Math.max(0, u) / Math.max(0.1, CUE.chatEnd - t0 - 0.6), 1.6)) + 1);
-  const count = Math.min(60, Math.round(60 * Math.pow(Math.min(1, Math.max(0, u) / Math.max(0.1, CUE.messages - t0 + 0.2)), 1.3)));
+  const n = Math.min(CHAT.length, Math.floor(CHAT.length * Math.pow(Math.max(0, u) / Math.max(0.1, t1 - t0 - 0.7), 1.6)) + 1);
+  const CNT = STORY.chat?.count ?? 60, tCnt = hasCue("messages") ? CUE.messages - t0 + 0.2 : (t1 - t0) * 0.6;
+  const count = Math.min(CNT, Math.round(CNT * Math.pow(Math.min(1, Math.max(0, u) / Math.max(0.1, tCnt)), 1.3)));
   const shake = t > CUE.messages - 0.1 && t < CUE.messages + 0.25 ? Math.sin(f * 2.7) * 6 : 0;
   return (
     <AbsoluteFill style={{ background: `rgba(15,25,20,${0.35 * out})`, alignItems: "center", justifyContent: "center", opacity: out }}>
@@ -88,15 +85,15 @@ const ChatOverlay: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) => {
           <div style={{ background: "#1f6b4a", color: "#fff", padding: "54px 36px 26px", display: "flex", alignItems: "center", gap: 22 }}>
             <div style={{ width: 82, height: 82, borderRadius: 41, background: YELLOW, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 40, fontWeight: 800, color: INK }}>CC</div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 40, fontWeight: 800 }}>Colony Carpool</div>
-              <div style={{ fontSize: 28, opacity: 0.85 }}>Rohan, Priya, Arjun, Sharma ji</div>
+              <div style={{ fontSize: 40, fontWeight: 800 }}>{STORY.chat?.title ?? "Group chat"}</div>
+              <div style={{ fontSize: 28, opacity: 0.85 }}>{STORY.chat?.members ?? ""}</div>
             </div>
             <div style={{ minWidth: 92, height: 92, borderRadius: 46, background: "#e5483a", color: "#fff", fontSize: 44, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center",
               transform: `scale(${1 + (t > CUE.sixty - 0.1 && t < CUE.sixty + 0.3 ? 0.35 : 0)})` }}>{count}</div>
           </div>
           <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "18px 26px", gap: 14, overflow: "hidden" }}>
             {CHAT.slice(0, n).map(([who, msg], i) => {
-              const mine = who === "Rohan";
+              const mine = who === (STORY.chat?.me ?? "");
               return (
                 <div key={i} style={{ alignSelf: mine ? "flex-end" : "flex-start", maxWidth: "82%", background: mine ? "#d6f5c6" : "#fff", borderRadius: 28, padding: "16px 24px",
                   boxShadow: "0 2px 3px rgba(0,0,0,.12)" }}>
@@ -135,22 +132,22 @@ const Badge2: React.FC<{ top: string; name: string }> = ({ top, name }) => (
 const EndCard: React.FC<{ t0: number }> = ({ t0 }) => {
   const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;
   const s = spring({ frame: f - Math.round(t0 * fps), fps, config: { damping: 12, stiffness: 150 } });
-  const s1 = spring({ frame: f - Math.round((CUE.name - 0.1) * fps), fps, config: { damping: 11, stiffness: 200 } });
-  const s2 = spring({ frame: f - Math.round((CUE.check - 0.05) * fps), fps, config: { damping: 11, stiffness: 200 } });
+  const s1 = spring({ frame: f - Math.round(((hasCue("name") ? CUE.name : t0 + 1.2) - 0.1) * fps), fps, config: { damping: 11, stiffness: 200 } });
+  const s2 = spring({ frame: f - Math.round(((hasCue("check") ? CUE.check : t0 + 2.2) - 0.05) * fps), fps, config: { damping: 11, stiffness: 200 } });
   const op = interpolate(t, [t0, t0 + 0.12], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const bob = Math.sin(t * 9) * 14;
   return (
     <AbsoluteFill style={{ background: "radial-gradient(120% 70% at 50% 30%, #b7dc68 0%, #5AAE45 45%, #2C6424 100%)", opacity: op, alignItems: "center", justifyContent: "center", fontFamily: font }}>
       <div style={{ transform: `scale(${0.6 + 0.4 * s})`, display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <div style={{ fontSize: 66, fontWeight: 800, color: "#fff", letterSpacing: -1.5, textAlign: "center", lineHeight: 1.1, maxWidth: 900 }}>Wave at your neighbour<br />every morning?</div>
+        <div style={{ fontSize: 66, fontWeight: 800, color: "#fff", letterSpacing: -1.5, textAlign: "center", lineHeight: 1.1, maxWidth: 900, whiteSpace: "pre-line" }}>{STORY.end.headline}</div>
         <div style={{ marginTop: 40, fontSize: 190, fontWeight: 800, color: "#fff", letterSpacing: -7, transform: `scale(${0.5 + 0.5 * s1})`, opacity: s1 }}>sahyatri<span style={{ color: YELLOW }}>.</span></div>
-        <div style={{ marginTop: 6, fontSize: 52, fontWeight: 700, color: "#fff", opacity: s1 }}>Community Carpool</div>
+        <div style={{ marginTop: 6, fontSize: 52, fontWeight: 700, color: "#fff", opacity: s1 }}>{STORY.end.tagline}</div>
         <div style={{ marginTop: 56, display: "flex", gap: 28, opacity: s2, transform: `scale(${0.7 + 0.3 * s2})` }}>
           <Badge2 top="Download on the" name="App Store" />
           <Badge2 top="Get it on" name="Google Play" />
         </div>
         <div style={{ marginTop: 70, fontSize: 80, fontWeight: 800, color: INK, background: YELLOW, padding: "12px 48px", borderRadius: 28, border: `7px solid ${INK}`, boxShadow: `10px 10px 0 ${INK}`,
-          transform: `rotate(-3deg) scale(${s2})` }}>Link in bio</div>
+          transform: `rotate(-3deg) scale(${s2})` }}>{STORY.end.button}</div>
         <div style={{ marginTop: 30, transform: `translateY(${bob}px)`, opacity: s2 }}>
           <svg width="90" height="110" viewBox="0 0 90 110"><path d="M45 8 V88 M12 58 L45 96 L78 58" stroke="#fff" strokeWidth="16" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </div>
@@ -160,26 +157,24 @@ const EndCard: React.FC<{ t0: number }> = ({ t0 }) => {
 };
 
 /** "They had been in the same meetings for two years. Cameras off.": a video-call grid, two camera-off tiles */
-const TILES = [
-  { n: "Rohan Verma", c: "#3f6fb5", off: true }, { n: "Manager", c: "#7a5ab5", off: false }, { n: "Arjun Mehta", c: "#4f8a32", off: true },
-  { n: "Neha (HR)", c: "#c25a7a", off: false }, { n: "Vikram", c: "#c98a12", off: false }, { n: "+42 others", c: "#555", off: true },
-];
+const TILES = (STORY.meeting?.tiles ?? []).map(([n, c, off]) => ({ n, c, off }));
 const Meeting: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) => {
   const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;
   const pop = spring({ frame: f - Math.round(t0 * fps), fps, config: { damping: 14, stiffness: 170 } });
   const out = interpolate(t, [t1 - 0.2, t1], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const hi = t > CUE.cameras - 0.2;
-  const zoom = 1 + 0.25 * interpolate(t, [CUE.cameras - 0.25, CUE.cameras + 0.1], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const hi = t > (hasCue("cameras") ? CUE.cameras : t0 + (t1 - t0) * 0.6) - 0.2;
+  const tc = hasCue("cameras") ? CUE.cameras : t0 + (t1 - t0) * 0.6;
+  const zoom = 1 + 0.25 * interpolate(t, [tc - 0.25, tc + 0.1], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
     <AbsoluteFill style={{ background: `rgba(10,14,20,${0.55 * out})`, alignItems: "center", justifyContent: "center", opacity: out, fontFamily: font }}>
       <div style={{ width: 960, borderRadius: 40, background: "#1b1d22", padding: 28, transform: `scale(${(0.7 + 0.3 * pop) * zoom})`, boxShadow: "0 40px 90px rgba(0,0,0,.5)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 16, color: "#fff", fontSize: 36, fontWeight: 700, marginBottom: 22 }}>
-          <div style={{ width: 18, height: 18, borderRadius: 9, background: "#e5483a" }} /> Weekly sync · 47 participants
+          <div style={{ width: 18, height: 18, borderRadius: 9, background: "#e5483a" }} /> {STORY.meeting?.title ?? "Meeting"}
           <div style={{ marginLeft: "auto", fontSize: 30, opacity: 0.7 }}>1:02:44</div>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
           {TILES.map((x, i) => {
-            const lit = hi && (i === 0 || i === 2);
+            const lit = hi && (STORY.meeting?.highlight ?? []).includes(i);
             return (
               <div key={i} style={{ height: 300, borderRadius: 24, background: x.off ? "#2a2d34" : `linear-gradient(160deg, ${x.c}, #22252b)`, position: "relative", display: "flex", alignItems: "center", justifyContent: "center",
                 border: lit ? `8px solid ${YELLOW}` : "8px solid transparent", transform: lit ? `scale(${1.04 + 0.02 * Math.sin(t * 12)})` : "none" }}>
@@ -210,11 +205,11 @@ export const CarpoolShort: React.FC = () => {
       )}
       {s.id === "chat" && <ChatOverlay t0={s.a / FPS} t1={s.b / FPS} />}
       {s.id === "app" && <AppSequence t0={s.a / FPS} t1={s.b / FPS} />}
-      {s.id === "where" && f / FPS > CUE.everyone - 0.2 && <MapCard t0={CUE.everyone - 0.2} />}
+      {s.id === "where" && hasCue("everyone") && f / FPS > CUE.everyone - 0.2 && <MapCard t0={CUE.everyone - 0.2} />}
       {s.id === "meeting" && <Meeting t0={s.a / FPS} t1={s.b / FPS} />}
       {s.id === "end" && <EndCard t0={END_CARD} />}
       {s.id !== "end" && <Captions y={s.id === "app" ? 95 : s.id === "chat" || s.id === "meeting" ? 110 : 1240} size={s.id === "app" ? 84 : 96} />}
-      <Audio src={staticFile("carpool/voice3.wav")} />
+      <Audio src={staticFile("carpool/voice_current.wav")} />
     </AbsoluteFill>
   );
 };

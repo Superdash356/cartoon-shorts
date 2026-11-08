@@ -1,0 +1,593 @@
+{
+ "title": "The Neighbour at Every Red Light",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.14,
+ "keepGap": 0.28,
+ "lines": [
+  {
+   "text": "This guy bought a brand new car, just to sit next to his neighbour at every red light.",
+   "rate": "+22%",
+   "pitch": "-3Hz",
+   "volume": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "Every morning, Rohan and Arjun leave the same colony, at the same time, in two different cars.",
+   "rate": "+30%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "First signal, they wave.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Second signal, thumbs up.",
+   "rate": "+24%",
+   "pitch": "+4Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Fifth signal, they've run out of greetings.",
+   "rate": "+28%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "This went on for two years.",
+   "rate": "+10%",
+   "pitch": "-8Hz",
+   "volume": "+10%",
+   "gap": 0.25
+  },
+  {
+   "text": "One day, Rohan rolls down the window,",
+   "rate": "+30%",
+   "pitch": "+0Hz",
+   "gap": 0.05
+  },
+  {
+   "text": "bro, where do you even work?",
+   "rate": "+18%",
+   "pitch": "+10Hz",
+   "volume": "+12%",
+   "gap": 0.22
+  },
+  {
+   "text": "Same office.",
+   "rate": "+14%",
+   "pitch": "-4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Same floor.",
+   "rate": "+14%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Same team.",
+   "rate": "+8%",
+   "pitch": "-8Hz",
+   "volume": "+15%",
+   "gap": 0.25
+  },
+  {
+   "text": "Same meetings. Two years. Cameras off.",
+   "rate": "+28%",
+   "pitch": "+2Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So they made a carpool group.",
+   "rate": "+30%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Sixty messages later, nobody knew who was driving, and Sharma ji's two minutes had become forty.",
+   "rate": "+36%",
+   "pitch": "+4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Group, dead. Four cars again.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "volume": "+10%",
+   "gap": 0.25
+  },
+  {
+   "text": "Turns out, carpools never fail because of the car.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "They fail because of the planning.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "volume": "+10%",
+   "gap": 0.22
+  },
+  {
+   "text": "So they let an app do the boring part.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "A roster picks today's driver. One tap says you're ready. And everyone watches the car arrive. Live.",
+   "rate": "+32%",
+   "pitch": "+2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Now it's one car, four friends, and three very bored parking spots.",
+   "rate": "+28%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Sharma ji is still late though. But now, everyone can see exactly where.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "If you wave at your neighbour every morning, the app's called Sahyatri.",
+   "rate": "+24%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Check it out. Link in bio.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "volume": "+10%",
+   "gap": 0.3
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "leave",
+   "at": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "sig1",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "sig2",
+   "at": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "sig5",
+   "at": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "years",
+   "at": [
+    5,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "ask",
+   "at": [
+    6,
+    0
+   ]
+  },
+  {
+   "id": "office",
+   "at": [
+    8,
+    0
+   ]
+  },
+  {
+   "id": "floor",
+   "at": [
+    9,
+    0
+   ]
+  },
+  {
+   "id": "meeting",
+   "at": [
+    10,
+    0
+   ]
+  },
+  {
+   "id": "doors",
+   "at": [
+    12,
+    0
+   ]
+  },
+  {
+   "id": "chat",
+   "at": [
+    13,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "dead",
+   "at": [
+    14,
+    0
+   ],
+   "music": "sad"
+  },
+  {
+   "id": "lonely",
+   "at": [
+    15,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "app",
+   "at": [
+    17,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "onecar",
+   "at": [
+    19,
+    0
+   ]
+  },
+  {
+   "id": "lot",
+   "at": [
+    19,
+    8
+   ]
+  },
+  {
+   "id": "late",
+   "at": [
+    20,
+    0
+   ]
+  },
+  {
+   "id": "where",
+   "at": [
+    20,
+    6
+   ]
+  },
+  {
+   "id": "end",
+   "at": [
+    21,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {
+  "wave": [
+   2,
+   3
+  ],
+  "thumbs": [
+   3,
+   2
+  ],
+  "outOf": [
+   4,
+   3
+  ],
+  "bro": [
+   7,
+   0
+  ],
+  "cameras": [
+   11,
+   4
+  ],
+  "sixty": [
+   13,
+   0
+  ],
+  "messages": [
+   13,
+   1
+  ],
+  "roster": [
+   18,
+   1
+  ],
+  "driver": [
+   18,
+   4
+  ],
+  "tap": [
+   18,
+   6
+  ],
+  "ready": [
+   18,
+   9
+  ],
+  "watch": [
+   18,
+   10
+  ],
+  "live": [
+   18,
+   16
+  ],
+  "one": [
+   19,
+   2
+  ],
+  "four": [
+   19,
+   4
+  ],
+  "three": [
+   19,
+   8
+  ],
+  "sharma": [
+   20,
+   0
+  ],
+  "everyone": [
+   20,
+   8
+  ],
+  "name": [
+   21,
+   9
+  ],
+  "check": [
+   22,
+   0
+  ]
+ },
+ "punch": [
+  [
+   0,
+   4
+  ],
+  [
+   2,
+   3
+  ],
+  [
+   3,
+   2
+  ],
+  [
+   4,
+   3
+  ],
+  [
+   5,
+   0
+  ],
+  [
+   7,
+   0
+  ],
+  [
+   8,
+   0
+  ],
+  [
+   9,
+   0
+  ],
+  [
+   10,
+   0
+  ],
+  [
+   11,
+   4
+  ],
+  [
+   13,
+   0
+  ],
+  [
+   14,
+   0
+  ],
+  [
+   16,
+   3
+  ],
+  [
+   18,
+   16
+  ],
+  [
+   19,
+   2
+  ],
+  [
+   19,
+   8
+  ],
+  [
+   20,
+   0
+  ],
+  [
+   21,
+   9
+  ]
+ ],
+ "stopMusic": [
+  [
+   7,
+   0,
+   8,
+   0
+  ]
+ ],
+ "chat": {
+  "title": "Colony Carpool",
+  "members": "Rohan, Priya, Arjun, Sharma ji",
+  "count": 60,
+  "me": "Rohan",
+  "messages": [
+   [
+    "Rohan",
+    "Who's driving today?"
+   ],
+   [
+    "Priya",
+    "Not me, I drove Monday"
+   ],
+   [
+    "Rohan",
+    "Monday was a holiday"
+   ],
+   [
+    "Sharma ji",
+    "5 min"
+   ],
+   [
+    "Arjun",
+    "Leaving at 8:15 sharp"
+   ],
+   [
+    "Priya",
+    "8:20?"
+   ],
+   [
+    "Rohan",
+    "Who has the car today??"
+   ],
+   [
+    "Sharma ji",
+    "2 min"
+   ],
+   [
+    "Arjun",
+    "Where is everyone"
+   ],
+   [
+    "Priya",
+    "Waiting at the gate"
+   ],
+   [
+    "Rohan",
+    "Which gate"
+   ],
+   [
+    "Sharma ji",
+    "2 min"
+   ],
+   [
+    "Arjun",
+    "I'll just take my car"
+   ],
+   [
+    "Priya",
+    "Me too"
+   ],
+   [
+    "Rohan",
+    "Same"
+   ]
+  ]
+ },
+ "meeting": {
+  "title": "Weekly sync \u00b7 47 participants",
+  "highlight": [
+   0,
+   2
+  ],
+  "tiles": [
+   [
+    "Rohan Verma",
+    "#3f6fb5",
+    true
+   ],
+   [
+    "Manager",
+    "#7a5ab5",
+    false
+   ],
+   [
+    "Arjun Mehta",
+    "#4f8a32",
+    true
+   ],
+   [
+    "Neha (HR)",
+    "#c25a7a",
+    false
+   ],
+   [
+    "Vikram",
+    "#c98a12",
+    false
+   ],
+   [
+    "+42 others",
+    "#555",
+    true
+   ]
+  ]
+ },
+ "end": {
+  "headline": "Wave at your neighbour\nevery morning?",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "bro",
+  "same",
+  "years",
+  "sixty",
+  "dead",
+  "planning",
+  "sahyatri",
+  "live",
+  "late",
+  "three",
+  "off",
+  "wave",
+  "thumbs"
+ ]
+}

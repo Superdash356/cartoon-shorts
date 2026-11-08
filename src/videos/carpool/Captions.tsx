@@ -2,7 +2,7 @@
 // the app's yellow with a pop. Chunks break on long pauses (sentence ends) and after 3 words.
 import React from "react";
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
-import { WORDS_T } from "./story";
+import { STORY, WORDS_T } from "./story";
 
 type Chunk = { words: { w: string; s: number }[]; s: number; e: number };
 const CHUNKS: Chunk[] = (() => {
@@ -16,7 +16,7 @@ const CHUNKS: Chunk[] = (() => {
   if (cur) out.push(cur);
   return out;
 })();
-const BIG = new Set(["bro", "same", "years", "sixty", "dead", "planning", "sahyatri", "live", "late", "three", "off", "wave", "thumbs"]);
+const BIG = new Set((STORY.captionsBig ?? []).map((x) => x.toLowerCase()));
 
 export const Captions: React.FC<{ y: number; size?: number }> = ({ y, size = 96 }) => {
   const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;

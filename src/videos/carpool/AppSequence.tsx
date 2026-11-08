@@ -7,7 +7,7 @@ import React from "react";
 import { AbsoluteFill, Easing, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { loadFont } from "@remotion/fonts";
 import { HomeScreen, LiveMapScreen, NotificationCard, RideScreen, RosterScreen, Icon, mock, tokens } from "../../sahyatri-ui";
-import { CUE } from "./story";
+import { CUE as CUE0, hasCue } from "./story";
 
 const { colors, palette, fontFamily, device } = tokens;
 for (const [w, f] of [["400", "Regular"], ["500", "Medium"], ["600", "SemiBold"], ["700", "Bold"], ["800", "ExtraBold"]] as const) {
@@ -77,6 +77,9 @@ type Beat = { id: "home" | "roster" | "ride" | "map"; t0: number };
 
 export const AppSequence: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) => {
   const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;
+  // beat cues from the story, or an even split of the app shot when the story leaves them out
+  const D = t1 - t0, dflt: Record<string, number> = { roster: 0.22, driver: 0.32, tap: 0.5, ready: 0.6, watch: 0.72, live: 0.9 };
+  const CUE = new Proxy({} as Record<string, number>, { get: (_o, k: string) => (hasCue(k) ? CUE0[k] : t0 + D * (dflt[k] ?? 0.5)) });
   const beats: Beat[] = [
     { id: "home", t0 },
     { id: "roster", t0: CUE.roster - 0.12 },

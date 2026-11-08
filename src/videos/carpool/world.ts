@@ -9,7 +9,7 @@ import { NOINK } from "../bridge/ink";
 import { Actor, Fx, Pool } from "../bridge/cast";
 import { bodyFront, bodySide, fxContact, Expr, Outfit, Pen, SKINS } from "../bridge/toon";
 import {
-  CAR_COL, CLOCK, CUE, DOOR_Z, WAIT_X, WI, FPS, GATE_X, HOUSE_X, HOUSE_Z, LANE_Z, LEAD, LOT, PARK_Z, SIGNAL_LANES, STOP_X, CarPose, ShotId, V3, W,
+  CAR_COL, CLOCK, CUE, hasCue, DOOR_Z, WAIT_X, WI, FPS, GATE_X, HOUSE_X, HOUSE_Z, LANE_Z, LEAD, LOT, PARK_Z, SIGNAL_LANES, STOP_X, CarPose, ShotId, V3, W,
   camAt, carsAt, clamp01, lotCar, shotAt, signalCars, smooth,
 } from "./story";
 
@@ -360,7 +360,7 @@ export class CarpoolWorld {
     }
     if (id === "late" || id === "where") {
       // Sharma ji (house 3) bursts out of his door and jogs for the waiting car
-      const t0 = CUE.sharma - 0.25, u = Math.max(0, t - t0);
+      const t0 = (hasCue("sharma") ? CUE.sharma : shotAt(f).a / FPS) - 0.25, u = Math.max(0, t - t0);
       const sx = HOUSE_X[3], from: V3 = [sx - 1.2, 0, DOOR_Z + 0.2], to: V3 = [WAIT_X + 2.3, 0, LANE_Z - 1.5];
       const k = clamp01(u / 5.6), x = from[0] + (to[0] - from[0]) * k, z = from[2] + (to[2] - from[2]) * smooth(Math.min(1, k * 1.8));
       person(3, x, 0, z, PEOPLE[3], "side", { mode: "march", phase: (u * 2.6) % 1, stride: 1.25, expr: "nervous" }, true);

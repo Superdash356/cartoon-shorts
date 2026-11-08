@@ -3,6 +3,7 @@
 // along x (cars drive toward +x, Indian left-hand traffic: the outbound lane is z < 0), the colony gate is at x = 34,
 // the main road (4 lanes, signal at x = 96) continues to the office car park at x ~ 135.
 import WORDS from "./words.json";
+import STORY_JSON from "./story.json";
 
 export const FPS = 30;
 export type V3 = [number, number, number];
@@ -16,15 +17,25 @@ export const W = (w: string, n = 0) => {
 export const WI = (i: number) => words[Math.min(i, words.length - 1)].start;
 /** onset (s) of word k of narration line L (lines.json order) */
 export const WL = (L: number, k = 0) => { const l = words.filter((w) => w.line === L); return (l[Math.min(k, l.length - 1)] ?? words[words.length - 1]).start; };
-/** story cues (s) */
-export const CUE = {
-  wave: WL(2, 3), thumbs: WL(3, 2), outOf: WL(4, 3), years: WL(5, 0), bro: WL(7, 0), team: WL(10, 0), cameras: WL(11, 4),
-  sixty: WL(13, 0), messages: WL(13, 1), chatEnd: WL(14, 0), app: WL(17, 0), roster: WL(18, 1), driver: WL(18, 4), tap: WL(18, 6), ready: WL(18, 9),
-  watch: WL(18, 10), live: WL(18, 16), one: WL(19, 2), four: WL(19, 4), three: WL(19, 8), sharma: WL(20, 0), but: WL(20, 6), everyone: WL(20, 8), cta: WL(21, 0), name: WL(21, 9), check: WL(22, 0),
+// ---------------- the current story (story.json: lines, shots, cues, overlay texts) ----------------
+export type StoryShot = { id: ShotId; at: [number, number]; music?: string };
+export type Story = {
+  title: string; lines: { text: string }[]; shots: StoryShot[]; cues: Record<string, [number, number]>; punch: [number, number][];
+  chat?: { title: string; members: string; count: number; me: string; messages: [string, string][] };
+  meeting?: { title: string; highlight: number[]; tiles: [string, string, boolean][] };
+  end: { headline: string; tagline: string; button: string }; captionsBig?: string[];
 };
+export const STORY = STORY_JSON as unknown as Story;
+const NEVER = 1e6;
+/** story cues (s); a cue the story does not define is NEVER (its effect simply does not fire) */
+export const CUE: Record<string, number> = new Proxy({} as Record<string, number>, {
+  get: (_o, k: string) => { const c = STORY.cues[k]; return c ? WL(c[0], c[1]) : NEVER; },
+});
+export const hasCue = (k: string) => !!STORY.cues[k];
 export const WORDS_T = words;
 export const VOICE_END = words[words.length - 1].end;
-export const END_CARD = WL(21) - 0.1; // CTA over the end card
+const endShot = STORY.shots.find((x) => x.id === "end");
+export const END_CARD = endShot ? WL(endShot.at[0], endShot.at[1]) - 0.1 : words[words.length - 1].end + 0.2; // CTA over the end card
 export const TOTAL = Math.ceil((VOICE_END + 0.75) * FPS);
 
 export const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
@@ -55,28 +66,10 @@ export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
 /** cut ~3 frames before line L (word k) */
 const cl = (L: number, k = 0) => (L === 0 && k === 0 ? 0 : WL(L, k) - 0.1);
-export const SHOTS: Shot[] = [
-  S("hook", cl(0), cl(1)),
-  S("leave", cl(1), cl(2)),
-  S("sig1", cl(2), cl(3)),
-  S("sig2", cl(3), cl(4)),
-  S("sig5", cl(4), cl(5)),
-  S("years", cl(5), cl(6)),
-  S("ask", cl(6), cl(8)),
-  S("office", cl(8), cl(9)),
-  S("floor", cl(9), cl(10)),
-  S("meeting", cl(10), cl(12)),
-  S("doors", cl(12), cl(13)),
-  S("chat", cl(13), cl(14)),
-  S("dead", cl(14), cl(15)),
-  S("lonely", cl(15), cl(17)),
-  S("app", cl(17), cl(19)),
-  S("onecar", cl(19), cl(19, 8)),
-  S("lot", cl(19, 8), cl(20)),
-  S("late", cl(20), cl(20, 6)),
-  S("where", cl(20, 6), END_CARD),
-  S("end", END_CARD, TOTAL / FPS + 1),
-];
+export const SHOTS: Shot[] = STORY.shots.map((x, i) => {
+  const nx = STORY.shots[i + 1];
+  return S(x.id, cl(x.at[0], x.at[1]), nx ? cl(nx.at[0], nx.at[1]) : TOTAL / FPS + 1);
+});
 SHOTS[SHOTS.length - 1].b = TOTAL;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 /** shots drawn under a full-screen 2D overlay: the 3D layer just needs a soft background */
@@ -104,7 +97,7 @@ export const carsAt = (id: ShotId, t: number): CarPose[] => {
       return [3, 2, 1, 0].map((i, k) => ({ x: GATE_X - 1 + 5.5 * (t - tg) - 6.8 * k, z: LANE_Z, yaw: 0, on: true, riders: [i], owner: i }));
     }
     case "onecar": {
-      const t0 = CUE.one - 0.5, s = Math.max(0, (t - t0)) * 6.5;
+      const t0 = (hasCue("one") ? CUE.one : shotAt(Math.round(t * FPS)).a / FPS + 0.3) - 0.5, s = Math.max(0, (t - t0)) * 6.5;
       return [0, 1, 3].map(parked).concat([{ x: GATE_X - 9 + s, z: LANE_Z, yaw: 0, on: true, riders: [2, 0, 1, 3], owner: POOL_CAR }]);
     }
     case "late": case "where": {
@@ -126,7 +119,7 @@ export const signalCars = (t: number, brake = true): CarPose[] => {
 };
 /** the carpool car pulling into bay 1 of the office lot */
 export const lotCar = (t: number): CarPose => {
-  const t0 = CUE.three - 0.35, u = glide((t - t0) / 1.6);
+  const t0 = (hasCue("three") ? CUE.three : shotAt(Math.round(t * FPS)).a / FPS) - 0.35, u = glide((t - t0) / 1.6);
   return { x: LOT.x[0], z: lerp(-6.5, LOT.z, u), yaw: -Math.PI / 2, on: true, riders: [2, 0, 1, 3], owner: POOL_CAR };
 };
 
@@ -139,7 +132,8 @@ const push = (f: number, f0: number, rate = 0.0025) => Math.exp(-rate * Math.max
 const tf = (s: ShotId) => SHOTS.find((x) => x.id === s)!.a;
 const C = (pos: V3, look: V3, fov = 40, roll = 0): Cam => ({ pos, look, fov, roll });
 /** word punches: a quick zoom-in kick that settles over ~0.25 s (Zack D. style emphasis) */
-export const PUNCH_T = (): number[] => [WL(0, 4), CUE.wave, CUE.thumbs, CUE.outOf, CUE.years, CUE.bro, WL(8), WL(9), WL(10), CUE.cameras, CUE.sixty, CUE.chatEnd, WL(16, 3), CUE.live, CUE.one, CUE.three, CUE.sharma, CUE.name];
+const PT = STORY.punch.map(([L, k]) => WL(L, k));
+export const PUNCH_T = (): number[] => PT;
 export const punchAt = (t: number) => {
   let k = 0;
   for (const tp of PUNCH_T()) { const d = t - (tp - 0.03); if (d >= 0 && d < 0.6) k = Math.max(k, Math.exp(-d / 0.09)); }

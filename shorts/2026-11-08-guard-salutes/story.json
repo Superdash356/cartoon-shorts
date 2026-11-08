@@ -1,7 +1,7 @@
 {
  "title": "The Guard Who Saluted Four Cars",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.14,
+ "tempo": 1.16,
  "keepGap": 0.28,
  "lines": [
   {
@@ -173,14 +173,14 @@
    ]
   },
   {
-   "id": "walk",
+   "id": "leave",
    "at": [
     2,
     0
    ]
   },
   {
-   "id": "leave",
+   "id": "walk",
    "at": [
     3,
     0
@@ -306,9 +306,158 @@
    "music": "end"
   }
  ],
- "cues": {},
- "punch": [],
- "stopMusic": [],
+ "cues": {
+  "snap": [
+   7,
+   6
+  ],
+  "guardTwist": [
+   8,
+   6
+  ],
+  "guardHappy": [
+   20,
+   0
+  ],
+  "sixty": [
+   13,
+   0
+  ],
+  "messages": [
+   13,
+   2
+  ],
+  "roster": [
+   18,
+   1
+  ],
+  "driver": [
+   18,
+   3
+  ],
+  "tap": [
+   18,
+   7
+  ],
+  "ready": [
+   18,
+   10
+  ],
+  "watch": [
+   18,
+   13
+  ],
+  "live": [
+   18,
+   17
+  ],
+  "one": [
+   19,
+   2
+  ],
+  "four": [
+   19,
+   4
+  ],
+  "sharma": [
+   21,
+   0
+  ],
+  "everyone": [
+   21,
+   8
+  ],
+  "name": [
+   22,
+   10
+  ],
+  "check": [
+   23,
+   0
+  ]
+ },
+ "punch": [
+  [
+   0,
+   10
+  ],
+  [
+   1,
+   8
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   4,
+   4
+  ],
+  [
+   6,
+   0
+  ],
+  [
+   7,
+   6
+  ],
+  [
+   8,
+   6
+  ],
+  [
+   9,
+   3
+  ],
+  [
+   10,
+   0
+  ],
+  [
+   11,
+   6
+  ],
+  [
+   13,
+   0
+  ],
+  [
+   14,
+   1
+  ],
+  [
+   16,
+   2
+  ],
+  [
+   18,
+   17
+  ],
+  [
+   19,
+   7
+  ],
+  [
+   20,
+   3
+  ],
+  [
+   21,
+   4
+  ],
+  [
+   22,
+   10
+  ]
+ ],
+ "stopMusic": [
+  [
+   7,
+   4,
+   8,
+   0
+  ]
+ ],
  "chat": {
   "title": "Colony Carpool",
   "members": "Rohan, Priya, Arjun, Sharma ji",
@@ -398,12 +547,12 @@
   "separately"
  ],
  "post": {
-  "title": "He bought a new car just to wave at his neighbour \ud83d\udc80",
-  "caption": "Same office. Same floor. Same team. Two years. \ud83d\ude2d",
+  "title": "Our guard saluted 4 cars going to the same office 💀",
+  "caption": "3 years. 4 cars. 4 salutes. Same tech park. 😭",
   "hashtags": [
-   "#bengaluru",
-   "#officelife",
+   "#colonylife",
    "#carpool",
+   "#officelife",
    "#animation",
    "#relatable"
   ]

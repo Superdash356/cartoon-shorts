@@ -59,7 +59,7 @@ export const LOT = { x: [131.5, 134.5, 137.5, 140.5], z: -15.5 }; // office bays
 export const CLOCK = { x: 38.68, y: 1.75, z: -7.5, r: 0.55 }; // booth wall clock (face toward +x)
 
 // ---------------- shots ----------------
-export type ShotId = "hook" | "leave" | "sig1" | "sig2" | "sig5" | "years" | "ask" | "office" | "floor" | "meeting" | "doors" | "chat" | "dead" | "lonely"
+export type ShotId = "guard" | "hook" | "leave" | "sig1" | "sig2" | "sig5" | "years" | "ask" | "office" | "floor" | "meeting" | "doors" | "chat" | "dead" | "lonely"
   | "app" | "onecar" | "lot" | "late" | "where" | "end"
   | "street" | "walk" | "clock" | "gate" | "signal" | "signal2" | "bro";
 export type Shot = { id: ShotId; a: number; b: number };
@@ -86,7 +86,7 @@ export const carsAt = (id: ShotId, t: number): CarPose[] => {
   const parked = (i: number): CarPose => ({ x: HOUSE_X[i] + 2.6, z: PARK_Z, yaw: 0, on: true, riders: [], owner: i });
   switch (id) {
     case "street": case "doors": case "office": case "floor": case "years": case "meeting": return [0, 1, 2, 3].map(parked);
-    case "walk": case "office": case "clock": case "floor": case "years": case "meeting": return [0, 1, 2, 3].map(parked);
+    case "walk": case "office": case "clock": case "floor": case "years": case "meeting": case "guard": return [0, 1, 2, 3].map(parked);
     case "leave": { // Rohan (white) then Arjun (blue), nose to tail out of the gate
       const tg = shotAt(Math.round(t * FPS)).a / FPS;
       return [0, 2].map((i, k) => ({ x: GATE_X - 14 + 3.4 * (t - tg) - 7.5 * k, z: LANE_Z, yaw: 0, on: true, riders: [i], owner: i }));
@@ -129,7 +129,7 @@ export type Cam = { pos: V3; look: V3; fov: number; roll: number };
 const dolly = (pos: V3, look: V3, k: number): V3 => [look[0] + (pos[0] - look[0]) * k, look[1] + (pos[1] - look[1]) * k, look[2] + (pos[2] - look[2]) * k];
 /** continuous push-in: ~rate per frame since frame f0 */
 const push = (f: number, f0: number, rate = 0.0025) => Math.exp(-rate * Math.max(0, f - f0));
-const tf = (s: ShotId) => SHOTS.find((x) => x.id === s)!.a;
+const tf = (_s: ShotId, f = 0) => shotAt(f).a;
 const C = (pos: V3, look: V3, fov = 40, roll = 0): Cam => ({ pos, look, fov, roll });
 /** word punches: a quick zoom-in kick that settles over ~0.25 s (Zack D. style emphasis) */
 const PT = STORY.punch.map(([L, k]) => WL(L, k));
@@ -144,8 +144,12 @@ export const camAt = (id: ShotId, f: number): Cam => {
   return { ...c, fov: c.fov * (1 - 0.1 * k), roll: c.roll + 0.02 * k * Math.sin(f * 1.7) };
 };
 const camAt0 = (id: ShotId, f: number): Cam => {
-  const t = f / FPS, a = tf(id);
+  const t = f / FPS, a = tf(id, f);
   switch (id) {
+    case "guard": { // close on the gate guard by his booth
+      const L: V3 = [37.4, 1.35, -5.4];
+      return C(dolly([41.6, 1.5, -3.4], L, push(f, a, 0.004)), L, 30, 0.02);
+    }
     case "hook": { // diagonal over the two cars at the light: new white car right next to the blue one
       const L: V3 = [STOP_X - 2.0, 1.25, 3.9];
       return C(dolly([STOP_X + 8.5, 2.1, 10.8], L, push(f, a, 0.0035)), L, 30, 0);
@@ -238,6 +242,7 @@ export const dofAt = (id: ShotId): { cInf: number; focus?: V3 } => {
   switch (id) {
     case "walk": return { cInf: 9, focus: [-7.4, 1.4, -6] };
     case "clock": case "years": return { cInf: 16 };
+    case "guard": return { cInf: 12 };
     case "sig1": return { cInf: 9 };
     case "sig5": case "ask": case "lonely": return { cInf: 13 };
     case "floor": return { cInf: 6 };

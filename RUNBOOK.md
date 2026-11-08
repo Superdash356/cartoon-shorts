@@ -33,7 +33,7 @@ problem, in the last third, plus a soft call to action at the very end.
 - Use `yt-package` for the post title + first caption line, and write 5 hashtags; save them in story.json `post`.
 
 ## 3. Encode it as `shorts/<YYYY-MM-DD>-<slug>/story.json`
-Copy the previous day's story.json and edit. Fields:
+Copy the previous day's story.json and edit. Shot ids may repeat (e.g. cut back to "guard"). Fields:
 - `title`, `voice` ("en-US-AndrewNeural"), `tempo` (1.10–1.16, aim total ≤ 50 s), `keepGap` (0.28)
 - `lines`: `{text, rate, pitch, volume?, gap}` one sentence each. Modulate like a performer: hook/twist/punchlines
   lower pitch (−4…−8 Hz) and a little slower; asides/"bro" higher (+6…+10 Hz); lists fast (+20…+30 %).
@@ -43,7 +43,7 @@ Copy the previous day's story.json and edit. Fields:
   (use on "app"), end.
 - `cues`: named moments `[line, word]` that drive gestures/SFX/overlays (only include those you use):
   wave, thumbs, outOf, bro, cameras, sixty, messages, roster, driver, tap, ready, watch, live, one, four, three,
-  sharma, everyone, name, check. App-shot cues (roster/driver/tap/ready/watch/live) are split evenly if left out.
+  sharma, everyone, name, check, snap, guardTwist, guardHappy. App-shot cues (roster/driver/tap/ready/watch/live) are split evenly if left out.
 - `punch`: `[line, word]` list of zoom punches (10–18 of them on the funniest/strongest words).
 - `stopMusic`: `[[L0,k0,L1,k1]]` silence windows (e.g. right before a punchline).
 - `chat` (title, members, count, me, messages[[who,msg]]) for the "chat" overlay; `meeting` (title, highlight, tiles)
@@ -61,6 +61,7 @@ Copy the previous day's story.json and edit. Fields:
 | sig5, ask, lonely | close-ups: Arjun (sig5, nervous on cue outOf) / Rohan (ask, grins on cue bro) / Rohan alone, slow push |
 | signal, signal2, bro | older signal framings (4 cars, side by side) |
 | clock, years | booth wall clock close-up; "years" spins the hands fast (time passing) |
+| guard | close-up of the gate guard: tired salutes, then cues snap (pained), guardTwist (grin), guardHappy (one happy salute) |
 | office, floor | Prestige Tech Park office block, wide / push into a window |
 | meeting | 2D video-call grid overlay (story.json `meeting`) |
 | chat | 2D group-chat flood overlay (story.json `chat`), counter to `count` |

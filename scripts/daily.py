@@ -37,9 +37,9 @@ def sync():
     sh("git stash pop -q || true", check=False)
 
 
-def run_workflow(wf, inputs, timeout=3600):
+def run_workflow(wf, inputs, timeout=3600, ref="main"):
     before = {r["id"] for r in api(f"/actions/workflows/{wf}/runs?per_page=5")["workflow_runs"]}
-    code = api(f"/actions/workflows/{wf}/dispatches", {"ref": "main", "inputs": inputs})
+    code = api(f"/actions/workflows/{wf}/dispatches", {"ref": ref, "inputs": inputs})
     if not code.strip().endswith("204"): raise SystemExit(f"dispatch failed: {code}")
     rid = None
     for _ in range(60):
@@ -93,7 +93,9 @@ def render(slug):
     d = f"shorts/{slug}"
     sh(f"git add -A src/videos/carpool public/carpool/voice_current.wav {d} && git commit -qm 'Build {slug}' || true", check=False)
     sync(); sh("git push -q")
-    run_workflow("render.yml", {"composition": "CarpoolShort", "chunks": "20", "audio": f"{d}/mix.wav", "tag": slug}, timeout=3600)
+    # render from a branch frozen at this commit, so another build pushing to main cannot change what gets rendered
+    sh(f"git push -q -f origin HEAD:refs/heads/build/{slug}")
+    run_workflow("render.yml", {"composition": "CarpoolShort", "chunks": "20", "audio": f"{d}/mix.wav", "tag": slug}, timeout=3600, ref=f"build/{slug}")
     sh("git fetch -q origin renders:refs/remotes/origin/renders --force")
     os.makedirs("out", exist_ok=True)
     sh(f"git show origin/renders:{slug}.mp4 > out/{slug}.mp4")

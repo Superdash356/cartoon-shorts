@@ -353,10 +353,18 @@ export class CarpoolWorld {
     if (id === "doors") {
       HOUSE_X.forEach((x, i) => person(i, x, 0, -9.0, PEOPLE[i], "front", { mode: "stand", expr: i === 3 ? "nervous" : "neutral", look: i % 2 ? 1 : -1 }));
     }
-    if (id === "gate" || id === "onecar" || id === "clock" || id === "leave" || id === "dead") {
+    if (id === "gate" || id === "onecar" || id === "clock" || id === "leave" || id === "dead" || id === "guard") {
       // the guard by his booth, saluting each passing car (raised hand), once for the one car
-      const sal = id === "gate" || id === "leave" || id === "dead" ? (Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined) : id === "onecar" && t > CUE.one - 0.2 ? 0.6 : undefined;
-      person(9, 37.4, 0, -5.4, GUARD, "front", { mode: "stand", expr: id === "onecar" ? "smile_closed" : "stern", wave: sal });
+      let sal = id === "gate" || id === "leave" || id === "dead" ? (Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined) : id === "onecar" && t > CUE.one - 0.2 ? 0.6 : undefined;
+      let ex: Expr = id === "onecar" ? "smile_closed" as Expr : "stern";
+      if (id === "guard") {
+        // the guard's own arc, from story cues: tired salutes -> snaps -> sly grin (twist) -> one happy salute
+        if (t > CUE.guardHappy - LEAD) { ex = "smile_closed" as Expr; sal = 0.6; }
+        else if (t > CUE.guardTwist - LEAD) { ex = "grin"; sal = undefined; }
+        else if (t > CUE.snap - LEAD) { ex = "pained"; sal = undefined; }
+        else { ex = "dazed"; sal = Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined; }
+      }
+      person(9, 37.4, 0, -5.4, GUARD, "front", { mode: "stand", expr: ex, wave: sal });
     }
     if (id === "late" || id === "where") {
       // Sharma ji (house 3) bursts out of his door and jogs for the waiting car

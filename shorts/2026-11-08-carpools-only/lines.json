@@ -1,0 +1,144 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "You'd never lose forty days of sleep over one parking spot.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.12,
+   "volume": "+10%"
+  },
+  {
+   "text": "These three neighbours did.",
+   "rate": "+8%",
+   "pitch": "-7Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Their tech park has exactly one bay in the shade.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Day one. Rohan leaves at eight thirty. Gone.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Day five. Priya leaves at eight. Gone.",
+   "rate": "+30%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Day twelve. Arjun leaves at seven. Still gone.",
+   "rate": "+30%",
+   "pitch": "+3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Day thirty. Rohan stops going home and just sleeps in the car park.",
+   "rate": "+24%",
+   "pitch": "-2Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Day forty. All three pull in at six a.m., ready for war.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "And the bay is already taken.",
+   "rate": "+16%",
+   "pitch": "-5Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "By a hatchback with four strangers inside, eating breakfast.",
+   "rate": "+26%",
+   "pitch": "+4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Then they finally read the sign.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Carpools only.",
+   "rate": "+4%",
+   "pitch": "-8Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "It said that on day one too.",
+   "rate": "+20%",
+   "pitch": "+6Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So they agree to share. One rule: whoever wakes up first drives.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Next morning, three alarms at five. Three drivers. Three cars at the gate.",
+   "rate": "+32%",
+   "pitch": "+2Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Again.",
+   "rate": "+6%",
+   "pitch": "-8Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Turns out a parking war is just a carpool nobody organised.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So now an app runs the roster and says whose turn it is.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "No alarms. No racing. Can't come? Hit skip today.",
+   "rate": "+28%",
+   "pitch": "+2Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Day sixty. One car, three friends, the shady bay, every morning.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan still sleeps in the car, though. Just in the back seat now.",
+   "rate": "+22%",
+   "pitch": "-3Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "If your commute feels like a race, try Sahyatri.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Link in bio.",
+   "rate": "+16%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  }
+ ]
+}

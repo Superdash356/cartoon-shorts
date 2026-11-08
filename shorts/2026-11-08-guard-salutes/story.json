@@ -1,0 +1,411 @@
+{
+ "title": "The Guard Who Saluted Four Cars",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.14,
+ "keepGap": 0.28,
+ "lines": [
+  {
+   "text": "Your colony guard has seen something you never noticed in three years.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2,
+   "volume": "+10%"
+  },
+  {
+   "text": "Every morning, Ramesh salutes the same four neighbours. Separately.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Eight oh one, Rohan. Salute.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Eight oh two, Priya. Salute.",
+   "rate": "+26%",
+   "pitch": "+4Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Eight oh three, Arjun. Salute.",
+   "rate": "+28%",
+   "pitch": "+6Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Eight forty, Sharma ji. The arm just stays up now.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Three years. Same four cars. Same four salutes.",
+   "rate": "+12%",
+   "pitch": "-8Hz",
+   "gap": 0.25,
+   "volume": "+10%"
+  },
+  {
+   "text": "Then one day, his arm just quits.",
+   "rate": "+20%",
+   "pitch": "-6Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So Ramesh finally reads their parking stickers.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "All four cars. Same tech park.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Same building.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.22,
+   "volume": "+12%"
+  },
+  {
+   "text": "So he walks up to them, bro, just go together.",
+   "rate": "+22%",
+   "pitch": "+8Hz",
+   "gap": 0.2,
+   "volume": "+10%"
+  },
+  {
+   "text": "So they made a carpool group.",
+   "rate": "+30%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Forty seven messages later, nobody knew who was driving, and Sharma ji was still two minutes away.",
+   "rate": "+36%",
+   "pitch": "+4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Group, dead. Four cars. Four salutes.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.25,
+   "volume": "+10%"
+  },
+  {
+   "text": "Turns out, the hard part of carpooling isn't the driving.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "It's the deciding.",
+   "rate": "+10%",
+   "pitch": "-7Hz",
+   "gap": 0.22,
+   "volume": "+10%"
+  },
+  {
+   "text": "So they let an app do the deciding.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "A roster picks who drives today. One tap says you're ready. And everyone watches the car arrive. Live.",
+   "rate": "+32%",
+   "pitch": "+2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Now it's one car, four friends, and one salute.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Ramesh's arm has never been happier.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Sharma ji is still late though. But now, everyone can see exactly where.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "If your colony guard deserves a break, the app's called Sahyatri.",
+   "rate": "+24%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Check it out. Link in bio.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.3,
+   "volume": "+10%"
+  }
+ ],
+ "shots": [
+  {
+   "id": "guard",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "street",
+   "at": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "walk",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "leave",
+   "at": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "gate",
+   "at": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "guard",
+   "at": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "years",
+   "at": [
+    6,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "guard",
+   "at": [
+    7,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "office",
+   "at": [
+    9,
+    0
+   ]
+  },
+  {
+   "id": "floor",
+   "at": [
+    10,
+    0
+   ]
+  },
+  {
+   "id": "doors",
+   "at": [
+    11,
+    0
+   ]
+  },
+  {
+   "id": "chat",
+   "at": [
+    13,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "dead",
+   "at": [
+    14,
+    0
+   ],
+   "music": "sad"
+  },
+  {
+   "id": "lonely",
+   "at": [
+    15,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "app",
+   "at": [
+    17,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "onecar",
+   "at": [
+    19,
+    0
+   ]
+  },
+  {
+   "id": "guard",
+   "at": [
+    20,
+    0
+   ]
+  },
+  {
+   "id": "late",
+   "at": [
+    21,
+    0
+   ]
+  },
+  {
+   "id": "where",
+   "at": [
+    21,
+    6
+   ]
+  },
+  {
+   "id": "end",
+   "at": [
+    22,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {},
+ "punch": [],
+ "stopMusic": [],
+ "chat": {
+  "title": "Colony Carpool",
+  "members": "Rohan, Priya, Arjun, Sharma ji",
+  "count": 47,
+  "me": "Rohan",
+  "messages": [
+   [
+    "Rohan",
+    "Ramesh says we should carpool"
+   ],
+   [
+    "Priya",
+    "Who's driving tomorrow?"
+   ],
+   [
+    "Arjun",
+    "Not me, I drove... never"
+   ],
+   [
+    "Sharma ji",
+    "2 min"
+   ],
+   [
+    "Rohan",
+    "8:00 sharp?"
+   ],
+   [
+    "Priya",
+    "8:10?"
+   ],
+   [
+    "Arjun",
+    "Whose car though"
+   ],
+   [
+    "Sharma ji",
+    "2 min"
+   ],
+   [
+    "Rohan",
+    "Petrol split how??"
+   ],
+   [
+    "Priya",
+    "Waiting at the gate"
+   ],
+   [
+    "Arjun",
+    "Which gate"
+   ],
+   [
+    "Sharma ji",
+    "2 min"
+   ],
+   [
+    "Rohan",
+    "I'll just take my car"
+   ],
+   [
+    "Priya",
+    "Me too"
+   ],
+   [
+    "Arjun",
+    "Same"
+   ]
+  ]
+ },
+ "end": {
+  "headline": "Your guard\ndeserves a break.",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "salute",
+  "years",
+  "quits",
+  "stickers",
+  "same",
+  "bro",
+  "dead",
+  "deciding",
+  "sahyatri",
+  "live",
+  "one",
+  "late",
+  "separately"
+ ],
+ "post": {
+  "title": "He bought a new car just to wave at his neighbour \ud83d\udc80",
+  "caption": "Same office. Same floor. Same team. Two years. \ud83d\ude2d",
+  "hashtags": [
+   "#bengaluru",
+   "#officelife",
+   "#carpool",
+   "#animation",
+   "#relatable"
+  ]
+ }
+}

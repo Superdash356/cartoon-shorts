@@ -1,0 +1,1142 @@
+[
+ {
+  "word": "You'd",
+  "start": 0.04,
+  "end": 0.161,
+  "line": 0
+ },
+ {
+  "word": "never",
+  "start": 0.172,
+  "end": 0.413,
+  "line": 0
+ },
+ {
+  "word": "pay",
+  "start": 0.424,
+  "end": 0.577,
+  "line": 0
+ },
+ {
+  "word": "someone",
+  "start": 0.588,
+  "end": 0.829,
+  "line": 0
+ },
+ {
+  "word": "to",
+  "start": 0.84,
+  "end": 0.873,
+  "line": 0
+ },
+ {
+  "word": "sit",
+  "start": 0.884,
+  "end": 1.082,
+  "line": 0
+ },
+ {
+  "word": "in",
+  "start": 1.093,
+  "end": 1.158,
+  "line": 0
+ },
+ {
+  "word": "your",
+  "start": 1.169,
+  "end": 1.268,
+  "line": 0
+ },
+ {
+  "word": "car",
+  "start": 1.279,
+  "end": 1.619,
+  "line": 0
+ },
+ {
+  "word": "This",
+  "start": 1.879,
+  "end": 2.006,
+  "line": 1
+ },
+ {
+  "word": "guy",
+  "start": 2.018,
+  "end": 2.226,
+  "line": 1
+ },
+ {
+  "word": "owes",
+  "start": 2.238,
+  "end": 2.4,
+  "line": 1
+ },
+ {
+  "word": "four",
+  "start": 2.411,
+  "end": 2.666,
+  "line": 1
+ },
+ {
+  "word": "thousand",
+  "start": 2.678,
+  "end": 3.036,
+  "line": 1
+ },
+ {
+  "word": "rupees",
+  "start": 3.048,
+  "end": 3.418,
+  "line": 1
+ },
+ {
+  "word": "for",
+  "start": 3.43,
+  "end": 3.638,
+  "line": 1
+ },
+ {
+  "word": "it",
+  "start": 3.65,
+  "end": 3.789,
+  "line": 1
+ },
+ {
+  "word": "Rewind",
+  "start": 4.199,
+  "end": 4.499,
+  "line": 2
+ },
+ {
+  "word": "one",
+  "start": 4.511,
+  "end": 4.667,
+  "line": 2
+ },
+ {
+  "word": "year",
+  "start": 4.679,
+  "end": 4.956,
+  "line": 2
+ },
+ {
+  "word": "Arjun",
+  "start": 5.296,
+  "end": 5.534,
+  "line": 3
+ },
+ {
+  "word": "drives",
+  "start": 5.544,
+  "end": 5.941,
+  "line": 3
+ },
+ {
+  "word": "Priya",
+  "start": 6.278,
+  "end": 6.566,
+  "line": 3
+ },
+ {
+  "word": "Rohan",
+  "start": 6.893,
+  "end": 7.26,
+  "line": 3
+ },
+ {
+  "word": "and",
+  "start": 7.27,
+  "end": 7.34,
+  "line": 3
+ },
+ {
+  "word": "Sharma",
+  "start": 7.349,
+  "end": 7.687,
+  "line": 3
+ },
+ {
+  "word": "ji",
+  "start": 7.697,
+  "end": 7.895,
+  "line": 3
+ },
+ {
+  "word": "ride",
+  "start": 7.905,
+  "end": 8.094,
+  "line": 3
+ },
+ {
+  "word": "along",
+  "start": 8.103,
+  "end": 8.391,
+  "line": 3
+ },
+ {
+  "word": "Petrol",
+  "start": 8.671,
+  "end": 8.896,
+  "line": 4
+ },
+ {
+  "word": "gets",
+  "start": 8.906,
+  "end": 9.052,
+  "line": 4
+ },
+ {
+  "word": "split",
+  "start": 9.062,
+  "end": 9.384,
+  "line": 4
+ },
+ {
+  "word": "every",
+  "start": 9.521,
+  "end": 9.706,
+  "line": 4
+ },
+ {
+  "word": "Friday",
+  "start": 9.716,
+  "end": 10.126,
+  "line": 4
+ },
+ {
+  "word": "on",
+  "start": 10.312,
+  "end": 10.419,
+  "line": 4
+ },
+ {
+  "word": "whatever's",
+  "start": 10.429,
+  "end": 10.82,
+  "line": 4
+ },
+ {
+  "word": "in",
+  "start": 10.829,
+  "end": 10.878,
+  "line": 4
+ },
+ {
+  "word": "the",
+  "start": 10.888,
+  "end": 10.937,
+  "line": 4
+ },
+ {
+  "word": "glovebox",
+  "start": 10.947,
+  "end": 11.493,
+  "line": 4
+ },
+ {
+  "word": "Week",
+  "start": 11.803,
+  "end": 11.928,
+  "line": 5
+ },
+ {
+  "word": "one",
+  "start": 11.938,
+  "end": 12.14,
+  "line": 5
+ },
+ {
+  "word": "One",
+  "start": 12.457,
+  "end": 12.563,
+  "line": 5
+ },
+ {
+  "word": "napkin",
+  "start": 12.573,
+  "end": 12.909,
+  "line": 5
+ },
+ {
+  "word": "Rohan",
+  "start": 13.227,
+  "end": 13.486,
+  "line": 5
+ },
+ {
+  "word": "owes",
+  "start": 13.553,
+  "end": 13.698,
+  "line": 5
+ },
+ {
+  "word": "two",
+  "start": 13.707,
+  "end": 13.871,
+  "line": 5
+ },
+ {
+  "word": "hundred",
+  "start": 13.88,
+  "end": 14.178,
+  "line": 5
+ },
+ {
+  "word": "Clean",
+  "start": 14.496,
+  "end": 14.746,
+  "line": 5
+ },
+ {
+  "word": "Month",
+  "start": 15.006,
+  "end": 15.16,
+  "line": 6
+ },
+ {
+  "word": "two",
+  "start": 15.169,
+  "end": 15.381,
+  "line": 6
+ },
+ {
+  "word": "Tolls",
+  "start": 15.708,
+  "end": 16.035,
+  "line": 6
+ },
+ {
+  "word": "parking",
+  "start": 16.179,
+  "end": 16.544,
+  "line": 6
+ },
+ {
+  "word": "and",
+  "start": 16.717,
+  "end": 16.756,
+  "line": 6
+ },
+ {
+  "word": "Sharma",
+  "start": 16.765,
+  "end": 17.044,
+  "line": 6
+ },
+ {
+  "word": "ji's",
+  "start": 17.054,
+  "end": 17.237,
+  "line": 6
+ },
+ {
+  "word": "samosas",
+  "start": 17.246,
+  "end": 17.737,
+  "line": 6
+ },
+ {
+  "word": "Month",
+  "start": 17.997,
+  "end": 18.117,
+  "line": 7
+ },
+ {
+  "word": "six",
+  "start": 18.128,
+  "end": 18.491,
+  "line": 7
+ },
+ {
+  "word": "The",
+  "start": 18.833,
+  "end": 18.884,
+  "line": 7
+ },
+ {
+  "word": "glovebox",
+  "start": 18.894,
+  "end": 19.388,
+  "line": 7
+ },
+ {
+  "word": "physically",
+  "start": 19.398,
+  "end": 19.821,
+  "line": 7
+ },
+ {
+  "word": "will",
+  "start": 19.831,
+  "end": 19.932,
+  "line": 7
+ },
+ {
+  "word": "not",
+  "start": 19.942,
+  "end": 20.103,
+  "line": 7
+ },
+ {
+  "word": "close",
+  "start": 20.113,
+  "end": 20.537,
+  "line": 7
+ },
+ {
+  "word": "So",
+  "start": 20.847,
+  "end": 21.028,
+  "line": 8
+ },
+ {
+  "word": "Arjun",
+  "start": 21.038,
+  "end": 21.442,
+  "line": 8
+ },
+ {
+  "word": "the",
+  "start": 21.734,
+  "end": 21.794,
+  "line": 8
+ },
+ {
+  "word": "engineer",
+  "start": 21.804,
+  "end": 22.319,
+  "line": 8
+ },
+ {
+  "word": "builds",
+  "start": 22.53,
+  "end": 22.742,
+  "line": 8
+ },
+ {
+  "word": "a",
+  "start": 22.752,
+  "end": 22.792,
+  "line": 8
+ },
+ {
+  "word": "spreadsheet",
+  "start": 22.802,
+  "end": 23.337,
+  "line": 8
+ },
+ {
+  "word": "Twelve",
+  "start": 23.597,
+  "end": 23.777,
+  "line": 9
+ },
+ {
+  "word": "tabs",
+  "start": 23.786,
+  "end": 24.184,
+  "line": 9
+ },
+ {
+  "word": "Colour",
+  "start": 24.496,
+  "end": 24.667,
+  "line": 9
+ },
+ {
+  "word": "coded",
+  "start": 24.676,
+  "end": 24.941,
+  "line": 9
+ },
+ {
+  "word": "A",
+  "start": 25.254,
+  "end": 25.301,
+  "line": 9
+ },
+ {
+  "word": "formula",
+  "start": 25.311,
+  "end": 25.661,
+  "line": 9
+ },
+ {
+  "word": "for",
+  "start": 25.671,
+  "end": 25.775,
+  "line": 9
+ },
+ {
+  "word": "samosas",
+  "start": 25.784,
+  "end": 26.296,
+  "line": 9
+ },
+ {
+  "word": "One",
+  "start": 26.556,
+  "end": 26.685,
+  "line": 10
+ },
+ {
+  "word": "error",
+  "start": 26.696,
+  "end": 26.944,
+  "line": 10
+ },
+ {
+  "word": "Nobody",
+  "start": 27.299,
+  "end": 27.623,
+  "line": 10
+ },
+ {
+  "word": "opens",
+  "start": 27.633,
+  "end": 27.903,
+  "line": 10
+ },
+ {
+  "word": "it",
+  "start": 27.913,
+  "end": 27.967,
+  "line": 10
+ },
+ {
+  "word": "again",
+  "start": 27.978,
+  "end": 28.28,
+  "line": 10
+ },
+ {
+  "word": "Back",
+  "start": 28.64,
+  "end": 28.751,
+  "line": 11
+ },
+ {
+  "word": "to",
+  "start": 28.761,
+  "end": 28.831,
+  "line": 11
+ },
+ {
+  "word": "napkins",
+  "start": 28.841,
+  "end": 29.325,
+  "line": 11
+ },
+ {
+  "word": "Except",
+  "start": 29.658,
+  "end": 29.95,
+  "line": 11
+ },
+ {
+  "word": "now",
+  "start": 29.96,
+  "end": 30.091,
+  "line": 11
+ },
+ {
+  "word": "Sharma",
+  "start": 30.102,
+  "end": 30.384,
+  "line": 11
+ },
+ {
+  "word": "ji",
+  "start": 30.394,
+  "end": 30.656,
+  "line": 11
+ },
+ {
+  "word": "does",
+  "start": 30.666,
+  "end": 30.827,
+  "line": 11
+ },
+ {
+  "word": "the",
+  "start": 30.837,
+  "end": 30.898,
+  "line": 11
+ },
+ {
+  "word": "maths",
+  "start": 30.908,
+  "end": 31.372,
+  "line": 11
+ },
+ {
+  "word": "Which",
+  "start": 31.712,
+  "end": 31.834,
+  "line": 12
+ },
+ {
+  "word": "brings",
+  "start": 31.846,
+  "end": 32.08,
+  "line": 12
+ },
+ {
+  "word": "us",
+  "start": 32.091,
+  "end": 32.18,
+  "line": 12
+ },
+ {
+  "word": "to",
+  "start": 32.192,
+  "end": 32.27,
+  "line": 12
+ },
+ {
+  "word": "today",
+  "start": 32.281,
+  "end": 32.627,
+  "line": 12
+ },
+ {
+  "word": "The",
+  "start": 32.937,
+  "end": 32.981,
+  "line": 13
+ },
+ {
+  "word": "final",
+  "start": 32.992,
+  "end": 33.288,
+  "line": 13
+ },
+ {
+  "word": "napkin",
+  "start": 33.299,
+  "end": 33.683,
+  "line": 13
+ },
+ {
+  "word": "says",
+  "start": 33.693,
+  "end": 33.88,
+  "line": 13
+ },
+ {
+  "word": "Arjun",
+  "start": 33.891,
+  "end": 34.384,
+  "line": 13
+ },
+ {
+  "word": "owes",
+  "start": 34.494,
+  "end": 34.604,
+  "line": 13
+ },
+ {
+  "word": "Sharma",
+  "start": 34.615,
+  "end": 35.009,
+  "line": 13
+ },
+ {
+  "word": "ji",
+  "start": 35.02,
+  "end": 35.272,
+  "line": 13
+ },
+ {
+  "word": "four",
+  "start": 35.283,
+  "end": 35.481,
+  "line": 13
+ },
+ {
+  "word": "thousand",
+  "start": 35.492,
+  "end": 35.952,
+  "line": 13
+ },
+ {
+  "word": "For",
+  "start": 36.232,
+  "end": 36.291,
+  "line": 14
+ },
+ {
+  "word": "driving",
+  "start": 36.303,
+  "end": 36.645,
+  "line": 14
+ },
+ {
+  "word": "him",
+  "start": 36.657,
+  "end": 36.81,
+  "line": 14
+ },
+ {
+  "word": "In",
+  "start": 37.199,
+  "end": 37.282,
+  "line": 14
+ },
+ {
+  "word": "Arjun's",
+  "start": 37.294,
+  "end": 37.73,
+  "line": 14
+ },
+ {
+  "word": "own",
+  "start": 37.742,
+  "end": 37.883,
+  "line": 14
+ },
+ {
+  "word": "car",
+  "start": 37.895,
+  "end": 38.249,
+  "line": 14
+ },
+ {
+  "word": "Moral",
+  "start": 38.709,
+  "end": 39.032,
+  "line": 15
+ },
+ {
+  "word": "a",
+  "start": 39.412,
+  "end": 39.457,
+  "line": 15
+ },
+ {
+  "word": "carpool",
+  "start": 39.468,
+  "end": 39.903,
+  "line": 15
+ },
+ {
+  "word": "survives",
+  "start": 39.914,
+  "end": 40.316,
+  "line": 15
+ },
+ {
+  "word": "traffic",
+  "start": 40.327,
+  "end": 40.796,
+  "line": 15
+ },
+ {
+  "word": "It",
+  "start": 41.164,
+  "end": 41.242,
+  "line": 15
+ },
+ {
+  "word": "doesn't",
+  "start": 41.253,
+  "end": 41.488,
+  "line": 15
+ },
+ {
+  "word": "survive",
+  "start": 41.499,
+  "end": 41.957,
+  "line": 15
+ },
+ {
+  "word": "napkin",
+  "start": 41.968,
+  "end": 42.303,
+  "line": 15
+ },
+ {
+  "word": "maths",
+  "start": 42.314,
+  "end": 42.782,
+  "line": 15
+ },
+ {
+  "word": "So",
+  "start": 43.192,
+  "end": 43.274,
+  "line": 16
+ },
+ {
+  "word": "the",
+  "start": 43.285,
+  "end": 43.356,
+  "line": 16
+ },
+ {
+  "word": "four",
+  "start": 43.367,
+  "end": 43.613,
+  "line": 16
+ },
+ {
+  "word": "moved",
+  "start": 43.623,
+  "end": 43.889,
+  "line": 16
+ },
+ {
+  "word": "the",
+  "start": 43.899,
+  "end": 43.951,
+  "line": 16
+ },
+ {
+  "word": "money",
+  "start": 43.961,
+  "end": 44.258,
+  "line": 16
+ },
+ {
+  "word": "into",
+  "start": 44.268,
+  "end": 44.453,
+  "line": 16
+ },
+ {
+  "word": "an",
+  "start": 44.463,
+  "end": 44.535,
+  "line": 16
+ },
+ {
+  "word": "app.",
+  "start": 44.545,
+  "end": 44.811,
+  "line": 16
+ },
+ {
+  "word": "Every",
+  "start": 45.071,
+  "end": 45.24,
+  "line": 17
+ },
+ {
+  "word": "petrol",
+  "start": 45.25,
+  "end": 45.567,
+  "line": 17
+ },
+ {
+  "word": "bill",
+  "start": 45.577,
+  "end": 45.736,
+  "line": 17
+ },
+ {
+  "word": "goes",
+  "start": 45.746,
+  "end": 46.014,
+  "line": 17
+ },
+ {
+  "word": "into",
+  "start": 46.024,
+  "end": 46.153,
+  "line": 17
+ },
+ {
+  "word": "settle",
+  "start": 46.163,
+  "end": 46.411,
+  "line": 17
+ },
+ {
+  "word": "costs",
+  "start": 46.42,
+  "end": 46.877,
+  "line": 17
+ },
+ {
+  "word": "The",
+  "start": 47.214,
+  "end": 47.274,
+  "line": 17
+ },
+ {
+  "word": "app",
+  "start": 47.284,
+  "end": 47.403,
+  "line": 17
+ },
+ {
+  "word": "splits",
+  "start": 47.413,
+  "end": 47.69,
+  "line": 17
+ },
+ {
+  "word": "it",
+  "start": 47.7,
+  "end": 47.839,
+  "line": 17
+ },
+ {
+  "word": "The",
+  "start": 48.099,
+  "end": 48.139,
+  "line": 18
+ },
+ {
+  "word": "roster",
+  "start": 48.149,
+  "end": 48.436,
+  "line": 18
+ },
+ {
+  "word": "rotates",
+  "start": 48.446,
+  "end": 48.813,
+  "line": 18
+ },
+ {
+  "word": "the",
+  "start": 48.823,
+  "end": 48.893,
+  "line": 18
+ },
+ {
+  "word": "driving",
+  "start": 48.903,
+  "end": 49.21,
+  "line": 18
+ },
+ {
+  "word": "too",
+  "start": 49.22,
+  "end": 49.468,
+  "line": 18
+ },
+ {
+  "word": "so",
+  "start": 49.766,
+  "end": 49.954,
+  "line": 18
+ },
+ {
+  "word": "Arjun",
+  "start": 49.964,
+  "end": 50.371,
+  "line": 18
+ },
+ {
+  "word": "gets",
+  "start": 50.381,
+  "end": 50.55,
+  "line": 18
+ },
+ {
+  "word": "mornings",
+  "start": 50.559,
+  "end": 50.857,
+  "line": 18
+ },
+ {
+  "word": "off",
+  "start": 50.867,
+  "end": 51.125,
+  "line": 18
+ },
+ {
+  "word": "And",
+  "start": 51.435,
+  "end": 51.489,
+  "line": 19
+ },
+ {
+  "word": "the",
+  "start": 51.5,
+  "end": 51.553,
+  "line": 19
+ },
+ {
+  "word": "glovebox",
+  "start": 51.564,
+  "end": 52.146,
+  "line": 19
+ },
+ {
+  "word": "It",
+  "start": 52.502,
+  "end": 52.577,
+  "line": 19
+ },
+ {
+  "word": "closes",
+  "start": 52.588,
+  "end": 52.922,
+  "line": 19
+ },
+ {
+  "word": "now",
+  "start": 52.933,
+  "end": 53.213,
+  "line": 19
+ },
+ {
+  "word": "Sharma",
+  "start": 53.493,
+  "end": 53.769,
+  "line": 20
+ },
+ {
+  "word": "ji",
+  "start": 53.78,
+  "end": 54.026,
+  "line": 20
+ },
+ {
+  "word": "still",
+  "start": 54.036,
+  "end": 54.251,
+  "line": 20
+ },
+ {
+  "word": "pays",
+  "start": 54.261,
+  "end": 54.528,
+  "line": 20
+ },
+ {
+  "word": "in",
+  "start": 54.538,
+  "end": 54.61,
+  "line": 20
+ },
+ {
+  "word": "samosas",
+  "start": 54.62,
+  "end": 55.163,
+  "line": 20
+ },
+ {
+  "word": "Now",
+  "start": 55.501,
+  "end": 55.583,
+  "line": 20
+ },
+ {
+  "word": "the",
+  "start": 55.593,
+  "end": 55.665,
+  "line": 20
+ },
+ {
+  "word": "guard",
+  "start": 55.675,
+  "end": 55.88,
+  "line": 20
+ },
+ {
+  "word": "gets",
+  "start": 55.89,
+  "end": 56.034,
+  "line": 20
+ },
+ {
+  "word": "one",
+  "start": 56.044,
+  "end": 56.198,
+  "line": 20
+ },
+ {
+  "word": "too",
+  "start": 56.208,
+  "end": 56.464,
+  "line": 20
+ },
+ {
+  "word": "If",
+  "start": 56.824,
+  "end": 56.898,
+  "line": 21
+ },
+ {
+  "word": "your",
+  "start": 56.909,
+  "end": 57.004,
+  "line": 21
+ },
+ {
+  "word": "carpool",
+  "start": 57.015,
+  "end": 57.375,
+  "line": 21
+ },
+ {
+  "word": "still",
+  "start": 57.386,
+  "end": 57.608,
+  "line": 21
+ },
+ {
+  "word": "runs",
+  "start": 57.619,
+  "end": 57.82,
+  "line": 21
+ },
+ {
+  "word": "on",
+  "start": 57.83,
+  "end": 57.947,
+  "line": 21
+ },
+ {
+  "word": "napkins",
+  "start": 57.958,
+  "end": 58.487,
+  "line": 21
+ },
+ {
+  "word": "Sahyatri",
+  "start": 58.678,
+  "end": 59.208,
+  "line": 21
+ },
+ {
+  "word": "does",
+  "start": 59.271,
+  "end": 59.419,
+  "line": 21
+ },
+ {
+  "word": "the",
+  "start": 59.43,
+  "end": 59.494,
+  "line": 21
+ },
+ {
+  "word": "maths",
+  "start": 59.504,
+  "end": 60.013,
+  "line": 21
+ },
+ {
+  "word": "Link",
+  "start": 60.273,
+  "end": 60.42,
+  "line": 22
+ },
+ {
+  "word": "in",
+  "start": 60.432,
+  "end": 60.5,
+  "line": 22
+ },
+ {
+  "word": "bio",
+  "start": 60.511,
+  "end": 60.875,
+  "line": 22
+ }
+]

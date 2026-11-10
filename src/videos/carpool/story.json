@@ -1,163 +1,163 @@
 {
- "title": "Forty Days for One Parking Spot",
+ "title": "The Driver Who Owes His Passenger",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.16,
- "keepGap": 0.28,
+ "tempo": 1.21,
+ "keepGap": 0.24,
  "beats": {
-  "theme": "the parking-spot war for the one shaded bay at the office",
-  "setting": "office car park with one shaded bay",
-  "conflict": "three neighbours leave earlier every day to grab the one shaded bay",
-  "failedAttempt": "'whoever wakes first drives' rule: three 5 am alarms, three drivers",
-  "twist": "the bay was signed 'carpools only' and a stranger carpool had it all along",
-  "lesson": "a parking war is just a carpool nobody organised",
-  "appAngle": "the roster says whose turn it is; skip today when you can't come",
-  "callback": "Rohan still sleeps in the car, now in the back seat",
-  "ctaLine": "If your commute feels like a race"
+  "theme": "petrol money split on glovebox napkins in a carpool that already works",
+  "setting": "inside the carpool car's glovebox, Friday settle-ups",
+  "conflict": "a year of napkin maths ends with the driver owing his own passenger",
+  "failedAttempt": "a colour-coded spreadsheet that dies on its first #REF error",
+  "twist": "Sharma ji did the napkin maths: Arjun owes him 4,000 for driving him",
+  "lesson": "a carpool survives traffic but not napkin maths",
+  "appAngle": "settle costs splits each petrol bill; roster rotates who drives",
+  "callback": "the glovebox finally closes; Sharma ji's samosas now feed the guard",
+  "ctaLine": "If your carpool still runs on napkins"
  },
  "lines": [
   {
-   "text": "You'd never lose forty days of sleep over one parking spot.",
-   "rate": "+16%",
-   "pitch": "-4Hz",
-   "gap": 0.12,
+   "text": "You'd never pay someone to sit in your car.",
+   "rate": "+14%",
+   "pitch": "-5Hz",
+   "gap": 0.1,
    "volume": "+10%"
   },
   {
-   "text": "These three neighbours did.",
+   "text": "This guy owes four thousand rupees for it.",
    "rate": "+8%",
    "pitch": "-7Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "Their tech park has exactly one bay in the shade.",
-   "rate": "+26%",
-   "pitch": "+0Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Day one. Rohan leaves at eight thirty. Gone.",
-   "rate": "+28%",
-   "pitch": "+0Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "Day five. Priya leaves at eight. Gone.",
-   "rate": "+30%",
-   "pitch": "+2Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "Day twelve. Arjun leaves at seven. Still gone.",
-   "rate": "+30%",
-   "pitch": "+3Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Day thirty. Rohan stops going home and just sleeps in the car park.",
-   "rate": "+24%",
-   "pitch": "-2Hz",
-   "gap": 0.18
-  },
-  {
-   "text": "Day forty. All three pull in at six a.m., ready for war.",
-   "rate": "+28%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "And the bay is already taken.",
-   "rate": "+16%",
-   "pitch": "-5Hz",
-   "gap": 0.08
-  },
-  {
-   "text": "By a hatchback with four strangers inside, eating breakfast.",
-   "rate": "+26%",
-   "pitch": "+4Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "Then they finally read the sign.",
-   "rate": "+18%",
-   "pitch": "-2Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Carpools only.",
-   "rate": "+4%",
-   "pitch": "-8Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "It said that on day one too.",
-   "rate": "+20%",
-   "pitch": "+6Hz",
-   "gap": 0.22
-  },
-  {
-   "text": "So they agree to share. One rule: whoever wakes up first drives.",
-   "rate": "+28%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Next morning, three alarms at five. Three drivers. Three cars at the gate.",
-   "rate": "+32%",
-   "pitch": "+2Hz",
-   "gap": 0.08
-  },
-  {
-   "text": "Again.",
-   "rate": "+6%",
-   "pitch": "-8Hz",
-   "gap": 0.22
-  },
-  {
-   "text": "Turns out a parking war is just a carpool nobody organised.",
-   "rate": "+18%",
-   "pitch": "-4Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "So now an app runs the roster and says whose turn it is.",
-   "rate": "+26%",
-   "pitch": "+0Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "No alarms. No racing. Can't come? Hit skip today.",
-   "rate": "+28%",
-   "pitch": "+2Hz",
-   "gap": 0.18
-  },
-  {
-   "text": "Day sixty. One car, three friends, the shady bay, every morning.",
-   "rate": "+24%",
-   "pitch": "+0Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Rohan still sleeps in the car, though. Just in the back seat now.",
-   "rate": "+22%",
-   "pitch": "-3Hz",
    "gap": 0.25
   },
   {
-   "text": "If your commute feels like a race, try Sahyatri.",
-   "rate": "+20%",
-   "pitch": "-2Hz",
+   "text": "Rewind one year.",
+   "rate": "+4%",
+   "pitch": "-6Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Arjun drives. Priya, Rohan and Sharma ji ride along.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
    "gap": 0.12
   },
   {
-   "text": "Link in bio.",
+   "text": "Petrol gets split every Friday, on whatever's in the glovebox.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week one. One napkin. Rohan owes two hundred. Clean.",
+   "rate": "+30%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month two. Tolls, parking, and Sharma ji's samosas.",
+   "rate": "+30%",
+   "pitch": "+3Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month six. The glovebox physically will not close.",
+   "rate": "+24%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "So Arjun, the engineer, builds a spreadsheet.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Twelve tabs. Colour coded. A formula for samosas.",
+   "rate": "+32%",
+   "pitch": "+4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "One error. Nobody opens it again.",
    "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Back to napkins. Except now Sharma ji does the maths.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Which brings us to today.",
+   "rate": "+12%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The final napkin says Arjun owes Sharma ji four thousand.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "For driving him. In Arjun's own car.",
+   "rate": "+6%",
+   "pitch": "-8Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Moral: a carpool survives traffic. It doesn't survive napkin maths.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So the four moved the money into an app.",
+   "rate": "+22%",
+   "pitch": "+4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Every petrol bill goes into settle costs. The app splits it.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "The roster rotates the driving too, so Arjun gets mornings off.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "And the glovebox? It closes now.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Sharma ji still pays in samosas. Now the guard gets one too.",
+   "rate": "+22%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "If your carpool still runs on napkins, Sahyatri does the maths.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Link in bio.",
+   "rate": "+10%",
    "pitch": "+0Hz",
    "gap": 0.1
   }
  ],
  "shots": [
   {
-   "id": "race",
+   "id": "onecar",
    "at": [
     0,
     0
@@ -165,124 +165,75 @@
    "music": "groove"
   },
   {
-   "id": "office",
+   "id": "sig5",
    "at": [
-    2,
+    1,
     0
    ]
   },
   {
-   "id": "spot",
+   "id": "years",
    "at": [
     2,
-    5
-   ]
+    0
+   ],
+   "music": "pad"
   },
   {
-   "id": "rushR",
+   "id": "lot",
    "at": [
     3,
     0
-   ]
+   ],
+   "music": "groove"
   },
   {
-   "id": "taken",
-   "at": [
-    3,
-    7
-   ]
-  },
-  {
-   "id": "rushP",
+   "id": "napkin",
    "at": [
     4,
     0
    ]
   },
   {
-   "id": "taken",
+   "id": "sheet",
    "at": [
-    4,
-    6
-   ]
-  },
-  {
-   "id": "rushA",
-   "at": [
-    5,
-    0
-   ]
-  },
-  {
-   "id": "taken",
-   "at": [
-    5,
-    6
-   ]
-  },
-  {
-   "id": "nap",
-   "at": [
-    6,
-    0
-   ]
-  },
-  {
-   "id": "race",
-   "at": [
-    7,
+    8,
     0
    ],
    "music": "nervous"
   },
   {
-   "id": "taken",
+   "id": "napkin",
    "at": [
-    8,
-    0
-   ],
-   "music": "stop"
-  },
-  {
-   "id": "strangers",
-   "at": [
-    9,
+    11,
     0
    ],
    "music": "groove"
   },
   {
-   "id": "sign",
-   "at": [
-    10,
-    0
-   ],
-   "music": "stop"
-  },
-  {
-   "id": "strangers",
+   "id": "clock",
    "at": [
     12,
     0
    ],
-   "music": "groove"
+   "music": "stop"
   },
   {
-   "id": "street",
+   "id": "napkin",
    "at": [
     13,
     0
    ]
   },
   {
-   "id": "gate3",
+   "id": "sig5",
    "at": [
     14,
     0
    ]
   },
   {
-   "id": "guard",
+   "id": "street",
    "at": [
     15,
     0
@@ -290,23 +241,15 @@
    "music": "sad"
   },
   {
-   "id": "taken",
-   "at": [
-    16,
-    0
-   ],
-   "music": "pad"
-  },
-  {
    "id": "app",
    "at": [
-    17,
+    16,
     0
    ],
    "music": "lift"
   },
   {
-   "id": "park",
+   "id": "napkin",
    "at": [
     19,
     0
@@ -314,10 +257,10 @@
    "music": "groove"
   },
   {
-   "id": "backseat",
+   "id": "guard",
    "at": [
     20,
-    0
+    6
    ]
   },
   {
@@ -330,21 +273,41 @@
   }
  ],
  "cues": {
-  "snap": [
-   15,
-   0
-  ],
-  "roster": [
-   17,
+  "outOf": [
+   14,
    4
   ],
-  "driver": [
-   17,
+  "flood": [
+   7,
+   3
+  ],
+  "tabs": [
+   9,
+   0
+  ],
+  "formula": [
+   9,
+   5
+  ],
+  "error": [
+   10,
+   1
+  ],
+  "big": [
+   13,
    8
   ],
-  "skip": [
+  "settle": [
+   17,
+   5
+  ],
+  "roster": [
    18,
-   6
+   1
+  ],
+  "driver": [
+   18,
+   4
   ],
   "tap": [
    30,
@@ -362,19 +325,31 @@
    30,
    0
   ],
+  "shut": [
+   19,
+   4
+  ],
+  "guardHappy": [
+   20,
+   11
+  ],
   "name": [
    21,
-   8
+   7
   ],
   "check": [
    22,
    0
+  ],
+  "samosa": [
+   20,
+   2
   ]
  },
  "punch": [
   [
    0,
-   3
+   2
   ],
   [
    1,
@@ -382,114 +357,194 @@
   ],
   [
    2,
-   4
-  ],
-  [
-   3,
-   7
-  ],
-  [
-   4,
-   6
+   0
   ],
   [
    5,
-   7
+   8
   ],
   [
    6,
-   9
+   7
   ],
   [
    7,
-   10
+   7
   ],
   [
    8,
-   4
+   6
   ],
   [
    9,
-   5
+   7
   ],
   [
-   11,
-   0
-  ],
-  [
-   11,
+   10,
    1
   ],
   [
-   12,
-   4
+   11,
+   5
+  ],
+  [
+   13,
+   8
   ],
   [
    14,
-   6
+   5
   ],
   [
    15,
-   0
+   8
   ],
   [
-   16,
-   6
-  ],
-  [
-   18,
-   6
-  ],
-  [
-   19,
-   6
-  ],
-  [
-   20,
+   17,
    9
   ],
   [
+   19,
+   4
+  ],
+  [
+   20,
+   5
+  ],
+  [
    21,
-   8
+   7
   ]
  ],
  "stopMusic": [
   [
-   10,
-   5,
-   11,
-   2
+   13,
+   0,
+   13,
+   8
   ]
  ],
+ "napkins": [
+  [
+   5,
+   2,
+   "Rohan → Arjun\n₹200 ✓"
+  ],
+  [
+   6,
+   2,
+   "Toll — Priya?\nParking — Rohan??\nSharma ji:\n2 samosas"
+  ],
+  [
+   11,
+   5,
+   "SHARMA JI'S MATHS\n(petrol ÷ samosa)\n× vibes"
+  ],
+  [
+   13,
+   1,
+   "ARJUN OWES\nSHARMA JI\n₹4,000"
+  ]
+ ],
+ "sheet": {
+  "title": "carpool_FINAL_v12.xlsx",
+  "tabs": [
+   "Petrol",
+   "Tolls",
+   "Parking",
+   "Samosas",
+   "Samosas (2)",
+   "Who paid",
+   "Who REALLY paid",
+   "Rohan",
+   "Disputes",
+   "Disputes (2)",
+   "Do not edit",
+   "FINAL"
+  ],
+  "cols": [
+   "Week",
+   "Petrol",
+   "Toll",
+   "Samosa",
+   "Owes"
+  ],
+  "rows": [
+   [
+    "W1",
+    "₹1,200",
+    "₹80",
+    "2",
+    "Rohan"
+   ],
+   [
+    "W2",
+    "₹1,150",
+    "₹80",
+    "4",
+    "Priya"
+   ],
+   [
+    "W3",
+    "₹1,300",
+    "₹0",
+    "1",
+    "?"
+   ],
+   [
+    "W4",
+    "₹1,250",
+    "₹160",
+    "6",
+    "Sharma ji"
+   ],
+   [
+    "W5",
+    "₹1,180",
+    "₹80",
+    "3",
+    "??"
+   ],
+   [
+    "W6",
+    "₹1,220",
+    "₹80",
+    "9",
+    "Arjun?"
+   ]
+  ],
+  "formula": "=SPLIT(PETROL, 4) − SAMOSA(Sharma ji)"
+ },
+ "appDriverNote": "Priya is driving today",
+ "appSticker": "ARJUN'S DAY OFF",
  "end": {
-  "headline": "Your commute\nisn't a race.",
+  "headline": "Still splitting petrol\non napkins?",
   "tagline": "Community Carpool",
   "button": "Link in bio"
  },
  "captionsBig": [
-  "gone",
-  "forty",
-  "taken",
-  "carpools",
-  "only",
-  "again",
-  "war",
-  "skip",
-  "back",
-  "sixty",
-  "sahyatri",
-  "breakfast"
+  "napkin",
+  "clean",
+  "samosas",
+  "spreadsheet",
+  "error",
+  "thousand",
+  "own",
+  "maths",
+  "rotates",
+  "closes",
+  "guard",
+  "sahyatri"
  ],
  "post": {
-  "title": "3 neighbours fought 40 days for one parking spot 💀",
-  "caption": "Day 1: leave at 8:30. Day 40: leave at 6. The sign said it the whole time 😭 Tag the friend who'd race you for parking.",
+  "title": "Free rides for a year cost him ₹4,000 💀",
+  "caption": "He drives. Sharma ji does the maths. Somehow the driver pays 😭 Tag the friend who still owes you petrol money.",
   "hashtags": [
-   "#shorts",
-   "#animation",
-   "#officelife",
    "#carpool",
-   "#funnyshorts"
+   "#officecommute",
+   "#animation",
+   "#funnyshorts",
+   "#indianoffice"
   ]
- },
- "appSticker": "NO ALARMS"
+ }
 }

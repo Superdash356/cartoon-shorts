@@ -162,11 +162,12 @@ export const AppSequence: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) =>
       {cur.id === "roster" && t > CUE.driver - 0.2 ? (
         <div style={{ position: "absolute", left: 540, top: 380, transform: `translate(-50%, ${(1 - spring({ frame: Math.round((t - CUE.driver + 0.2) * fps), fps, config: { damping: 15, stiffness: 160 } })) * -500}px) scale(2.25)`, transformOrigin: "50% 0%" }}>
           <div style={{ borderRadius: 20, overflow: "hidden", boxShadow: "0 18px 40px rgba(0,0,0,.25)" }}>
-            <NotificationCard {...mock.notifications.driverAssigned} title="Arjun is driving today" body="Morning ride · 08:15 · Honda City" when="Just now" width={360} />
+            <NotificationCard {...mock.notifications.driverAssigned} title={(STORY as unknown as { appDriverNote?: string }).appDriverNote ?? "Arjun is driving today"} body="Morning ride · 08:15 · Honda City" when="Just now" width={360} />
           </div>
         </div>
       ) : null}
       {cur.id === "roster" ? <Sticker text={STORY.appSticker ?? "NO DEBATE"} icon="checkmark-circle" t={t} t0={CUE.driver + 0.25} x={540} y={1520} rot={-5} /> : null}
+      {hasCue("settle") && cur.id === "home" ? <Sticker text="SETTLE COSTS" t={t} t0={CUE0.settle - 0.05} x={540} y={1560} rot={-4} /> : null}
       {hasCue("skip") ? <Sticker text="SKIP TODAY" t={t} t0={CUE0.skip - 0.05} x={600} y={1260} rot={5} /> : null}
       {cur.id === "map" ? <Sticker text="LIVE" icon="navigate" t={t} t0={CUE.live - 0.05} x={760} y={1580} rot={6} /> : null}
     </AbsoluteFill>

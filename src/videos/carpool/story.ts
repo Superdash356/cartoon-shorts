@@ -64,7 +64,9 @@ export type ShotId = "guard" | "hook" | "leave" | "sig1" | "sig2" | "sig5" | "ye
   | "street" | "walk" | "clock" | "gate" | "signal" | "signal2" | "bro"
   // the parking-spot war: three cars racing, one car rushing out at a time, the one shaded bay (canopy + "carpools only"
   // sign) empty / taken by a stranger carpool, Rohan asleep in the lot, three cars at the gate, the pool parking in the bay
-  | "race" | "rushR" | "rushP" | "rushA" | "spot" | "taken" | "strangers" | "sign" | "nap" | "gate3" | "park" | "backseat";
+  | "race" | "rushR" | "rushP" | "rushA" | "spot" | "taken" | "strangers" | "sign" | "nap" | "gate3" | "park" | "backseat"
+  // napkin maths: the open glovebox full of petrol-maths napkins, and the engineer's spreadsheet (2D overlays, Napkins.tsx)
+  | "napkin" | "sheet";
 export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
 /** cut ~3 frames before line L (word k) */
@@ -76,7 +78,7 @@ export const SHOTS: Shot[] = STORY.shots.map((x, i) => {
 SHOTS[SHOTS.length - 1].b = TOTAL;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 /** shots drawn under a full-screen 2D overlay: the 3D layer just needs a soft background */
-export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true };
+export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true };
 
 // ---------------- motion ----------------
 // four neighbours, index i lives in house i; car i is parked in front of house i
@@ -241,7 +243,7 @@ const camAt0 = (id: ShotId, f: number): Cam => {
       const L: V3 = [6, 1.4, -9.2];
       return C(dolly([-16, 2.2, -6.8], L, push(f, a, 0.002)), L, 36, 0);
     }
-    case "chat": case "app": { // soft background behind the overlays
+    case "chat": case "app": case "napkin": case "sheet": { // soft background behind the overlays
       const L: V3 = [0, 3, -12];
       return C(dolly([4, 4, 10], L, push(f, a, 0.001)), L, 50, 0);
     }
@@ -290,7 +292,7 @@ export const dofAt = (id: ShotId): { cInf: number; focus?: V3 } => {
     case "bro": return { cInf: 13 };
     case "signal": return { cInf: 11, focus: [STOP_X - 1.2, 1.3, 0] };
     case "doors": return { cInf: 7, focus: [-7, 1.5, -9] };
-    case "chat": case "app": return { cInf: 22 };
+    case "chat": case "app": case "napkin": case "sheet": return { cInf: 22 };
     case "onecar": return { cInf: 10 };
     case "where": return { cInf: 12, focus: [WAIT_X - 0.1, 1.3, LANE_Z] };
     case "strangers": case "nap": case "backseat": return { cInf: 12 };

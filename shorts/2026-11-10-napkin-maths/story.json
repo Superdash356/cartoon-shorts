@@ -1,8 +1,8 @@
 {
  "title": "The Driver Who Owes His Passenger",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.16,
- "keepGap": 0.28,
+ "tempo": 1.21,
+ "keepGap": 0.24,
  "beats": {
   "theme": "petrol money split on glovebox napkins in a carpool that already works",
   "setting": "inside the carpool car's glovebox, Friday settle-ups",
@@ -257,13 +257,6 @@
    "music": "groove"
   },
   {
-   "id": "park",
-   "at": [
-    20,
-    0
-   ]
-  },
-  {
    "id": "guard",
    "at": [
     20,
@@ -347,6 +340,10 @@
   "check": [
    22,
    0
+  ],
+  "samosa": [
+   20,
+   2
   ]
  },
  "punch": [

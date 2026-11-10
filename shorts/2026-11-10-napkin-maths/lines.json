@@ -1,0 +1,144 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "You'd never pay someone to sit in your car.",
+   "rate": "+14%",
+   "pitch": "-5Hz",
+   "gap": 0.1,
+   "volume": "+10%"
+  },
+  {
+   "text": "This guy owes four thousand rupees for it.",
+   "rate": "+8%",
+   "pitch": "-7Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Rewind one year.",
+   "rate": "+4%",
+   "pitch": "-6Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Arjun drives. Priya, Rohan and Sharma ji ride along.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Petrol gets split every Friday, on whatever's in the glovebox.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week one. One napkin. Rohan owes two hundred. Clean.",
+   "rate": "+30%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month two. Tolls, parking, and Sharma ji's samosas.",
+   "rate": "+30%",
+   "pitch": "+3Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month six. The glovebox physically will not close.",
+   "rate": "+24%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "So Arjun, the engineer, builds a spreadsheet.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Twelve tabs. Colour coded. A formula for samosas.",
+   "rate": "+32%",
+   "pitch": "+4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "One error. Nobody opens it again.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Back to napkins. Except now Sharma ji does the maths.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Which brings us to today.",
+   "rate": "+12%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The final napkin says Arjun owes Sharma ji four thousand.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "For driving him. In Arjun's own car.",
+   "rate": "+6%",
+   "pitch": "-8Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Moral: a carpool survives traffic. It doesn't survive napkin maths.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So the four moved the money into an app.",
+   "rate": "+22%",
+   "pitch": "+4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Every petrol bill goes into settle costs. The app splits it.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "The roster rotates the driving too, so Arjun gets mornings off.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "And the glovebox? It closes now.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Sharma ji still pays in samosas. Now the guard gets one too.",
+   "rate": "+22%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "If your carpool still runs on napkins, Sahyatri does the maths.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Link in bio.",
+   "rate": "+10%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  }
+ ]
+}

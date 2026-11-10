@@ -257,6 +257,24 @@ if "tap" in C:
 if "watch" in C: whoosh(C["watch"] - 0.1, 0.3, 0.3); car_by(C["watch"] + 0.8, -0.3, 0.3, 1.2, 0.25)
 if "four" in C: honk(C["four"] + 0.1, 520, 0.1, 0.35)
 if "everyone" in C: pop(C["everyone"] - 0.15, 1000, 0.4)
+# napkin maths: paper flops for each napkin, a rustling pile on "flood", spreadsheet error buzz, glovebox lid thunk
+def paper(t0, g=0.35):
+    tq = tt(0.16)
+    place(sfx, pan(bp(r.standard_normal(len(tq)), 1500, 7000) * np.exp(-tq / 0.04) * g, 0.1), t0)
+for L, k, _txt in story.get("napkins", []):
+    paper(WL(L, k) - 0.06)
+if "flood" in C:
+    for j in range(12): paper(C["flood"] - 0.05 + 0.05 * j, 0.22)
+if "tabs" in C:
+    for j in range(5): pop(C["tabs"] + 0.1 * j, 900 + 120 * j, 0.25)
+if "error" in C:
+    tq = tt(0.45)
+    place(sfx, np.sign(np.sin(2 * np.pi * 110 * tq)) * np.exp(-tq / 0.25) * 0.18, C["error"] - 0.03)
+if "big" in C: pop(C["big"], 700, 0.4)
+if "shut" in C:
+    tq = tt(0.3)
+    place(sfx, lp(r.standard_normal(len(tq)), 700) * np.exp(-tq / 0.03) * 0.8 + np.sin(2 * np.pi * 75 * tq) * np.exp(-tq / 0.08) * 0.7, C["shut"] + 0.2)
+if "settle" in C: ding(C["settle"])
 for L, k in story.get("punch", []):
     pass
 

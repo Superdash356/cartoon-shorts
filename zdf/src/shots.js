@@ -220,7 +220,7 @@ function palmWatch(man, w, t, y = 1.2) {
   man.aimHand('L', V(-0.35, 0.12, 1), V(0, 1, -0.12));
   man.curl('L', 0.16, 0.2);
   const lp = man.world('L_Hand'), palm = man.palm('L'), along = man.world('L_Finger2').sub(lp).normalize();
-  w.position.copy(lp).addScaledVector(along, 0.05).addScaledVector(palm, 0.014);
+  w.position.copy(lp).addScaledVector(along, 0.06).addScaledVector(palm, 0.016);
   const z = palm.clone(), yv = along.clone().addScaledVector(z, -along.dot(z)).normalize(), x = new THREE.Vector3().crossVectors(yv, z);
   w.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(x, yv, z));
 }
@@ -231,10 +231,10 @@ function scanPose(man, ph, w, t, smile = 0, lookCam = null) {
   man.aimHand('R', V(0.55, 0.0, 0.85), V(0.05, 1, -0.4));
   man.curl('R', 0.14, 0.3);
   const rp = man.world('R_Hand'), rpalm = man.palm('R'), rmid = man.world('R_Finger2').sub(rp).normalize();
-  ph.position.copy(rp).addScaledVector(rmid, 0.085).addScaledVector(rpalm, 0.009);
+  ph.position.copy(rp).addScaledVector(rmid, 0.085).addScaledVector(rpalm, 0.014);
   const zAxis = rpalm.clone(), yAxis = rmid.clone().addScaledVector(zAxis, -rmid.dot(zAxis)).normalize(), xAxis = new THREE.Vector3().crossVectors(yAxis, zAxis);
   ph.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(xAxis, yAxis, zAxis));
-  man.look(lookCam || ph.position, 0.85);
+  man.look(lookCam || ph.position, 0.65);
   man.face({ blink: blink(t), smile, browUp: smile * 0.7, wide: smile * 0.35, cheek: smile * 0.5 });
 }
 const cardHtml = (a, pop) => `<div style="position:absolute;left:70px;right:70px;top:300px;transform:scale(${a * pop});opacity:${Math.min(1, a * 1.5)};background:rgba(10,18,22,.93);border:3px solid #27e0c4;border-radius:30px;padding:26px 20px 24px;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.45)">
@@ -246,7 +246,7 @@ function shotH1({ makeStage }) {
   const scene = makeStage({ shadowSize: 2.2, sunDir: [-2.5, 5, 3.5] });
   const man = makeRealHuman(); scene.add(man.root);
   const ph = phone(); scene.add(ph);
-  const w = watch({ strap: 0.12 }); w.scale.setScalar(WS); scene.add(w);
+  const w = watch({ strap: 0.06 }); w.scale.setScalar(WS); scene.add(w);
   const beam = scanBeam(); scene.add(beam);
   const tl = new THREE.PointLight(0x27e0c4, 0, 0.4); scene.add(tl);
   const c = cam(36);
@@ -266,7 +266,7 @@ function shotH2({ makeStage }, start) {
   const scene = makeStage({ shadowSize: 2.2, sunDir: [-2.5, 5, 3.5] });
   const man = makeRealHuman(); scene.add(man.root);
   const ph = phone(); scene.add(ph);
-  const w = watch({ strap: 0.12 }); w.scale.setScalar(WS); scene.add(w);
+  const w = watch({ strap: 0.06 }); w.scale.setScalar(WS); scene.add(w);
   const c = cam(36); const tV = at(7, 'sixty') - start;
   return { scene, camera: c, update(t) {
     const sm = smooth(range(t, tV, tV + 0.8)) * 0.9;
@@ -281,16 +281,16 @@ function shotH2({ makeStage }, start) {
 function shotI({ makeStage }) {
   const scene = makeStage({ shadowSize: 2.2, sunDir: [-2.5, 5, 3.5] });
   const man = makeRealHuman(); man.root.rotation.y = 0.1; scene.add(man.root);
-  const w = watch({ strap: 0.12 }); w.scale.setScalar(WS); scene.add(w);
+  const w = watch({ strap: 0.06 }); w.scale.setScalar(WS); scene.add(w);
   const c = cam(32);
   return { scene, camera: c, update(t) {
     man.reset(); man.armsDown();
     palmWatch(man, w, t, 1.34);
     w.setSeconds(37 + Math.floor(t * 5) / 5 * 6);
     const k = easeInOut(range(t, 0, 4.5));
-    place(c, [lerp(-0.22, -0.12, k), 1.54, lerp(1.35, 1.12, k)], [0.02, 1.47, 0.2]);
+    place(c, [lerp(-0.26, -0.18, k), 1.6, lerp(1.8, 1.58, k)], [0.02, 1.52, 0.15]);
     const lc = smooth(range(t, 1.7, 2.2));
-    man.look(w.position.clone().lerp(c.position, lc), 0.85); man.face({ blink: blink(t), smile: 0.6 + 0.35 * lc, cheek: 0.6, browUp: 0.3, squint: 0.2 * lc });
+    man.look(w.position.clone().lerp(c.position, lc), lerp(0.6, 0.9, lc)); man.face({ blink: blink(t), smile: 0.6 + 0.35 * lc, cheek: 0.6, browUp: 0.3, squint: 0.2 * lc });
     const a = range(t, 0.1, 0.5);
     return { dof: { focus: c.position.distanceTo(man.world('Head')), aperture: 0.0016, maxblur: 0.007 }, bloom: 0.35,
       overlay: ov(`<span style="font-size:58px;${big}">Scan For Worth</span>`, 90, `opacity:${a}`) + ov('AI estimates · not appraisals', 166, `font-size:22px;font-weight:500;opacity:${a * 0.85};text-shadow:0 2px 8px rgba(0,0,0,.7)`) };

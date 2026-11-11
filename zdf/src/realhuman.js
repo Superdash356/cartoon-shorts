@@ -145,7 +145,8 @@ export function makeRealHuman() {
       fwd.addScaledVector(up0, -fwd.dot(up0)).normalize();
       const want = target.clone().sub(eye).normalize();
       const full = new THREE.Quaternion().setFromUnitVectors(fwd, want);
-      for (const [bn, w] of [[B.Neck, 0.3 * weight], [B.Head, 0.55 * weight]]) { sync(); applyWorld(bn, new THREE.Quaternion().slerp(full, w)); }
+      // head only: on this skeleton the shoulders hang off the neck bone, so turning the neck would move the arms
+      sync(); applyWorld(B.Head, new THREE.Quaternion().slerp(full, 0.8 * weight));
       for (const e of [B.LEye, B.REye]) { sync(); applyWorld(e, new THREE.Quaternion().slerp(full, 0.12 * weight)); }
     },
     lean(x = 0, y = 0, z = 0) { // bend the spine: x forward, y twist, z sideways (radians, world axes of the root)

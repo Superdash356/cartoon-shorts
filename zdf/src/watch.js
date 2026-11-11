@@ -217,7 +217,7 @@ export function watch({ strap = 0 } = {}) {
     }
     straps.push([chain, sy]);
   }
-  g.setStrap = k => { for (const [chain, sy] of straps) chain.forEach((s, i) => { s.rotation.x = sy * k * (i === 0 ? 0.55 : 0.42); }); };
+  g.setStrap = k => { for (const [chain, sy] of straps) chain.forEach((s, i) => { s.rotation.x = -sy * k * (i === 0 ? 0.55 : 0.42); }); };
   g.setStrap(strap);
   const xg = []; // ruby glows that show through the dial
   for (const j of mv.jewels) { const s = glow(0xff1740, 0.34, true); const p = j.position.clone().multiplyScalar(0.96); s.position.set(-p.x, p.y, 0.2); s.material.opacity = 0; s.renderOrder = 9; g.add(s); xg.push(s); }

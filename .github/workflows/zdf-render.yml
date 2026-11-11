@@ -1,0 +1,103 @@
+name: Render 3D explainer (zdf)
+
+# Renders the three.js "3D explainer" short in zdf/ (headless Chrome, software WebGL) in parallel chunks,
+# joins them, adds the voice and publishes the mp4 as a release and on the `renders` branch.
+on:
+  workflow_dispatch:
+    inputs:
+      chunks:
+        description: "Parallel chunks (max 20 on free runners)"
+        default: "20"
+      dpr:
+        description: "1 = 720x1280, 1.5 = 1080x1920"
+        default: "1.5"
+      fps:
+        description: "Frames per second"
+        default: "30"
+      audio:
+        description: "Voice/mix wav in the repo (blank = silent)"
+        default: ""
+      tag:
+        description: "Release tag (blank = zdf-run<n>)"
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: zdf-render-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+      - name: Fetch the person and the lighting map
+        run: bash zdf/fetch-assets.sh
+      - uses: actions/upload-artifact@v4
+        with: { name: zdf-assets, path: zdf/assets, retention-days: 1 }
+      - id: plan
+        run: |
+          node -e '
+            import("./zdf/src/timing.js").then(m => {
+              const fps = Number(process.argv[1]), n = Math.round(m.DURATION * fps), k = Math.max(1, Math.min(20, Number(process.argv[2])));
+              const inc = []; for (let i = 0; i < k; i++) { const a = Math.round(i * n / k), b = Math.round((i + 1) * n / k); if (b > a) inc.push({ idx: String(i).padStart(2, "0"), f0: a, f1: b }); }
+              console.log("matrix=" + JSON.stringify({ include: inc }));
+            })' "${{ inputs.fps }}" "${{ inputs.chunks }}" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+      - run: cd zdf && npm ci && npx playwright install --with-deps chromium
+      - uses: actions/download-artifact@v4
+        with: { name: zdf-assets, path: zdf/assets }
+      - name: Render frames ${{ matrix.f0 }}-${{ matrix.f1 }}
+        run: cd zdf && GL=swiftshader DPR=${{ inputs.dpr }} node render.mjs frames "../chunk_${{ matrix.idx }}.mp4" "${{ inputs.fps }}" "${{ matrix.f0 }}" "${{ matrix.f1 }}"
+      - uses: actions/upload-artifact@v4
+        with: { name: "zdfchunk_${{ matrix.idx }}", path: "chunk_${{ matrix.idx }}.mp4", retention-days: 2 }
+
+  assemble:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { pattern: "zdfchunk_*", path: chunks, merge-multiple: true }
+      - name: Join chunks and add audio
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+          ls chunks/*.mp4 | sort | sed "s#^#file '$PWD/#; s#\$#'#" > list.txt
+          ffmpeg -hide_banner -loglevel error -f concat -safe 0 -i list.txt -c copy video.mp4
+          if [ -n "${{ inputs.audio }}" ] && [ -f "${{ inputs.audio }}" ]; then
+            D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 video.mp4)
+            ffmpeg -hide_banner -loglevel error -i video.mp4 -i "${{ inputs.audio }}" -map 0:v:0 -map 1:a:0 -c:v copy -af "apad,loudnorm=I=-14:TP=-1.5" -c:a aac -b:a 256k -ar 48000 -t "$D" final.mp4
+          else
+            mv video.mp4 final.mp4
+          fi
+          ffprobe -v error -show_entries format=duration:stream=width,height,nb_frames -of compact final.mp4
+      - uses: actions/upload-artifact@v4
+        with: { name: zdf-final, path: final.mp4, retention-days: 30 }
+      - name: Publish as a release and to the renders branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ inputs.tag }}"; [ -z "$TAG" ] && TAG="zdf-run${{ github.run_number }}"
+          gh release create "$TAG" final.mp4 --title "$TAG" --notes "3D explainer (zdf), dpr ${{ inputs.dpr }}" --target "${{ github.sha }}" || gh release upload "$TAG" final.mp4 --clobber
+          mkdir -p /tmp/r && cp final.mp4 "/tmp/r/$TAG.mp4" && cd /tmp/r
+          git init -q -b renders && git config user.name "github-actions" && git config user.email "actions@github.com"
+          git add . && git commit -qm "$TAG"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}" renders

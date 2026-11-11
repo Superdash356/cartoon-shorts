@@ -3,3 +3,5 @@ out/
 public/bridge/kenney/
 *.mp4
 __pycache__/
+zdf/node_modules/
+zdf/assets/

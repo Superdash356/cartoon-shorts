@@ -1,149 +1,148 @@
 {
- "title": "The Driver Who Owes His Passenger",
+ "title": "Two Gates, One Carpool",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.21,
- "keepGap": 0.24,
+ "tempo": 1.16,
+ "keepGap": 0.26,
  "beats": {
-  "theme": "petrol money split on glovebox napkins in a carpool that already works",
-  "setting": "inside the carpool car's glovebox, Friday settle-ups",
-  "conflict": "a year of napkin maths ends with the driver owing his own passenger",
-  "failedAttempt": "a colour-coded spreadsheet that dies on its first #REF error",
-  "twist": "Sharma ji did the napkin maths: Arjun owes him 4,000 for driving him",
-  "lesson": "a carpool survives traffic but not napkin maths",
-  "appAngle": "settle costs splits each petrol bill; roster rotates who drives",
-  "callback": "the glovebox finally closes; Sharma ji's samosas now feed the guard",
-  "ctaLine": "If your carpool still runs on napkins"
+  "theme": "the new neighbour with no ride, two lanes away, in a colony with two gates",
+  "setting": "a top-down colony map: front gate, back gate, and the chai stall between them",
+  "conflict": "driver and passenger wait for each other every morning and never meet",
+  "failedAttempt": "waiting at the wrong gate, then both walking to the other gate and swapping places",
+  "twist": "the colony has two gates and the guard knew from Monday, nobody asked him",
+  "lesson": "'the gate' is not a place",
+  "appAngle": "tap 'I'm at the pickup point' for one agreed spot, then see the driver's car close in on the map",
+  "callback": "now they ask the guard first, and the pickup point is the chai stall, neither gate",
+  "ctaLine": "If 'meet me at the gate' ruined your morning"
  },
  "lines": [
   {
-   "text": "You'd never pay someone to sit in your car.",
+   "text": "You'd never lose a week of mornings to one word.",
    "rate": "+14%",
-   "pitch": "-5Hz",
-   "gap": 0.1,
-   "volume": "+10%"
+   "pitch": "-6Hz",
+   "gap": 0.1
   },
   {
-   "text": "This guy owes four thousand rupees for it.",
-   "rate": "+8%",
+   "text": "These two did.",
+   "rate": "+6%",
    "pitch": "-7Hz",
    "gap": 0.25
   },
   {
-   "text": "Rewind one year.",
-   "rate": "+4%",
-   "pitch": "-6Hz",
-   "gap": 0.18
-  },
-  {
-   "text": "Arjun drives. Priya, Rohan and Sharma ji ride along.",
-   "rate": "+26%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Petrol gets split every Friday, on whatever's in the glovebox.",
+   "text": "Arjun drives to the tech park. Kabir, his new neighbour, works there too. No car.",
    "rate": "+28%",
    "pitch": "+0Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Week one. One napkin. Rohan owes two hundred. Clean.",
-   "rate": "+30%",
-   "pitch": "+2Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "Month two. Tolls, parking, and Sharma ji's samosas.",
-   "rate": "+30%",
-   "pitch": "+3Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "Month six. The glovebox physically will not close.",
-   "rate": "+24%",
-   "pitch": "-3Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "So Arjun, the engineer, builds a spreadsheet.",
-   "rate": "+24%",
-   "pitch": "+0Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "Twelve tabs. Colour coded. A formula for samosas.",
-   "rate": "+32%",
-   "pitch": "+4Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "One error. Nobody opens it again.",
-   "rate": "+16%",
-   "pitch": "-6Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "Back to napkins. Except now Sharma ji does the maths.",
-   "rate": "+24%",
-   "pitch": "+2Hz",
-   "gap": 0.18
-  },
-  {
-   "text": "Which brings us to today.",
-   "rate": "+12%",
-   "pitch": "-4Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "The final napkin says Arjun owes Sharma ji four thousand.",
-   "rate": "+14%",
-   "pitch": "-6Hz",
    "gap": 0.12
   },
   {
-   "text": "For driving him. In Arjun's own car.",
-   "rate": "+6%",
-   "pitch": "-8Hz",
+   "text": "So Arjun texts him. Pick you up at the gate, eight sharp.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday. Arjun waits at the gate. Kabir waits at the gate. Nobody comes.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Tuesday. Twenty minutes each. Still nobody.",
+   "rate": "+24%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Wednesday, they both text, I am literally at the gate.",
+   "rate": "+26%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "And they were both telling the truth.",
+   "rate": "+12%",
+   "pitch": "-5Hz",
    "gap": 0.3
   },
   {
-   "text": "Moral: a carpool survives traffic. It doesn't survive napkin maths.",
-   "rate": "+12%",
+   "text": "This colony has two gates.",
+   "rate": "+4%",
+   "pitch": "-8Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Front gate. Back gate. Two hundred metres apart.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The guard? He figured it out on Monday.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Nobody asked him.",
+   "rate": "+6%",
+   "pitch": "-8Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Thursday, both of them walk over to the other gate.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Different paths. Perfect swap.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Lesson: the gate is not a place.",
+   "rate": "+10%",
    "pitch": "-6Hz",
    "gap": 0.25
   },
   {
-   "text": "So the four moved the money into an app.",
+   "text": "So the pickup moved into an app.",
    "rate": "+22%",
    "pitch": "+4Hz",
    "gap": 0.1
   },
   {
-   "text": "Every petrol bill goes into settle costs. The app splits it.",
-   "rate": "+26%",
+   "text": "Kabir taps, I'm at the pickup point. One spot.",
+   "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.1
   },
   {
-   "text": "The roster rotates the driving too, so Arjun gets mornings off.",
-   "rate": "+26%",
+   "text": "And Arjun's car crawls closer on the map.",
+   "rate": "+24%",
    "pitch": "+2Hz",
    "gap": 0.15
   },
   {
-   "text": "And the glovebox? It closes now.",
-   "rate": "+16%",
-   "pitch": "-3Hz",
+   "text": "Friday. One car. One gate. Zero waiting.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
    "gap": 0.12
   },
   {
-   "text": "Sharma ji still pays in samosas. Now the guard gets one too.",
-   "rate": "+22%",
+   "text": "And the guard? Now they ask him first.",
+   "rate": "+20%",
    "pitch": "+6Hz",
-   "gap": 0.2
+   "gap": 0.15
   },
   {
-   "text": "If your carpool still runs on napkins, Sahyatri does the maths.",
+   "text": "Their pickup point? Neither gate. The chai stall in the middle.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "If meet me at the gate ruined your morning, try Sahyatri.",
    "rate": "+18%",
    "pitch": "-2Hz",
    "gap": 0.1
@@ -157,7 +156,7 @@
  ],
  "shots": [
   {
-   "id": "onecar",
+   "id": "years",
    "at": [
     0,
     0
@@ -165,63 +164,67 @@
    "music": "groove"
   },
   {
-   "id": "sig5",
+   "id": "gates",
    "at": [
     1,
     0
    ]
   },
   {
-   "id": "years",
+   "id": "leave",
    "at": [
     2,
-    0
-   ],
-   "music": "pad"
-  },
-  {
-   "id": "lot",
-   "at": [
-    3,
-    0
-   ],
-   "music": "groove"
-  },
-  {
-   "id": "napkin",
-   "at": [
-    4,
     0
    ]
   },
   {
-   "id": "sheet",
+   "id": "street",
    "at": [
-    8,
+    2,
+    6
+   ]
+  },
+  {
+   "id": "chat",
+   "at": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "gates",
+   "at": [
+    4,
     0
    ],
    "music": "nervous"
   },
   {
-   "id": "napkin",
+   "id": "clock",
    "at": [
-    11,
+    5,
+    0
+   ]
+  },
+  {
+   "id": "gates",
+   "at": [
+    6,
+    0
+   ]
+  },
+  {
+   "id": "guard",
+   "at": [
+    10,
     0
    ],
    "music": "groove"
   },
   {
-   "id": "clock",
+   "id": "gates",
    "at": [
     12,
-    0
-   ],
-   "music": "stop"
-  },
-  {
-   "id": "napkin",
-   "at": [
-    13,
     0
    ]
   },
@@ -230,28 +233,21 @@
    "at": [
     14,
     0
-   ]
-  },
-  {
-   "id": "street",
-   "at": [
-    15,
-    0
    ],
-   "music": "sad"
+   "music": "pad"
   },
   {
    "id": "app",
    "at": [
-    16,
+    15,
     0
    ],
    "music": "lift"
   },
   {
-   "id": "napkin",
+   "id": "onecar",
    "at": [
-    19,
+    18,
     0
    ],
    "music": "groove"
@@ -259,8 +255,15 @@
   {
    "id": "guard",
    "at": [
+    19,
+    0
+   ]
+  },
+  {
+   "id": "gates",
+   "at": [
     20,
-    6
+    0
    ]
   },
   {
@@ -273,278 +276,210 @@
   }
  ],
  "cues": {
-  "outOf": [
-   14,
+  "both": [
+   6,
    4
   ],
-  "flood": [
-   7,
+  "two": [
+   8,
    3
   ],
-  "tabs": [
+  "apart": [
    9,
+   4
+  ],
+  "guardTwist": [
+   11,
    0
   ],
-  "formula": [
-   9,
-   5
+  "swap": [
+   12,
+   4
   ],
-  "error": [
-   10,
-   1
-  ],
-  "big": [
+  "meet": [
    13,
-   8
+   2
   ],
-  "settle": [
-   17,
-   5
+  "outOf": [
+   14,
+   3
   ],
   "roster": [
+   15,
+   5
+  ],
+  "driver": [
+   15,
+   6
+  ],
+  "tap": [
+   16,
+   1
+  ],
+  "ready": [
+   16,
+   7
+  ],
+  "watch": [
+   17,
+   1
+  ],
+  "live": [
+   17,
+   4
+  ],
+  "one": [
    18,
    1
   ],
-  "driver": [
-   18,
-   4
-  ],
-  "tap": [
-   30,
-   0
-  ],
-  "ready": [
-   30,
-   0
-  ],
-  "watch": [
-   30,
-   0
-  ],
-  "live": [
-   30,
-   0
-  ],
-  "shut": [
-   19,
-   4
-  ],
   "guardHappy": [
+   19,
+   3
+  ],
+  "pin": [
    20,
-   11
+   6
   ],
   "name": [
    21,
-   7
+   10
   ],
   "check": [
    22,
    0
-  ],
-  "samosa": [
-   20,
-   2
   ]
  },
  "punch": [
   [
    0,
-   2
+   8
   ],
   [
    1,
-   3
+   2
   ],
   [
-   2,
-   0
-  ],
-  [
-   5,
-   8
-  ],
-  [
-   6,
-   7
-  ],
-  [
-   7,
-   7
-  ],
-  [
-   8,
-   6
-  ],
-  [
-   9,
-   7
-  ],
-  [
-   10,
-   1
-  ],
-  [
-   11,
-   5
-  ],
-  [
-   13,
-   8
-  ],
-  [
-   14,
-   5
-  ],
-  [
-   15,
-   8
-  ],
-  [
-   17,
+   3,
    9
   ],
   [
-   19,
-   4
+   4,
+   11
   ],
   [
-   20,
+   5,
    5
   ],
   [
-   21,
+   6,
+   6
+  ],
+  [
+   7,
+   6
+  ],
+  [
+   8,
+   3
+  ],
+  [
+   9,
+   6
+  ],
+  [
+   11,
+   0
+  ],
+  [
+   13,
+   3
+  ],
+  [
+   14,
+   4
+  ],
+  [
+   16,
    7
+  ],
+  [
+   18,
+   5
+  ],
+  [
+   19,
+   7
+  ],
+  [
+   20,
+   3
+  ],
+  [
+   20,
+   6
   ]
  ],
  "stopMusic": [
   [
-   13,
+   7,
    0,
-   13,
-   8
+   8,
+   4
   ]
  ],
- "napkins": [
-  [
-   5,
-   2,
-   "Rohan → Arjun\n₹200 ✓"
-  ],
-  [
-   6,
-   2,
-   "Toll — Priya?\nParking — Rohan??\nSharma ji:\n2 samosas"
-  ],
-  [
-   11,
-   5,
-   "SHARMA JI'S MATHS\n(petrol ÷ samosa)\n× vibes"
-  ],
-  [
-   13,
-   1,
-   "ARJUN OWES\nSHARMA JI\n₹4,000"
-  ]
- ],
- "sheet": {
-  "title": "carpool_FINAL_v12.xlsx",
-  "tabs": [
-   "Petrol",
-   "Tolls",
-   "Parking",
-   "Samosas",
-   "Samosas (2)",
-   "Who paid",
-   "Who REALLY paid",
-   "Rohan",
-   "Disputes",
-   "Disputes (2)",
-   "Do not edit",
-   "FINAL"
-  ],
-  "cols": [
-   "Week",
-   "Petrol",
-   "Toll",
-   "Samosa",
-   "Owes"
-  ],
-  "rows": [
-   [
-    "W1",
-    "₹1,200",
-    "₹80",
-    "2",
-    "Rohan"
-   ],
-   [
-    "W2",
-    "₹1,150",
-    "₹80",
-    "4",
-    "Priya"
-   ],
-   [
-    "W3",
-    "₹1,300",
-    "₹0",
-    "1",
-    "?"
-   ],
-   [
-    "W4",
-    "₹1,250",
-    "₹160",
-    "6",
-    "Sharma ji"
-   ],
-   [
-    "W5",
-    "₹1,180",
-    "₹80",
-    "3",
-    "??"
-   ],
-   [
-    "W6",
-    "₹1,220",
-    "₹80",
-    "9",
-    "Arjun?"
-   ]
-  ],
-  "formula": "=SPLIT(PETROL, 4) − SAMOSA(Sharma ji)"
- },
- "appDriverNote": "Priya is driving today",
- "appSticker": "ARJUN'S DAY OFF",
  "end": {
-  "headline": "Still splitting petrol\non napkins?",
+  "headline": "Which gate?\nSorted.",
   "tagline": "Community Carpool",
   "button": "Link in bio"
  },
  "captionsBig": [
-  "napkin",
-  "clean",
-  "samosas",
-  "spreadsheet",
-  "error",
-  "thousand",
-  "own",
-  "maths",
-  "rotates",
-  "closes",
-  "guard",
+  "word",
+  "gate",
+  "gates",
+  "truth",
+  "nobody",
+  "swap",
+  "place",
+  "chai",
   "sahyatri"
  ],
  "post": {
-  "title": "Free rides for a year cost him ₹4,000 💀",
-  "caption": "He drives. Sharma ji does the maths. Somehow the driver pays 😭 Tag the friend who still owes you petrol money.",
+  "title": "4 mornings lost to the word \"gate\" 💀",
+  "caption": "Same colony. Same office. Different gates 😭 Tag the friend who says \"I'm at the gate\" and isn't.",
   "hashtags": [
    "#carpool",
-   "#officecommute",
+   "#colonylife",
    "#animation",
    "#funnyshorts",
-   "#indianoffice"
+   "#officecommute"
   ]
- }
+ },
+ "chat": {
+  "title": "Kabir (new neighbour)",
+  "members": "online",
+  "count": 2,
+  "me": "Arjun",
+  "messages": [
+   [
+    "Arjun",
+    "pick you up at the gate, 8 sharp 🚗"
+   ],
+   [
+    "Kabir",
+    "perfect!! see you at the gate 🙏"
+   ]
+  ]
+ },
+ "gates": {
+  "front": "FRONT GATE",
+  "back": "BACK GATE",
+  "a": "ARJUN",
+  "k": "KABIR",
+  "bubble": "I'm literally at the gate",
+  "lost": "where r u??",
+  "pin": "PICKUP POINT",
+  "stall": "CHAI"
+ },
+ "appSticker": "ONE SPOT",
+ "appDriverNote": "Arjun is driving today"
 }

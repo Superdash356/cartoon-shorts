@@ -160,6 +160,8 @@ export function makeRealHuman() {
     },
     world(name) { sync(); return wpos(B[name]); },
     palm(S) { return palmNormal(S); },
+    // the middle of a closed fist (where a gripped strap or handle sits)
+    grip(S) { const pn = palmNormal(S); return wpos(B[S + '_Hand']).lerp(wpos(B[S + '_Finger2']), 0.75).addScaledVector(pn, 0.022); },
     // the point between thumb tip and index tip (where a pinched object sits)
     pinch(S) { sync(); return wpos(B[S + '_Finger02']).lerp(wpos(B[S + '_Finger12']), 0.5); },
   };

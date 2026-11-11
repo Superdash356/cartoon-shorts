@@ -199,9 +199,9 @@ export function watch({ strap = 0 } = {}) {
   const hour = mk(0.46, 0.07, 0.125, (10 + 10 / 60) / 12 * TAU), minute = mk(0.7, 0.05, 0.14, 10 / 60 * TAU);
   const sec = new THREE.Group(); { const b = new THREE.Mesh(new THREE.BoxGeometry(0.014, 0.14, 0.01), new THREE.MeshStandardMaterial({ color: 0xb3261e, roughness: 0.4, transparent: true })); b.position.y = 0.05; sec.add(b); sec.position.set(0, -0.37, 0.125); g.add(sec); }
   const cap = zCyl(0.045, 0.05, M.steel, 20); cap.position.z = 0.14; g.add(cap);
-  const glass = new THREE.Mesh(new THREE.SphereGeometry(0.93, 48, 16, 0, TAU, 0, 0.5), M.glass); glass.rotation.x = Math.PI / 2; glass.scale.z = 1; glass.position.z = 0.22 - 0.93 * Math.cos(0.5) * 0.25; glass.scale.set(1, 1, 0.25); glass.renderOrder = 5; g.add(glass);
+  const glass = new THREE.Mesh(new THREE.SphereGeometry(0.93, 48, 16, 0, TAU, 0, 0.5), M.glass); glass.rotation.x = Math.PI / 2; glass.position.z = 0.22 - 0.93 * Math.cos(0.5) * 0.25; glass.scale.set(1, 0.25, 1); glass.renderOrder = 5; g.add(glass);
   const crown = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.14, 24), M.steel); crown.rotation.z = Math.PI / 2; crown.position.set(1.15, 0, 0); g.add(crown);
-  for (const sx of [-1, 1]) for (const sy of [-1, 1]) { const lug = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.5, 0.2), M.steel); lug.position.set(sx * 0.58, sy * 1.1, -0.03); lug.rotation.x = -sy * 0.25; g.add(lug); }
+  for (const sx of [-1, 1]) for (const sy of [-1, 1]) { const lug = new THREE.Mesh(new THREE.CapsuleGeometry(0.075, 0.26, 6, 14), M.steel); lug.position.set(sx * 0.6, sy * 1.04, -0.05); lug.rotation.x = -sy * 0.3; g.add(lug); }
   const back = new THREE.Group(); g.add(back);
   { const d = zCyl(0.93, 0.05, M.steel, 72); d.position.z = -0.2; back.add(d); const rr = new THREE.Mesh(new THREE.TorusGeometry(0.7, 0.012, 8, 64), M.steelRough); rr.position.z = -0.228; back.add(rr);
     for (let k = 0; k < 6; k++) { const n = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.05, 0.02), M.black); n.position.set(Math.cos(k / 6 * TAU) * 0.82, Math.sin(k / 6 * TAU) * 0.82, -0.226); n.rotation.z = k / 6 * TAU + Math.PI / 2; back.add(n); } }

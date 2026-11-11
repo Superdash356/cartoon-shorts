@@ -1,0 +1,656 @@
+[
+ {
+  "word": "Before",
+  "start": 0.04,
+  "end": 0.315,
+  "line": 0
+ },
+ {
+  "word": "you",
+  "start": 0.328,
+  "end": 0.44,
+  "line": 0
+ },
+ {
+  "word": "donate",
+  "start": 0.452,
+  "end": 0.79,
+  "line": 0
+ },
+ {
+  "word": "your",
+  "start": 0.802,
+  "end": 0.927,
+  "line": 0
+ },
+ {
+  "word": "dad's",
+  "start": 0.94,
+  "end": 1.29,
+  "line": 0
+ },
+ {
+  "word": "1990s",
+  "start": 1.302,
+  "end": 2.078,
+  "line": 0
+ },
+ {
+  "word": "camera",
+  "start": 2.09,
+  "end": 2.502,
+  "line": 0
+ },
+ {
+  "word": "look",
+  "start": 2.89,
+  "end": 3.002,
+  "line": 0
+ },
+ {
+  "word": "at",
+  "start": 3.015,
+  "end": 3.065,
+  "line": 0
+ },
+ {
+  "word": "what",
+  "start": 3.078,
+  "end": 3.19,
+  "line": 0
+ },
+ {
+  "word": "happened",
+  "start": 3.203,
+  "end": 3.502,
+  "line": 0
+ },
+ {
+  "word": "to",
+  "start": 3.515,
+  "end": 3.565,
+  "line": 0
+ },
+ {
+  "word": "mine",
+  "start": 3.578,
+  "end": 3.915,
+  "line": 0
+ },
+ {
+  "word": "It",
+  "start": 4.575,
+  "end": 4.638,
+  "line": 1
+ },
+ {
+  "word": "was",
+  "start": 4.65,
+  "end": 4.775,
+  "line": 1
+ },
+ {
+  "word": "sitting",
+  "start": 4.788,
+  "end": 5.038,
+  "line": 1
+ },
+ {
+  "word": "in",
+  "start": 5.05,
+  "end": 5.125,
+  "line": 1
+ },
+ {
+  "word": "a",
+  "start": 5.138,
+  "end": 5.213,
+  "line": 1
+ },
+ {
+  "word": "donate",
+  "start": 5.225,
+  "end": 5.625,
+  "line": 1
+ },
+ {
+  "word": "box",
+  "start": 5.638,
+  "end": 6.15,
+  "line": 1
+ },
+ {
+  "word": "between",
+  "start": 6.313,
+  "end": 6.638,
+  "line": 1
+ },
+ {
+  "word": "a",
+  "start": 6.65,
+  "end": 6.713,
+  "line": 1
+ },
+ {
+  "word": "broken",
+  "start": 6.725,
+  "end": 7.138,
+  "line": 1
+ },
+ {
+  "word": "lamp",
+  "start": 7.15,
+  "end": 7.5,
+  "line": 1
+ },
+ {
+  "word": "and",
+  "start": 7.663,
+  "end": 7.738,
+  "line": 1
+ },
+ {
+  "word": "some",
+  "start": 7.75,
+  "end": 7.925,
+  "line": 1
+ },
+ {
+  "word": "old",
+  "start": 7.938,
+  "end": 8.125,
+  "line": 1
+ },
+ {
+  "word": "cables",
+  "start": 8.137,
+  "end": 8.675,
+  "line": 1
+ },
+ {
+  "word": "Every",
+  "start": 9.285,
+  "end": 9.485,
+  "line": 2
+ },
+ {
+  "word": "summer",
+  "start": 9.497,
+  "end": 9.872,
+  "line": 2
+ },
+ {
+  "word": "he'd",
+  "start": 10.235,
+  "end": 10.372,
+  "line": 2
+ },
+ {
+  "word": "point",
+  "start": 10.385,
+  "end": 10.61,
+  "line": 2
+ },
+ {
+  "word": "it",
+  "start": 10.622,
+  "end": 10.697,
+  "line": 2
+ },
+ {
+  "word": "at",
+  "start": 10.71,
+  "end": 10.822,
+  "line": 2
+ },
+ {
+  "word": "me",
+  "start": 10.835,
+  "end": 11.01,
+  "line": 2
+ },
+ {
+  "word": "And",
+  "start": 11.422,
+  "end": 11.51,
+  "line": 2
+ },
+ {
+  "word": "I'd",
+  "start": 11.522,
+  "end": 11.622,
+  "line": 2
+ },
+ {
+  "word": "hide",
+  "start": 11.635,
+  "end": 11.847,
+  "line": 2
+ },
+ {
+  "word": "my",
+  "start": 11.86,
+  "end": 11.985,
+  "line": 2
+ },
+ {
+  "word": "face",
+  "start": 11.997,
+  "end": 12.535,
+  "line": 2
+ },
+ {
+  "word": "Click",
+  "start": 13.195,
+  "end": 13.47,
+  "line": 3
+ },
+ {
+  "word": "Whirr",
+  "start": 13.882,
+  "end": 14.132,
+  "line": 3
+ },
+ {
+  "word": "Click",
+  "start": 14.545,
+  "end": 14.82,
+  "line": 3
+ },
+ {
+  "word": "Thirty-six",
+  "start": 15.307,
+  "end": 15.832,
+  "line": 3
+ },
+ {
+  "word": "shots",
+  "start": 15.845,
+  "end": 16.158,
+  "line": 3
+ },
+ {
+  "word": "a",
+  "start": 16.17,
+  "end": 16.207,
+  "line": 3
+ },
+ {
+  "word": "roll",
+  "start": 16.22,
+  "end": 16.57,
+  "line": 3
+ },
+ {
+  "word": "and",
+  "start": 16.957,
+  "end": 17.02,
+  "line": 3
+ },
+ {
+  "word": "he",
+  "start": 17.033,
+  "end": 17.12,
+  "line": 3
+ },
+ {
+  "word": "made",
+  "start": 17.133,
+  "end": 17.37,
+  "line": 3
+ },
+ {
+  "word": "every",
+  "start": 17.545,
+  "end": 17.758,
+  "line": 3
+ },
+ {
+  "word": "one",
+  "start": 17.77,
+  "end": 17.983,
+  "line": 3
+ },
+ {
+  "word": "count",
+  "start": 17.995,
+  "end": 18.395,
+  "line": 3
+ },
+ {
+  "word": "Turns",
+  "start": 19.055,
+  "end": 19.293,
+  "line": 4
+ },
+ {
+  "word": "out",
+  "start": 19.305,
+  "end": 19.568,
+  "line": 4
+ },
+ {
+  "word": "film",
+  "start": 19.843,
+  "end": 20.043,
+  "line": 4
+ },
+ {
+  "word": "is",
+  "start": 20.055,
+  "end": 20.168,
+  "line": 4
+ },
+ {
+  "word": "back",
+  "start": 20.18,
+  "end": 20.58,
+  "line": 4
+ },
+ {
+  "word": "Some",
+  "start": 20.993,
+  "end": 21.193,
+  "line": 4
+ },
+ {
+  "word": "cameras",
+  "start": 21.205,
+  "end": 21.58,
+  "line": 4
+ },
+ {
+  "word": "from",
+  "start": 21.593,
+  "end": 21.73,
+  "line": 4
+ },
+ {
+  "word": "the",
+  "start": 21.743,
+  "end": 21.805,
+  "line": 4
+ },
+ {
+  "word": "nineties",
+  "start": 21.818,
+  "end": 22.255,
+  "line": 4
+ },
+ {
+  "word": "now",
+  "start": 22.268,
+  "end": 22.468,
+  "line": 4
+ },
+ {
+  "word": "sell",
+  "start": 22.48,
+  "end": 22.793,
+  "line": 4
+ },
+ {
+  "word": "for",
+  "start": 22.805,
+  "end": 22.955,
+  "line": 4
+ },
+ {
+  "word": "more",
+  "start": 22.968,
+  "end": 23.243,
+  "line": 4
+ },
+ {
+  "word": "than",
+  "start": 23.255,
+  "end": 23.368,
+  "line": 4
+ },
+ {
+  "word": "they",
+  "start": 23.38,
+  "end": 23.505,
+  "line": 4
+ },
+ {
+  "word": "cost",
+  "start": 23.518,
+  "end": 23.88,
+  "line": 4
+ },
+ {
+  "word": "new",
+  "start": 23.893,
+  "end": 24.168,
+  "line": 4
+ },
+ {
+  "word": "So",
+  "start": 24.778,
+  "end": 24.89,
+  "line": 5
+ },
+ {
+  "word": "before",
+  "start": 24.903,
+  "end": 25.19,
+  "line": 5
+ },
+ {
+  "word": "the",
+  "start": 25.203,
+  "end": 25.278,
+  "line": 5
+ },
+ {
+  "word": "box",
+  "start": 25.29,
+  "end": 25.578,
+  "line": 5
+ },
+ {
+  "word": "went",
+  "start": 25.59,
+  "end": 25.765,
+  "line": 5
+ },
+ {
+  "word": "out",
+  "start": 25.778,
+  "end": 26.053,
+  "line": 5
+ },
+ {
+  "word": "I",
+  "start": 26.253,
+  "end": 26.303,
+  "line": 5
+ },
+ {
+  "word": "scanned",
+  "start": 26.315,
+  "end": 26.715,
+  "line": 5
+ },
+ {
+  "word": "it",
+  "start": 26.728,
+  "end": 26.878,
+  "line": 5
+ },
+ {
+  "word": "An",
+  "start": 27.388,
+  "end": 27.475,
+  "line": 6
+ },
+ {
+  "word": "estimated",
+  "start": 27.488,
+  "end": 28.05,
+  "line": 6
+ },
+ {
+  "word": "two",
+  "start": 28.063,
+  "end": 28.288,
+  "line": 6
+ },
+ {
+  "word": "hundred",
+  "start": 28.3,
+  "end": 28.613,
+  "line": 6
+ },
+ {
+  "word": "to",
+  "start": 28.625,
+  "end": 28.725,
+  "line": 6
+ },
+ {
+  "word": "four",
+  "start": 28.738,
+  "end": 29.063,
+  "line": 6
+ },
+ {
+  "word": "hundred",
+  "start": 29.075,
+  "end": 29.338,
+  "line": 6
+ },
+ {
+  "word": "dollars",
+  "start": 29.35,
+  "end": 29.875,
+  "line": 6
+ },
+ {
+  "word": "I",
+  "start": 30.635,
+  "end": 30.685,
+  "line": 7
+ },
+ {
+  "word": "didn't",
+  "start": 30.698,
+  "end": 30.873,
+  "line": 7
+ },
+ {
+  "word": "sell",
+  "start": 30.885,
+  "end": 31.148,
+  "line": 7
+ },
+ {
+  "word": "it",
+  "start": 31.16,
+  "end": 31.285,
+  "line": 7
+ },
+ {
+  "word": "I",
+  "start": 31.698,
+  "end": 31.76,
+  "line": 7
+ },
+ {
+  "word": "bought",
+  "start": 31.773,
+  "end": 31.91,
+  "line": 7
+ },
+ {
+  "word": "a",
+  "start": 31.923,
+  "end": 31.948,
+  "line": 7
+ },
+ {
+  "word": "roll",
+  "start": 31.96,
+  "end": 32.198,
+  "line": 7
+ },
+ {
+  "word": "of",
+  "start": 32.21,
+  "end": 32.298,
+  "line": 7
+ },
+ {
+  "word": "film",
+  "start": 32.31,
+  "end": 32.635,
+  "line": 7
+ },
+ {
+  "word": "I",
+  "start": 33.295,
+  "end": 33.345,
+  "line": 8
+ },
+ {
+  "word": "used",
+  "start": 33.358,
+  "end": 33.595,
+  "line": 8
+ },
+ {
+  "word": "Scan",
+  "start": 33.608,
+  "end": 33.845,
+  "line": 8
+ },
+ {
+  "word": "For",
+  "start": 33.858,
+  "end": 33.995,
+  "line": 8
+ },
+ {
+  "word": "Worth",
+  "start": 34.008,
+  "end": 34.37,
+  "line": 8
+ },
+ {
+  "word": "Check",
+  "start": 34.783,
+  "end": 34.945,
+  "line": 8
+ },
+ {
+  "word": "the",
+  "start": 34.958,
+  "end": 35.045,
+  "line": 8
+ },
+ {
+  "word": "box",
+  "start": 35.058,
+  "end": 35.383,
+  "line": 8
+ },
+ {
+  "word": "before",
+  "start": 35.395,
+  "end": 35.683,
+  "line": 8
+ },
+ {
+  "word": "it",
+  "start": 35.695,
+  "end": 35.77,
+  "line": 8
+ },
+ {
+  "word": "goes",
+  "start": 35.783,
+  "end": 36.208,
+  "line": 8
+ }
+]

@@ -21,7 +21,7 @@ function mats() {
   if (MATS) return MATS;
   const T = ASSETS.tex;
   MATS = {
-    body: new THREE.MeshStandardMaterial({ map: T.body_color, normalMap: T.body_normal, roughness: 0.78, metalness: 0, envMapIntensity: 0.7 }),
+    body: new THREE.MeshPhysicalMaterial({ map: T.body_color, normalMap: T.body_normal, normalScale: new THREE.Vector2(0.8, 0.8), roughness: 0.6, metalness: 0, sheen: 0.45, sheenColor: new THREE.Color(0xff9a7a), sheenRoughness: 0.45, clearcoat: 0.06, clearcoatRoughness: 0.5, envMapIntensity: 0.6 }),
     head: new THREE.MeshPhysicalMaterial({ map: T.head_color, normalMap: T.head_normal, roughness: 0.52, metalness: 0, sheen: 0.35, sheenColor: new THREE.Color(0xffb9a0), sheenRoughness: 0.5, envMapIntensity: 0.75 }),
     opacity: new THREE.MeshStandardMaterial({ map: T.opacity_color, alphaTest: 0.35, transparent: false, side: THREE.DoubleSide, roughness: 0.6, envMapIntensity: 0.6 }),
   };

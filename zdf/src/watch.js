@@ -56,6 +56,30 @@ function leatherTexture() {
   }, false);
 }
 
+// premium strap texture: rich brown full-grain leather, darker edge paint, cream contrast stitching, holes
+// u runs across the strap (0..1), v along it (1 unit = one case radius)
+function strapTextures() {
+  const r = rng(41), W = 256, H = 2048, c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d');
+  const gr = g.createLinearGradient(0, 0, W, 0); gr.addColorStop(0, '#2a150b'); gr.addColorStop(0.07, '#5b3018'); gr.addColorStop(0.5, '#6e3b1d'); gr.addColorStop(0.93, '#5b3018'); gr.addColorStop(1, '#2a150b');
+  g.fillStyle = gr; g.fillRect(0, 0, W, H);
+  for (let i = 0; i < 9000; i++) { const v = r(); g.fillStyle = `rgba(${v < 0.5 ? '20,8,2' : '160,100,60'},${0.04 + r() * 0.08})`; g.beginPath(); g.arc(r() * W, r() * H, 0.6 + r() * 2.2, 0, TAU); g.fill(); }
+  for (let i = 0; i < 60; i++) { g.strokeStyle = `rgba(30,12,4,${0.08 + r() * 0.1})`; g.lineWidth = 0.7; g.beginPath(); const x = r() * W, y = r() * H; g.moveTo(x, y); g.bezierCurveTo(x + 30, y + 20, x - 20, y + 50, x + (r() - .5) * 60, y + 80); g.stroke(); }
+  // stitching: slanted cream stitches in two rows, with tiny shadows
+  for (const x0 of [W * 0.13, W * 0.87]) for (let y = 6; y < H; y += 26) {
+    g.strokeStyle = 'rgba(0,0,0,.35)'; g.lineWidth = 6; g.beginPath(); g.moveTo(x0 - 2, y + 2); g.lineTo(x0 + 3, y + 17); g.stroke();
+    g.strokeStyle = '#e9d8b4'; g.lineWidth = 4.2; g.lineCap = 'round'; g.beginPath(); g.moveTo(x0 - 3, y); g.lineTo(x0 + 2, y + 15); g.stroke();
+  }
+  const map = new THREE.CanvasTexture(c); map.colorSpace = THREE.SRGBColorSpace; map.wrapS = map.wrapT = THREE.RepeatWrapping; map.anisotropy = 8;
+  // bump: grain plus stitch grooves
+  const b = document.createElement('canvas'); b.width = W; b.height = H; const h = b.getContext('2d');
+  h.fillStyle = '#808080'; h.fillRect(0, 0, W, H);
+  for (let i = 0; i < 16000; i++) { const v = 100 + r() * 70; h.fillStyle = `rgb(${v},${v},${v})`; h.beginPath(); h.arc(r() * W, r() * H, 0.7 + r() * 1.8, 0, TAU); h.fill(); }
+  for (const x0 of [W * 0.13, W * 0.87]) { h.strokeStyle = '#3a3a3a'; h.lineWidth = 9; h.beginPath(); h.moveTo(x0, 0); h.lineTo(x0, H); h.stroke(); for (let y = 6; y < H; y += 26) { h.strokeStyle = '#d8d8d8'; h.lineWidth = 5; h.beginPath(); h.moveTo(x0 - 3, y); h.lineTo(x0 + 2, y + 15); h.stroke(); } }
+  const bump = new THREE.CanvasTexture(b); bump.wrapS = bump.wrapT = THREE.RepeatWrapping;
+  return { map, bump };
+}
+
 // ---------- materials ----------
 let WM = null;
 export function wmat() {
@@ -78,8 +102,9 @@ export function wmat() {
     hand: new THREE.MeshPhysicalMaterial({ color: 0x1b2440, metalness: 1, roughness: 0.25, transparent: true }),
     glass: new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: 0.1, roughness: 0.02, metalness: 0, clearcoat: 1, envMapIntensity: 2.2, depthWrite: false }),
     leather: new THREE.MeshStandardMaterial({ color: 0x4d2c18, roughness: 0.62, bumpMap: lea, bumpScale: 1.4 }),
+    strap: (() => { const T = strapTextures(); return new THREE.MeshPhysicalMaterial({ map: T.map, bumpMap: T.bump, bumpScale: 2.2, roughness: 0.5, clearcoat: 0.35, clearcoatRoughness: 0.42, sheen: 0.4, sheenColor: new THREE.Color(0xc98a5a), sheenRoughness: 0.6, vertexColors: true }); })(),
     black: new THREE.MeshStandardMaterial({ color: 0x17181b, roughness: 0.45, metalness: 0.2 }),
-    bin: new THREE.MeshStandardMaterial({ color: 0x3b4046, roughness: 0.5, metalness: 0.7, side: THREE.DoubleSide }),
+    bin: new THREE.MeshStandardMaterial({ color: 0x7d838b, roughness: 0.42, metalness: 0.35, side: THREE.DoubleSide }),
     paper: new THREE.MeshStandardMaterial({ color: 0xe9e6dd, roughness: 0.95, flatShading: true }),
   };
   return WM;
@@ -185,6 +210,67 @@ export function movement() {
   return shadow(g);
 }
 
+// ---------- leather strap ----------
+// a ribbon swept along a path in the watch's YZ plane: padded (domed) top, rounded edges, tapering width.
+// `curl` 0 = straight (hanging), 1 = bent back as if around a wrist. Each strap starts at the lugs.
+function ribbon(len, w0, w1, th, sy, curl, tipRound = true) {
+  const N = 90, P = 14, pos = [], uv = [], col = [], idx = [];
+  // path
+  const pts = []; let y = sy * 1.04, z = -0.07, a = 0;
+  for (let i = 0; i <= N; i++) {
+    const s = i / N * len; pts.push([y, z, a, s]);
+    const ds = len / N; a = curl * 0.58 * Math.min(s, 3.2) * (s < 0.5 ? s / 0.5 : 1); // starts straight out of the lugs
+    y += sy * Math.cos(a) * ds; z -= Math.sin(a) * ds;
+  }
+  for (let i = 0; i <= N; i++) {
+    const [py, pz, pa, s] = pts[i], k = i / N;
+    let w = w0 + (w1 - w0) * k;
+    if (tipRound && k > 0.93) w *= Math.sqrt(Math.max(0.02, 1 - ((k - 0.93) / 0.07) ** 2));
+    const ny = sy * Math.sin(pa), nz = Math.cos(pa); // strap normal (towards the dial side)
+    for (let j = 0; j < P; j++) {
+      // rounded, domed cross-section: x across, h up the normal
+      const t = j / P * TAU, cx = Math.cos(t), sx = Math.sin(t);
+      const x = Math.sign(cx) * Math.pow(Math.abs(cx), 0.35) * w / 2;
+      const hh = Math.sign(sx) * Math.pow(Math.abs(sx), 0.6) * th / 2 * (sx > 0 ? 1 + 0.35 * (1 - (2 * x / w) ** 2) : 1);
+      pos.push(x, py + ny * hh, pz + nz * hh);
+      uv.push(0.5 + x / w, s * 0.55);
+      const edge = Math.abs(sx) < 0.55 ? 0.55 : 1; // painted edges darker
+      col.push(edge, edge * 0.92, edge * 0.88);
+    }
+  }
+  for (let i = 0; i < N; i++) for (let j = 0; j < P; j++) {
+    const a0 = i * P + j, a1 = i * P + (j + 1) % P, b0 = a0 + P, b1 = a1 + P;
+    idx.push(a0, b0, a1, a1, b0, b1);
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  geo.setIndex(idx); if (sy < 0) geo.index.array.reverse(); geo.computeVertexNormals();
+  const m = new THREE.Mesh(geo, wmat().strap); m.castShadow = m.receiveShadow = true;
+  m.pathAt = s => { const i = Math.min(N, Math.round(s / len * N)); const [py, pz, pa] = pts[i]; return { y: py, z: pz, a: pa }; };
+  return m;
+}
+function leatherStraps(curl) {
+  const M = wmat(), g = new THREE.Group();
+  const top = ribbon(3.1, 1.0, 0.86, 0.13, 1, curl, false); g.add(top);
+  const bot = ribbon(4.4, 1.0, 0.8, 0.13, -1, curl, true); g.add(bot);
+  // spring bars hidden inside the lugs: a rolled leather end at each lug
+  for (const sy of [-1, 1]) { const r = new THREE.Mesh(new THREE.CylinderGeometry(0.085, 0.085, 1.02, 20), M.strap); r.rotation.z = Math.PI / 2; r.position.set(0, sy * 1.04, -0.07); g.add(r); }
+  // buckle at the end of the top strap: a polished steel frame and tongue
+  const e = top.pathAt(3.1);
+  const bk = new THREE.Group(); bk.position.set(0, e.y, e.z); bk.rotation.x = -e.a; g.add(bk);
+  // flat D-shaped frame lying on the strap plane, the arc beyond the strap end
+  const fr = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.05, 16, 48, Math.PI), M.steel); fr.scale.set(1.1, 0.62, 1); fr.position.set(0, -0.02, 0.02); bk.add(fr);
+  const bar = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.1, 16), M.steel); bar.rotation.z = Math.PI / 2; bar.position.set(0, -0.02, 0.02); bk.add(bar);
+  const tongue = new THREE.Mesh(new THREE.CapsuleGeometry(0.032, 0.28, 6, 10), M.steel); tongue.position.set(0, 0.15, 0.06); tongue.rotation.x = -0.12; bk.add(tongue);
+  // keeper loops just before the buckle
+  for (const s0 of [2.55, 2.8]) { const p = top.pathAt(s0); const k = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.035, 8, 40), M.strap); k.scale.set(1.04, 0.16, 1); k.rotation.x = Math.PI / 2 - p.a; k.position.set(0, p.y, p.z); g.add(k); }
+  // holes in the long strap
+  for (let i = 0; i < 6; i++) { const p = bot.pathAt(2.2 + i * 0.32); const hole = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.02, 14), new THREE.MeshStandardMaterial({ color: 0x120804, roughness: 0.9 })); hole.rotation.x = Math.PI / 2 - p.a; hole.position.set(0, p.y + Math.sin(p.a) * -0.066, p.z + Math.cos(p.a) * 0.071); g.add(hole); }
+  return g;
+}
+
 // ---------- the whole watch ----------
 // strap: 0 = hanging straight, 1 = curled as if on a wrist. Time shown is 10:10, seconds hand at `sec`.
 export function watch({ strap = 0 } = {}) {
@@ -203,29 +289,20 @@ export function watch({ strap = 0 } = {}) {
   const crown = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.14, 24), M.steel); crown.rotation.z = Math.PI / 2; crown.position.set(1.15, 0, 0); g.add(crown);
   for (const sx of [-1, 1]) for (const sy of [-1, 1]) { const lug = new THREE.Mesh(new THREE.CapsuleGeometry(0.075, 0.26, 6, 14), M.steel); lug.position.set(sx * 0.6, sy * 1.04, -0.05); lug.rotation.x = -sy * 0.3; g.add(lug); }
   const back = new THREE.Group(); g.add(back);
-  { const d = zCyl(0.93, 0.05, M.steel, 72); d.position.z = -0.2; back.add(d); const rr = new THREE.Mesh(new THREE.TorusGeometry(0.7, 0.012, 8, 64), M.steelRough); rr.position.z = -0.228; back.add(rr);
-    for (let k = 0; k < 6; k++) { const n = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.05, 0.02), M.black); n.position.set(Math.cos(k / 6 * TAU) * 0.82, Math.sin(k / 6 * TAU) * 0.82, -0.226); n.rotation.z = k / 6 * TAU + Math.PI / 2; back.add(n); } }
-  const mv = movement(); mv.scale.setScalar(0.96); mv.rotation.y = Math.PI; mv.position.z = -0.06; g.add(mv);
-  // strap: two chains of leather segments
-  const straps = [];
-  for (const sy of [-1, 1]) {
-    let parent = new THREE.Group(); parent.position.set(0, sy * 1.12, -0.06); g.add(parent); const chain = [];
-    for (let k = 0; k < 7; k++) {
-      const seg = new THREE.Group(); const w = 1.0 - k * 0.035;
-      const b = new THREE.Mesh(new THREE.BoxGeometry(w, 0.42, 0.085), M.leather); b.position.y = sy * 0.2; seg.add(b);
-      parent.add(seg); const nx = new THREE.Group(); nx.position.y = sy * 0.4; seg.add(nx); parent = nx; chain.push(seg);
-    }
-    straps.push([chain, sy]);
-  }
-  g.setStrap = k => { for (const [chain, sy] of straps) chain.forEach((s, i) => { s.rotation.x = -sy * k * (i === 0 ? 0.55 : 0.42); }); };
+  { const d = zCyl(0.93, 0.05, M.steel, 72); d.position.z = -0.25; back.add(d); const rr = new THREE.Mesh(new THREE.TorusGeometry(0.7, 0.012, 8, 64), M.steelRough); rr.position.z = -0.278; back.add(rr);
+    for (let k = 0; k < 6; k++) { const n = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.05, 0.02), M.black); n.position.set(Math.cos(k / 6 * TAU) * 0.82, Math.sin(k / 6 * TAU) * 0.82, -0.276); n.rotation.z = k / 6 * TAU + Math.PI / 2; back.add(n); } }
+  const mv = movement(); mv.scale.set(0.96, 0.96, 0.55); mv.rotation.y = Math.PI; mv.position.z = -0.06; g.add(mv);
+  // strap: two continuous, padded leather ribbons with stitching, a buckle and keepers (see leatherStrap)
+  let strapGrp = null;
+  g.setStrap = k => { if (strapGrp) g.remove(strapGrp); strapGrp = leatherStraps(k); g.add(strapGrp); };
   g.setStrap(strap);
   const xg = []; // ruby glows that show through the dial
   for (const j of mv.jewels) { const s = glow(0xff1740, 0.34, true); const p = j.position.clone().multiplyScalar(0.96); s.position.set(-p.x, p.y, 0.2); s.material.opacity = 0; s.renderOrder = 9; g.add(s); xg.push(s); }
   g.xray = k => {
-    dial.material.opacity = 1 - 0.82 * k; handM.opacity = 1 - 0.7 * k; sec.children[0].material.opacity = 1 - 0.7 * k;
+    dial.material.opacity = 1 - 0.72 * k; handM.opacity = 1 - 0.7 * k; sec.children[0].material.opacity = 1 - 0.7 * k;
     dial.material.depthWrite = k < 0.02;
     mv.rotation.y = k > 0.01 ? 0 : Math.PI; mv.position.z = k > 0.01 ? -0.02 : -0.06;
-    xg.forEach((s, i) => { s.material.opacity = k * (0.5 + 0.2 * Math.sin(i * 1.7)); s.scale.setScalar(0.2 + 0.1 * k); });
+    xg.forEach((s, i) => { s.material.opacity = k * (0.32 + 0.12 * Math.sin(i * 1.7)); s.scale.setScalar(0.18 + 0.06 * k); });
     mv.setGlow(k);
   };
   g.back = back; g.movement = mv; g.sec = sec; g.hour = hour; g.minute = minute;
@@ -311,7 +388,7 @@ export function card(head, value, chips, foot) {
 }
 // a teal scanning sheet (1 x 1, additive)
 export function scanBeam() {
-  const tex = canvasTex(256, (c, S) => { const g = c.createLinearGradient(0, 0, 0, S); g.addColorStop(0, 'rgba(39,224,196,0)'); g.addColorStop(0.46, 'rgba(39,224,196,.35)'); g.addColorStop(0.5, 'rgba(210,255,248,1)'); g.addColorStop(0.54, 'rgba(39,224,196,.35)'); g.addColorStop(1, 'rgba(39,224,196,0)'); c.fillStyle = g; c.fillRect(0, 0, S, S); });
+  const tex = canvasTex(256, (c, S) => { const g = c.createLinearGradient(0, 0, 0, S); g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(0.46, 'rgba(255,255,255,.3)'); g.addColorStop(0.5, 'rgba(255,255,255,1)'); g.addColorStop(0.54, 'rgba(255,255,255,.3)'); g.addColorStop(1, 'rgba(255,255,255,0)'); c.fillStyle = g; c.fillRect(0, 0, S, S); });
   const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: tex, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, depthTest: false, toneMapped: false, side: THREE.DoubleSide }));
   m.renderOrder = 15; return m;
 }

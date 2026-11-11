@@ -24,7 +24,7 @@ const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH 
 const page = await browser.newPage({ viewport: { width: 720, height: 1280 }, deviceScaleFactor: DPR });
 page.on('console', m => { if (m.type() === 'error' || m.type() === 'warning') console.log('[page]', m.text()); });
 page.on('pageerror', e => console.log('[pageerror]', e.message));
-await page.goto(`http://localhost:${port}/index.html?render=1&dpr=${DPR}`);
+await page.goto(`http://localhost:${port}/index.html?render=1&dpr=${DPR}${process.env.Q || ''}`);
 await page.waitForFunction(() => window.renderAt && window.ready, null, { timeout: 180000 });
 await page.evaluate(() => window.ready);
 const shot = () => page.screenshot({ clip: { x: 0, y: 0, width: 720, height: 1280 }, type: 'png' });

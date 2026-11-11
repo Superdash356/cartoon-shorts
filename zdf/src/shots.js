@@ -21,77 +21,115 @@ const big = 'font-weight:700;letter-spacing:-1px;text-shadow:0 4px 18px rgba(0,0
 // Cinematography rule for this engine: the object is the hero and is always the sharp thing in frame. The person is
 // only ever a hand at the frame edge or a soft, out-of-focus figure behind it; never a full, sharp body or face.
 // He grips the strap in a closed fist; the watch hangs below it.
-function dangle(man, wrist, t, { open = 0, lean = 0.35 } = {}) {
+// SYNC: the hand moves first (a slow sway, a small tremor, a lift) and the watch is a real pendulum hung from the
+// fist: its swing and strap twist are simulated from the hand's own acceleration, so the watch only moves because
+// the hand did, a beat later. Everything is integrated from a fixed start, so a frame depends only on t.
+const HANG = 0.084;                                  // fist to watch centre (m)
+function handPath(base, lift = 0, liftAt = 0) {
+  return t => [
+    base.x + 0.011 * Math.sin(0.9 * t) + 0.003 * Math.sin(2.7 * t + 1.1),
+    base.y + 0.005 * Math.sin(1.3 * t + 0.5) + lift * easeInOut(range(t, liftAt, liftAt + 0.7)),
+    base.z + 0.007 * Math.sin(0.7 * t + 2.0) + 0.002 * Math.sin(3.1 * t),
+  ];
+}
+const wristRoll = t => 0.13 * Math.sin(0.9 * t + 0.6) + 0.03 * Math.sin(2.2 * t);
+// damped, driven pendulum (x and z swing) + strap twist; returns the state at time t
+function pendulum(path, t, t0 = -2) {
+  const dt = 1 / 300, g = 9.81, c = 1.6, kT = 14, cT = 1.4;
+  let ax = 0, vx = 0, az = 0, vz = 0, tw = 0, vt = 0;
+  const acc = (tt, i) => (path(tt + dt)[i] - 2 * path(tt)[i] + path(tt - dt)[i]) / (dt * dt);
+  for (let tt = t0; tt < t; tt += dt) {
+    vx += (-(g / HANG) * Math.sin(ax) - c * vx - acc(tt, 0) * Math.cos(ax) / HANG) * dt; ax += vx * dt;
+    vz += (-(g / HANG) * Math.sin(az) - c * vz - acc(tt, 2) * Math.cos(az) / HANG) * dt; az += vz * dt;
+    vt += (-kT * (tw - wristRoll(tt)) - cT * vt) * dt; tw += vt * dt;
+  }
+  return { ax, vx, az, vz, tw, vt };
+}
+function dangle(man, wrist, t, { open = 0, lean = 0.35, roll = wristRoll(t) } = {}) {
   man.reset(); man.armsDown(0.1, 0.2); man.lean(lean, 0, 0);
   man.reach('R', wrist, V(-1, -0.3, -0.7));
-  man.aimHand('R', V(0.1, -0.35, 1), V(0.15, -1, -0.25));
+  const q = new THREE.Quaternion().setFromAxisAngle(V(0, 1, 0), roll);
+  man.aimHand('R', V(0.1, -0.35, 1).applyQuaternion(q), V(0.15, -1, -0.25).applyQuaternion(q));
   man.curl('R', 0.95 - open * 0.85, 0.85 - open * 0.75);
   man.face({ blink: blink(t) });
   return man.grip('R');
 }
-function hangWatch(w, p, t, drop = 0) {
-  const a = Math.sin(t * 2.1) * 0.09;
-  w.position.set(p.x + Math.sin(a) * 0.084, p.y - 0.084 * Math.cos(a) - drop, p.z);
-  w.rotation.set(0, Math.sin(t * 1.3) * 0.18 + 0.12, -a);
+const _qs = new THREE.Quaternion(), _qy = new THREE.Quaternion(), _e = new THREE.Euler();
+function hangWatch(w, grip, st, yaw0 = 0.12) {
+  _qs.setFromEuler(_e.set(-st.az, 0, st.ax));          // swing: +x swing turns about z, +z swing about -x
+  _qy.setFromAxisAngle(V(0, 1, 0), yaw0 + st.tw);       // strap twist follows the wrist roll
+  w.quaternion.copy(_qs).multiply(_qy);
+  w.position.copy(grip).add(V(0, -HANG, 0).applyQuaternion(_qs));
 }
 
-// ===== A1: low by the bin. The watch hangs in focus; he is a blur behind it =====
+// ===== A1: low by the bin, in lamp light. He lifts it; the watch swings from his fist =====
+const A_BASE = V(-0.3, 0.8, 0.52), A_PATH = handPath(A_BASE, 0.018, 0.1);
 function shotA1({ makeStage }) {
-  const scene = makeStage({ shadowSize: 2.2, sunDir: [-2.5, 5, 3.5] });
+  const scene = makeStage({ look: 'lamp', shadowSize: 2.2, sunDir: [-2.2, 4, 3.2], sun: 2.8 });
   const man = makeRealHuman(); man.root.rotation.y = 0.12; scene.add(man.root);
   const b = bin(); b.position.set(-0.3, 0, 0.56); scene.add(b);
   const w = watch(); w.scale.setScalar(WS); scene.add(w);
   const c = cam(40);
   return { scene, camera: c, update(t) {
-    const p = dangle(man, V(-0.3, 0.8, 0.52), t);
-    hangWatch(w, p, t);
-    const wp = V(p.x, p.y - 0.084, p.z);
-    const k = easeInOut(range(t, 0, 2.3)), s = shake(t, 0.4);
-    place(c, [wp.x + lerp(0.2, 0.06, k) + s[0], wp.y + lerp(-0.1, -0.03, k) + s[1], wp.z + lerp(0.62, 0.34, k)], [wp.x, wp.y + lerp(-0.07, -0.03, k), wp.z]);
-    return { dof: { focus: c.position.distanceTo(wp), aperture: 0.02, maxblur: 0.02 }, bloom: 0.35 };
+    const P = A_PATH(t), grip = dangle(man, V(...P), t);
+    hangWatch(w, grip, pendulum(A_PATH, t));
+    const wp = w.position;
+    const k = easeInOut(range(t, 0, 2.3)), s = shake(t, 0.35);
+    place(c, [wp.x + lerp(0.2, 0.06, k) + s[0], wp.y + lerp(-0.1, -0.03, k) + s[1], wp.z + lerp(0.62, 0.34, k)], [wp.x, wp.y + lerp(-0.05, -0.02, k) + 0.03, wp.z]);
+    return { dof: { focus: c.position.distanceTo(wp), aperture: 0.02, maxblur: 0.02 }, bloom: 0.35, exposure: 1.15 };
   } };
 }
-// ===== A2: macro on the dangling watch; the rubies glow through the dial =====
+// ===== A2: macro on the swinging watch; the rubies glow through the dial =====
 function shotA2({ makeStage }, start) {
-  const scene = makeStage({ shadowSize: 2.2, sunDir: [-2.5, 5, 3.5] });
+  const scene = makeStage({ look: 'lamp', shadowSize: 2.2, sunDir: [-2.2, 4, 3.2], sun: 2.8 });
   const man = makeRealHuman(); man.root.rotation.y = 0.12; scene.add(man.root);
   const b = bin(); b.position.set(-0.3, 0, 0.56); scene.add(b);
   const w = watch(); w.scale.setScalar(WS); scene.add(w);
   const light = new THREE.PointLight(0xff2040, 0, 0.5); scene.add(light);
   const c = cam(30); const tR = at(0, 'seventeen') - start;
   return { scene, camera: c, update(t) {
-    const T = t + 2.1;
-    const p = dangle(man, V(-0.3, 0.8, 0.52), T);
-    hangWatch(w, p, T);
+    const T = t + start, P = A_PATH(T), grip = dangle(man, V(...P), T);
+    hangWatch(w, grip, pendulum(A_PATH, T));
     const x = smooth(range(t, tR - 0.15, tR + 0.3));
     w.xray(x); w.movement.update(0);
-    light.position.copy(w.position).add(V(0, 0, 0.04)); light.intensity = x * 0.03;
-    const k = easeOut(range(t, 0, 2.2));
-    const wp = w.position;
+    light.position.copy(w.position).add(V(0, 0, 0.04)); light.intensity = x * 0.015;
+    const k = easeOut(range(t, 0, 2.2)), wp = w.position;
+    // the camera rides with the watch, slightly behind its swing (a handheld operator following it)
     place(c, [wp.x + lerp(0.045, 0.015, k), wp.y - 0.004, wp.z + lerp(0.2, 0.15, k)], [wp.x, wp.y - 0.006, wp.z]);
-    return { dof: { focus: c.position.distanceTo(wp), aperture: 0.02, maxblur: 0.018 }, bloom: 0.35 + x * 0.3 };
+    return { dof: { focus: c.position.distanceTo(wp), aperture: 0.02, maxblur: 0.018 }, bloom: 0.3 + x * 0.15, exposure: 1.15 };
   } };
 }
 // ===== B: from inside the bin, looking up; the watch is sharp, he is soft; he lets go =====
+const B_PATH = handPath(V(-0.02, 0.56, 0.5));
 function shotB({ makeStage }, start) {
-  const scene = makeStage({ shadowSize: 2.2, sunDir: [-2, 6, 2] });
+  const scene = makeStage({ look: 'lamp', shadowSize: 2.2, sunDir: [-1.5, 5, 1.5], sun: 2.6 });
   const man = makeRealHuman(); man.root.position.set(0.05, 0, -0.05); scene.add(man.root);
   const b = bin(true); b.position.set(0, 0, 0.5); scene.add(b);
   const w = watch(); w.scale.setScalar(WS); scene.add(w);
-  const fill = new THREE.PointLight(0xfff0e0, 0.12, 3); fill.position.set(0, 0.2, 0.5); scene.add(fill);
-  const c = cam(50); const tD = at(1, 'scrap') - start;
+  const fill = new THREE.PointLight(0xffd6b0, 0.12, 0.4); fill.position.set(0, 0.12, 0.5); scene.add(fill);
+  // the room's lamp, high behind him: rims his hair and shoulders and catches the bin's lip so we read 'inside the bin'
+  const top = new THREE.SpotLight(0xffc48a, 22, 6, 0.6, 0.7, 1.4); top.position.set(0.7, 2.7, -0.6); top.target.position.set(0, 0.4, 0.5); scene.add(top, top.target);
+  const lip = new THREE.PointLight(0xffd6b0, 0.5, 0.5); lip.position.set(-0.12, 0.33, 0.62); scene.add(lip);
+  const c = cam(66); const tD = at(1, 'scrap') - start;
   return { scene, camera: c, update(t) {
     const fall = Math.max(0, t - tD);
-    const open = smooth(range(t, tD - 0.1, tD + 0.18));
-    const p = dangle(man, V(-0.02, 0.56, 0.5), t, { open, lean: 0.95 });
+    const open = smooth(range(t, tD - 0.08, tD + 0.15));
+    // the hand rises a little once the weight is gone
+    const P = B_PATH(t); P[1] += 0.012 * easeOut(range(t, tD, tD + 0.35));
+    const grip = dangle(man, V(...P), t, { open, lean: 0.95 });
     man.look(V(0, 0.05, 0.5), 0.8);
-    const sw = Math.sin(t * 2.1) * 0.09 * (1 - Math.min(1, fall * 3));
-    const drop = 0.4 * fall * fall;
-    w.position.set(p.x + Math.sin(sw) * 0.084, p.y - 0.084 * Math.cos(sw) - drop, p.z);
-    // it hangs edge-on to the camera, then tumbles face-down as it falls
-    w.rotation.set(lerp(1.0, Math.PI / 2, smooth(range(fall, 0, 0.4))), 0, Math.sin(t * 1.3) * 0.2 + fall * 1.1);
-    c.position.set(Math.sin(t * 0.9) * 0.008, 0.045, 0.5); c.up.set(0, 0, 1); c.lookAt(0.005, 1, 0.53);
-    return { dof: { focus: Math.max(0.1, w.position.y - 0.045), aperture: 0.09, maxblur: 0.03 }, bloom: 0.3, exposure: 1.1 };
+    const tr = Math.min(t, tD), st = pendulum(B_PATH, tr);
+    const g0 = fall > 0 ? dangle(man, V(...B_PATH(tD)), tD) : grip;
+    hangWatch(w, g0, st, 1.0);
+    if (fall > 0) {
+      // released: carry on with the swing velocity it had, fall, and tumble
+      man.reset(); dangle(man, V(...P), t, { open, lean: 0.95 }); man.look(V(0, 0.05, 0.5), 0.8);
+      const v = V(st.vx * HANG, 0, st.vz * HANG);
+      w.position.addScaledVector(v, fall).add(V(0, -4.9 * fall * fall, 0));
+      w.rotateX(smooth(range(fall, 0, 0.45)) * 1.2); w.rotateZ(fall * 2.2 + st.vx * fall * 0.3);
+    }
+    c.position.set(Math.sin(t * 0.9) * 0.006, 0.03, 0.5); c.up.set(0, 0, 1); c.lookAt(0.005, 1, 0.53);
+    return { dof: { focus: Math.max(0.1, w.position.y - 0.045), aperture: 0.09, maxblur: 0.03 }, bloom: 0.3, exposure: 1.45 };
   } };
 }
 // ===== C: the case back comes off: the movement and its rubies =====
@@ -175,7 +213,7 @@ function shotF({ makeStage }, start) {
 }
 // ===== G1: a watchmaker's tweezers set a jewel; it starts again =====
 function shotG1({ makeStage }) {
-  const scene = makeStage({ shadowSize: 4, sunDir: [-3, 6, 3], floorRepeat: 0.55 });
+  const scene = lampStage(makeStage);
   const w = watch({ strap: 0 }); w.rotation.x = Math.PI / 2; w.position.set(0, 0.26, 0); w.back.visible = false; scene.add(w);
   const mv = w.movement; const J = mv.jewels[5]; J.visible = false;
   const tw = tweezers(); scene.add(tw);
@@ -210,54 +248,65 @@ function shotG2({ makeStage }) {
     return { dof: { focus: c.position.z - 0.2, aperture: 0.0009, maxblur: 0.008 }, bloom: 0.5 };
   } };
 }
-// ===== H: the phone's view. The watch on the table, a scan line, then the estimate =====
-const tableWatch = scene => { const w = watch({ strap: 0 }); w.rotation.x = -Math.PI / 2; w.rotation.z = 0.35; w.position.set(0, 0.3, 0); scene.add(w); return w; };
-const corner = (x, y, sx, sy, a) => `<div style="position:absolute;left:${x}px;top:${y}px;width:74px;height:74px;border:6px solid #27e0c4;border-${sx}:none;border-${sy}:none;border-radius:${sx === 'right' ? (sy === 'bottom' ? '18px 0 0 0' : '0 0 0 18px') : (sy === 'bottom' ? '0 18px 0 0' : '0 0 18px 0')};opacity:${a}"></div>`;
-const finder = (a, g = 0) => corner(96 - g, 360 - g, 'right', 'bottom', a) + corner(550 + g, 360 - g, 'left', 'bottom', a) + corner(96 - g, 840 + g, 'right', 'top', a) + corner(550 + g, 840 + g, 'left', 'top', a);
-const cardHtml = (a, pop) => `<div style="position:absolute;left:70px;right:70px;top:120px;transform:scale(${a * pop});opacity:${Math.min(1, a * 1.5)};background:rgba(10,18,22,.93);border:3px solid #27e0c4;border-radius:30px;padding:26px 20px 24px;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.45)">
-  <div style="font-size:26px;font-weight:700;color:#8ff3e3;letter-spacing:1px">ESTIMATED RESALE</div>
-  <div style="font-size:92px;font-weight:700;line-height:1.15">$60 – $150</div>
-  <div style="margin-top:8px"><span style="display:inline-block;background:rgba(39,224,196,.16);border-radius:30px;padding:8px 20px;font-size:23px;font-weight:700;color:#d9fff9;margin:0 5px">Not running</span><span style="display:inline-block;background:rgba(39,224,196,.16);border-radius:30px;padding:8px 20px;font-size:23px;font-weight:700;color:#d9fff9;margin:0 5px">Demand: steady</span></div>
-  <div style="margin-top:14px;font-size:19px;font-weight:700;color:rgba(255,255,255,.6)">AI estimate · not an appraisal</div></div>`;
+// ===== H: the phone's view, on the watchmaker's desk under the same warm lamp as the rest of the film =====
+// Visual language is the film's own: white bold type, gold accents (the watch's gold and the rubies' red), no app UI
+// colours. The price lands as a rolling counter, like the "691,200" shot.
+const GOLD = '#f3c768';
+const deskWatch = (scene, strap = 0.0) => { const w = watch({ strap }); w.rotation.x = -Math.PI / 2; w.rotation.z = 0.35; w.position.set(0, 0.3, 0); scene.add(w); return w; };
+const corner = (x, y, sx, sy, a) => `<div style="position:absolute;left:${x}px;top:${y}px;width:60px;height:60px;border:3px solid rgba(255,244,220,.92);border-${sx}:none;border-${sy}:none;opacity:${a};box-shadow:0 0 12px rgba(243,199,104,.35)"></div>`;
+const finder = (a, g = 0) => corner(110 - g, 380 - g, 'right', 'bottom', a) + corner(550 + g, 380 - g, 'left', 'bottom', a) + corner(110 - g, 840 + g, 'right', 'top', a) + corner(550 + g, 840 + g, 'left', 'top', a);
+const pill = (txt, k) => `<span style="display:inline-block;padding:9px 24px;border:3px solid ${GOLD};color:${GOLD};border-radius:40px;font-size:28px;${big}letter-spacing:1px;transform:scale(${0.7 + 0.3 * easeOut(k)});opacity:${k}">${txt}</span>`;
+function lampStage(makeStage) {
+  const scene = makeStage({ look: 'desk', shadowSize: 3.5, sunDir: [-2.4, 5, 2.2], sun: 2.6, floorRepeat: 1.2 });
+  const pool = new THREE.SpotLight(0xffd29a, 42, 14, 0.42, 0.85, 1.6); pool.position.set(-1.4, 6, 1.8); pool.target.position.set(0, 0.3, 0); pool.castShadow = true; pool.shadow.mapSize.set(2048, 2048); pool.shadow.bias = -0.0003;
+  scene.add(pool, pool.target);
+  return scene;
+}
 function shotH1({ makeStage }) {
-  const scene = makeStage({ shadowSize: 4, sunDir: [-3, 6, 3], floorRepeat: 0.55, sun: 1.3 });
-  const w = tableWatch(scene);
-  const beam = scanBeam(); beam.rotation.x = -Math.PI / 2; beam.scale.set(3.4, 0.9, 1); scene.add(beam);
-  const tl = new THREE.PointLight(0x27e0c4, 0, 3); scene.add(tl);
+  const scene = lampStage(makeStage);
+  const w = deskWatch(scene);
+  const beam = scanBeam(); beam.material.color = new THREE.Color(0xffd27a); beam.rotation.x = -Math.PI / 2; beam.scale.set(3.4, 0.7, 1); scene.add(beam);
+  const tl = new THREE.PointLight(0xffd27a, 0, 3); scene.add(tl);
   const c = cam(30);
   return { scene, camera: c, update(t) {
     const k = easeInOut(range(t, 0, 1.9)), s = shake(t, 1.2);
     place(c, [lerp(0.9, 0.5, k) + s[0] * 4, lerp(8.6, 7.4, k), lerp(4.2, 3.4, k) + s[1] * 4], [0, 0.2, -0.2]);
     const sc = range(t, 0.3, 1.85), z = lerp(-1.6, 1.6, (sc * 2) % 1), on = sc > 0 && sc < 1;
-    beam.visible = on; beam.position.set(0, 0.62, z); tl.position.set(0, 0.9, z); tl.intensity = on ? 0.6 : 0;
+    beam.visible = on; beam.position.set(0, 0.62, z); tl.position.set(0, 0.9, z); tl.intensity = on ? 0.8 : 0;
     const a = range(t, 0.05, 0.3), dots = '.'.repeat(1 + Math.floor(t * 3) % 3);
-    return { dof: { focus: c.position.distanceTo(w.position), aperture: 0.0012, maxblur: 0.008 }, bloom: 0.3, exposure: 0.62,
-      overlay: finder(a, 10 * (1 - easeOut(a))) + ov(`Scanning${dots}`, 250, `font-size:34px;font-weight:700;color:#8ff3e3;opacity:${a};text-shadow:0 2px 10px rgba(0,0,0,.6)`) };
+    return { dof: { focus: c.position.distanceTo(w.position), aperture: 0.0012, maxblur: 0.008 }, bloom: 0.35, exposure: 0.82,
+      overlay: finder(a, 10 * (1 - easeOut(a))) + ov(`SCANNING${dots}`, 300, `font-size:26px;${big}letter-spacing:4px;color:${GOLD};opacity:${a}`) };
   } };
 }
 function shotH2({ makeStage }, start) {
-  const scene = makeStage({ shadowSize: 4, sunDir: [-3, 6, 3], floorRepeat: 0.55, sun: 1.3 });
-  const w = tableWatch(scene);
-  const c = cam(30); const tV = at(7, 'sixty') - start;
+  const scene = lampStage(makeStage);
+  const w = deskWatch(scene);
+  // a glint of light slides across the crystal as the price lands (product-shot move)
+  const glint = new THREE.PointLight(0xfff0d0, 0, 2.5); scene.add(glint);
+  const c = cam(30); const tV = at(7, 'sixty') - start, tF = at(7, 'fifty') - start;
   return { scene, camera: c, update(t) {
     const k = easeOut(range(t, 0, 3.6));
-    place(c, [lerp(0.5, 0.2, k), lerp(7.4, 7.0, k), lerp(3.4, 3.7, k)], [0, 0.2, lerp(-0.2, -1.0, k)]);
-    const a = easeOut(range(t, 0.05, 0.4)), pop = 1 + 0.06 * Math.sin(clamp((t - tV) / 0.3) * Math.PI);
-    return { dof: { focus: c.position.distanceTo(w.position), aperture: 0.0012, maxblur: 0.008 }, bloom: 0.3, exposure: 0.62, overlay: cardHtml(a, pop) };
+    place(c, [lerp(0.6, 0.15, k), lerp(5.2, 4.2, k), lerp(4.0, 3.6, k)], [0, 0.3, lerp(-0.1, -0.5, k)]);
+    const gk = range(t, tV - 0.1, tV + 0.9); glint.position.set(lerp(-1.6, 1.6, gk), 1.1, 0.4); glint.intensity = Math.sin(gk * Math.PI) * 2.2;
+    const lo = Math.round(60 * easeOut(range(t, 0.1, tV))), hi = Math.round(150 * easeOut(range(t, 0.1, tF + 0.1)));
+    const a = range(t, 0.05, 0.35), nr = range(t, tF + 0.2, tF + 0.45);
+    return { dof: { focus: c.position.distanceTo(w.position), aperture: 0.0016, maxblur: 0.009 }, bloom: 0.4, exposure: 0.82,
+      overlay: ov(`<div style="font-size:24px;${big}letter-spacing:5px;color:${GOLD};opacity:${a}">ESTIMATED RESALE</div><div style="font-size:112px;${big}font-variant-numeric:tabular-nums;opacity:${a}">$${lo}–$${hi}</div>`, 110) +
+        ov(pill('NOT RUNNING', nr), 300) + ov('AI estimate · not an appraisal', 372, `font-size:20px;font-weight:600;opacity:${nr * 0.8};text-shadow:0 2px 8px rgba(0,0,0,.8)`) };
   } };
 }
-// ===== I: it stays on the desk, not in the bin =====
+// ===== I: it stays on the desk, ticking again; the camera settles at desk level =====
 function shotI({ makeStage }) {
-  const scene = makeStage({ shadowSize: 4, sunDir: [-4, 5, 2], floorRepeat: 0.55, sun: 1.3 });
-  const w = tableWatch(scene);
-  const warm = new THREE.PointLight(0xffc98a, 5, 12); warm.position.set(-3, 2.5, 2); scene.add(warm);
+  const scene = lampStage(makeStage);
+  const w = deskWatch(scene, 0.75); w.rotation.set(-0.5, 0.35, 0); w.position.set(0, 1.05, 0);
   const c = cam(30);
   return { scene, camera: c, update(t) {
-    const k = easeInOut(range(t, 0, 4.8)), ang = lerp(-0.5, 0.35, k);
-    place(c, [Math.sin(ang) * 5.2, lerp(3.2, 4.2, k), Math.cos(ang) * 5.2], [0, 0.3, 0]);
+    w.setSeconds(37 + Math.floor(t * 5) / 5 * 6);
+    const k = easeInOut(range(t, 0, 4.8)), ang = lerp(-0.45, 0.25, k);
+    place(c, [Math.sin(ang) * lerp(8.2, 7.2, k), lerp(1.7, 1.5, k), Math.cos(ang) * lerp(8.2, 7.2, k)], [0, 2.15, 0]);
     const a = range(t, 0.1, 0.5);
-    return { dof: { focus: c.position.distanceTo(w.position), aperture: 0.003, maxblur: 0.01 }, bloom: 0.3, exposure: 0.66,
-      overlay: ov(`<span style="font-size:58px;${big}">Scan For Worth</span>`, 96, `opacity:${a}`) + ov('AI estimates · not appraisals', 172, `font-size:22px;font-weight:500;opacity:${a * 0.85};text-shadow:0 2px 8px rgba(0,0,0,.7)`) };
+    return { dof: { focus: c.position.distanceTo(w.position), aperture: 0.004, maxblur: 0.012 }, bloom: 0.4, exposure: 0.82,
+      overlay: ov(`<span style="font-size:58px;${big}">Scan For Worth</span>`, 96, `opacity:${a}`) + ov(`<span style="letter-spacing:3px">AI ESTIMATES · NOT APPRAISALS</span>`, 172, `font-size:18px;font-weight:700;color:${GOLD};opacity:${a * 0.9};text-shadow:0 2px 8px rgba(0,0,0,.7)`) };
   } };
 }
 

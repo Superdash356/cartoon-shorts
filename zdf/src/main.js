@@ -66,38 +66,48 @@ const SKIES = {
   blue: [0x2b78d6, 0x5b9fea, 0x92c3f2, 0xa9cdf1],
   dark: [0x05070c, 0x0b1220, 0x16233a, 0x0a0f18],
   warm: [0x6f5a48, 0x9a8068, 0xc9b199, 0x8a745f],
+  lamp: [0x3a2b20, 0x2a2018, 0x221a14, 0x120e0b],
 };
-// look: 'room' (wooden floor, painted wall, window light), 'dark' (macro studio) or 'blue' (open sky)
+// look: 'room' (daylight room), 'lamp' (the same room at night under one warm lamp: low-key, hides CG flaws),
+//       'desk' (dark walnut workbench under the lamp, for table-top macros), 'dark' (macro studio) or 'blue' (open sky)
 export function makeStage({ shadowSize = 3, sunDir = [-3, 6, 4], sun = 2.3, look = 'room', floorY = 0, floorRepeat = 5 } = {}) {
   const scene = new THREE.Scene();
   if (!hdrEnv && ASSETS.hdr) hdrEnv = pmrem.fromEquirectangular(ASSETS.hdr).texture;
   scene.environment = hdrEnv || envTex;
-  scene.environmentIntensity = look === 'dark' ? 0.55 : 0.8;
+  scene.environmentIntensity = { dark: 0.55, lamp: 0.22, desk: 0.3 }[look] ?? 0.8;
   const sky = new THREE.Mesh(new THREE.SphereGeometry(80, 48, 24), skyMaterial());
-  const cols = SKIES[look === 'room' ? 'warm' : look];
+  const cols = SKIES[look === 'room' ? 'warm' : look === 'desk' ? 'lamp' : look];
   ['top', 'mid', 'horizon', 'floorC'].forEach((k, i) => sky.material.uniforms[k].value.set(cols[i]));
   sky.frustumCulled = false; sky.renderOrder = -10;
   scene.add(sky); scene.userData.sky = sky;
-  if (look === 'room') {
+  const lowKey = look === 'lamp' || look === 'desk';
+  if (look === 'room' || look === 'lamp') {
     const wt = plankTexture(); wt.repeat.set(floorRepeat, floorRepeat);
-    const floor = new THREE.Mesh(new THREE.PlaneGeometry(24, 24), new THREE.MeshStandardMaterial({ map: wt, color: 0xffffff, roughness: 0.38, metalness: 0 }));
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(24, 24), new THREE.MeshStandardMaterial({ map: wt, color: look === 'lamp' ? 0x8a6a52 : 0xffffff, roughness: 0.38, metalness: 0 }));
     floor.rotation.x = -Math.PI / 2; floor.position.y = floorY; floor.receiveShadow = true; scene.add(floor);
-    const wallM = new THREE.MeshStandardMaterial({ color: 0xd9d2c4, roughness: 0.95 });
+    const wallM = new THREE.MeshStandardMaterial({ color: look === 'lamp' ? 0x6b5848 : 0xd9d2c4, roughness: 0.95 });
     const wall = new THREE.Mesh(new THREE.PlaneGeometry(24, 6), wallM); wall.position.set(0, 3 + floorY, -3.2); wall.receiveShadow = true; scene.add(wall);
     const wall2 = new THREE.Mesh(new THREE.PlaneGeometry(24, 6), wallM); wall2.position.set(4.5, 3 + floorY, 0); wall2.rotation.y = -Math.PI / 2; wall2.receiveShadow = true; scene.add(wall2);
     const skirt = new THREE.Mesh(new THREE.BoxGeometry(24, 0.11, 0.025), new THREE.MeshStandardMaterial({ color: 0xf2efe8, roughness: 0.6 })); skirt.position.set(0, 0.055 + floorY, -3.19); scene.add(skirt);
+  } else if (look === 'desk') {
+    const wt = plankTexture(9); wt.repeat.set(floorRepeat * 0.3, floorRepeat * 0.1);
+    const desk = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.MeshPhysicalMaterial({ map: wt, color: 0x6a4a32, roughness: 0.55, envMapIntensity: 0.15 }));
+    desk.rotation.x = -Math.PI / 2; desk.position.y = floorY; desk.receiveShadow = true; scene.add(desk);
   } else {
     const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.ShadowMaterial({ color: 0x000814, opacity: look === 'dark' ? 0.5 : 0.32 }));
     ground.rotation.x = -Math.PI / 2; ground.position.y = floorY; ground.receiveShadow = true; scene.add(ground);
   }
-  const hemi = new THREE.HemisphereLight(look === 'room' ? 0xfff1df : 0xcfe4ff, look === 'room' ? 0x8a705a : 0x7f93ad, look === 'dark' ? 0.25 : 0.55); scene.add(hemi);
-  const key = new THREE.DirectionalLight(look === 'room' ? 0xffe9d2 : 0xfff3e6, sun);
+  const hemi = new THREE.HemisphereLight(look === 'room' || lowKey ? 0xfff1df : 0xcfe4ff, look === 'room' || lowKey ? 0x5a4636 : 0x7f93ad, lowKey ? 0.1 : look === 'dark' ? 0.25 : 0.55); scene.add(hemi);
+  const key = new THREE.DirectionalLight(lowKey ? 0xffc48a : look === 'room' ? 0xffe9d2 : 0xfff3e6, sun);
   key.position.set(...sunDir); key.castShadow = true;
   key.shadow.mapSize.set(2048, 2048);
   const c = key.shadow.camera; c.left = c.bottom = -shadowSize; c.right = c.top = shadowSize; c.near = 0.5; c.far = 30;
   key.shadow.bias = -0.0004; key.shadow.normalBias = 0.02; key.shadow.radius = 5;
   scene.add(key, key.target);
-  const rim = new THREE.DirectionalLight(0xdbe9ff, look === 'dark' ? 1.6 : 0.9); rim.position.set(4, 3, -5); scene.add(rim);
+  const rim = new THREE.DirectionalLight(look === 'lamp' ? 0x9fc2ff : look === 'desk' ? 0xffe2c4 : 0xdbe9ff, lowKey ? 2.2 : look === 'dark' ? 1.6 : 0.9); rim.position.set(4, 3, -5); scene.add(rim);
+  if (lowKey) { // a second, warmer kicker from behind-left: separates skin and metal from the dark background
+    const kick = new THREE.DirectionalLight(0xffb070, 1.3); kick.position.set(-5, 2, -4); scene.add(kick);
+  }
   scene.userData.key = key;
   return scene;
 }

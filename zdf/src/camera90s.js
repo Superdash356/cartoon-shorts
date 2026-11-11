@@ -188,6 +188,6 @@ export function phone() {
 export function flatCap() {
   const g = new THREE.Group(), mat = new THREE.MeshStandardMaterial({ color: 0x2c2620, roughness: 0.9 });
   const crown = new THREE.Mesh(new THREE.SphereGeometry(0.105, 32, 16, 0, TAU, 0, Math.PI / 2), mat); crown.scale.set(1, 0.42, 1.12); g.add(crown);
-  const brim = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.08, 0.008, 32, 1, false, -Math.PI / 2, Math.PI), mat); brim.position.set(0, 0.0, 0.1); brim.scale.set(1.25, 1, 0.75); brim.rotation.x = 0.14; g.add(brim);
+  const brim = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.007, 32, 1, false, -Math.PI / 2, Math.PI), mat); brim.position.set(0, -0.004, 0.085); brim.scale.set(1.15, 1, 0.62); brim.rotation.x = 0.18; g.add(brim);
   return shadow(g);
 }

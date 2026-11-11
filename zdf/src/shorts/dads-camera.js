@@ -48,8 +48,14 @@ function beach(makeStage) {
 // people: dark clothes and skin, outlined by the rim shader (a thin line: high power), faces kept in shadow
 function person(rim = 0xffc896, dad = false) {
   const h = makeRealHuman();
+  // drop the hair cards (spiky at this scale) and the lashes; a smooth sculpted hair shape replaces them
+  const hide = new THREE.MeshBasicMaterial({ visible: false });
+  h.mesh.material = h.mesh.material.map(m => (m.alphaTest > 0 ? hide : m));
+  const hair = new THREE.Mesh(new THREE.SphereGeometry(1, 48, 32, 0, Math.PI * 2, 0, Math.PI * 0.62), new THREE.MeshPhysicalMaterial({ color: 0x15110e, roughness: 0.45, sheen: 0.6, sheenColor: new THREE.Color(0x8a7058), sheenRoughness: 0.4 }));
+  hair.scale.set(0.097, 0.09, 0.112); hair.castShadow = true; h.hair = hair;
+  rimify(hair, { color: rim, power: 3.6, strength: 2.0 });
   rimify(h.root, { color: rim, power: 3.6, strength: 2.0, darken: 0.22 });
-  if (dad) { const cap = flatCap(); cap.scale.setScalar(100); cap.position.set(0, 9, 1); cap.rotation.x = -0.1; h.bones.Head.add(cap); rimify(cap, { color: rim, power: 3.6, strength: 2.0, darken: 0.5 }); h.cap = cap; }
+  if (dad) { const cap = flatCap(); rimify(cap, { color: rim, power: 3.6, strength: 2.0, darken: 0.5 }); h.cap = cap; }
   return h;
 }
 function cameraProp(rim, str = 1.4) { const c = camera90s(); rimify(c, { color: rim, power: 2.4, strength: str }); return c; }
@@ -57,6 +63,18 @@ const AMBER_RIM = 0xffc896, BLUE_RIM = 0xd8e6ff;
 const white = k => k > 0.001 ? `<div style="position:absolute;inset:0;background:#fff;opacity:${Math.min(1, k)}"></div>` : '';
 const look = (o = {}) => Object.assign({ bloom: 0.9, exposure: 1.0, vignette: 0.5, grain: 0.03 }, o);
 
+// keep dad's cap on his head: placed each frame from the skull's real up/forward directions (bone axes differ)
+function fitCap(h) {
+  if (h.hair && !h.hair.parent) h.root.parent.add(h.hair);
+  if (h.cap && !h.cap.parent) h.root.parent.add(h.cap);
+  const head = h.world('Head'), neck = h.world('Neck'), nose = h.world('MNose');
+  const up = head.clone().sub(neck).normalize(), fwd = nose.clone().sub(head); fwd.addScaledVector(up, -fwd.dot(up)).normalize();
+  const x = new THREE.Vector3().crossVectors(up, fwd);
+  const q = new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(x, up, fwd));
+  if (h.hair) { h.hair.quaternion.copy(q); h.hair.position.copy(head).addScaledVector(up, 0.082).addScaledVector(fwd, 0.004); }
+  if (h.cap) { h.cap.quaternion.copy(q); h.cap.position.copy(head).addScaledVector(up, CAP_UP).addScaledVector(fwd, CAP_FWD); }
+}
+const CAP_UP = 0.17, CAP_FWD = -0.004;
 // pose: holding the camera in both hands at chest height, looking down at it. p = camera position (world)
 function holdAtChest(h, c, p, yaw = 0) {
   h.reset(); h.armsDown(); h.lean(0.12, 0, 0);
@@ -65,6 +83,7 @@ function holdAtChest(h, c, p, yaw = 0) {
   h.reach('R', p.clone().add(r(V(-0.085, -0.012, -0.03))), r(V(-1, -0.8, -0.3))); h.aimHand('R', r(V(0.35, 0.3, 0.6)), r(V(1, 0, 0))); h.curl('R', 0.55, 0.4);
   h.reach('L', p.clone().add(r(V(0.07, -0.025, -0.03))), r(V(1, -0.8, -0.3))); h.aimHand('L', r(V(-0.3, 0.3, 0.6)), r(V(-1, 0.3, 0))); h.curl('L', 0.5, 0.4);
   h.look(p, 0.9);
+  fitCap(h);
 }
 // pose: camera raised to the right eye (his right = -x), lens forward along the root's +z. k: 0 at chest -> 1 at the eye
 function raiseToEye(h, c, k = 1) {
@@ -77,6 +96,7 @@ function raiseToEye(h, c, k = 1) {
   h.reach('R', p.clone().add(r(V(-0.07, -0.03, -0.03))), r(V(-0.2, -1, 0.5))); h.aimHand('R', r(V(0.1, 0.9, 0.25)), r(V(1, 0, 0.15))); h.curl('R', 0.6, 0.5);
   h.reach('L', p.clone().add(r(V(0.055, -0.05, -0.02))), r(V(0.2, -1, 0.5))); h.aimHand('L', r(V(-0.1, 0.9, 0.3)), r(V(-0.6, 0.6, 0.2))); h.curl('L', 0.45, 0.35);
   h.look(p.clone().add(r(V(0, 0, 3))), 0.6);
+  fitCap(h);
 }
 function desk(scene, y = 0.76) {
   const d = new THREE.Mesh(new THREE.BoxGeometry(3, 0.04, 1.4), new THREE.MeshPhysicalMaterial({ color: 0x3a2618, roughness: 0.35, clearcoat: 0.4, clearcoatRoughness: 0.3 })); d.position.set(0, y - 0.02, 0); d.receiveShadow = true; scene.add(d);

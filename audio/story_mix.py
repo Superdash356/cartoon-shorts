@@ -275,6 +275,16 @@ if "shut" in C:
     tq = tt(0.3)
     place(sfx, lp(r.standard_normal(len(tq)), 700) * np.exp(-tq / 0.03) * 0.8 + np.sin(2 * np.pi * 75 * tq) * np.exp(-tq / 0.08) * 0.7, C["shut"] + 0.2)
 if "settle" in C: ding(C["settle"])
+# two gates: bubbles pop on "both", the reveal stamp on "two", footsteps + a car during "swap", the pin drop on "pin"
+if "both" in C: pop(C["both"] - 0.08, 900, 0.35, -0.3); pop(C["both"] + 0.05, 1100, 0.35, 0.3)
+if "two" in C:
+    tq = tt(0.3)
+    place(sfx, lp(r.standard_normal(len(tq)), 600) * np.exp(-tq / 0.04) * 0.8 + np.sin(2 * np.pi * 70 * tq) * np.exp(-tq / 0.1) * 0.7, C["two"])
+    whoosh(C["two"] - 0.15, 0.4, 0.4)
+if "swap" in C:
+    for j in range(10): step(C["swap"] + 0.1 + 0.2 * j, 0.18)
+    car_by(C["swap"] + 0.9, -0.6, 0.6, 1.6, 0.3)
+if "pin" in C: whoosh(C["pin"] - 0.25, 0.3, 0.3); pop(C["pin"] + 0.1, 650, 0.45)
 for L, k in story.get("punch", []):
     pass
 

@@ -1,0 +1,143 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "You'd never lose a week of mornings to one word.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "These two did.",
+   "rate": "+6%",
+   "pitch": "-7Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Arjun drives to the tech park. Kabir, his new neighbour, works there too. No car.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "So Arjun texts him. Pick you up at the gate, eight sharp.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday. Arjun waits at the gate. Kabir waits at the gate. Nobody comes.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Tuesday. Twenty minutes each. Still nobody.",
+   "rate": "+24%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Wednesday, they both text, I am literally at the gate.",
+   "rate": "+26%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "And they were both telling the truth.",
+   "rate": "+12%",
+   "pitch": "-5Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "This colony has two gates.",
+   "rate": "+4%",
+   "pitch": "-8Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Front gate. Back gate. Two hundred metres apart.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The guard? He figured it out on Monday.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Nobody asked him.",
+   "rate": "+6%",
+   "pitch": "-8Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Thursday, both of them walk over to the other gate.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Different paths. Perfect swap.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Lesson: the gate is not a place.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So the pickup moved into an app.",
+   "rate": "+22%",
+   "pitch": "+4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Kabir taps, I'm at the pickup point. One spot.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "And Arjun's car crawls closer on the map.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Friday. One car. One gate. Zero waiting.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "And the guard? Now they ask him first.",
+   "rate": "+20%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Their pickup point? Neither gate. The chai stall in the middle.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "If meet me at the gate ruined your morning, try Sahyatri.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Link in bio.",
+   "rate": "+10%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  }
+ ]
+}

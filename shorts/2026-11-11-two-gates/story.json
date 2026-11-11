@@ -1,0 +1,485 @@
+{
+ "title": "Two Gates, One Carpool",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.16,
+ "keepGap": 0.26,
+ "beats": {
+  "theme": "the new neighbour with no ride, two lanes away, in a colony with two gates",
+  "setting": "a top-down colony map: front gate, back gate, and the chai stall between them",
+  "conflict": "driver and passenger wait for each other every morning and never meet",
+  "failedAttempt": "waiting at the wrong gate, then both walking to the other gate and swapping places",
+  "twist": "the colony has two gates and the guard knew from Monday, nobody asked him",
+  "lesson": "'the gate' is not a place",
+  "appAngle": "tap 'I'm at the pickup point' for one agreed spot, then see the driver's car close in on the map",
+  "callback": "now they ask the guard first, and the pickup point is the chai stall, neither gate",
+  "ctaLine": "If 'meet me at the gate' ruined your morning"
+ },
+ "lines": [
+  {
+   "text": "You'd never lose a week of mornings to one word.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "These two did.",
+   "rate": "+6%",
+   "pitch": "-7Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Arjun drives to the tech park. Kabir, his new neighbour, works there too. No car.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "So Arjun texts him. Pick you up at the gate, eight sharp.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday. Arjun waits at the gate. Kabir waits at the gate. Nobody comes.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Tuesday. Twenty minutes each. Still nobody.",
+   "rate": "+24%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Wednesday, they both text, I am literally at the gate.",
+   "rate": "+26%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "And they were both telling the truth.",
+   "rate": "+12%",
+   "pitch": "-5Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "This colony has two gates.",
+   "rate": "+4%",
+   "pitch": "-8Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Front gate. Back gate. Two hundred metres apart.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The guard? He figured it out on Monday.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Nobody asked him.",
+   "rate": "+6%",
+   "pitch": "-8Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Thursday, both of them walk over to the other gate.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Different paths. Perfect swap.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Lesson: the gate is not a place.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So the pickup moved into an app.",
+   "rate": "+22%",
+   "pitch": "+4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Kabir taps, I'm at the pickup point. One spot.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "And Arjun's car crawls closer on the map.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Friday. One car. One gate. Zero waiting.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "And the guard? Now they ask him first.",
+   "rate": "+20%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Their pickup point? Neither gate. The chai stall in the middle.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "If meet me at the gate ruined your morning, try Sahyatri.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Link in bio.",
+   "rate": "+10%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  }
+ ],
+ "shots": [
+  {
+   "id": "years",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "gates",
+   "at": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "leave",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "street",
+   "at": [
+    2,
+    6
+   ]
+  },
+  {
+   "id": "chat",
+   "at": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "gates",
+   "at": [
+    4,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "clock",
+   "at": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "gates",
+   "at": [
+    6,
+    0
+   ]
+  },
+  {
+   "id": "guard",
+   "at": [
+    10,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "gates",
+   "at": [
+    12,
+    0
+   ]
+  },
+  {
+   "id": "sig5",
+   "at": [
+    14,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "app",
+   "at": [
+    15,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "onecar",
+   "at": [
+    18,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "guard",
+   "at": [
+    19,
+    0
+   ]
+  },
+  {
+   "id": "gates",
+   "at": [
+    20,
+    0
+   ]
+  },
+  {
+   "id": "end",
+   "at": [
+    21,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {
+  "both": [
+   6,
+   4
+  ],
+  "two": [
+   8,
+   3
+  ],
+  "apart": [
+   9,
+   4
+  ],
+  "guardTwist": [
+   11,
+   0
+  ],
+  "swap": [
+   12,
+   4
+  ],
+  "meet": [
+   13,
+   2
+  ],
+  "outOf": [
+   14,
+   3
+  ],
+  "roster": [
+   15,
+   5
+  ],
+  "driver": [
+   15,
+   6
+  ],
+  "tap": [
+   16,
+   1
+  ],
+  "ready": [
+   16,
+   7
+  ],
+  "watch": [
+   17,
+   1
+  ],
+  "live": [
+   17,
+   4
+  ],
+  "one": [
+   18,
+   1
+  ],
+  "guardHappy": [
+   19,
+   3
+  ],
+  "pin": [
+   20,
+   6
+  ],
+  "name": [
+   21,
+   10
+  ],
+  "check": [
+   22,
+   0
+  ]
+ },
+ "punch": [
+  [
+   0,
+   8
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   3,
+   9
+  ],
+  [
+   4,
+   11
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   6,
+   6
+  ],
+  [
+   7,
+   6
+  ],
+  [
+   8,
+   3
+  ],
+  [
+   9,
+   6
+  ],
+  [
+   11,
+   0
+  ],
+  [
+   13,
+   3
+  ],
+  [
+   14,
+   4
+  ],
+  [
+   16,
+   7
+  ],
+  [
+   18,
+   5
+  ],
+  [
+   19,
+   7
+  ],
+  [
+   20,
+   3
+  ],
+  [
+   20,
+   6
+  ]
+ ],
+ "stopMusic": [
+  [
+   7,
+   0,
+   8,
+   4
+  ]
+ ],
+ "end": {
+  "headline": "Which gate?\nSorted.",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "word",
+  "gate",
+  "gates",
+  "truth",
+  "nobody",
+  "swap",
+  "place",
+  "chai",
+  "sahyatri"
+ ],
+ "post": {
+  "title": "4 mornings lost to the word \"gate\" 💀",
+  "caption": "Same colony. Same office. Different gates 😭 Tag the friend who says \"I'm at the gate\" and isn't.",
+  "hashtags": [
+   "#carpool",
+   "#colonylife",
+   "#animation",
+   "#funnyshorts",
+   "#officecommute"
+  ]
+ },
+ "chat": {
+  "title": "Kabir (new neighbour)",
+  "members": "online",
+  "count": 2,
+  "me": "Arjun",
+  "messages": [
+   [
+    "Arjun",
+    "pick you up at the gate, 8 sharp 🚗"
+   ],
+   [
+    "Kabir",
+    "perfect!! see you at the gate 🙏"
+   ]
+  ]
+ },
+ "gates": {
+  "front": "FRONT GATE",
+  "back": "BACK GATE",
+  "a": "ARJUN",
+  "k": "KABIR",
+  "bubble": "I'm literally at the gate",
+  "lost": "where r u??",
+  "pin": "PICKUP POINT",
+  "stall": "CHAI"
+ },
+ "appSticker": "ONE SPOT",
+ "appDriverNote": "Arjun is driving today"
+}

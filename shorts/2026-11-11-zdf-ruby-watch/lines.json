@@ -1,0 +1,14 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {"text": "If you toss your grandpa's dead watch, you could be tossing seventeen rubies.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.3},
+  {"text": "Some people think a watch that stopped is just scrap metal.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.3},
+  {"text": "But inside, its fastest parts spin on tiny lab-grown rubies.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.25},
+  {"text": "Steel grinding on steel wears out fast. Steel on ruby barely wears at all.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.25},
+  {"text": "That matters, because this little wheel swings up to eight times every second.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.2},
+  {"text": "That's nearly seven hundred thousand swings a day, with no battery.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.3},
+  {"text": "So even a dead one can be repaired, and collectors still want it.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.3},
+  {"text": "So he scanned it first. Estimated resale: sixty to one hundred fifty dollars.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.3},
+  {"text": "I used Scan For Worth. Check the drawer before the trash.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.2}
+ ]
+}

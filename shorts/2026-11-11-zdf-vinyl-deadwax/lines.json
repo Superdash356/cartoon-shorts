@@ -1,0 +1,14 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {"text": "Stop. Before you sell your grandma's records for a dollar, look at this tiny ring.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.35},
+  {"text": "Most people sell old vinyl by the box.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.3},
+  {"text": "But zoom in. Each side is one groove, a spiral a third of a mile long.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.25},
+  {"text": "The needle rides its tiny wiggles, and those wiggles are the music.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.3},
+  {"text": "Past the last song is a smooth band. Collectors call it the dead wax.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.25},
+  {"text": "Those scratched letters were etched in when the record was cut.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.25},
+  {"text": "They help collectors tell which pressing it is, and early pressings can sell for far more.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.3},
+  {"text": "So scan the crate first. This one: an estimated eighty to two hundred dollars.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.3},
+  {"text": "I used Scan For Worth. Check the crate before the yard sale.", "rate": "+0%", "pitch": "+0Hz", "gap": 0.2}
+ ]
+}

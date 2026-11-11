@@ -8,6 +8,7 @@ import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { SHOTS, CAPTIONS, DURATION, FADES } from './shots.js';
 import { ASSETS, loadAssets } from './assets.js';
 import { plankTexture } from './textures.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const W = 720, H = 1280;
 const qs0 = new URLSearchParams(location.search);
@@ -61,7 +62,7 @@ const envScene = new THREE.Scene();
 }
 const envTex = pmrem.fromScene(envScene, 0.02).texture;
 
-let hdrEnv = null;
+let hdrEnv = null, studioEnv = null;
 const SKIES = {
   blue: [0x2b78d6, 0x5b9fea, 0x92c3f2, 0xa9cdf1],
   dark: [0x05070c, 0x0b1220, 0x16233a, 0x0a0f18],
@@ -70,10 +71,12 @@ const SKIES = {
 };
 // look: 'room' (daylight room), 'lamp' (the same room at night under one warm lamp: low-key, hides CG flaws),
 //       'desk' (dark walnut workbench under the lamp, for table-top macros), 'dark' (macro studio) or 'blue' (open sky)
-export function makeStage({ shadowSize = 3, sunDir = [-3, 6, 4], sun = 2.3, look = 'room', floorY = 0, floorRepeat = 5 } = {}) {
+export function makeStage({ shadowSize = 3, sunDir = [-3, 6, 4], sun = 2.3, look = 'room', floorY = 0, floorRepeat = 5, keyColor = null, rimColor = null, env = 'hdr' } = {}) {
   const scene = new THREE.Scene();
   if (!hdrEnv && ASSETS.hdr) hdrEnv = pmrem.fromEquirectangular(ASSETS.hdr).texture;
-  scene.environment = hdrEnv || envTex;
+  // env 'studio': dark room with a few soft boxes - black glossy things (vinyl, lacquer) stay black with crisp highlights
+  if (env === 'studio' && !studioEnv) studioEnv = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  scene.environment = env === 'studio' ? studioEnv : (hdrEnv || envTex);
   scene.environmentIntensity = { dark: 0.55, lamp: 0.22, desk: 0.3 }[look] ?? 0.8;
   const sky = new THREE.Mesh(new THREE.SphereGeometry(80, 48, 24), skyMaterial());
   const cols = SKIES[look === 'room' ? 'warm' : look === 'desk' ? 'lamp' : look];
@@ -83,7 +86,7 @@ export function makeStage({ shadowSize = 3, sunDir = [-3, 6, 4], sun = 2.3, look
   const lowKey = look === 'lamp' || look === 'desk';
   if (look === 'room' || look === 'lamp') {
     const wt = plankTexture(); wt.repeat.set(floorRepeat, floorRepeat);
-    const floor = new THREE.Mesh(new THREE.PlaneGeometry(24, 24), new THREE.MeshStandardMaterial({ map: wt, color: look === 'lamp' ? 0x8a6a52 : 0xffffff, roughness: 0.38, metalness: 0 }));
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(24, 24), new THREE.MeshStandardMaterial({ map: wt, color: look === 'lamp' ? 0x9c8068 : 0xffffff, roughness: 0.38, metalness: 0 }));
     floor.rotation.x = -Math.PI / 2; floor.position.y = floorY; floor.receiveShadow = true; scene.add(floor);
     const wallM = new THREE.MeshStandardMaterial({ color: look === 'lamp' ? 0x6b5848 : 0xd9d2c4, roughness: 0.95 });
     const wall = new THREE.Mesh(new THREE.PlaneGeometry(24, 6), wallM); wall.position.set(0, 3 + floorY, -3.2); wall.receiveShadow = true; scene.add(wall);
@@ -99,12 +102,13 @@ export function makeStage({ shadowSize = 3, sunDir = [-3, 6, 4], sun = 2.3, look
   }
   const hemi = new THREE.HemisphereLight(look === 'room' || lowKey ? 0xfff1df : 0xcfe4ff, look === 'room' || lowKey ? 0x5a4636 : 0x7f93ad, lowKey ? 0.1 : look === 'dark' ? 0.25 : 0.55); scene.add(hemi);
   const key = new THREE.DirectionalLight(lowKey ? 0xffc48a : look === 'room' ? 0xffe9d2 : 0xfff3e6, sun);
+  if (keyColor !== null) key.color.set(keyColor);
   key.position.set(...sunDir); key.castShadow = true;
   key.shadow.mapSize.set(2048, 2048);
   const c = key.shadow.camera; c.left = c.bottom = -shadowSize; c.right = c.top = shadowSize; c.near = 0.5; c.far = 30;
   key.shadow.bias = -0.0004; key.shadow.normalBias = 0.02; key.shadow.radius = 5;
   scene.add(key, key.target);
-  const rim = new THREE.DirectionalLight(look === 'lamp' ? 0x9fc2ff : look === 'desk' ? 0xffe2c4 : 0xdbe9ff, lowKey ? 2.2 : look === 'dark' ? 1.6 : 0.9); rim.position.set(4, 3, -5); scene.add(rim);
+  const rim = new THREE.DirectionalLight(look === 'lamp' ? 0x9fc2ff : look === 'desk' ? 0xffe2c4 : 0xdbe9ff, lowKey ? 2.2 : look === 'dark' ? 1.6 : 0.9); rim.position.set(4, 3, -5); if (rimColor !== null) rim.color.set(rimColor); scene.add(rim);
   if (lowKey) { // a second, warmer kicker from behind-left: separates skin and metal from the dark background
     const kick = new THREE.DirectionalLight(0xffb070, 1.3); kick.position.set(-5, 2, -4); scene.add(kick);
   }

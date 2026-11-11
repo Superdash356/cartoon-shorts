@@ -5,6 +5,8 @@ import { makeRealHuman } from '../realhuman.js';
 import { rimify } from '../rim.js';
 import { camera90s, canister, donateBox, lightTable, phone, flatCap } from '../camera90s.js';
 import { glowTexture } from '../textures.js';
+import { ASSETS } from '../assets.js';
+const ASSETS_HEAD = () => ASSETS.tex.head_color;
 import { lerp, smooth, easeOut, easeIn, easeInOut, range, clamp, V, cam, place, shake } from '../anim.js';
 import { WORDS, LINES, CAPTIONS as CAPS, DURATION } from './dads-camera.timing.js';
 
@@ -40,9 +42,9 @@ function beach(makeStage) {
   scene.environmentIntensity = 0.08;
   scene.traverse(o => { if (o.isHemisphereLight) o.intensity = 0.04; });
   const sky = scene.userData.sky; ['top', 'mid', 'horizon', 'floorC'].forEach((k, i) => sky.material.uniforms[k].value.set([0x0a1020, 0x3a4a6a, 0xf2f4ff, 0x0b0d12][i]));
-  const sea = new THREE.Mesh(new THREE.PlaneGeometry(200, 100), new THREE.MeshPhysicalMaterial({ color: 0x0b0f18, roughness: 0.12, metalness: 0.2, clearcoat: 1 })); sea.rotation.x = -Math.PI / 2; sea.position.set(0, -0.02, -55); scene.add(sea);
+  const sea = new THREE.Mesh(new THREE.PlaneGeometry(200, 100), new THREE.MeshPhysicalMaterial({ color: 0x0b0f18, roughness: 0.4, metalness: 0.1, clearcoat: 0.3, clearcoatRoughness: 0.4 })); sea.rotation.x = -Math.PI / 2; sea.position.set(0, -0.02, -55); scene.add(sea);
   const sand = new THREE.Mesh(new THREE.PlaneGeometry(40, 12), new THREE.MeshStandardMaterial({ color: 0x1a1814, roughness: 1 })); sand.rotation.x = -Math.PI / 2; sand.position.set(0, 0.001, 0); scene.add(sand);
-  const sun = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTexture(), color: 0xffffff, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false, toneMapped: false })); sun.scale.setScalar(7); sun.position.set(-11, 1.3, -40); scene.add(sun);
+  const sun = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTexture(), color: 0xffffff, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false, toneMapped: false })); 
   return scene;
 }
 // people: dark clothes and skin, outlined by the rim shader (a thin line: high power), faces kept in shadow
@@ -53,9 +55,11 @@ function person(rim = 0xffc896, dad = false) {
   h.mesh.material = h.mesh.material.map(m => (m.alphaTest > 0 ? hide : m));
   const hair = new THREE.Mesh(new THREE.SphereGeometry(1, 48, 32, 0, Math.PI * 2, 0, Math.PI * 0.62), new THREE.MeshPhysicalMaterial({ color: 0x15110e, roughness: 0.45, sheen: 0.6, sheenColor: new THREE.Color(0x8a7058), sheenRoughness: 0.4 }));
   hair.scale.set(0.097, 0.09, 0.112); hair.castShadow = true; h.hair = hair;
-  rimify(hair, { color: rim, power: 3.6, strength: 2.0 });
+  h.hair = null;
   rimify(h.root, { color: rim, power: 3.6, strength: 2.0, darken: 0.22 });
-  if (dad) { const cap = flatCap(); rimify(cap, { color: rim, power: 3.6, strength: 2.0, darken: 0.5 }); h.cap = cap; }
+  // the face stays a silhouette: head material darker still, so only its outline catches light
+  h.mesh.material.forEach(m => { if (m.map === ASSETS_HEAD()) { m.color.multiplyScalar(0.12); m.sheen = 0; } });
+  
   return h;
 }
 function cameraProp(rim, str = 1.4) { const c = camera90s(); rimify(c, { color: rim, power: 2.4, strength: str }); return c; }
@@ -93,8 +97,8 @@ function raiseToEye(h, c, k = 1) {
   const chest = h.root.position.clone().add(r(V(0.02, 1.13, 0.3)));
   const p = eye.clone().add(r(V(0.026, -0.02, 0.075))).lerp(chest, 1 - k);
   c.position.copy(p); c.quaternion.copy(rq); c.rotateX(-0.45 * (1 - k));
-  h.reach('R', p.clone().add(r(V(-0.07, -0.03, -0.03))), r(V(-0.2, -1, 0.5))); h.aimHand('R', r(V(0.1, 0.9, 0.25)), r(V(1, 0, 0.15))); h.curl('R', 0.6, 0.5);
-  h.reach('L', p.clone().add(r(V(0.055, -0.05, -0.02))), r(V(0.2, -1, 0.5))); h.aimHand('L', r(V(-0.1, 0.9, 0.3)), r(V(-0.6, 0.6, 0.2))); h.curl('L', 0.45, 0.35);
+  h.reach('R', p.clone().add(r(V(-0.085, -0.035, -0.045))), r(V(-0.25, -1, 0.2))); h.aimHand('R', r(V(0.15, 0.25, 1)), r(V(1, 0, 0))); h.curl('R', 0.55, 0.35);
+  h.reach('L', p.clone().add(r(V(0.02, -0.07, -0.02))), r(V(0.3, -1, 0.1))); h.aimHand('L', r(V(-0.25, 0.1, 1)), r(V(0, 1, 0))); h.curl('L', 0.35, 0.3);
   h.look(p.clone().add(r(V(0, 0, 3))), 0.6);
   fitCap(h);
 }
@@ -134,12 +138,12 @@ function s3({ makeStage }) {
   const scene = nightRoom(makeStage, [[-0.6, 0.9, -1.2], [0.4, 1.1, -1.8], [0.9, 0.7, -0.8]]);
   const b = donateBox(); rimify(b, { color: AMBER_RIM, power: 2.6, strength: 0.6 }); scene.add(b);
   const c = cameraProp(AMBER_RIM, 1.6); c.position.copy(b.top).add(V(0, 0.03, 0)); c.rotation.set(-0.25, -0.4, 0.12); scene.add(c);
-  const front = new THREE.SpotLight(0xffc890, 6, 3, 0.55, 0.9, 1.5); front.position.set(0.5, 1.2, 1.2); front.target.position.set(0, 0.15, 0); scene.add(front, front.target);
-  const inside = new THREE.PointLight(0xffb070, 0.5, 0.6); inside.position.set(0.05, 0.35, 0.05); scene.add(inside);
+  const front = new THREE.SpotLight(0xffc890, 3, 3, 0.55, 0.9, 1.5); front.position.set(0.5, 1.2, 1.2); front.target.position.set(0, 0.15, 0); scene.add(front, front.target);
+  const inside = new THREE.PointLight(0xffb070, 0.15, 0.6); inside.position.set(0.05, 0.35, 0.05); scene.add(inside);
   const cm = cam(32);
   return { scene, camera: cm, update(t) {
     const k = easeInOut(range(t, 0, 4));
-    place(cm, [lerp(0.08, 0.16, k), lerp(0.95, 0.5, k), lerp(0.8, 0.78, k)], [0.03, lerp(0.17, 0.2, k), 0.02]);
+    place(cm, [lerp(0.02, 0.06, k), lerp(0.95, 0.55, k), lerp(0.95, 0.92, k)], [0.02, lerp(0.17, 0.18, k), 0.02]);
     return look({ tone: 'amber', dof: { focus: cm.position.distanceTo(c.position), aperture: 0.006, maxblur: 0.014 } });
   } };
 }
@@ -199,12 +203,12 @@ function s7({ makeStage }) {
   scene.environmentIntensity = 0.1;
   const lt = lightTable(); scene.add(lt);
   for (let i = 0; i < 3; i++) { const cn = canister(); cn.position.set(-0.26 + i * 0.035, 0.024, 0.16 - i * 0.02); cn.rotation.y = i * 0.7; rimify(cn, { color: AMBER_RIM, power: 2.4, strength: 0.6 }); scene.add(cn); }
-  const up = new THREE.PointLight(0xfff0e0, 1.2, 1); up.position.set(0, 0.05, 0); scene.add(up);
+  
   const cm = cam(30);
   return { scene, camera: cm, update(t) {
     const k = easeInOut(range(t, 0, 2.2));
     place(cm, [lerp(-0.32, -0.08, k), lerp(0.16, 0.13, k), lerp(0.42, 0.34, k)], [lerp(-0.18, 0.04, k), 0.0, 0.0]);
-    return look({ tone: 'amber', dof: { focus: cm.position.distanceTo(V(lerp(-0.18, 0.04, k), 0, 0)), aperture: 0.008, maxblur: 0.016 }, bloom: 0.45, exposure: 0.5, gamma: 1.25 });
+    return look({ tone: 'amber', dof: { focus: cm.position.distanceTo(V(lerp(-0.18, 0.04, k), 0, 0)), aperture: 0.008, maxblur: 0.016 }, bloom: 0.45, exposure: 0.85, gamma: 1.1 });
   } };
 }
 // ===== 8. more than they cost new: the camera turns on the desk, lens out, in the bulb light =====
@@ -248,7 +252,7 @@ function s9({ makeStage }, start) {
   const y = desk(scene);
   const c = cameraProp(AMBER_RIM, 1.6); c.position.set(0, y + 0.034, 0); c.rotation.y = 0.35; c.setLens(1); c.setCount(36); scene.add(c);
   // the scan: a thin sheet of white light sweeping over the camera
-  const beam = new THREE.Mesh(new THREE.PlaneGeometry(0.4, 0.003), new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.9, toneMapped: false, depthWrite: false }));
+  const beam = new THREE.Mesh(new THREE.PlaneGeometry(0.15, 0.0015), new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.55, toneMapped: false, depthWrite: false }));
   beam.material.userData.noRim = true; beam.rotation.x = -Math.PI / 2; scene.add(beam);
   const bl = new THREE.PointLight(0xffffff, 0, 0.3); scene.add(bl);
   const cm = cam(32);
@@ -256,7 +260,7 @@ function s9({ makeStage }, start) {
     const s2 = shake(T, 0.8), k = easeOut(range(t, 0, 2));
     place(cm, [s2[0] * 0.01 + 0.02, y + lerp(0.46, 0.38, k) + s2[1] * 0.01, lerp(0.28, 0.22, k)], [0, y + 0.02, 0]);
     const sc = range(t, 0.25, 1.9), z = lerp(-0.07, 0.07, (sc * 2) % 1), on = sc > 0 && sc < 1;
-    beam.visible = on; beam.position.set(0, y + 0.075, z); bl.position.set(0, y + 0.1, z); bl.intensity = on ? 0.12 : 0;
+    beam.visible = on; beam.position.set(0, y + 0.075, z); bl.position.set(0, y + 0.1, z); bl.intensity = 0;
     const a = range(t, 0.05, 0.3), dots = '.'.repeat(1 + Math.floor(t * 3) % 3);
     const corner = (x, yy, sx, sy) => `<div style="position:absolute;left:${x}px;top:${yy}px;width:54px;height:54px;border:2px solid rgba(255,255,255,.9);border-${sx}:none;border-${sy}:none;opacity:${a}"></div>`;
     return look({ tone: 'amber', dof: { focus: cm.position.distanceTo(c.position), aperture: 0.008, maxblur: 0.014 },
@@ -275,7 +279,7 @@ function s10({ makeStage }, start) {
     const lo = Math.round(200 * easeOut(range(t, 0.1, t2 + 0.3))), hi = Math.round(400 * easeOut(range(t, 0.1, t4 + 0.4)));
     ph.draw((x, W, H) => priceScreen(x, W, H, lo, hi, range(t, 0.05, 0.3))); ph.glow.intensity = 1.2;
     const k = easeOut(range(t, 0, 3));
-    place(cm, [lerp(0.1, 0.06, k), y + lerp(0.46, 0.4, k), lerp(0.3, 0.24, k)], [0.0, y, 0.0]);
+    place(cm, [lerp(0.03, 0.02, k), y + lerp(0.82, 0.74, k), lerp(0.26, 0.22, k)], [0.0, y, 0.01]);
     return look({ tone: 'amber', dof: { focus: cm.position.distanceTo(ph.position), aperture: 0.006, maxblur: 0.014 } });
   } };
 }
@@ -289,7 +293,7 @@ function s11({ makeStage }) {
   return { scene, camera: cm, update(t) {
     const off = smooth(range(t, 0.25, 0.6));
     ph.draw((x, W, H) => { priceScreen(x, W, H, 200, 400, 1); x.fillStyle = `rgba(0,0,0,${off})`; x.fillRect(0, 0, W, H); }); ph.glow.intensity = 1.2 * (1 - off);
-    place(cm, [-0.02, y + 0.32, 0.34], [-0.02, y, 0.0]);
+    place(cm, [0.02, y + 0.74, 0.22], [0.0, y, 0.01]);
     return look({ tone: 'amber', dof: { focus: cm.position.distanceTo(c.position), aperture: 0.01, maxblur: 0.016 } });
   } };
 }

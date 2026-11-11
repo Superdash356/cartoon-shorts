@@ -155,7 +155,7 @@ function negatives(seed) {
 }
 export function lightTable() {
   const g = new THREE.Group();
-  const top = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.03, 0.5), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff2e2, emissiveIntensity: 0.4, roughness: 0.4 })); top.position.y = -0.015; g.add(top);
+  const top = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.03, 0.5), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff2e2, emissiveIntensity: 0.22, roughness: 0.4 })); top.position.y = -0.015; g.add(top);
   top.material.userData.noRim = true;
   const frame = new THREE.Mesh(new THREE.BoxGeometry(0.74, 0.04, 0.54), new THREE.MeshStandardMaterial({ color: 0x1a1a1c, roughness: 0.6 })); frame.position.y = -0.024; g.add(frame);
   const strips = [];

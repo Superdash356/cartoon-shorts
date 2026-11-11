@@ -5,7 +5,8 @@ import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
-import { SHOTS, CAPTIONS, DURATION, FADES } from './shots.js';
+import * as SHORT from './shots.js';
+const { SHOTS, CAPTIONS, DURATION, FADES } = SHORT;
 import { ASSETS, loadAssets } from './assets.js';
 import { plankTexture } from './textures.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
@@ -124,14 +125,21 @@ const renderPass = new RenderPass(dummyScene, dummyCam);
 const bokeh = new BokehPass(dummyScene, dummyCam, { focus: 2, aperture: 0.002, maxblur: 0.01 });
 const bloom = new UnrealBloomPass(new THREE.Vector2(W * DPR, H * DPR), 0.25, 0.4, 1.6);
 const grade = new ShaderPass({
-  uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uVig: { value: 0.28 } },
+  uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uVig: { value: 0.28 }, uAmt: { value: 0 }, uGamma: { value: 1 },
+    uT0: { value: new THREE.Color() }, uT1: { value: new THREE.Color() }, uT2: { value: new THREE.Color() }, uT3: { value: new THREE.Color() }, uGrain: { value: 0.018 } },
   vertexShader: `varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
-  fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime, uVig; varying vec2 vUv;
+  fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime, uVig, uAmt, uGamma, uGrain; uniform vec3 uT0, uT1, uT2, uT3; varying vec2 vUv;
     float h(vec2 p){ return fract(sin(dot(p, vec2(12.9898,78.233)) + uTime*7.13) * 43758.5453); }
     void main(){ vec4 c = texture2D(tDiffuse, vUv);
+      // duotone grade: luminance mapped onto a 4-stop ramp (shadow, mid, highlight, peak)
+      if (uAmt > 0.0) {
+        float l = pow(clamp(dot(c.rgb, vec3(0.299, 0.587, 0.114)), 0.0, 1.0), uGamma);
+        vec3 g = l < 0.33 ? mix(uT0, uT1, l / 0.33) : l < 0.7 ? mix(uT1, uT2, (l - 0.33) / 0.37) : mix(uT2, uT3, (l - 0.7) / 0.3);
+        c.rgb = mix(c.rgb, g, uAmt);
+      }
       vec2 q = vUv - 0.5; q.x *= 0.5625;
       c.rgb *= 1.0 - uVig * smoothstep(0.18, 0.62, length(q));
-      c.rgb += (h(vUv*1280.0) - 0.5) * 0.018;
+      c.rgb += (h(vUv*1280.0) - 0.5) * uGrain;
       gl_FragColor = c; }`,
 });
 composer.addPass(renderPass);
@@ -142,6 +150,7 @@ composer.addPass(grade);
 
 // ---------- timeline ----------
 const capEl = document.getElementById('cap');
+if (SHORT.CAP_STYLE) capEl.style.cssText += SHORT.CAP_STYLE;
 const fadeEl = document.getElementById('fade');
 const ovEl = document.getElementById('ov');
 const hud = document.getElementById('hud');
@@ -173,6 +182,14 @@ window.renderAt = (t) => {
   bloom.strength = (r.bloom ?? 0.35) * 0.6;
   renderer.toneMappingExposure = r.exposure ?? 1.0;
   grade.uniforms.uTime.value = t;
+  // tone: a named duotone from SHORT.TONES (e.g. 'amber', 'blue'); toneB + toneMix cross-fade two of them
+  const TN = SHORT.TONES || {};
+  const ta = r.tone && TN[r.tone], tb = r.toneB && TN[r.toneB], tm = r.toneMix ?? 0;
+  grade.uniforms.uAmt.value = ta ? (r.toneAmt ?? 1) : 0;
+  if (ta) ['uT0', 'uT1', 'uT2', 'uT3'].forEach((u, i) => { grade.uniforms[u].value.set(ta[i]); if (tb) grade.uniforms[u].value.lerp(new THREE.Color(tb[i]), tm); });
+  grade.uniforms.uGamma.value = r.gamma ?? 1;
+  grade.uniforms.uVig.value = r.vignette ?? 0.28;
+  grade.uniforms.uGrain.value = r.grain ?? 0.018;
   composer.render();
   if (ovEl.innerHTML !== (r.overlay || '')) ovEl.innerHTML = r.overlay || '';
   // captions + fades

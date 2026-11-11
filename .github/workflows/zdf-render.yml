@@ -43,7 +43,9 @@ jobs:
       - id: plan
         run: |
           node -e '
-            import("./zdf/src/timing.js").then(m => {
+            const fs = require("fs");
+            const slug = fs.readFileSync("zdf/src/shots.js", "utf8").match(/shorts\/([\w-]+)\.js/)[1];
+            import("./zdf/src/shorts/" + slug + ".timing.js").then(m => {
               const fps = Number(process.argv[1]), n = Math.round(m.DURATION * fps), k = Math.max(1, Math.min(20, Number(process.argv[2])));
               const inc = []; for (let i = 0; i < k; i++) { const a = Math.round(i * n / k), b = Math.round((i + 1) * n / k); if (b > a) inc.push({ idx: String(i).padStart(2, "0"), f0: a, f1: b }); }
               console.log("matrix=" + JSON.stringify({ include: inc }));

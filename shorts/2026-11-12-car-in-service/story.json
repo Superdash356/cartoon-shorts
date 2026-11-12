@@ -1,0 +1,491 @@
+{
+ "title": "The Carpool Excuse That Lasted 9 Weeks",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.14,
+ "keepGap": 0.28,
+ "beats": {
+  "theme": "the car that is always 'in service' so its owner never takes his driving turn",
+  "setting": "Rohan's parked hatchback and a paper roster on the colony lift door, narrated by the car",
+  "conflict": "Rohan dodges every Wednesday driving turn with a fresh 'in service' sticky note",
+  "failedAttempt": "a paper roster taped across the lift door that rips in half when the lift opens",
+  "twist": "the car was never broken: Rohan can't drive and bought it for the photos",
+  "lesson": "skipping your turn is fine, faking a breakdown is not",
+  "appAngle": "the non-driver pays his share through settle costs; the confession goes in the pool's group chat",
+  "callback": "the car with the 'emotionally unwell' AC now hosts Rohan's engine-off steering-noise practice",
+  "ctaLine": "If your carpool runs on excuses"
+ },
+ "lines": [
+  {
+   "text": "If your friend's car is always in service, I'm that car.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Rohan's hatchback. Haven't moved in nine weeks.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Four neighbours, one carpool. Arjun tapes a driving roster to the lift door.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday, Arjun. Tuesday, Priya. Wednesday, Rohan.",
+   "rate": "+30%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week one, a sticky note. Car in service.",
+   "rate": "+22%",
+   "pitch": "-2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Week three. In service. Clutch.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Week six. In service. AC emotionally unwell.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "My AC is fine. I'm a car. I don't have feelings.",
+   "rate": "+24%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So every Wednesday, Arjun drives him instead.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Then the lift opens, and the roster rips right through Wednesday.",
+   "rate": "+24%",
+   "pitch": "-2Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "That night, Priya walks past me. Spotless. Full tyres.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "And Rohan finally cracks.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "He can't drive. Never learned. He bought me for the photos.",
+   "rate": "+14%",
+   "pitch": "-8Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Lesson: skipping your turn is fine. Faking a clutch isn't.",
+   "rate": "+18%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So the pool ditched the lift door for an app.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan rides, and pays his share through settle costs.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "The other three take turns behind the wheel.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "He confessed in the pool's group chat.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Sharma ji replied: driving lessons, Sunday, my car.",
+   "rate": "+26%",
+   "pitch": "+8Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Me? Still parked. Every evening, Rohan sits in me, making steering noises.",
+   "rate": "+22%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Calls it practice.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "If your carpool runs on excuses, try Sahyatri.",
+   "rate": "+16%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Link in bio.",
+   "rate": "+12%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  }
+ ],
+ "shots": [
+  {
+   "id": "mycar",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "years",
+   "at": [
+    1,
+    5
+   ]
+  },
+  {
+   "id": "doors",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "lift",
+   "at": [
+    2,
+    4
+   ]
+  },
+  {
+   "id": "mycar",
+   "at": [
+    7,
+    0
+   ]
+  },
+  {
+   "id": "onecar",
+   "at": [
+    8,
+    0
+   ]
+  },
+  {
+   "id": "lift",
+   "at": [
+    9,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "spotted",
+   "at": [
+    10,
+    0
+   ]
+  },
+  {
+   "id": "mycar",
+   "at": [
+    11,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "street",
+   "at": [
+    13,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "app",
+   "at": [
+    14,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "chat",
+   "at": [
+    17,
+    0
+   ]
+  },
+  {
+   "id": "practice",
+   "at": [
+    19,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "end",
+   "at": [
+    21,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {
+  "wed": [
+   3,
+   4
+  ],
+  "split": [
+   9,
+   3
+  ],
+  "spot": [
+   10,
+   6
+  ],
+  "settle": [
+   15,
+   7
+  ],
+  "roster": [
+   16,
+   0
+  ],
+  "driver": [
+   16,
+   3
+  ],
+  "tap": [
+   19,
+   0
+  ],
+  "ready": [
+   19,
+   1
+  ],
+  "watch": [
+   19,
+   5
+  ],
+  "live": [
+   19,
+   6
+  ],
+  "steer": [
+   19,
+   9
+  ]
+ },
+ "punch": [
+  [
+   0,
+   10
+  ],
+  [
+   1,
+   5
+  ],
+  [
+   3,
+   6
+  ],
+  [
+   4,
+   5
+  ],
+  [
+   5,
+   4
+  ],
+  [
+   6,
+   6
+  ],
+  [
+   7,
+   10
+  ],
+  [
+   9,
+   7
+  ],
+  [
+   10,
+   6
+  ],
+  [
+   11,
+   3
+  ],
+  [
+   12,
+   2
+  ],
+  [
+   12,
+   10
+  ],
+  [
+   13,
+   6
+  ],
+  [
+   15,
+   7
+  ],
+  [
+   18,
+   7
+  ],
+  [
+   19,
+   11
+  ],
+  [
+   20,
+   2
+  ]
+ ],
+ "stopMusic": [
+  [
+   11,
+   3,
+   12,
+   3
+  ]
+ ],
+ "end": {
+  "headline": "Carpool running\non excuses?",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "service",
+  "rips",
+  "photos",
+  "practice",
+  "Sahyatri"
+ ],
+ "post": {
+  "title": "The Carpool Excuse That Lasted 9 Weeks",
+  "caption": "Told by the car: Rohan's hatchback was 'in service' every single Wednesday. It never moved. Tag the friend whose car is always at the garage.",
+  "hashtags": [
+   "#carpool",
+   "#animatedstory",
+   "#officecomedy",
+   "#commute",
+   "#Sahyatri"
+  ]
+ },
+ "liftNotes": [
+  [
+   4,
+   5,
+   "car in\nservice"
+  ],
+  [
+   5,
+   2,
+   "in service\n(clutch)"
+  ],
+  [
+   6,
+   2,
+   "in service\nAC unwell"
+  ]
+ ],
+ "liftRoster": {
+  "title": "CARPOOL ROSTER",
+  "rows": [
+   [
+    "MON",
+    "Arjun"
+   ],
+   [
+    "TUE",
+    "Priya"
+   ],
+   [
+    "WED",
+    "Rohan"
+   ],
+   [
+    "THU",
+    "Sharma ji"
+   ],
+   [
+    "FRI",
+    "Arjun"
+   ]
+  ]
+ },
+ "appDriverNote": "Priya is driving today",
+ "appSticker": "TAKING TURNS",
+ "chat": {
+  "title": "Tech Park Pool",
+  "members": "Arjun, Priya, Rohan, Sharma ji",
+  "count": 7,
+  "me": "Rohan",
+  "messages": [
+   [
+    "Rohan",
+    "ok. confession."
+   ],
+   [
+    "Rohan",
+    "car is not in service"
+   ],
+   [
+    "Rohan",
+    "I can't drive"
+   ],
+   [
+    "Priya",
+    "WE KNOW"
+   ],
+   [
+    "Arjun",
+    "bro. emotionally unwell AC??"
+   ],
+   [
+    "Sharma ji",
+    "Driving lessons. Sunday. My car."
+   ],
+   [
+    "Rohan",
+    "...ok"
+   ]
+  ]
+ }
+}

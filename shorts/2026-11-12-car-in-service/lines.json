@@ -1,0 +1,143 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "If your friend's car is always in service, I'm that car.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Rohan's hatchback. Haven't moved in nine weeks.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Four neighbours, one carpool. Arjun tapes a driving roster to the lift door.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday, Arjun. Tuesday, Priya. Wednesday, Rohan.",
+   "rate": "+30%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week one, a sticky note. Car in service.",
+   "rate": "+22%",
+   "pitch": "-2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Week three. In service. Clutch.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Week six. In service. AC emotionally unwell.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "My AC is fine. I'm a car. I don't have feelings.",
+   "rate": "+24%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So every Wednesday, Arjun drives him instead.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Then the lift opens, and the roster rips right through Wednesday.",
+   "rate": "+24%",
+   "pitch": "-2Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "That night, Priya walks past me. Spotless. Full tyres.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "And Rohan finally cracks.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "He can't drive. Never learned. He bought me for the photos.",
+   "rate": "+14%",
+   "pitch": "-8Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Lesson: skipping your turn is fine. Faking a clutch isn't.",
+   "rate": "+18%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So the pool ditched the lift door for an app.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan rides, and pays his share through settle costs.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "The other three take turns behind the wheel.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "He confessed in the pool's group chat.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Sharma ji replied: driving lessons, Sunday, my car.",
+   "rate": "+26%",
+   "pitch": "+8Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Me? Still parked. Every evening, Rohan sits in me, making steering noises.",
+   "rate": "+22%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Calls it practice.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "If your carpool runs on excuses, try Sahyatri.",
+   "rate": "+16%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Link in bio.",
+   "rate": "+12%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  }
+ ]
+}

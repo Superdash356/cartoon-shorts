@@ -68,7 +68,10 @@ export type ShotId = "guard" | "hook" | "leave" | "sig1" | "sig2" | "sig5" | "ye
   // napkin maths: the open glovebox full of petrol-maths napkins, and the engineer's spreadsheet (2D overlays, Napkins.tsx)
   | "napkin" | "sheet"
   // two gates: top-down colony map overlay with a front and a back gate (2D overlay, Gates.tsx)
-  | "gates";
+  | "gates"
+  // car in service: Rohan's parked hatchback close (it narrates), Priya inspecting it, Rohan practising engine-off in it,
+  // and the paper roster on the lift door (2D overlay, Lift.tsx)
+  | "mycar" | "spotted" | "practice" | "lift";
 export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
 /** cut ~3 frames before line L (word k) */
@@ -80,7 +83,7 @@ export const SHOTS: Shot[] = STORY.shots.map((x, i) => {
 SHOTS[SHOTS.length - 1].b = TOTAL;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 /** shots drawn under a full-screen 2D overlay: the 3D layer just needs a soft background */
-export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true };
+export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true };
 
 // ---------------- motion ----------------
 // four neighbours, index i lives in house i; car i is parked in front of house i
@@ -90,7 +93,9 @@ export const STRANGER_CAR = 4;
 export const BAY = { x: 131.5, z: -15.5, signZ: -19.05 };
 export const POOL_CAR = 2; // the blue one becomes today's carpool car
 export type CarPose = { x: number; z: number; yaw: number; on: boolean; riders: number[]; owner: number };
-export const WAIT_X = 14.5; // the carpool car waits here for Sharma ji
+export const WAIT_X = 14.5;
+/** Rohan's parked hatchback (car 0, in front of house 0) */
+export const MYCAR_X = -21 + 2.6; // the carpool car waits here for Sharma ji
 /** where every car is at time t (s), for the colony / gate shots */
 export const carsAt = (id: ShotId, t: number): CarPose[] => {
   const parked = (i: number): CarPose => ({ x: HOUSE_X[i] + 2.6, z: PARK_Z, yaw: 0, on: true, riders: [], owner: i });
@@ -128,6 +133,8 @@ export const carsAt = (id: ShotId, t: number): CarPose[] => {
       return [0, 1, 2].map((i) => ({ x: x0 + [0.5, -0.3, 0.1][i] + 0.6 * Math.sin(t * 2.6 + i * 2.1), z: [1.8, -1.8, -5.4][i], yaw: 0, on: true, riders: [i], owner: i }));
     }
     case "taken": case "strangers": case "sign": return [strangerCar()];
+    case "mycar": case "spotted": return [0, 1, 2, 3].map(parked);
+    case "practice": return [{ ...parked(0), riders: [0] }, parked(1), parked(2), parked(3)];
     case "nap": return [strangerCar(), { x: LOT.x[3], z: LOT.z, yaw: -Math.PI / 2, on: true, riders: [0], owner: 0 }];
     case "park": case "backseat": {
       const t0 = shotAt(Math.round(t * FPS)).a / FPS + 0.15, u = id === "park" ? glide((t - t0) / 1.8) : 1;
@@ -245,7 +252,19 @@ const camAt0 = (id: ShotId, f: number): Cam => {
       const L: V3 = [6, 1.4, -9.2];
       return C(dolly([-16, 2.2, -6.8], L, push(f, a, 0.002)), L, 36, 0);
     }
-    case "chat": case "app": case "napkin": case "sheet": case "gates": { // soft background behind the overlays
+    case "mycar": { // low front 3/4 on Rohan's parked white hatchback: the narrator. Slow push, slight dutch on the hook
+      const L: V3 = [MYCAR_X - 0.6, 0.9, PARK_Z];
+      return C(dolly([MYCAR_X + 8.2, 1.5, PARK_Z + 3.4], L, push(f, a, 0.0025)), L, 34, 0.03);
+    }
+    case "spotted": { // wider: Priya stops on the lane beside the car and looks it over
+      const L: V3 = [MYCAR_X + 0.2, 1.0, PARK_Z + 1.2];
+      return C(dolly([MYCAR_X + 11, 2.0, PARK_Z + 6.0], L, push(f, a, 0.002)), L, 34, 0);
+    }
+    case "practice": { // side window on the driver's seat: Rohan, engine off, turning the wheel
+      const L: V3 = [MYCAR_X - 0.1, 1.15, PARK_Z + 0.42];
+      return C(dolly([MYCAR_X + 5.6, 1.55, PARK_Z + 1.9], L, push(f, a, 0.003)), L, 30, 0.02);
+    }
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": { // soft background behind the overlays
       const L: V3 = [0, 3, -12];
       return C(dolly([4, 4, 10], L, push(f, a, 0.001)), L, 50, 0);
     }
@@ -294,7 +313,10 @@ export const dofAt = (id: ShotId): { cInf: number; focus?: V3 } => {
     case "bro": return { cInf: 13 };
     case "signal": return { cInf: 11, focus: [STOP_X - 1.2, 1.3, 0] };
     case "doors": return { cInf: 7, focus: [-7, 1.5, -9] };
-    case "chat": case "app": case "napkin": case "sheet": case "gates": return { cInf: 22 };
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": return { cInf: 22 };
+    case "mycar": return { cInf: 14 };
+    case "spotted": return { cInf: 10, focus: [MYCAR_X + 1.2, 1.2, PARK_Z + 2.4] };
+    case "practice": return { cInf: 13 };
     case "onecar": return { cInf: 10 };
     case "where": return { cInf: 12, focus: [WAIT_X - 0.1, 1.3, LANE_Z] };
     case "strangers": case "nap": case "backseat": return { cInf: 12 };

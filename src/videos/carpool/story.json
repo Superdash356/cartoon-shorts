@@ -1,162 +1,162 @@
 {
- "title": "Two Gates, One Carpool",
+ "title": "The Carpool Excuse That Lasted 9 Weeks",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.16,
- "keepGap": 0.26,
+ "tempo": 1.15,
+ "keepGap": 0.28,
  "beats": {
-  "theme": "the new neighbour with no ride, two lanes away, in a colony with two gates",
-  "setting": "a top-down colony map: front gate, back gate, and the chai stall between them",
-  "conflict": "driver and passenger wait for each other every morning and never meet",
-  "failedAttempt": "waiting at the wrong gate, then both walking to the other gate and swapping places",
-  "twist": "the colony has two gates and the guard knew from Monday, nobody asked him",
-  "lesson": "'the gate' is not a place",
-  "appAngle": "tap 'I'm at the pickup point' for one agreed spot, then see the driver's car close in on the map",
-  "callback": "now they ask the guard first, and the pickup point is the chai stall, neither gate",
-  "ctaLine": "If 'meet me at the gate' ruined your morning"
+  "theme": "the car that is always 'in service' so its owner never takes his driving turn",
+  "setting": "Rohan's parked hatchback and a paper roster on the colony lift door, narrated by the car",
+  "conflict": "Rohan dodges every Wednesday driving turn with a fresh 'in service' sticky note",
+  "failedAttempt": "a paper roster taped across the lift door that rips in half when the lift opens",
+  "twist": "the car was never broken: Rohan can't drive and bought it for the photos",
+  "lesson": "skipping your turn is fine, faking a breakdown is not",
+  "appAngle": "the non-driver pays his share through settle costs; the confession goes in the pool's group chat",
+  "callback": "the car with the 'emotionally unwell' AC now hosts Rohan's engine-off steering-noise practice",
+  "ctaLine": "If your carpool runs on excuses"
  },
  "lines": [
   {
-   "text": "You'd never lose a week of mornings to one word.",
+   "text": "If your friend's car is always in service, I'm that car.",
    "rate": "+14%",
    "pitch": "-6Hz",
-   "gap": 0.1
+   "gap": 0.2
   },
   {
-   "text": "These two did.",
-   "rate": "+6%",
-   "pitch": "-7Hz",
+   "text": "Rohan's hatchback. Haven't moved in nine weeks.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Four neighbours share a carpool. Arjun tapes the roster to the lift door.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday, Arjun. Tuesday, Priya. Wednesday, Rohan.",
+   "rate": "+30%",
+   "pitch": "+2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week one, a sticky note. Car in service.",
+   "rate": "+22%",
+   "pitch": "-2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Week three. In service. Clutch.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Week six. In service. AC emotionally unwell.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "My AC is fine. I'm a car. No feelings.",
+   "rate": "+24%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So Arjun covers every Wednesday.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Then the lift opens, and the roster rips right through Wednesday.",
+   "rate": "+24%",
+   "pitch": "-2Hz",
    "gap": 0.25
   },
   {
-   "text": "Arjun drives to the tech park. Kabir, his new neighbour, works there too. No car.",
-   "rate": "+28%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "So Arjun texts him. Pick you up at the gate, eight sharp.",
-   "rate": "+24%",
+   "text": "That evening, Priya walks past me. Spotless.",
+   "rate": "+22%",
    "pitch": "+0Hz",
    "gap": 0.15
   },
   {
-   "text": "Monday. Arjun waits at the gate. Kabir waits at the gate. Nobody comes.",
-   "rate": "+28%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Tuesday. Twenty minutes each. Still nobody.",
-   "rate": "+24%",
-   "pitch": "-3Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Wednesday, they both text, I am literally at the gate.",
-   "rate": "+26%",
-   "pitch": "+6Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "And they were both telling the truth.",
-   "rate": "+12%",
-   "pitch": "-5Hz",
+   "text": "And Rohan finally cracks.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
    "gap": 0.3
   },
   {
-   "text": "This colony has two gates.",
-   "rate": "+4%",
+   "text": "He can't drive. Never learned. He bought me for the photos.",
+   "rate": "+14%",
    "pitch": "-8Hz",
-   "gap": 0.25
+   "gap": 0.3
   },
   {
-   "text": "Front gate. Back gate. Two hundred metres apart.",
-   "rate": "+24%",
-   "pitch": "+0Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "The guard? He figured it out on Monday.",
+   "text": "Lesson: skipping your turn is fine. Faking a clutch isn't.",
    "rate": "+18%",
-   "pitch": "-3Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Nobody asked him.",
-   "rate": "+6%",
-   "pitch": "-8Hz",
-   "gap": 0.25
-  },
-  {
-   "text": "Thursday, both of them walk over to the other gate.",
-   "rate": "+26%",
-   "pitch": "+2Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "Different paths. Perfect swap.",
-   "rate": "+16%",
-   "pitch": "-4Hz",
-   "gap": 0.25
-  },
-  {
-   "text": "Lesson: the gate is not a place.",
-   "rate": "+10%",
    "pitch": "-6Hz",
    "gap": 0.25
   },
   {
-   "text": "So the pickup moved into an app.",
-   "rate": "+22%",
-   "pitch": "+4Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "Kabir taps, I'm at the pickup point. One spot.",
+   "text": "So the pool switched to an app.",
    "rate": "+24%",
    "pitch": "+0Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "And Arjun's car crawls closer on the map.",
-   "rate": "+24%",
-   "pitch": "+2Hz",
    "gap": 0.15
   },
   {
-   "text": "Friday. One car. One gate. Zero waiting.",
-   "rate": "+18%",
-   "pitch": "-2Hz",
+   "text": "Rohan rides, and pays his share through settle costs.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
    "gap": 0.12
   },
   {
-   "text": "And the guard? Now they ask him first.",
-   "rate": "+20%",
-   "pitch": "+6Hz",
+   "text": "The other three take turns driving.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
    "gap": 0.15
   },
   {
-   "text": "Their pickup point? Neither gate. The chai stall in the middle.",
-   "rate": "+18%",
-   "pitch": "-3Hz",
-   "gap": 0.15
+   "text": "He confessed in the pool's group chat.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.12
   },
   {
-   "text": "If meet me at the gate ruined your morning, try Sahyatri.",
-   "rate": "+18%",
+   "text": "Sharma ji replied: driving lessons, Sunday, my car.",
+   "rate": "+26%",
+   "pitch": "+8Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Me? Every evening, Rohan sits in me making steering noises.",
+   "rate": "+22%",
    "pitch": "-2Hz",
-   "gap": 0.1
+   "gap": 0.15
+  },
+  {
+   "text": "Calls it practice.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "If your carpool runs on excuses, try Sahyatri.",
+   "rate": "+16%",
+   "pitch": "-2Hz",
+   "gap": 0.15
   },
   {
    "text": "Link in bio.",
-   "rate": "+10%",
+   "rate": "+12%",
    "pitch": "+0Hz",
    "gap": 0.1
   }
  ],
  "shots": [
   {
-   "id": "years",
+   "id": "mycar",
    "at": [
     0,
     0
@@ -164,74 +164,67 @@
    "music": "groove"
   },
   {
-   "id": "gates",
+   "id": "years",
    "at": [
     1,
-    0
+    5
    ]
   },
   {
-   "id": "leave",
+   "id": "walk",
    "at": [
     2,
     0
    ]
   },
   {
-   "id": "street",
+   "id": "lift",
    "at": [
     2,
-    6
+    5
    ]
   },
   {
-   "id": "chat",
+   "id": "mycar",
    "at": [
-    3,
+    7,
     0
    ]
   },
   {
-   "id": "gates",
+   "id": "onecar",
    "at": [
-    4,
+    8,
+    0
+   ]
+  },
+  {
+   "id": "lift",
+   "at": [
+    9,
     0
    ],
    "music": "nervous"
   },
   {
-   "id": "clock",
-   "at": [
-    5,
-    0
-   ]
-  },
-  {
-   "id": "gates",
-   "at": [
-    6,
-    0
-   ]
-  },
-  {
-   "id": "guard",
+   "id": "spotted",
    "at": [
     10,
     0
-   ],
-   "music": "groove"
-  },
-  {
-   "id": "gates",
-   "at": [
-    12,
-    0
    ]
   },
   {
-   "id": "sig5",
+   "id": "mycar",
    "at": [
-    14,
+    11,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "street",
+   "at": [
+    13,
     0
    ],
    "music": "pad"
@@ -239,32 +232,25 @@
   {
    "id": "app",
    "at": [
-    15,
+    14,
     0
    ],
    "music": "lift"
   },
   {
-   "id": "onecar",
+   "id": "chat",
    "at": [
-    18,
+    17,
     0
-   ],
-   "music": "groove"
+   ]
   },
   {
-   "id": "guard",
+   "id": "practice",
    "at": [
     19,
     0
-   ]
-  },
-  {
-   "id": "gates",
-   "at": [
-    20,
-    0
-   ]
+   ],
+   "music": "groove"
   },
   {
    "id": "end",
@@ -276,99 +262,71 @@
   }
  ],
  "cues": {
-  "both": [
-   6,
+  "wed": [
+   3,
    4
   ],
-  "two": [
-   8,
-   3
-  ],
-  "apart": [
+  "split": [
    9,
-   4
-  ],
-  "guardTwist": [
-   11,
-   0
-  ],
-  "swap": [
-   12,
-   4
-  ],
-  "meet": [
-   13,
-   2
-  ],
-  "outOf": [
-   14,
    3
   ],
-  "roster": [
-   15,
-   5
-  ],
-  "driver": [
-   15,
+  "spot": [
+   10,
    6
   ],
-  "tap": [
-   16,
-   1
-  ],
-  "ready": [
-   16,
+  "settle": [
+   15,
    7
   ],
-  "watch": [
-   17,
-   1
+  "roster": [
+   16,
+   0
   ],
-  "live": [
-   17,
-   4
-  ],
-  "one": [
-   18,
-   1
-  ],
-  "guardHappy": [
-   19,
+  "driver": [
+   16,
    3
   ],
-  "pin": [
-   20,
+  "tap": [
+   19,
+   0
+  ],
+  "ready": [
+   19,
+   1
+  ],
+  "watch": [
+   19,
+   5
+  ],
+  "live": [
+   19,
    6
   ],
-  "name": [
-   21,
-   10
-  ],
-  "check": [
-   22,
-   0
+  "steer": [
+   19,
+   7
   ]
  },
  "punch": [
   [
    0,
-   8
+   10
   ],
   [
    1,
-   2
+   5
   ],
   [
    3,
-   9
+   6
   ],
   [
    4,
-   11
+   5
   ],
   [
    5,
-   5
+   4
   ],
   [
    6,
@@ -376,110 +334,158 @@
   ],
   [
    7,
-   6
-  ],
-  [
-   8,
-   3
+   8
   ],
   [
    9,
+   7
+  ],
+  [
+   10,
    6
   ],
   [
    11,
-   0
-  ],
-  [
-   13,
    3
   ],
   [
-   14,
-   4
+   12,
+   2
   ],
   [
-   16,
+   12,
+   10
+  ],
+  [
+   13,
+   6
+  ],
+  [
+   15,
    7
   ],
   [
    18,
-   5
-  ],
-  [
-   19,
    7
   ],
   [
-   20,
-   3
+   19,
+   9
   ],
   [
    20,
-   6
+   2
   ]
  ],
  "stopMusic": [
   [
-   7,
-   0,
-   8,
-   4
+   11,
+   3,
+   12,
+   3
   ]
  ],
  "end": {
-  "headline": "Which gate?\nSorted.",
+  "headline": "Carpool running\non excuses?",
   "tagline": "Community Carpool",
   "button": "Link in bio"
  },
  "captionsBig": [
-  "word",
-  "gate",
-  "gates",
-  "truth",
-  "nobody",
-  "swap",
-  "place",
-  "chai",
-  "sahyatri"
+  "service",
+  "rips",
+  "photos",
+  "practice",
+  "Sahyatri"
  ],
  "post": {
-  "title": "4 mornings lost to the word \"gate\" 💀",
-  "caption": "Same colony. Same office. Different gates 😭 Tag the friend who says \"I'm at the gate\" and isn't.",
+  "title": "The Carpool Excuse That Lasted 9 Weeks",
+  "caption": "Told by the car: Rohan's hatchback was 'in service' every single Wednesday. It never moved. Tag the friend whose car is always at the garage.",
   "hashtags": [
    "#carpool",
-   "#colonylife",
-   "#animation",
-   "#funnyshorts",
-   "#officecommute"
+   "#animatedstory",
+   "#officecomedy",
+   "#commute",
+   "#Sahyatri"
   ]
  },
- "chat": {
-  "title": "Kabir (new neighbour)",
-  "members": "online",
-  "count": 2,
-  "me": "Arjun",
-  "messages": [
+ "liftNotes": [
+  [
+   4,
+   5,
+   "car in\nservice"
+  ],
+  [
+   5,
+   2,
+   "in service\n(clutch)"
+  ],
+  [
+   6,
+   2,
+   "in service\nAC unwell"
+  ]
+ ],
+ "liftRoster": {
+  "title": "CARPOOL ROSTER",
+  "rows": [
    [
-    "Arjun",
-    "pick you up at the gate, 8 sharp 🚗"
+    "MON",
+    "Arjun"
    ],
    [
-    "Kabir",
-    "perfect!! see you at the gate 🙏"
+    "TUE",
+    "Priya"
+   ],
+   [
+    "WED",
+    "Rohan"
+   ],
+   [
+    "THU",
+    "Sharma ji"
+   ],
+   [
+    "FRI",
+    "Arjun"
    ]
   ]
  },
- "gates": {
-  "front": "FRONT GATE",
-  "back": "BACK GATE",
-  "a": "ARJUN",
-  "k": "KABIR",
-  "bubble": "I'm literally at the gate",
-  "lost": "where r u??",
-  "pin": "PICKUP POINT",
-  "stall": "CHAI"
- },
- "appSticker": "ONE SPOT",
- "appDriverNote": "Arjun is driving today"
+ "appDriverNote": "Priya is driving today",
+ "appSticker": "TAKING TURNS",
+ "chat": {
+  "title": "Tech Park Pool",
+  "members": "Arjun, Priya, Rohan, Sharma ji",
+  "count": 7,
+  "me": "Rohan",
+  "messages": [
+   [
+    "Rohan",
+    "ok. confession."
+   ],
+   [
+    "Rohan",
+    "car is not in service"
+   ],
+   [
+    "Rohan",
+    "I can't drive"
+   ],
+   [
+    "Priya",
+    "WE KNOW"
+   ],
+   [
+    "Arjun",
+    "bro. emotionally unwell AC??"
+   ],
+   [
+    "Sharma ji",
+    "Driving lessons. Sunday. My car."
+   ],
+   [
+    "Rohan",
+    "...ok"
+   ]
+  ]
+ }
 }

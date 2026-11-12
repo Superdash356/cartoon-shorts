@@ -10,7 +10,7 @@ import { Actor, Fx, Pool } from "../bridge/cast";
 import { bodyFront, bodySide, fxContact, Expr, Outfit, Pen, SKINS } from "../bridge/toon";
 import {
   BAY, CAR_COL, CLOCK, CUE, hasCue, DOOR_Z, WAIT_X, WI, FPS, GATE_X, HOUSE_X, HOUSE_Z, LANE_Z, LEAD, LOT, PARK_Z, SIGNAL_LANES, STOP_X, CarPose, ShotId, V3, W,
-  camAt, carsAt, clamp01, lotCar, shotAt, signalCars, smooth,
+  camAt, carsAt, clamp01, lotCar, shotAt, signalCars, smooth, MYCAR_X,
 } from "./story";
 
 // ---------------- cast ----------------
@@ -348,6 +348,7 @@ export class CarpoolWorld {
       case "backseat": return who === 0 ? "smile_closed" as Expr : "laugh";
       case "late": return who === 2 ? "smile_closed" as Expr : "grin";
       case "where": return t > CUE.everyone - LEAD ? "laugh" : "grin";
+      case "practice": return t > CUE.steer - LEAD ? "whistle" : "grin";
       default: return "neutral";
     }
   }
@@ -357,6 +358,7 @@ export class CarpoolWorld {
     if (id === "sig2" && duo && t > CUE.thumbs - LEAD) return 0.9;  // hand up and held: "thumbs up"
     if (id === "ask" && who === 0 && t > CUE.bro - LEAD) return 0.4 + 0.3 * Math.sin(t * 6);
     if (id === "onecar" && who === 0 && t > CUE.four - LEAD) return Math.sin(t * 8);
+    if (id === "practice" && who === 0) return 0.35 + 0.25 * Math.sin(t * 5); // hands on an imaginary wheel, steering
     return undefined;
   }
 
@@ -386,6 +388,12 @@ export class CarpoolWorld {
         else { ex = "dazed"; sal = Math.sin(t * 6.5) > -0.2 ? 0.6 : undefined; }
       }
       person(9, 37.4, 0, -5.4, GUARD, "front", { mode: "stand", expr: ex, wave: sal });
+    }
+    if (id === "spotted") {
+      // Priya walks along the lane, stops beside Rohan's spotless car and stares at it (squint -> grin on cue "spot")
+      const t0 = shotAt(f).a / FPS, u = Math.max(0, t - t0), x = Math.min(MYCAR_X + 1.2, MYCAR_X - 3.5 + u * 2.4), walking = x < MYCAR_X + 1.2;
+      const ex: Expr = t > CUE.spot - LEAD ? "grin" : "stern";
+      person(1, x, 0, PARK_Z + 2.4, PEOPLE[1], walking ? "side" : "front", walking ? { mode: "march", phase: (u * 2.2) % 1, stride: 0.9, expr: ex } : { mode: "stand", expr: ex, look: -1 }, false);
     }
     if (id === "late" || id === "where") {
       // Sharma ji (house 3) bursts out of his door and jogs for the waiting car

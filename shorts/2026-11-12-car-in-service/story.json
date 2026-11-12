@@ -1,7 +1,7 @@
 {
  "title": "The Carpool Excuse That Lasted 9 Weeks",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.14,
+ "tempo": 1.15,
  "keepGap": 0.28,
  "beats": {
   "theme": "the car that is always 'in service' so its owner never takes his driving turn",
@@ -28,7 +28,7 @@
    "gap": 0.2
   },
   {
-   "text": "Four neighbours, one carpool. Arjun tapes a driving roster to the lift door.",
+   "text": "Four neighbours share a carpool. Arjun tapes the roster to the lift door.",
    "rate": "+26%",
    "pitch": "+0Hz",
    "gap": 0.15
@@ -58,13 +58,13 @@
    "gap": 0.2
   },
   {
-   "text": "My AC is fine. I'm a car. I don't have feelings.",
+   "text": "My AC is fine. I'm a car. No feelings.",
    "rate": "+24%",
    "pitch": "+6Hz",
    "gap": 0.2
   },
   {
-   "text": "So every Wednesday, Arjun drives him instead.",
+   "text": "So Arjun covers every Wednesday.",
    "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.15
@@ -76,7 +76,7 @@
    "gap": 0.25
   },
   {
-   "text": "That night, Priya walks past me. Spotless. Full tyres.",
+   "text": "That evening, Priya walks past me. Spotless.",
    "rate": "+22%",
    "pitch": "+0Hz",
    "gap": 0.15
@@ -100,7 +100,7 @@
    "gap": 0.25
   },
   {
-   "text": "So the pool ditched the lift door for an app.",
+   "text": "So the pool switched to an app.",
    "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.15
@@ -112,7 +112,7 @@
    "gap": 0.12
   },
   {
-   "text": "The other three take turns behind the wheel.",
+   "text": "The other three take turns driving.",
    "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.15
@@ -130,7 +130,7 @@
    "gap": 0.2
   },
   {
-   "text": "Me? Still parked. Every evening, Rohan sits in me, making steering noises.",
+   "text": "Me? Every evening, Rohan sits in me making steering noises.",
    "rate": "+22%",
    "pitch": "-2Hz",
    "gap": 0.15
@@ -181,7 +181,7 @@
    "id": "lift",
    "at": [
     2,
-    4
+    5
    ]
   },
   {
@@ -304,7 +304,7 @@
   ],
   "steer": [
    19,
-   9
+   7
   ]
  },
  "punch": [
@@ -334,7 +334,7 @@
   ],
   [
    7,
-   10
+   8
   ],
   [
    9,
@@ -370,7 +370,7 @@
   ],
   [
    19,
-   11
+   9
   ],
   [
    20,

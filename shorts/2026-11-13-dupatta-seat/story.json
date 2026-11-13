@@ -1,11 +1,11 @@
 {
  "title": "The Dupatta That Owned the Front Seat",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.18,
+ "tempo": 1.16,
  "keepGap": 0.28,
  "beats": {
   "theme": "the aunty who reserves the front seat with a dupatta",
-  "setting": "top-down inside the pool car's cabin, narrated like a wildlife documentary",
+  "setting": "top-down inside the pool car's cabin, weekly diary of who got there first",
   "conflict": "three passengers come out earlier each week and the front seat is always already claimed",
   "failedAttempt": "a coin toss at the gate where every coin rolls into the drain",
   "twist": "the dupatta is Kapoor aunty's: she isn't in the carpool, she rides two stops to the market",
@@ -22,14 +22,8 @@
    "gap": 0.2
   },
   {
-   "text": "Observe the carpool, in its natural habitat.",
-   "rate": "+20%",
-   "pitch": "-2Hz",
-   "gap": 0.12
-  },
-  {
    "text": "One driver. Three passengers. One front seat.",
-   "rate": "+26%",
+   "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.15
   },
@@ -46,7 +40,7 @@
    "gap": 0.18
   },
   {
-   "text": "Week two. Priya, seven sharp, with her own cushion. Dupatta. Plus a steel tiffin.",
+   "text": "Week two. Priya, seven sharp. Dupatta. Plus a steel tiffin.",
    "rate": "+26%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -64,7 +58,7 @@
    "gap": 0.2
   },
   {
-   "text": "So the back seat settles it like adults. Coin toss.",
+   "text": "So they settle it like adults. Coin toss.",
    "rate": "+22%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -94,7 +88,7 @@
    "gap": 0.2
   },
   {
-   "text": "She rides two stops to the vegetable market. Front seat.",
+   "text": "She rides two stops to the vegetable market.",
    "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -118,7 +112,7 @@
    "gap": 0.12
   },
   {
-   "text": "Kapoor aunty joined, and the roster gave her a driving turn.",
+   "text": "Aunty joined. The roster gave her a driving turn.",
    "rate": "+22%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -164,65 +158,58 @@
    "music": "groove"
   },
   {
-   "id": "street",
+   "id": "onecar",
    "at": [
     1,
     0
    ]
   },
   {
-   "id": "onecar",
+   "id": "ask",
    "at": [
     2,
     0
    ]
   },
   {
-   "id": "doors",
-   "at": [
-    3,
-    0
-   ]
-  },
-  {
    "id": "seat",
    "at": [
-    3,
+    2,
     5
    ]
   },
   {
    "id": "walk",
    "at": [
-    5,
+    4,
     0
    ]
   },
   {
    "id": "seat",
    "at": [
-    5,
-    9
+    4,
+    5
    ]
   },
   {
    "id": "late",
    "at": [
-    6,
+    5,
     0
    ]
   },
   {
    "id": "seat",
    "at": [
-    6,
+    5,
     7
    ]
   },
   {
    "id": "street",
    "at": [
-    8,
+    7,
     0
    ],
    "music": "nervous"
@@ -230,21 +217,21 @@
   {
    "id": "toss",
    "at": [
-    8,
-    8
+    7,
+    6
    ]
   },
   {
    "id": "guard",
    "at": [
-    11,
+    10,
     0
    ]
   },
   {
    "id": "seat",
    "at": [
-    12,
+    11,
     0
    ],
    "music": "sad"
@@ -252,7 +239,7 @@
   {
    "id": "leave",
    "at": [
-    13,
+    12,
     0
    ],
    "music": "groove"
@@ -260,14 +247,14 @@
   {
    "id": "sig5",
    "at": [
-    14,
+    13,
     0
    ]
   },
   {
    "id": "doors",
    "at": [
-    15,
+    14,
     0
    ],
    "music": "pad"
@@ -275,15 +262,15 @@
   {
    "id": "app",
    "at": [
-    16,
+    15,
     0
    ],
    "music": "lift"
   },
   {
-   "id": "onecar",
+   "id": "guard",
    "at": [
-    19,
+    18,
     0
    ],
    "music": "groove"
@@ -291,14 +278,14 @@
   {
    "id": "seat",
    "at": [
-    20,
+    19,
     0
    ]
   },
   {
    "id": "end",
    "at": [
-    21,
+    20,
     0
    ],
    "music": "end"
@@ -306,23 +293,23 @@
  ],
  "cues": {
   "tag": [
-   12,
+   11,
    0
   ],
   "guardTwist": [
-   11,
+   10,
    5
   ],
+  "guardHappy": [
+   18,
+   2
+  ],
   "outOf": [
-   14,
+   13,
    6
   ],
-  "one": [
-   19,
-   0
-  ],
   "swap": [
-   20,
+   19,
    3
   ]
  },
@@ -332,44 +319,48 @@
    11
   ],
   [
-   2,
+   1,
    4
   ],
   [
-   3,
+   2,
    6
   ],
   [
-   4,
+   3,
    0
   ],
   [
-   5,
+   4,
+   5
+  ],
+  [
+   4,
    9
   ],
   [
    5,
-   13
-  ],
-  [
-   6,
    4
   ],
   [
-   6,
+   5,
    9
   ],
   [
-   7,
+   6,
    0
   ],
   [
+   7,
+   6
+  ],
+  [
    8,
-   8
+   10
   ],
   [
    9,
-   10
+   6
   ],
   [
    10,
@@ -377,31 +368,27 @@
   ],
   [
    11,
-   6
-  ],
-  [
-   12,
    3
   ],
   [
-   15,
+   14,
    10
   ],
   [
-   18,
+   17,
    5
   ],
   [
-   20,
+   19,
    5
   ]
  ],
  "stopMusic": [
   [
-   11,
+   10,
    5,
-   12,
-   7
+   11,
+   6
   ]
  ],
  "end": {
@@ -417,9 +404,15 @@
   "Sahyatri"
  ],
  "post": {
-  "title": "",
-  "caption": "",
-  "hashtags": []
+  "title": "A dupatta held our front seat for 15 mornings 💀",
+  "caption": "Week after week, the front seat of the carpool was already claimed by a dupatta nobody recognised. The owner wasn't even in the carpool. Tag the friend who always calls front seat.",
+  "hashtags": [
+   "#carpool",
+   "#animatedstory",
+   "#frontseat",
+   "#desicomedy",
+   "#Sahyatri"
+  ]
  },
  "seatItems": [
   [
@@ -429,19 +422,13 @@
    "front"
   ],
   [
-   5,
+   4,
    9,
-   "cushion",
-   "back"
-  ],
-  [
-   5,
-   13,
    "tiffin",
    "front"
   ],
   [
-   6,
+   5,
    9,
    "flask",
    "front"
@@ -450,12 +437,12 @@
  "seatTag": "KAPOOR AUNTY",
  "tosses": [
   [
-   9,
+   8,
    1,
    1
   ],
   [
-   10,
+   9,
    3,
    2
   ]

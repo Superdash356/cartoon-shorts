@@ -8,14 +8,8 @@
    "gap": 0.2
   },
   {
-   "text": "Observe the carpool, in its natural habitat.",
-   "rate": "+20%",
-   "pitch": "-2Hz",
-   "gap": 0.12
-  },
-  {
    "text": "One driver. Three passengers. One front seat.",
-   "rate": "+26%",
+   "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.15
   },
@@ -32,7 +26,7 @@
    "gap": 0.18
   },
   {
-   "text": "Week two. Priya, seven sharp, with her own cushion. Dupatta. Plus a steel tiffin.",
+   "text": "Week two. Priya, seven sharp. Dupatta. Plus a steel tiffin.",
    "rate": "+26%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -50,7 +44,7 @@
    "gap": 0.2
   },
   {
-   "text": "So the back seat settles it like adults. Coin toss.",
+   "text": "So they settle it like adults. Coin toss.",
    "rate": "+22%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -80,7 +74,7 @@
    "gap": 0.2
   },
   {
-   "text": "She rides two stops to the vegetable market. Front seat.",
+   "text": "She rides two stops to the vegetable market.",
    "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -104,7 +98,7 @@
    "gap": 0.12
   },
   {
-   "text": "Kapoor aunty joined, and the roster gave her a driving turn.",
+   "text": "Aunty joined. The roster gave her a driving turn.",
    "rate": "+22%",
    "pitch": "+0Hz",
    "gap": 0.12

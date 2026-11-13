@@ -1,162 +1,156 @@
 {
- "title": "The Carpool Excuse That Lasted 9 Weeks",
+ "title": "The Dupatta That Owned the Front Seat",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.15,
+ "tempo": 1.19,
  "keepGap": 0.28,
  "beats": {
-  "theme": "the car that is always 'in service' so its owner never takes his driving turn",
-  "setting": "Rohan's parked hatchback and a paper roster on the colony lift door, narrated by the car",
-  "conflict": "Rohan dodges every Wednesday driving turn with a fresh 'in service' sticky note",
-  "failedAttempt": "a paper roster taped across the lift door that rips in half when the lift opens",
-  "twist": "the car was never broken: Rohan can't drive and bought it for the photos",
-  "lesson": "skipping your turn is fine, faking a breakdown is not",
-  "appAngle": "the non-driver pays his share through settle costs; the confession goes in the pool's group chat",
-  "callback": "the car with the 'emotionally unwell' AC now hosts Rohan's engine-off steering-noise practice",
-  "ctaLine": "If your carpool runs on excuses"
+  "theme": "the aunty who reserves the front seat with a dupatta",
+  "setting": "top-down inside the pool car's cabin, weekly diary of who got there first",
+  "conflict": "three passengers come out earlier each week and the front seat is always already claimed",
+  "failedAttempt": "a coin toss at the gate where every coin rolls into the drain",
+  "twist": "the dupatta is Kapoor aunty's: she isn't in the carpool, she rides two stops to the market",
+  "lesson": "if nobody knows who's in your carpool, the dupatta decides",
+  "appAngle": "a pool with named members gives the stowaway her own driving turn; skip today frees her seat",
+  "callback": "on her Thursday turn the dupatta reserves the driver's seat instead",
+  "ctaLine": "If a dupatta owns your front seat"
  },
  "lines": [
   {
-   "text": "If your friend's car is always in service, I'm that car.",
-   "rate": "+14%",
-   "pitch": "-6Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "Rohan's hatchback. Haven't moved in nine weeks.",
-   "rate": "+20%",
-   "pitch": "-2Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "Four neighbours share a carpool. Arjun tapes the roster to the lift door.",
-   "rate": "+26%",
-   "pitch": "+0Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Monday, Arjun. Tuesday, Priya. Wednesday, Rohan.",
-   "rate": "+30%",
-   "pitch": "+2Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Week one, a sticky note. Car in service.",
-   "rate": "+22%",
-   "pitch": "-2Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Week three. In service. Clutch.",
-   "rate": "+22%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Week six. In service. AC emotionally unwell.",
-   "rate": "+20%",
-   "pitch": "-4Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "My AC is fine. I'm a car. No feelings.",
-   "rate": "+24%",
-   "pitch": "+6Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "So Arjun covers every Wednesday.",
-   "rate": "+24%",
-   "pitch": "+0Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Then the lift opens, and the roster rips right through Wednesday.",
-   "rate": "+24%",
-   "pitch": "-2Hz",
-   "gap": 0.25
-  },
-  {
-   "text": "That evening, Priya walks past me. Spotless.",
-   "rate": "+22%",
-   "pitch": "+0Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "And Rohan finally cracks.",
-   "rate": "+16%",
-   "pitch": "-4Hz",
-   "gap": 0.3
-  },
-  {
-   "text": "He can't drive. Never learned. He bought me for the photos.",
-   "rate": "+14%",
-   "pitch": "-8Hz",
-   "gap": 0.3
-  },
-  {
-   "text": "Lesson: skipping your turn is fine. Faking a clutch isn't.",
+   "text": "Your carpool lost its front seat for 15 mornings to a dupatta nobody's ever seen.",
    "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "One driver. Three passengers. One front seat.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week one. Rohan, eight sharp. A dupatta's already there.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Folded. Polite.",
+   "rate": "+8%",
+   "pitch": "-6Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Week two. Priya, seven sharp. Dupatta. Plus a steel tiffin.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Week three. Sharma ji, early for once. Dupatta, tiffin, flask of chai.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Still warm.",
+   "rate": "+6%",
+   "pitch": "-8Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So they settle it like adults. Coin toss.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Rohan flips. The coin rolls under the car. Into the drain.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Best of three. Two more coins. Same drain.",
+   "rate": "+28%",
+   "pitch": "+4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Then the guard walks over. That's Kapoor aunty's.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Kapoor aunty is not in the carpool.",
+   "rate": "+8%",
+   "pitch": "-8Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "She rides two stops to the vegetable market.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Arjun thought she was Priya's aunt. Priya thought, Arjun's.",
+   "rate": "+28%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Lesson: if nobody knows who's in your carpool, the dupatta decides.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fix? A real pool, inside an app. Four names. Then five.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Aunty joined. The roster gave her a driving turn.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Market closed? One tap on skip today, front seat free.",
+   "rate": "+24%",
+   "pitch": "+4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Thursday. Kapoor aunty drives.",
+   "rate": "+16%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "The dupatta now reserves the driver's seat.",
+   "rate": "+10%",
    "pitch": "-6Hz",
    "gap": 0.25
   },
   {
-   "text": "So the pool switched to an app.",
-   "rate": "+24%",
-   "pitch": "+0Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Rohan rides, and pays his share through settle costs.",
-   "rate": "+24%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "The other three take turns driving.",
-   "rate": "+24%",
-   "pitch": "+0Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "He confessed in the pool's group chat.",
-   "rate": "+24%",
-   "pitch": "+2Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Sharma ji replied: driving lessons, Sunday, my car.",
-   "rate": "+26%",
-   "pitch": "+8Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "Me? Every evening, Rohan sits in me making steering noises.",
-   "rate": "+22%",
-   "pitch": "-2Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Calls it practice.",
+   "text": "If a dupatta owns your front seat, try Sahyatri.",
    "rate": "+14%",
-   "pitch": "-6Hz",
-   "gap": 0.3
-  },
-  {
-   "text": "If your carpool runs on excuses, try Sahyatri.",
-   "rate": "+16%",
-   "pitch": "-2Hz",
-   "gap": 0.15
+   "pitch": "+0Hz",
+   "gap": 0.12
   },
   {
    "text": "Link in bio.",
-   "rate": "+12%",
+   "rate": "+10%",
    "pitch": "+0Hz",
    "gap": 0.1
   }
  ],
  "shots": [
   {
-   "id": "mycar",
+   "id": "seat",
    "at": [
     0,
     0
@@ -164,67 +158,103 @@
    "music": "groove"
   },
   {
-   "id": "years",
+   "id": "onecar",
    "at": [
     1,
+    0
+   ]
+  },
+  {
+   "id": "ask",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "seat",
+   "at": [
+    2,
     5
    ]
   },
   {
    "id": "walk",
    "at": [
-    2,
+    4,
     0
    ]
   },
   {
-   "id": "lift",
+   "id": "seat",
    "at": [
-    2,
+    4,
     5
    ]
   },
   {
-   "id": "mycar",
+   "id": "late",
+   "at": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "seat",
+   "at": [
+    5,
+    7
+   ]
+  },
+  {
+   "id": "street",
    "at": [
     7,
-    0
-   ]
-  },
-  {
-   "id": "onecar",
-   "at": [
-    8,
-    0
-   ]
-  },
-  {
-   "id": "lift",
-   "at": [
-    9,
     0
    ],
    "music": "nervous"
   },
   {
-   "id": "spotted",
+   "id": "toss",
+   "at": [
+    7,
+    6
+   ]
+  },
+  {
+   "id": "guard",
    "at": [
     10,
     0
    ]
   },
   {
-   "id": "mycar",
+   "id": "seat",
    "at": [
     11,
     0
    ],
-   "music": "stop"
+   "music": "sad"
   },
   {
-   "id": "street",
+   "id": "leave",
+   "at": [
+    12,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "sig5",
    "at": [
     13,
+    0
+   ]
+  },
+  {
+   "id": "doors",
+   "at": [
+    14,
     0
    ],
    "music": "pad"
@@ -232,113 +262,105 @@
   {
    "id": "app",
    "at": [
-    14,
+    15,
     0
    ],
    "music": "lift"
   },
   {
-   "id": "chat",
+   "id": "guard",
    "at": [
-    17,
-    0
-   ]
-  },
-  {
-   "id": "practice",
-   "at": [
-    19,
+    18,
     0
    ],
    "music": "groove"
   },
   {
+   "id": "seat",
+   "at": [
+    19,
+    0
+   ]
+  },
+  {
    "id": "end",
    "at": [
-    21,
+    20,
     0
    ],
    "music": "end"
   }
  ],
  "cues": {
-  "wed": [
-   3,
-   4
+  "tag": [
+   11,
+   0
   ],
-  "split": [
-   9,
-   3
-  ],
-  "spot": [
+  "guardTwist": [
    10,
-   6
-  ],
-  "settle": [
-   15,
-   7
-  ],
-  "roster": [
-   16,
-   0
-  ],
-  "driver": [
-   16,
-   3
-  ],
-  "tap": [
-   19,
-   0
-  ],
-  "ready": [
-   19,
-   1
-  ],
-  "watch": [
-   19,
    5
   ],
-  "live": [
-   19,
+  "guardHappy": [
+   18,
+   2
+  ],
+  "outOf": [
+   13,
    6
   ],
-  "steer": [
+  "swap": [
    19,
-   7
+   3
   ]
  },
  "punch": [
   [
    0,
-   10
+   11
   ],
   [
    1,
-   5
+   4
+  ],
+  [
+   2,
+   6
   ],
   [
    3,
-   6
+   0
   ],
   [
    4,
    5
   ],
   [
+   4,
+   9
+  ],
+  [
    5,
    4
   ],
   [
+   5,
+   9
+  ],
+  [
    6,
-   6
+   0
   ],
   [
    7,
-   8
+   6
+  ],
+  [
+   8,
+   10
   ],
   [
    9,
-   7
+   6
   ],
   [
    10,
@@ -349,143 +371,82 @@
    3
   ],
   [
-   12,
-   2
-  ],
-  [
-   12,
+   14,
    10
   ],
   [
-   13,
-   6
-  ],
-  [
-   15,
-   7
-  ],
-  [
-   18,
-   7
+   17,
+   5
   ],
   [
    19,
-   9
-  ],
-  [
-   20,
-   2
+   5
   ]
  ],
  "stopMusic": [
   [
+   10,
+   5,
    11,
-   3,
-   12,
-   3
+   6
   ]
  ],
  "end": {
-  "headline": "Carpool running\non excuses?",
+  "headline": "Who owns your\nfront seat?",
   "tagline": "Community Carpool",
   "button": "Link in bio"
  },
  "captionsBig": [
-  "service",
-  "rips",
-  "photos",
-  "practice",
+  "dupatta",
+  "drain",
+  "Kapoor",
+  "driver's",
   "Sahyatri"
  ],
  "post": {
-  "title": "The Carpool Excuse That Lasted 9 Weeks",
-  "caption": "Told by the car: Rohan's hatchback was 'in service' every single Wednesday. It never moved. Tag the friend whose car is always at the garage.",
+  "title": "A dupatta held our front seat for 15 mornings 💀",
+  "caption": "Week after week, the front seat of the carpool was already claimed by a dupatta nobody recognised. The owner wasn't even in the carpool. Tag the friend who always calls front seat.",
   "hashtags": [
    "#carpool",
    "#animatedstory",
-   "#officecomedy",
-   "#commute",
+   "#frontseat",
+   "#desicomedy",
    "#Sahyatri"
   ]
  },
- "liftNotes": [
+ "seatItems": [
+  [
+   0,
+   0,
+   "dupatta",
+   "front"
+  ],
   [
    4,
-   5,
-   "car in\nservice"
+   9,
+   "tiffin",
+   "front"
   ],
   [
    5,
-   2,
-   "in service\n(clutch)"
-  ],
-  [
-   6,
-   2,
-   "in service\nAC unwell"
+   9,
+   "flask",
+   "front"
   ]
  ],
- "liftRoster": {
-  "title": "CARPOOL ROSTER",
-  "rows": [
-   [
-    "MON",
-    "Arjun"
-   ],
-   [
-    "TUE",
-    "Priya"
-   ],
-   [
-    "WED",
-    "Rohan"
-   ],
-   [
-    "THU",
-    "Sharma ji"
-   ],
-   [
-    "FRI",
-    "Arjun"
-   ]
+ "seatTag": "KAPOOR AUNTY",
+ "tosses": [
+  [
+   8,
+   1,
+   1
+  ],
+  [
+   9,
+   3,
+   2
   ]
- },
- "appDriverNote": "Priya is driving today",
- "appSticker": "TAKING TURNS",
- "chat": {
-  "title": "Tech Park Pool",
-  "members": "Arjun, Priya, Rohan, Sharma ji",
-  "count": 7,
-  "me": "Rohan",
-  "messages": [
-   [
-    "Rohan",
-    "ok. confession."
-   ],
-   [
-    "Rohan",
-    "car is not in service"
-   ],
-   [
-    "Rohan",
-    "I can't drive"
-   ],
-   [
-    "Priya",
-    "WE KNOW"
-   ],
-   [
-    "Arjun",
-    "bro. emotionally unwell AC??"
-   ],
-   [
-    "Sharma ji",
-    "Driving lessons. Sunday. My car."
-   ],
-   [
-    "Rohan",
-    "...ok"
-   ]
-  ]
- }
+ ],
+ "appDriverNote": "Kapoor aunty is driving today",
+ "appSticker": "HER TURN"
 }

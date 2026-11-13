@@ -152,7 +152,7 @@ export const SeatOverlay: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) =>
 
 // ---------------- the coin toss at the gate ----------------
 const TOSSES = (S.tosses ?? []).map(([L, k, n]) => ({ t: WL(L, k) - 0.05, n }));
-const FLIP = 0.75, ROLL = 0.6; // s
+const FLIP = 0.6, ROLL = 0.5; // s
 const GROUND = 1180, DRAIN = { x: 760, y: GROUND + 30, w: 240, h: 70 };
 const Coin: React.FC<{ t: number; t0: number; k: number; n: number }> = ({ t, t0, k, n }) => {
   const u = t - t0 - k * 0.12;

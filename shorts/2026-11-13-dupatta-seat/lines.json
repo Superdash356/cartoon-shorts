@@ -1,0 +1,143 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "Your carpool lost its front seat for 15 mornings to a dupatta nobody's ever seen.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Observe the carpool, in its natural habitat.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "One driver. Three passengers. One front seat.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week one. Rohan, eight sharp. A dupatta's already there.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Folded. Polite.",
+   "rate": "+8%",
+   "pitch": "-6Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Week two. Priya, seven sharp, with her own cushion. Dupatta. Plus a steel tiffin.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Week three. Sharma ji, early for once. Dupatta, tiffin, flask of chai.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Still warm.",
+   "rate": "+6%",
+   "pitch": "-8Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So the back seat settles it like adults. Coin toss.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Rohan flips. The coin rolls under the car. Into the drain.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Best of three. Two more coins. Same drain.",
+   "rate": "+28%",
+   "pitch": "+4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Then the guard walks over. That's Kapoor aunty's.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Kapoor aunty is not in the carpool.",
+   "rate": "+8%",
+   "pitch": "-8Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "She rides two stops to the vegetable market. Front seat.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Arjun thought she was Priya's aunt. Priya thought, Arjun's.",
+   "rate": "+28%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Lesson: if nobody knows who's in your carpool, the dupatta decides.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fix? A real pool, inside an app. Four names. Then five.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Kapoor aunty joined, and the roster gave her a driving turn.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Market closed? One tap on skip today, front seat free.",
+   "rate": "+24%",
+   "pitch": "+4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Thursday. Kapoor aunty drives.",
+   "rate": "+16%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "The dupatta now reserves the driver's seat.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "If a dupatta owns your front seat, try Sahyatri.",
+   "rate": "+14%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Link in bio.",
+   "rate": "+10%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  }
+ ]
+}

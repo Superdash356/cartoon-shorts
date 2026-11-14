@@ -274,8 +274,8 @@ const camAt0 = (id: ShotId, f: number): Cam => {
       return C(dolly([MYCAR_X + 5.6, 1.55, PARK_Z + 1.9], L, push(f, a, 0.003)), L, 30, 0.02);
     }
     case "bosscar": { // front 3/4 on the red car: Priya driving, Dev alone in the back like a cab passenger
-      const L: V3 = [BOSS_X - 0.7, 1.15, LANE_Z - 0.1];
-      return C(dolly([BOSS_X + 5.4, 1.75, LANE_Z + 4.4], L, push(f, a, 0.0025)), L, 36, 0.02);
+      const L: V3 = [BOSS_X - 0.7, 1.2, LANE_Z - 0.05];
+      return C(dolly([BOSS_X + 6.2, 1.55, LANE_Z - 4.6], L, push(f, a, 0.0025)), L, 30, 0.02);
     }
     case "boss": { // close on Priya at the wheel, through the windscreen
       const L: V3 = [BOSS_X - 0.05, 1.3, LANE_Z + 0.42];

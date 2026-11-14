@@ -73,7 +73,10 @@ export type ShotId = "guard" | "hook" | "leave" | "sig1" | "sig2" | "sig5" | "ye
   // and the paper roster on the lift door (2D overlay, Lift.tsx)
   | "mycar" | "spotted" | "practice" | "lift"
   // dupatta seat: top-down cabin with the front seat claimed by a dupatta, and the coin toss into the drain (2D overlays, Seat.tsx)
-  | "seat" | "toss";
+  | "seat" | "toss"
+  // boss's lift: Priya's red car waiting on the lane, Priya at the wheel, the intern Dev alone in the back seat like a cab
+  // passenger (wide / close on Priya / close on Dev), and the two secret rule lists (2D overlays, Rules.tsx)
+  | "bosscar" | "boss" | "intern" | "rules" | "rules2";
 export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
 /** cut ~3 frames before line L (word k) */
@@ -85,7 +88,7 @@ export const SHOTS: Shot[] = STORY.shots.map((x, i) => {
 SHOTS[SHOTS.length - 1].b = TOTAL;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 /** shots drawn under a full-screen 2D overlay: the 3D layer just needs a soft background */
-export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true };
+export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true, rules: true, rules2: true };
 
 // ---------------- motion ----------------
 // four neighbours, index i lives in house i; car i is parked in front of house i
@@ -97,7 +100,9 @@ export const POOL_CAR = 2; // the blue one becomes today's carpool car
 export type CarPose = { x: number; z: number; yaw: number; on: boolean; riders: number[]; owner: number };
 export const WAIT_X = 14.5;
 /** Rohan's parked hatchback (car 0, in front of house 0) */
-export const MYCAR_X = -21 + 2.6; // the carpool car waits here for Sharma ji
+export const MYCAR_X = -21 + 2.6;
+/** the boss's red car (car 1) waiting on the lane; the intern (person 4) sits in the back seat behind the empty front seat */
+export const BOSS_X = WAIT_X, INTERN = 4; // the carpool car waits here for Sharma ji
 /** where every car is at time t (s), for the colony / gate shots */
 export const carsAt = (id: ShotId, t: number): CarPose[] => {
   const parked = (i: number): CarPose => ({ x: HOUSE_X[i] + 2.6, z: PARK_Z, yaw: 0, on: true, riders: [], owner: i });
@@ -136,6 +141,8 @@ export const carsAt = (id: ShotId, t: number): CarPose[] => {
     }
     case "taken": case "strangers": case "sign": return [strangerCar()];
     case "mycar": case "spotted": return [0, 1, 2, 3].map(parked);
+    case "bosscar": case "boss": case "intern":
+      return [0, 2, 3].map(parked).concat([{ x: BOSS_X, z: LANE_Z, yaw: 0, on: true, riders: [1, -1, -1, INTERN], owner: 1 }]);
     case "practice": return [{ ...parked(0), riders: [0] }, parked(1), parked(2), parked(3)];
     case "nap": return [strangerCar(), { x: LOT.x[3], z: LOT.z, yaw: -Math.PI / 2, on: true, riders: [0], owner: 0 }];
     case "park": case "backseat": {
@@ -266,7 +273,19 @@ const camAt0 = (id: ShotId, f: number): Cam => {
       const L: V3 = [MYCAR_X - 0.1, 1.15, PARK_Z + 0.42];
       return C(dolly([MYCAR_X + 5.6, 1.55, PARK_Z + 1.9], L, push(f, a, 0.003)), L, 30, 0.02);
     }
-    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": { // soft background behind the overlays
+    case "bosscar": { // front 3/4 on the red car: Priya driving, Dev alone in the back like a cab passenger
+      const L: V3 = [BOSS_X - 0.7, 1.15, LANE_Z - 0.1];
+      return C(dolly([BOSS_X + 5.4, 1.75, LANE_Z + 4.4], L, push(f, a, 0.0025)), L, 36, 0.02);
+    }
+    case "boss": { // close on Priya at the wheel, through the windscreen
+      const L: V3 = [BOSS_X - 0.05, 1.3, LANE_Z + 0.42];
+      return C(dolly([BOSS_X + 1.9, 1.45, LANE_Z + 1.75], L, push(f, a, 0.004)), L, 30, -0.03);
+    }
+    case "intern": { // close on Dev in the back seat, from the front-left past the empty front seat
+      const L: V3 = [BOSS_X - 1.25, 1.3, LANE_Z - 0.42];
+      return C(dolly([BOSS_X + 1.7, 1.5, LANE_Z - 1.9], L, push(f, a, 0.004)), L, 30, 0.03);
+    }
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": { // soft background behind the overlays
       const L: V3 = [0, 3, -12];
       return C(dolly([4, 4, 10], L, push(f, a, 0.001)), L, 50, 0);
     }
@@ -315,7 +334,9 @@ export const dofAt = (id: ShotId): { cInf: number; focus?: V3 } => {
     case "bro": return { cInf: 13 };
     case "signal": return { cInf: 11, focus: [STOP_X - 1.2, 1.3, 0] };
     case "doors": return { cInf: 7, focus: [-7, 1.5, -9] };
-    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": return { cInf: 22 };
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": return { cInf: 22 };
+    case "bosscar": return { cInf: 10 };
+    case "boss": case "intern": return { cInf: 13 };
     case "mycar": return { cInf: 14 };
     case "spotted": return { cInf: 10, focus: [MYCAR_X + 1.2, 1.2, PARK_Z + 2.4] };
     case "practice": return { cInf: 13 };

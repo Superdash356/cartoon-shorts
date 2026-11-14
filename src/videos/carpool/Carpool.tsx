@@ -19,6 +19,7 @@ import { GloveboxOverlay, SheetOverlay } from "./Napkins";
 import { GatesOverlay } from "./Gates";
 import { LiftOverlay } from "./Lift";
 import { SeatOverlay, TossOverlay } from "./Seat";
+import { RulesOverlay } from "./Rules";
 
 export const CARPOOL_FRAMES = TOTAL;
 const Composer = EffectComposer as unknown as React.FC<{ multisampling: number; children?: React.ReactNode }>;
@@ -242,9 +243,11 @@ export const CarpoolShort: React.FC = () => {
       {s.id === "lift" && <LiftOverlay t0={s.a / FPS} t1={s.b / FPS} />}
       {s.id === "seat" && <SeatOverlay t0={s.a / FPS} t1={s.b / FPS} />}
       {s.id === "toss" && <TossOverlay t0={s.a / FPS} t1={s.b / FPS} />}
+      {s.id === "rules" && <RulesOverlay t0={s.a / FPS} t1={s.b / FPS} page={0} />}
+      {s.id === "rules2" && <RulesOverlay t0={s.a / FPS} t1={s.b / FPS} page={1} />}
       {s.id === "end" && <EndCard t0={END_CARD} />}
       {s.id !== "end" && s.id !== "app" && <DayStamp />}
-      {s.id !== "end" && <Captions y={s.id === "app" ? 95 : s.id === "chat" || s.id === "meeting" || s.id === "sheet" || s.id === "gates" ? 110 : s.id === "napkin" ? 1420 : s.id === "lift" ? 1560 : s.id === "seat" ? 1610 : s.id === "toss" ? 230 : s.id === "clock" || s.id === "years" ? 1560 : 1240} size={s.id === "app" ? 84 : 96} />}
+      {s.id !== "end" && <Captions y={s.id === "app" ? 95 : s.id === "chat" || s.id === "meeting" || s.id === "sheet" || s.id === "gates" ? 110 : s.id === "napkin" ? 1420 : s.id === "lift" ? 1560 : s.id === "seat" ? 1610 : s.id === "toss" ? 230 : s.id === "rules" || s.id === "rules2" ? 1580 : s.id === "clock" || s.id === "years" ? 1560 : 1240} size={s.id === "app" ? 84 : 96} />}
       <Audio src={staticFile("carpool/voice_current.wav")} />
     </AbsoluteFill>
   );

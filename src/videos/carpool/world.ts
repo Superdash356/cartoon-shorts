@@ -286,6 +286,7 @@ export class CarpoolWorld {
     };
     // riders sit in their car seats, facing the lens
     poses.forEach((p, ci) => p.riders.forEach((who, si) => {
+      if (who < 0) return; // empty seat
       const car = carOf[ci], s = SEATS[si];
       const wp = V(...s).applyAxisAngle(V(0, 1, 0), p.yaw).add(car.position);
       const sleep = who === 0 && (id === "nap" || id === "backseat" || id === "park");
@@ -349,6 +350,10 @@ export class CarpoolWorld {
       case "late": return who === 2 ? "smile_closed" as Expr : "grin";
       case "where": return t > CUE.everyone - LEAD ? "laugh" : "grin";
       case "practice": return t > CUE.steer - LEAD ? "whistle" : "grin";
+      case "bosscar": case "boss": case "intern": // both polite-smile through it; the boss cracks; the callback is a real laugh
+        if (t > CUE.together - LEAD) return "laugh";
+        if (who === 1) return t > CUE.bossSad - LEAD ? "pained" : "grin";
+        return t > CUE.tips - LEAD && t < CUE.sweat - LEAD ? "grin" : "nervous";
       default: return "neutral";
     }
   }

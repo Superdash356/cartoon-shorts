@@ -1,0 +1,494 @@
+{
+ "title": "The Free Lift Nobody Could Cancel",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.2,
+ "keepGap": 0.28,
+ "beats": {
+  "theme": "the boss who drives the intern to work, and neither can say no",
+  "setting": "the team lead's red car with the intern alone in the back seat, plus their two secret rule lists",
+  "conflict": "a free daily lift both of them secretly hate but are too polite to cancel",
+  "failedAttempt": "nobody turns up: both secretly bail the same Monday and hide from each other for forty minutes",
+  "twist": "the boss keeps her own secret rules: she hates driving and only goes on because she thinks the intern needs it",
+  "lesson": "if nobody can say no, it's not a lift, it's a hostage situation",
+  "appAngle": "the roster spreads the driving across a bigger pool, and skip today says no on your behalf",
+  "callback": "the radio jingle they both faked loving finally goes off, and they laugh for real",
+  "ctaLine": "If your boss drives you to work"
+ },
+ "lines": [
+  {
+   "text": "Your boss offers you a free lift.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "This intern said yes. Three sweaty months.",
+   "rate": "+20%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Dev's the new intern. His team lead, Priya, lives two lanes over.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Day one, she offers. You don't say no to your boss.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "So Dev writes rules.",
+   "rate": "+20%",
+   "pitch": "-3Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Rule one. Never take the front seat.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "So he sits in the back. She looks like his cab driver.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Day four, he nearly tips her.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Rule two. Laugh at everything, even the radio jingle.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Rule three. Never touch the AC.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Three months. Sweating. Politely.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Plot twist. Priya has rules too.",
+   "rate": "+14%",
+   "pitch": "-7Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Never cancel, he needs me. Keep the jingle on, he loves it.",
+   "rate": "+26%",
+   "pitch": "+7Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "She hates driving. And that jingle.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "One Monday, both secretly bail.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Dev hides behind the gate. Priya hides behind her car.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Forty minutes. Nobody turns up.",
+   "rate": "+16%",
+   "pitch": "-5Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "The guard watches two adults hide from each other.",
+   "rate": "+22%",
+   "pitch": "+4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Lesson: if nobody can say no, it's not a lift. It's a hostage situation.",
+   "rate": "+18%",
+   "pitch": "-6Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "So they put the ride on an app. Arjun's car joined the pool.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "The roster shares the driving. Skip today says no for you.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "First morning without the jingle, they both laughed. For real this time.",
+   "rate": "+20%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "If your boss drives you to work, try Sahyatri.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Link in bio.",
+   "rate": "+12%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  }
+ ],
+ "shots": [
+  {
+   "id": "boss",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "intern",
+   "at": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "street",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "bosscar",
+   "at": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "rules",
+   "at": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "bosscar",
+   "at": [
+    6,
+    0
+   ]
+  },
+  {
+   "id": "intern",
+   "at": [
+    7,
+    0
+   ]
+  },
+  {
+   "id": "rules",
+   "at": [
+    8,
+    0
+   ]
+  },
+  {
+   "id": "intern",
+   "at": [
+    10,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "rules2",
+   "at": [
+    11,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "boss",
+   "at": [
+    13,
+    0
+   ],
+   "music": "sad"
+  },
+  {
+   "id": "doors",
+   "at": [
+    14,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "guard",
+   "at": [
+    15,
+    0
+   ]
+  },
+  {
+   "id": "years",
+   "at": [
+    16,
+    0
+   ]
+  },
+  {
+   "id": "guard",
+   "at": [
+    17,
+    0
+   ]
+  },
+  {
+   "id": "bosscar",
+   "at": [
+    18,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "app",
+   "at": [
+    19,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "bosscar",
+   "at": [
+    21,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "end",
+   "at": [
+    22,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {
+  "tips": [
+   7,
+   4
+  ],
+  "sweat": [
+   8,
+   0
+  ],
+  "twist": [
+   11,
+   0
+  ],
+  "bossSad": [
+   13,
+   0
+  ],
+  "guardTwist": [
+   17,
+   1
+  ],
+  "roster": [
+   20,
+   1
+  ],
+  "driver": [
+   20,
+   2
+  ],
+  "skip": [
+   20,
+   5
+  ],
+  "together": [
+   21,
+   6
+  ],
+  "name": [
+   22,
+   8
+  ]
+ },
+ "punch": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   5
+  ],
+  [
+   3,
+   10
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   6,
+   10
+  ],
+  [
+   7,
+   4
+  ],
+  [
+   8,
+   8
+  ],
+  [
+   9,
+   5
+  ],
+  [
+   10,
+   3
+  ],
+  [
+   11,
+   1
+  ],
+  [
+   12,
+   10
+  ],
+  [
+   13,
+   5
+  ],
+  [
+   16,
+   2
+  ],
+  [
+   17,
+   4
+  ],
+  [
+   18,
+   12
+  ],
+  [
+   20,
+   5
+  ],
+  [
+   21,
+   7
+  ]
+ ],
+ "stopMusic": [
+  [
+   10,
+   3,
+   11,
+   2
+  ]
+ ],
+ "rulePages": [
+  {
+   "title": "Rules for the boss's car",
+   "sub": "DO NOT show Priya",
+   "items": [
+    [
+     5,
+     2,
+     "Never sit in front"
+    ],
+    [
+     8,
+     2,
+     "Laugh at everything. Even the jingle"
+    ],
+    [
+     9,
+     2,
+     "Never touch the AC"
+    ]
+   ]
+  },
+  {
+   "title": "Intern rules",
+   "sub": "don't tell Dev",
+   "items": [
+    [
+     12,
+     0,
+     "Never cancel. He needs me"
+    ],
+    [
+     12,
+     5,
+     "Jingle stays ON. He loves it"
+    ]
+   ]
+  }
+ ],
+ "appSticker": "TURNS, NOT FAVOURS",
+ "appDriverNote": "Arjun's turn to drive today",
+ "end": {
+  "headline": "Can't say no\nto the free lift?",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "boss",
+  "rules",
+  "jingle",
+  "AC",
+  "twist",
+  "hostage",
+  "skip",
+  "laughed"
+ ],
+ "post": {
+  "title": "He wrote 3 rules to survive his boss's car 💀",
+  "caption": "Free lift from the boss every morning. Secret rules on both sides, and nobody allowed to say no 😭 Tag the friend who can't turn down a favour.",
+  "hashtags": [
+   "#internlife",
+   "#officecomedy",
+   "#carpool",
+   "#animatedshorts",
+   "#Sahyatri"
+  ]
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "Your kid could ride to school in the wrong car for a month, and you'd never know.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Four parents. One lane. Four kids. One school.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Ten minutes to the bell. Four cars, one kid each.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Six minutes. All four hit the school road. Bumper to bumper.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Two minutes. Sharma ji starts honking in rhythm.",
+   "rate": "+22%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Zero. Bell. Four kids, still buckled in.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "New plan. One car, taking turns.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "But nobody wants to look lazy.",
+   "rate": "+22%",
+   "pitch": "+5Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "So next morning, all four volunteer. Secretly.",
+   "rate": "+20%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan grabs Priya's kid. Priya grabs Arjun's. Arjun grabs Sharma ji's grandson.",
+   "rate": "+30%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Four cars again. Every kid in the wrong one.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Weird part? Not one kid complained.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "The kids had been swapping cars at the colony gate for weeks.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Best friend in the blue car? Hop in.",
+   "rate": "+26%",
+   "pitch": "+7Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Lesson: when nine year olds out plan you, get a roster.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So the school run went on an app. The roster names one parent a day.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Everyone else follows the car on a live map, not the window.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday. One car, four kids, through the gate before the bell.",
+   "rate": "+22%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The kids still swap. Just seats now. Mid drive.",
+   "rate": "+18%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "School run four cars deep? Sahyatri's in the bio.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  }
+ ]
+}

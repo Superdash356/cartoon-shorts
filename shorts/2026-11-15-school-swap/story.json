@@ -1,0 +1,475 @@
+{
+ "title": "The Secret School-Run Swap",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.14,
+ "keepGap": 0.28,
+ "beats": {
+  "theme": "school-run chaos: four parents, four cars, one school, late every day",
+  "setting": "the school drop-off road with a bell tower clock counting down, plus the colony gate where the kids swap cars",
+  "conflict": "four separate school runs jam the same school road and all four kids miss the bell",
+  "failedAttempt": "everyone turns up as driver on the same day: all four volunteer and grab each other's kids",
+  "twist": "the kids had been secretly swapping cars at the colony gate for weeks to ride with their best friends",
+  "lesson": "when nine year olds out-plan you, you need a roster",
+  "appAngle": "the roster names one school-run parent per morning; the others follow the car on the live map instead of the window",
+  "callback": "the kids still swap, just seats now, mid-drive",
+  "ctaLine": "School run four cars deep?"
+ },
+ "lines": [
+  {
+   "text": "Your kid could ride to school in the wrong car for a month, and you'd never know.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Four parents. One lane. Four kids. One school.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Ten minutes to the bell. Four cars, one kid each.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Six minutes. All four hit the school road. Bumper to bumper.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Two minutes. Sharma ji starts honking in rhythm.",
+   "rate": "+22%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Zero. Bell. Four kids, still buckled in.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "New plan. One car, taking turns.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "But nobody wants to look lazy.",
+   "rate": "+22%",
+   "pitch": "+5Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "So next morning, all four volunteer. Secretly.",
+   "rate": "+20%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan grabs Priya's kid. Priya grabs Arjun's. Arjun grabs Sharma ji's grandson.",
+   "rate": "+30%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Four cars again. Every kid in the wrong one.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Weird part? Not one kid complained.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "The kids had been swapping cars at the colony gate for weeks.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Best friend in the blue car? Hop in.",
+   "rate": "+26%",
+   "pitch": "+7Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Lesson: when nine year olds out plan you, get a roster.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So the school run went on an app. The roster names one parent a day.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Everyone else follows the car on a live map, not the window.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday. One car, four kids, through the gate before the bell.",
+   "rate": "+22%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The kids still swap. Just seats now. Mid drive.",
+   "rate": "+18%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "School run four cars deep? Sahyatri's in the bio.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  }
+ ],
+ "shots": [
+  {
+   "id": "school",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "street",
+   "at": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "gate",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "school",
+   "at": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "school",
+   "at": [
+    5,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "doors",
+   "at": [
+    6,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "walk",
+   "at": [
+    8,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "mixup",
+   "at": [
+    9,
+    0
+   ]
+  },
+  {
+   "id": "guard",
+   "at": [
+    11,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "swap",
+   "at": [
+    12,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "clock",
+   "at": [
+    14,
+    0
+   ],
+   "music": "sad"
+  },
+  {
+   "id": "app",
+   "at": [
+    15,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "early",
+   "at": [
+    17,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "end",
+   "at": [
+    19,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {
+  "guardTwist": [
+   11,
+   5
+  ],
+  "honk": [
+   4,
+   5
+  ],
+  "bell": [
+   5,
+   1
+  ],
+  "wrong": [
+   10,
+   7
+  ],
+  "secret": [
+   12,
+   4
+  ],
+  "hop": [
+   13,
+   6
+  ],
+  "early": [
+   17,
+   8
+  ],
+  "seats": [
+   18,
+   5
+  ],
+  "roster": [
+   15,
+   9
+  ],
+  "driver": [
+   15,
+   12
+  ],
+  "live": [
+   16,
+   7
+  ]
+ },
+ "punch": [
+  [
+   0,
+   6
+  ],
+  [
+   0,
+   15
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   2,
+   0
+  ],
+  [
+   3,
+   6
+  ],
+  [
+   4,
+   5
+  ],
+  [
+   5,
+   1
+  ],
+  [
+   5,
+   3
+  ],
+  [
+   7,
+   4
+  ],
+  [
+   8,
+   4
+  ],
+  [
+   9,
+   11
+  ],
+  [
+   10,
+   7
+  ],
+  [
+   11,
+   5
+  ],
+  [
+   12,
+   4
+  ],
+  [
+   13,
+   6
+  ],
+  [
+   14,
+   4
+  ],
+  [
+   17,
+   8
+  ],
+  [
+   18,
+   5
+  ]
+ ],
+ "stopMusic": [
+  [
+   5,
+   0,
+   5,
+   4
+  ],
+  [
+   11,
+   0,
+   12,
+   0
+  ]
+ ],
+ "end": {
+  "headline": "School run\nfour cars deep?",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "bell",
+  "honking",
+  "volunteer",
+  "swapping",
+  "roster",
+  "seats",
+  "Sahyatri"
+ ],
+ "post": {
+  "title": "4 parents got out-planned by their kids 💀",
+  "caption": "Four parents, four cars, one school, and still late every morning. The kids had already fixed it. Tag the parent who's always on the school run.",
+  "hashtags": [
+   "#schoolrun",
+   "#animatedstory",
+   "#parentlife",
+   "#desicomedy",
+   "#Sahyatri"
+  ]
+ },
+ "school": {
+  "name": "LITTLE STARS SCHOOL",
+  "times": [
+   [
+    0,
+    0,
+    "7:58"
+   ],
+   [
+    2,
+    0,
+    "7:50"
+   ],
+   [
+    3,
+    0,
+    "7:54"
+   ],
+   [
+    4,
+    0,
+    "7:58"
+   ],
+   [
+    5,
+    0,
+    "8:00"
+   ],
+   [
+    17,
+    0,
+    "7:55"
+   ]
+  ],
+  "cars": [
+   "ROHAN",
+   "PRIYA",
+   "ARJUN",
+   "SHARMA JI"
+  ],
+  "honk": "HONK ♪",
+  "late": "LATE",
+  "early": "EARLY",
+  "mixup": [
+   [
+    "ROHAN",
+    "PRIYA'S KID"
+   ],
+   [
+    "PRIYA",
+    "ARJUN'S KID"
+   ],
+   [
+    "ARJUN",
+    "SHARMA JI'S GRANDSON"
+   ],
+   [
+    "SHARMA JI",
+    "ROHAN'S KID"
+   ]
+  ],
+  "wrong": "WRONG KID",
+  "secret": "SECRET SWAP",
+  "seats": "SEAT SWAP"
+ },
+ "appDriverNote": "Arjun has the school run today",
+ "appSticker": "SCHOOL RUN"
+}

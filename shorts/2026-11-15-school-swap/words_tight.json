@@ -1,0 +1,962 @@
+[
+ {
+  "word": "Your",
+  "start": 0.035,
+  "end": 0.11
+ },
+ {
+  "word": "kid",
+  "start": 0.118,
+  "end": 0.304
+ },
+ {
+  "word": "could",
+  "start": 0.314,
+  "end": 0.434
+ },
+ {
+  "word": "ride",
+  "start": 0.444,
+  "end": 0.602
+ },
+ {
+  "word": "to",
+  "start": 0.611,
+  "end": 0.658
+ },
+ {
+  "word": "school",
+  "start": 0.667,
+  "end": 0.937
+ },
+ {
+  "word": "in",
+  "start": 0.946,
+  "end": 0.992
+ },
+ {
+  "word": "the",
+  "start": 1.002,
+  "end": 1.057
+ },
+ {
+  "word": "wrong",
+  "start": 1.067,
+  "end": 1.271
+ },
+ {
+  "word": "car",
+  "start": 1.281,
+  "end": 1.457
+ },
+ {
+  "word": "for",
+  "start": 1.466,
+  "end": 1.577
+ },
+ {
+  "word": "a",
+  "start": 1.587,
+  "end": 1.615
+ },
+ {
+  "word": "month",
+  "start": 1.624,
+  "end": 1.912
+ },
+ {
+  "word": "and",
+  "start": 2.117,
+  "end": 2.163
+ },
+ {
+  "word": "you'd",
+  "start": 2.172,
+  "end": 2.293
+ },
+ {
+  "word": "never",
+  "start": 2.303,
+  "end": 2.479
+ },
+ {
+  "word": "know",
+  "start": 2.489,
+  "end": 2.655
+ },
+ {
+  "word": "Four",
+  "start": 2.971,
+  "end": 3.033
+ },
+ {
+  "word": "parents",
+  "start": 3.042,
+  "end": 3.422
+ },
+ {
+  "word": "One lane",
+  "start": 3.714,
+  "end": 4.006
+ },
+ {
+  "word": "Four",
+  "start": 4.316,
+  "end": 4.377
+ },
+ {
+  "word": "kids",
+  "start": 4.386,
+  "end": 4.704
+ },
+ {
+  "word": "One",
+  "start": 4.996,
+  "end": 5.094
+ },
+ {
+  "word": "school",
+  "start": 5.103,
+  "end": 5.341
+ },
+ {
+  "word": "Ten",
+  "start": 5.613,
+  "end": 5.719
+ },
+ {
+  "word": "minutes",
+  "start": 5.728,
+  "end": 5.958
+ },
+ {
+  "word": "to",
+  "start": 5.967,
+  "end": 6.038
+ },
+ {
+  "word": "the",
+  "start": 6.046,
+  "end": 6.117
+ },
+ {
+  "word": "bell",
+  "start": 6.126,
+  "end": 6.339
+ },
+ {
+  "word": "Four",
+  "start": 6.584,
+  "end": 6.672
+ },
+ {
+  "word": "cars",
+  "start": 6.681,
+  "end": 7.017
+ },
+ {
+  "word": "one",
+  "start": 7.061,
+  "end": 7.238
+ },
+ {
+  "word": "kid",
+  "start": 7.247,
+  "end": 7.406
+ },
+ {
+  "word": "each",
+  "start": 7.415,
+  "end": 7.681
+ },
+ {
+  "word": "Six",
+  "start": 7.953,
+  "end": 8.1
+ },
+ {
+  "word": "minutes",
+  "start": 8.109,
+  "end": 8.413
+ },
+ {
+  "word": "All",
+  "start": 8.701,
+  "end": 8.796
+ },
+ {
+  "word": "four",
+  "start": 8.805,
+  "end": 8.927
+ },
+ {
+  "word": "hit",
+  "start": 8.936,
+  "end": 9.04
+ },
+ {
+  "word": "the",
+  "start": 9.049,
+  "end": 9.101
+ },
+ {
+  "word": "school",
+  "start": 9.11,
+  "end": 9.292
+ },
+ {
+  "word": "road",
+  "start": 9.301,
+  "end": 9.51
+ },
+ {
+  "word": "Bumper",
+  "start": 9.806,
+  "end": 9.936
+ },
+ {
+  "word": "to",
+  "start": 9.945,
+  "end": 9.989
+ },
+ {
+  "word": "bumper",
+  "start": 9.997,
+  "end": 10.302
+ },
+ {
+  "word": "Two",
+  "start": 10.574,
+  "end": 10.654
+ },
+ {
+  "word": "minutes",
+  "start": 10.664,
+  "end": 10.987
+ },
+ {
+  "word": "Sharma",
+  "start": 11.283,
+  "end": 11.518
+ },
+ {
+  "word": "ji",
+  "start": 11.526,
+  "end": 11.761
+ },
+ {
+  "word": "starts",
+  "start": 11.859,
+  "end": 12.093
+ },
+ {
+  "word": "honking",
+  "start": 12.102,
+  "end": 12.38
+ },
+ {
+  "word": "in",
+  "start": 12.389,
+  "end": 12.461
+ },
+ {
+  "word": "rhythm",
+  "start": 12.47,
+  "end": 12.686
+ },
+ {
+  "word": "Zero",
+  "start": 12.958,
+  "end": 13.246
+ },
+ {
+  "word": "Bell",
+  "start": 13.492,
+  "end": 13.675
+ },
+ {
+  "word": "Four",
+  "start": 13.92,
+  "end": 13.987
+ },
+ {
+  "word": "kids",
+  "start": 13.996,
+  "end": 14.343
+ },
+ {
+  "word": "still",
+  "start": 14.497,
+  "end": 14.68
+ },
+ {
+  "word": "buckled",
+  "start": 14.689,
+  "end": 14.959
+ },
+ {
+  "word": "in",
+  "start": 14.968,
+  "end": 15.122
+ },
+ {
+  "word": "New",
+  "start": 15.368,
+  "end": 15.449
+ },
+ {
+  "word": "plan",
+  "start": 15.458,
+  "end": 15.727
+ },
+ {
+  "word": "One",
+  "start": 16.033,
+  "end": 16.132
+ },
+ {
+  "word": "car",
+  "start": 16.14,
+  "end": 16.419
+ },
+ {
+  "word": "taking",
+  "start": 16.563,
+  "end": 16.77
+ },
+ {
+  "word": "turns",
+  "start": 16.779,
+  "end": 17.139
+ },
+ {
+  "word": "But",
+  "start": 17.411,
+  "end": 17.464
+ },
+ {
+  "word": "nobody",
+  "start": 17.473,
+  "end": 17.689
+ },
+ {
+  "word": "wants",
+  "start": 17.698,
+  "end": 17.832
+ },
+ {
+  "word": "to",
+  "start": 17.842,
+  "end": 17.896
+ },
+ {
+  "word": "look",
+  "start": 17.904,
+  "end": 18.039
+ },
+ {
+  "word": "lazy",
+  "start": 18.048,
+  "end": 18.318
+ },
+ {
+  "word": "So",
+  "start": 18.59,
+  "end": 18.682
+ },
+ {
+  "word": "next",
+  "start": 18.69,
+  "end": 18.873
+ },
+ {
+  "word": "morning",
+  "start": 18.882,
+  "end": 19.147
+ },
+ {
+  "word": "all",
+  "start": 19.431,
+  "end": 19.54
+ },
+ {
+  "word": "four",
+  "start": 19.549,
+  "end": 19.714
+ },
+ {
+  "word": "volunteer",
+  "start": 19.723,
+  "end": 20.161
+ },
+ {
+  "word": "Secretly",
+  "start": 20.463,
+  "end": 20.819
+ },
+ {
+  "word": "Rohan",
+  "start": 21.091,
+  "end": 21.268
+ },
+ {
+  "word": "grabs",
+  "start": 21.277,
+  "end": 21.496
+ },
+ {
+  "word": "Priya's",
+  "start": 21.504,
+  "end": 21.749
+ },
+ {
+  "word": "kid",
+  "start": 21.758,
+  "end": 21.968
+ },
+ {
+  "word": "Priya",
+  "start": 22.255,
+  "end": 22.407
+ },
+ {
+  "word": "grabs",
+  "start": 22.416,
+  "end": 22.635
+ },
+ {
+  "word": "Arjun's",
+  "start": 22.643,
+  "end": 23.099
+ },
+ {
+  "word": "Arjun",
+  "start": 23.377,
+  "end": 23.639
+ },
+ {
+  "word": "grabs",
+  "start": 23.647,
+  "end": 23.934
+ },
+ {
+  "word": "Sharma",
+  "start": 24.01,
+  "end": 24.246
+ },
+ {
+  "word": "ji's",
+  "start": 24.254,
+  "end": 24.44
+ },
+ {
+  "word": "grandson",
+  "start": 24.448,
+  "end": 24.794
+ },
+ {
+  "word": "Four",
+  "start": 25.066,
+  "end": 25.139
+ },
+ {
+  "word": "cars",
+  "start": 25.148,
+  "end": 25.322
+ },
+ {
+  "word": "again",
+  "start": 25.331,
+  "end": 25.541
+ },
+ {
+  "word": "Every",
+  "start": 25.843,
+  "end": 26.025
+ },
+ {
+  "word": "kid",
+  "start": 26.035,
+  "end": 26.236
+ },
+ {
+  "word": "in",
+  "start": 26.245,
+  "end": 26.3
+ },
+ {
+  "word": "the",
+  "start": 26.309,
+  "end": 26.364
+ },
+ {
+  "word": "wrong",
+  "start": 26.373,
+  "end": 26.583
+ },
+ {
+  "word": "one",
+  "start": 26.592,
+  "end": 26.793
+ },
+ {
+  "word": "Weird",
+  "start": 27.109,
+  "end": 27.241
+ },
+ {
+  "word": "part",
+  "start": 27.251,
+  "end": 27.468
+ },
+ {
+  "word": "Not",
+  "start": 27.78,
+  "end": 27.884
+ },
+ {
+  "word": "one",
+  "start": 27.894,
+  "end": 28.017
+ },
+ {
+  "word": "kid",
+  "start": 28.025,
+  "end": 28.177
+ },
+ {
+  "word": "complained",
+  "start": 28.187,
+  "end": 28.612
+ },
+ {
+  "word": "The",
+  "start": 28.858,
+  "end": 28.894
+ },
+ {
+  "word": "kids",
+  "start": 28.904,
+  "end": 29.086
+ },
+ {
+  "word": "had",
+  "start": 29.095,
+  "end": 29.177
+ },
+ {
+  "word": "been",
+  "start": 29.187,
+  "end": 29.278
+ },
+ {
+  "word": "swapping",
+  "start": 29.287,
+  "end": 29.653
+ },
+ {
+  "word": "cars",
+  "start": 29.661,
+  "end": 29.918
+ },
+ {
+  "word": "at",
+  "start": 29.926,
+  "end": 29.982
+ },
+ {
+  "word": "the",
+  "start": 29.99,
+  "end": 30.046
+ },
+ {
+  "word": "colony",
+  "start": 30.054,
+  "end": 30.319
+ },
+ {
+  "word": "gate",
+  "start": 30.329,
+  "end": 30.493
+ },
+ {
+  "word": "for",
+  "start": 30.503,
+  "end": 30.621
+ },
+ {
+  "word": "weeks",
+  "start": 30.63,
+  "end": 30.987
+ },
+ {
+  "word": "Best",
+  "start": 31.259,
+  "end": 31.406
+ },
+ {
+  "word": "friend",
+  "start": 31.415,
+  "end": 31.581
+ },
+ {
+  "word": "in",
+  "start": 31.589,
+  "end": 31.624
+ },
+ {
+  "word": "the",
+  "start": 31.632,
+  "end": 31.676
+ },
+ {
+  "word": "blue",
+  "start": 31.685,
+  "end": 31.816
+ },
+ {
+  "word": "car",
+  "start": 31.824,
+  "end": 32.059
+ },
+ {
+  "word": "Hop",
+  "start": 32.355,
+  "end": 32.485
+ },
+ {
+  "word": "in",
+  "start": 32.494,
+  "end": 32.616
+ },
+ {
+  "word": "Lesson",
+  "start": 32.888,
+  "end": 33.181
+ },
+ {
+  "word": "when",
+  "start": 33.418,
+  "end": 33.521
+ },
+ {
+  "word": "nine",
+  "start": 33.531,
+  "end": 33.711
+ },
+ {
+  "word": "year",
+  "start": 33.72,
+  "end": 33.861
+ },
+ {
+  "word": "olds",
+  "start": 33.871,
+  "end": 34.022
+ },
+ {
+  "word": "out",
+  "start": 34.032,
+  "end": 34.136
+ },
+ {
+  "word": "plan",
+  "start": 34.145,
+  "end": 34.391
+ },
+ {
+  "word": "you",
+  "start": 34.4,
+  "end": 34.552
+ },
+ {
+  "word": "get",
+  "start": 34.769,
+  "end": 34.863
+ },
+ {
+  "word": "a",
+  "start": 34.873,
+  "end": 34.892
+ },
+ {
+  "word": "roster",
+  "start": 34.901,
+  "end": 35.355
+ },
+ {
+  "word": "So",
+  "start": 35.601,
+  "end": 35.662
+ },
+ {
+  "word": "the",
+  "start": 35.671,
+  "end": 35.733
+ },
+ {
+  "word": "school",
+  "start": 35.742,
+  "end": 35.963
+ },
+ {
+  "word": "run",
+  "start": 35.972,
+  "end": 36.175
+ },
+ {
+  "word": "went",
+  "start": 36.184,
+  "end": 36.29
+ },
+ {
+  "word": "on",
+  "start": 36.299,
+  "end": 36.379
+ },
+ {
+  "word": "an",
+  "start": 36.388,
+  "end": 36.449
+ },
+ {
+  "word": "app.",
+  "start": 36.459,
+  "end": 36.697
+ },
+ {
+  "word": "The",
+  "start": 36.997,
+  "end": 37.033
+ },
+ {
+  "word": "roster",
+  "start": 37.042,
+  "end": 37.316
+ },
+ {
+  "word": "names",
+  "start": 37.325,
+  "end": 37.511
+ },
+ {
+  "word": "one",
+  "start": 37.519,
+  "end": 37.705
+ },
+ {
+  "word": "parent",
+  "start": 37.714,
+  "end": 37.935
+ },
+ {
+  "word": "a",
+  "start": 37.944,
+  "end": 37.97
+ },
+ {
+  "word": "day",
+  "start": 37.979,
+  "end": 38.2
+ },
+ {
+  "word": "Everyone",
+  "start": 38.472,
+  "end": 38.729
+ },
+ {
+  "word": "else",
+  "start": 38.738,
+  "end": 38.924
+ },
+ {
+  "word": "follows",
+  "start": 38.932,
+  "end": 39.197
+ },
+ {
+  "word": "the",
+  "start": 39.206,
+  "end": 39.268
+ },
+ {
+  "word": "car",
+  "start": 39.277,
+  "end": 39.568
+ },
+ {
+  "word": "on",
+  "start": 39.622,
+  "end": 39.666
+ },
+ {
+  "word": "a",
+  "start": 39.675,
+  "end": 39.711
+ },
+ {
+  "word": "live",
+  "start": 39.719,
+  "end": 39.975
+ },
+ {
+  "word": "map",
+  "start": 39.984,
+  "end": 40.268
+ },
+ {
+  "word": "not",
+  "start": 40.48,
+  "end": 40.604
+ },
+ {
+  "word": "the",
+  "start": 40.612,
+  "end": 40.665
+ },
+ {
+  "word": "window",
+  "start": 40.674,
+  "end": 40.975
+ },
+ {
+  "word": "Monday",
+  "start": 41.246,
+  "end": 41.481
+ },
+ {
+  "word": "One",
+  "start": 41.786,
+  "end": 41.894
+ },
+ {
+  "word": "car",
+  "start": 41.903,
+  "end": 42.182
+ },
+ {
+  "word": "four",
+  "start": 42.37,
+  "end": 42.478
+ },
+ {
+  "word": "kids",
+  "start": 42.487,
+  "end": 42.846
+ },
+ {
+  "word": "through",
+  "start": 43.018,
+  "end": 43.134
+ },
+ {
+  "word": "the",
+  "start": 43.143,
+  "end": 43.215
+ },
+ {
+  "word": "gate",
+  "start": 43.224,
+  "end": 43.404
+ },
+ {
+  "word": "before",
+  "start": 43.413,
+  "end": 43.628
+ },
+ {
+  "word": "the",
+  "start": 43.638,
+  "end": 43.691
+ },
+ {
+  "word": "bell",
+  "start": 43.7,
+  "end": 43.925
+ },
+ {
+  "word": "The",
+  "start": 44.197,
+  "end": 44.243
+ },
+ {
+  "word": "kids",
+  "start": 44.253,
+  "end": 44.429
+ },
+ {
+  "word": "still",
+  "start": 44.439,
+  "end": 44.596
+ },
+ {
+  "word": "swap",
+  "start": 44.606,
+  "end": 44.912
+ },
+ {
+  "word": "Just",
+  "start": 45.219,
+  "end": 45.331
+ },
+ {
+  "word": "seats",
+  "start": 45.339,
+  "end": 45.554
+ },
+ {
+  "word": "now",
+  "start": 45.563,
+  "end": 45.758
+ },
+ {
+  "word": "Mid drive",
+  "start": 46.055,
+  "end": 46.436
+ },
+ {
+  "word": "School",
+  "start": 46.752,
+  "end": 47.022
+ },
+ {
+  "word": "run",
+  "start": 47.031,
+  "end": 47.17
+ },
+ {
+  "word": "four",
+  "start": 47.18,
+  "end": 47.346
+ },
+ {
+  "word": "cars",
+  "start": 47.356,
+  "end": 47.579
+ },
+ {
+  "word": "deep",
+  "start": 47.589,
+  "end": 47.811
+ },
+ {
+  "word": "Sahyatri's",
+  "start": 48.118,
+  "end": 48.536
+ },
+ {
+  "word": "in",
+  "start": 48.546,
+  "end": 48.601
+ },
+ {
+  "word": "the",
+  "start": 48.611,
+  "end": 48.667
+ },
+ {
+  "word": "bio",
+  "start": 48.675,
+  "end": 48.982
+ }
+]

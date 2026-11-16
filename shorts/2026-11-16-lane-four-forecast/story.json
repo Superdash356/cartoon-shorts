@@ -8,7 +8,7 @@
   "setting": "Lane four told as a deadpan TV weather forecast, water gauge rising day by day",
   "conflict": "one neighbour's SUV becomes the whole lane's flood ferry and he runs out of fuel",
   "failedAttempt": "a fight over petrol money: UPI, cash and Sharma ji's blessings, argued knee deep",
-  "twist": "the rain had stopped; the flood is the hero's own roof tank, his pump left on every morning",
+  "twist": "the rain had stopped; every paper boat drifts away from the hero's gate: his roof tank overflows, pump left on every morning",
   "lesson": "when one hero does all the driving, nobody checks the hero",
   "appAngle": "fuel goes into settle costs and splits itself; the roster gives every car on the lane a morning",
   "callback": "the guard now switches the pump off personally; tomorrow's forecast is dry with scattered blessings",
@@ -94,7 +94,7 @@
    "gap": 0.15
   },
   {
-   "text": "It sails the wrong way. Straight to Arjun's gate.",
+   "text": "Every boat drifts away from the same gate. Arjun's.",
    "rate": "+20%",
    "pitch": "-3Hz",
    "gap": 0.15
@@ -305,14 +305,6 @@
    11,
    2
   ],
-  "wrongway": [
-   13,
-   3
-  ],
-  "atgate": [
-   13,
-   5
-  ],
   "tank": [
    14,
    1
@@ -364,6 +356,14 @@
   "sprinkle": [
    21,
    4
+  ],
+  "drift": [
+   13,
+   2
+  ],
+  "atgate": [
+   13,
+   8
   ]
  },
  "punch": [
@@ -413,7 +413,7 @@
   ],
   [
    13,
-   3
+   8
   ],
   [
    14,
@@ -467,7 +467,7 @@
   "blessings",
   "empty",
   "cancelled",
-  "wrong",
+  "drifts",
   "overflowing",
   "settle",
   "roster",

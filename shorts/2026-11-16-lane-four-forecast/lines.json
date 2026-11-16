@@ -1,0 +1,143 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "You'd never guess why this lane flooded for five days without rain.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Nobody did. Except a paper boat.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Here's the forecast for Lane four.",
+   "rate": "+18%",
+   "pitch": "+4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday. Ankle deep. Only Arjun's tall SUV gets out.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "He ferries Rohan. Hero.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Tuesday. Knee deep. Rohan, Priya, Sharma ji.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Wednesday. Waist deep. Nine people and the guard's cycle on the roof.",
+   "rate": "+28%",
+   "pitch": "+2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Then, petrol money.",
+   "rate": "+14%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan pays UPI. Priya pays cash. Sharma ji pays in blessings.",
+   "rate": "+24%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Friday. Arjun's heart is full. His tank is empty.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "The lane argues, knee deep, over how many blessings make a litre.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Ferry service, cancelled.",
+   "rate": "+10%",
+   "pitch": "-7Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Then Priya's kid floats a paper boat.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "It sails the wrong way. Straight to Arjun's gate.",
+   "rate": "+20%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "His roof tank is overflowing. The pump's been on all week.",
+   "rate": "+22%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Arjun switches it on every morning, then leaves to be the hero.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Lesson: when one hero does all the driving, nobody checks the hero.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So Lane four built a real pool on an app.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Petrol now lands in settle costs and splits itself.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The roster gives every car its own morning.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "The pump? The guard switches it off now. Personally.",
+   "rate": "+18%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Tomorrow's forecast: dry, with scattered blessings.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "One hero doing every drive? Sahyatri. Link in bio.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  }
+ ]
+}

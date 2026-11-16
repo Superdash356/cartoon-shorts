@@ -1,0 +1,537 @@
+{
+ "title": "The Flood With No Rain",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.14,
+ "keepGap": 0.28,
+ "beats": {
+  "theme": "monsoon flooded lane where only one tall car can get anyone out",
+  "setting": "Lane four told as a deadpan TV weather forecast, water gauge rising day by day",
+  "conflict": "one neighbour's SUV becomes the whole lane's flood ferry and he runs out of fuel",
+  "failedAttempt": "a fight over petrol money: UPI, cash and Sharma ji's blessings, argued knee deep",
+  "twist": "the rain had stopped; the flood is the hero's own roof tank, his pump left on every morning",
+  "lesson": "when one hero does all the driving, nobody checks the hero",
+  "appAngle": "fuel goes into settle costs and splits itself; the roster gives every car on the lane a morning",
+  "callback": "the guard now switches the pump off personally; tomorrow's forecast is dry with scattered blessings",
+  "ctaLine": "One hero doing every drive?"
+ },
+ "lines": [
+  {
+   "text": "You'd never guess why this lane flooded for five days without rain.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Nobody did. Except a paper boat.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Here's the forecast for Lane four.",
+   "rate": "+18%",
+   "pitch": "+4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Monday. Ankle deep. Only Arjun's tall SUV gets out.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "He ferries Rohan. Hero.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Tuesday. Knee deep. Rohan, Priya, Sharma ji.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Wednesday. Waist deep. Nine people and the guard's cycle on the roof.",
+   "rate": "+28%",
+   "pitch": "+2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Then, petrol money.",
+   "rate": "+14%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan pays UPI. Priya pays cash. Sharma ji pays in blessings.",
+   "rate": "+24%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Friday. Arjun's heart is full. His tank is empty.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "The lane argues, knee deep, over how many blessings make a litre.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Ferry service, cancelled.",
+   "rate": "+10%",
+   "pitch": "-7Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Then Priya's kid floats a paper boat.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "It sails the wrong way. Straight to Arjun's gate.",
+   "rate": "+20%",
+   "pitch": "-3Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "His roof tank is overflowing. The pump's been on all week.",
+   "rate": "+22%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Arjun switches it on every morning, then leaves to be the hero.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Lesson: when one hero does all the driving, nobody checks the hero.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So Lane four built a real pool on an app.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Petrol now lands in settle costs and splits itself.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The roster gives every car its own morning.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "The pump? The guard switches it off now. Personally.",
+   "rate": "+18%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Tomorrow's forecast: dry, with scattered blessings.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "One hero doing every drive? Sahyatri. Link in bio.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  }
+ ],
+ "shots": [
+  {
+   "id": "flood",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "boat",
+   "at": [
+    1,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "forecast",
+   "at": [
+    2,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "guard",
+   "at": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "forecast",
+   "at": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "fare",
+   "at": [
+    7,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "doors",
+   "at": [
+    10,
+    0
+   ]
+  },
+  {
+   "id": "fare",
+   "at": [
+    11,
+    0
+   ],
+   "music": "sad"
+  },
+  {
+   "id": "boat",
+   "at": [
+    12,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "sig5",
+   "at": [
+    15,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "flood",
+   "at": [
+    16,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "app",
+   "at": [
+    17,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "guard",
+   "at": [
+    20,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "dry",
+   "at": [
+    21,
+    0
+   ]
+  },
+  {
+   "id": "end",
+   "at": [
+    22,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {
+  "hero": [
+   4,
+   3
+  ],
+  "cycle": [
+   6,
+   7
+  ],
+  "upi": [
+   8,
+   2
+  ],
+  "cash": [
+   8,
+   5
+  ],
+  "bless": [
+   8,
+   10
+  ],
+  "full": [
+   9,
+   4
+  ],
+  "empty": [
+   9,
+   8
+  ],
+  "cancel": [
+   11,
+   2
+  ],
+  "wrongway": [
+   13,
+   3
+  ],
+  "atgate": [
+   13,
+   5
+  ],
+  "tank": [
+   14,
+   1
+  ],
+  "pump": [
+   14,
+   6
+  ],
+  "outOf": [
+   15,
+   11
+  ],
+  "settle": [
+   18,
+   4
+  ],
+  "roster": [
+   19,
+   1
+  ],
+  "driver": [
+   19,
+   4
+  ],
+  "tap": [
+   30,
+   0
+  ],
+  "ready": [
+   30,
+   0
+  ],
+  "watch": [
+   30,
+   0
+  ],
+  "live": [
+   30,
+   0
+  ],
+  "guardHappy": [
+   20,
+   8
+  ],
+  "dry": [
+   21,
+   2
+  ],
+  "sprinkle": [
+   21,
+   4
+  ]
+ },
+ "punch": [
+  [
+   0,
+   6
+  ],
+  [
+   0,
+   11
+  ],
+  [
+   1,
+   4
+  ],
+  [
+   3,
+   5
+  ],
+  [
+   4,
+   3
+  ],
+  [
+   5,
+   1
+  ],
+  [
+   6,
+   1
+  ],
+  [
+   6,
+   8
+  ],
+  [
+   8,
+   10
+  ],
+  [
+   9,
+   8
+  ],
+  [
+   11,
+   2
+  ],
+  [
+   13,
+   3
+  ],
+  [
+   14,
+   4
+  ],
+  [
+   14,
+   6
+  ],
+  [
+   16,
+   8
+  ],
+  [
+   20,
+   8
+  ],
+  [
+   21,
+   4
+  ]
+ ],
+ "stopMusic": [
+  [
+   1,
+   0,
+   1,
+   2
+  ],
+  [
+   11,
+   0,
+   11,
+   2
+  ],
+  [
+   16,
+   0,
+   17,
+   0
+  ]
+ ],
+ "end": {
+  "headline": "One hero doing\nevery drive?",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "flooded",
+  "hero",
+  "blessings",
+  "empty",
+  "cancelled",
+  "wrong",
+  "overflowing",
+  "settle",
+  "roster",
+  "personally",
+  "Sahyatri"
+ ],
+ "post": {
+  "title": "A paper boat solved Lane 4's flood 💀",
+  "caption": "Five days of flooding, zero rain, and one neighbour ferrying the whole lane in his SUV. Then a paper boat sailed the wrong way. Tag the friend who does every single drive.",
+  "hashtags": [
+   "#monsoon",
+   "#animatedstory",
+   "#carpool",
+   "#desicomedy",
+   "#Sahyatri"
+  ]
+ },
+ "appDriverNote": "Rohan is driving today",
+ "appSticker": "NO MORE FERRY",
+ "flood": {
+  "lane": "LANE 4",
+  "days": [
+   [
+    3,
+    0,
+    "MON",
+    "ANKLE DEEP",
+    0.22,
+    1
+   ],
+   [
+    5,
+    0,
+    "TUE",
+    "KNEE DEEP",
+    0.45,
+    3
+   ],
+   [
+    6,
+    0,
+    "WED",
+    "WAIST DEEP",
+    0.72,
+    9
+   ]
+  ],
+  "fare": [
+   [
+    "UPI",
+    "PAID ✓"
+   ],
+   [
+    "CASH",
+    "₹ ₹ ₹"
+   ],
+   [
+    "BLESSINGS",
+    "🙏"
+   ]
+  ],
+  "cancel": "FERRY CANCELLED",
+  "pump": "PUMP: ON",
+  "dry": "DRY",
+  "tomorrow": "TOMORROW"
+ }
+}

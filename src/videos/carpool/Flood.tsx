@@ -114,7 +114,7 @@ const WeatherSet: React.FC<{ t: number; t0: number; dry: boolean; pop: (ta: numb
   const cur = dry ? null : DAYS[Math.max(0, k)];
   const prev = k > 0 ? DAYS[k - 1] : null;
   const lv = dry ? 0 : cur ? (prev ? prev.level : 0) + (cur.level - (prev ? prev.level : 0)) * cl(t, [cur.t, cur.t + 0.7], [0, 1]) : 0;
-  const G = 1380, H = 430, wy = G - lv * H; // ground line, full gauge height, water surface
+  const G = 1440, H = 540, wy = G - lv * H; // ground line, full gauge height, water surface
   const riders = dry ? 1 : cur ? cur.riders : 1;
   const chip = dry ? { day: FC.tomorrow ?? "TOMORROW", depth: FC.dry ?? "DRY", t: T("dry") } : cur ? { day: cur.day, depth: cur.depth, t: cur.t } : null;
   const cs = chip ? pop(chip.t) : 0;
@@ -127,7 +127,7 @@ const WeatherSet: React.FC<{ t: number; t0: number; dry: boolean; pop: (ta: numb
       </defs>
       <rect x={0} y={0} width={1080} height={1920} fill="url(#fsky)" />
       {/* houses silhouette */}
-      {[[40, 300], [300, 260], [560, 320], [800, 280]].map(([x, h], i) => (
+      {[[40, 380], [300, 330], [560, 400], [800, 350]].map(([x, h], i) => (
         <g key={i}>
           <rect x={x} y={G - h} width={230} height={h} fill={["#f2d6a8", "#e9c2b0", "#cfe0c6", "#e8d9b6"][i]} stroke={INK} strokeWidth={6} />
           <path d={`M ${x - 15} ${G - h} L ${x + 115} ${G - h - 90} L ${x + 245} ${G - h} Z`} fill={["#c46a4e", "#8a5a3c", "#3d6db5", "#c46a4e"][i]} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
@@ -138,7 +138,7 @@ const WeatherSet: React.FC<{ t: number; t0: number; dry: boolean; pop: (ta: numb
       <rect x={0} y={G} width={1080} height={1920 - G} fill="#8a7a62" />
       <rect x={0} y={G} width={1080} height={24} fill="#a7acb2" stroke={INK} strokeWidth={5} />
       {/* SUV */}
-      <SUV p={[600, G - 50 - (lv > 0.3 ? (lv - 0.3) * 60 : 0)]} riders={riders} cycle={cyc} t={t} bob={lv > 0.05 ? 6 : 0} />
+      <g transform={`translate(600 ${G - 60 - (lv > 0.3 ? (lv - 0.3) * 80 : 0)}) scale(1.3)`}><SUV p={[0, 0]} riders={riders} cycle={cyc} t={t} bob={lv > 0.05 ? 6 : 0} /></g>
       {/* water */}
       {lv > 0.01 ? (
         <g>

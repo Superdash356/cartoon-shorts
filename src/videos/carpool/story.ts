@@ -266,7 +266,7 @@ const camAt0 = (id: ShotId, f: number): Cam => {
     }
     case "flood": { // high over the flooded lane, sun out: four neighbours stranded at their doors, cars up to the hubs
       const L: V3 = [-4, 0.9, -6.5];
-      return C(dolly([12, 5.2, 7.5], L, push(f, a, 0.0028)), L, 40, 0.02);
+      return C(dolly([15, 6.2, 9.5], L, push(f, a, 0.0028)), L, 46, 0.02);
     }
     case "doors": { // the four at their doors, phones out, before anyone leaves (chat overlay comes next)
       const L: V3 = [6, 1.4, -9.2];

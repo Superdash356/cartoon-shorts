@@ -79,7 +79,11 @@ export type ShotId = "guard" | "hook" | "leave" | "sig1" | "sig2" | "sig5" | "ye
   | "bosscar" | "boss" | "intern" | "rules" | "rules2"
   // school-run swap: top-down school road with the bell-tower countdown, the parents' kid mix-up, the kids' secret car swap
   // at the colony gate, and the one pool car arriving early (2D overlays, School.tsx)
-  | "school" | "mixup" | "swap" | "early";
+  | "school" | "mixup" | "swap" | "early"
+  // lane-four forecast (2026-11-16): the colony lane under water on a sunny day (3D), and 2D overlays: the TV weather
+  // forecast with the water gauge + the SUV ferry, the petrol-money fight, the paper boat sailing to the overflowing roof
+  // tank, and tomorrow's dry forecast (Flood.tsx)
+  | "flood" | "forecast" | "fare" | "boat" | "dry";
 export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
 /** cut ~3 frames before line L (word k) */
@@ -91,7 +95,7 @@ export const SHOTS: Shot[] = STORY.shots.map((x, i) => {
 SHOTS[SHOTS.length - 1].b = TOTAL;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 /** shots drawn under a full-screen 2D overlay: the 3D layer just needs a soft background */
-export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true, rules: true, rules2: true, school: true, mixup: true, swap: true, early: true };
+export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true, rules: true, rules2: true, school: true, mixup: true, swap: true, early: true, forecast: true, fare: true, boat: true, dry: true };
 
 // ---------------- motion ----------------
 // four neighbours, index i lives in house i; car i is parked in front of house i
@@ -110,7 +114,7 @@ export const BOSS_X = WAIT_X, INTERN = 4; // the carpool car waits here for Shar
 export const carsAt = (id: ShotId, t: number): CarPose[] => {
   const parked = (i: number): CarPose => ({ x: HOUSE_X[i] + 2.6, z: PARK_Z, yaw: 0, on: true, riders: [], owner: i });
   switch (id) {
-    case "street": case "doors": case "office": case "floor": case "years": case "meeting": return [0, 1, 2, 3].map(parked);
+    case "flood": case "street": case "doors": case "office": case "floor": case "years": case "meeting": return [0, 1, 2, 3].map(parked);
     case "walk": case "office": case "clock": case "floor": case "years": case "meeting": case "guard": return [0, 1, 2, 3].map(parked);
     case "leave": { // Rohan (white) then Arjun (blue), nose to tail out of the gate
       const tg = shotAt(Math.round(t * FPS)).a / FPS;
@@ -260,6 +264,10 @@ const camAt0 = (id: ShotId, f: number): Cam => {
       const L: V3 = [STOP_X - 2.3, 1.25, 0.4];
       return C(dolly([STOP_X + 3.2, 1.75, 8.8], L, push(f, a, 0.003)), L, 40, 0.05);
     }
+    case "flood": { // high over the flooded lane, sun out: four neighbours stranded at their doors, cars up to the hubs
+      const L: V3 = [-4, 0.9, -6.5];
+      return C(dolly([12, 5.2, 7.5], L, push(f, a, 0.0028)), L, 40, 0.02);
+    }
     case "doors": { // the four at their doors, phones out, before anyone leaves (chat overlay comes next)
       const L: V3 = [6, 1.4, -9.2];
       return C(dolly([-16, 2.2, -6.8], L, push(f, a, 0.002)), L, 36, 0);
@@ -288,7 +296,7 @@ const camAt0 = (id: ShotId, f: number): Cam => {
       const L: V3 = [BOSS_X - 1.25, 1.3, LANE_Z - 0.42];
       return C(dolly([BOSS_X + 1.7, 1.5, LANE_Z - 1.9], L, push(f, a, 0.004)), L, 30, 0.03);
     }
-    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": { // soft background behind the overlays
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": { // soft background behind the overlays
       const L: V3 = [0, 3, -12];
       return C(dolly([4, 4, 10], L, push(f, a, 0.001)), L, 50, 0);
     }
@@ -337,7 +345,8 @@ export const dofAt = (id: ShotId): { cInf: number; focus?: V3 } => {
     case "bro": return { cInf: 13 };
     case "signal": return { cInf: 11, focus: [STOP_X - 1.2, 1.3, 0] };
     case "doors": return { cInf: 7, focus: [-7, 1.5, -9] };
-    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": return { cInf: 22 };
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": return { cInf: 22 };
+    case "flood": return { cInf: 7, focus: [-7, 1.2, -6] };
     case "bosscar": return { cInf: 10 };
     case "boss": case "intern": return { cInf: 13 };
     case "mycar": return { cInf: 14 };

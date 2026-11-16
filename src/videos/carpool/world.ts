@@ -103,6 +103,7 @@ export class CarpoolWorld {
   private fog = new THREE.Fog("#bccbec", 25, 420);
   private clouds: THREE.Mesh[] = [];
   private redLamps: THREE.MeshBasicMaterial[] = [];
+  private water!: THREE.Mesh; private waterTex!: THREE.Texture;
   private hourHand!: THREE.Mesh; private minHand!: THREE.Mesh; private secHand!: THREE.Mesh;
   private frustum = new THREE.Frustum(); private m4 = new THREE.Matrix4(); private sph = new THREE.Sphere(); private v = new THREE.Vector3();
 
@@ -228,6 +229,19 @@ export class CarpoolWorld {
     }), color: 0xe8e8e8 }));
     bsign.position.set(BAY.x, 2.05, BAY.signZ); bsign.layers.set(NOINK); R.add(bsign);
 
+    // the flooded lane (shot "flood", 2026-11-16): a sunlit sheet of water over the lane and footpaths, ripple streaks drifting
+    this.waterTex = ctex("floodRipples", 512, 512, (g) => {
+      g.fillStyle = "#5aa6d6"; g.fillRect(0, 0, 512, 512);
+      for (let i = 0; i < 70; i++) {
+        const x = (i * 197) % 512, y = (i * 113) % 512, w = 30 + (i % 5) * 18;
+        g.strokeStyle = i % 3 ? "rgba(255,255,255,0.35)" : "rgba(30,90,140,0.35)"; g.lineWidth = 3 + (i % 3);
+        g.beginPath(); g.moveTo(x, y); g.quadraticCurveTo(x + w / 2, y - 6, x + w, y); g.stroke();
+      }
+    });
+    this.waterTex.wrapS = this.waterTex.wrapT = THREE.RepeatWrapping; this.waterTex.repeat.set(18, 4);
+    this.water = new THREE.Mesh(new THREE.PlaneGeometry(GATE_X + 60, 17.2), new THREE.MeshBasicMaterial({ map: this.waterTex, color: new THREE.Color(0.95, 1.0, 1.05), transparent: true, opacity: 0.86, depthWrite: false }));
+    this.water.rotation.x = -Math.PI / 2; this.water.position.set((GATE_X - 60) / 2, 0.3, 0); this.water.layers.set(NOINK); this.water.visible = false; this.water.renderOrder = 2; R.add(this.water);
+
     // cars (posed per frame): two of each colour, handed out by owner
     this.cars = CAR_COL.map((col) => [0, 1].map(() => { const c = mkCar(col); c.visible = false; R.add(c); return c; }));
   }
@@ -301,6 +315,9 @@ export class CarpoolWorld {
       this.minHand.rotation.z = (-minA * Math.PI) / 180; this.hourHand.rotation.z = (-hourA * Math.PI) / 180;
       this.secHand.rotation.z = -(Math.floor(t * 8) / 8) * Math.PI * 2 * (id === "years" ? 6 : 1.5);
     }
+    // ---- flood water ----
+    this.water.visible = id === "flood";
+    this.waterTex.offset.set(t * 0.05, Math.sin(t * 1.3) * 0.02);
     // ---- red light ----
     for (const m of this.redLamps) m.color.setRGB(2.4, 0.15, 0.1);
 
@@ -377,6 +394,9 @@ export class CarpoolWorld {
         const u = Math.max(0, t - t0), z = Math.min(DOOR_Z + u * 1.6, -3.5), walking = z < -3.5;
         person(i, x - 0.45, 0, z, PEOPLE[i], "front", walking ? { mode: "stroll", phase: (u * 2.1 + i * 0.13) % 1, expr: "neutral" } : { mode: "stand", expr: "neutral" });
       });
+    }
+    if (id === "flood") { // everyone stuck at their doors, staring at the water
+      HOUSE_X.forEach((x, i) => person(i, x, 0, -9.0, PEOPLE[i], "front", { mode: "stand", expr: i === 2 ? "grin" : "nervous", look: i % 2 ? 1 : -1 }));
     }
     if (id === "doors") {
       HOUSE_X.forEach((x, i) => person(i, x, 0, -9.0, PEOPLE[i], "front", { mode: "stand", expr: i === 3 ? "nervous" : "neutral", look: i % 2 ? 1 : -1 }));

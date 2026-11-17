@@ -1,0 +1,131 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "You've run for a bus. This guy ran for the wrong one for three weeks.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Observe the office commuter, in his natural habitat.",
+   "rate": "+12%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Eight fourteen. Rohan hunts the eight fifteen shuttle.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Week one. He sprints. The doors shut on his nose.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week two. A shoe flies off. The bus does not care.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week three. Laptop, tiffin, toothbrush still in his mouth.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "He gains. He leaps. The driver waves bye.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So, cunning. A daily chai, if the driver waits two minutes.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The driver drinks the chai. Leaves at eight fifteen.",
+   "rate": "+14%",
+   "pitch": "-5Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Then the guard finally speaks.",
+   "rate": "+12%",
+   "pitch": "-3Hz",
+   "gap": 0.35
+  },
+  {
+   "text": "Sir. That is a school bus.",
+   "rate": "+4%",
+   "pitch": "-8Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Your shuttle got cancelled in June. Check your email.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Thirty kids have been cheering him on. Daily.",
+   "rate": "+16%",
+   "pitch": "+4Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Lesson: the best ride is the one that waits for you.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "So the herd evolved. It got itself an app.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Four neighbours, one pool. The roster picks whose car goes.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The live map: two hundred metres out.",
+   "rate": "+18%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan finishes brushing, strolls out. Car's right there.",
+   "rate": "+16%",
+   "pitch": "-2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "No sprint. A rare sight in the wild.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "The school bus still slows at his gate. For the chai.",
+   "rate": "+14%",
+   "pitch": "-4Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Sprinting for your ride every morning? Try Sahyatri. Link in bio.",
+   "rate": "+14%",
+   "pitch": "+0Hz",
+   "gap": 0.2
+  }
+ ]
+}

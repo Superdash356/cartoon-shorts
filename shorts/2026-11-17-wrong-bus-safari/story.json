@@ -1,0 +1,522 @@
+{
+ "title": "He Chased the Wrong Bus for 3 Weeks",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.18,
+ "keepGap": 0.26,
+ "beats": {
+  "theme": "the office shuttle that leaves without you",
+  "setting": "the colony road at 8:14 am, narrated as a deadpan wildlife documentary with a REC camera bug",
+  "conflict": "Rohan sprints after the 8:15 shuttle every morning for three weeks and never catches it",
+  "failedAttempt": "bribing the bus driver with a daily cutting chai to wait two minutes",
+  "twist": "it is a school bus; his office shuttle was cancelled in June by an email he never opened",
+  "lesson": "the best ride is the one that waits for you",
+  "appAngle": "the roster picks whose car goes and the live map shows it 200 m out, so nobody has to run",
+  "callback": "the school bus still slows at his gate every morning, for its chai",
+  "ctaLine": "Sprinting for your ride every morning?"
+ },
+ "lines": [
+  {
+   "text": "You've run for a bus. This guy ran for the wrong one for three weeks.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Observe the office commuter, in his natural habitat.",
+   "rate": "+12%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Eight fourteen. Rohan hunts the eight fifteen shuttle.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Week one. He sprints. The doors shut on his nose.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week two. A shoe flies off. The bus does not care.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Week three. Laptop, tiffin, toothbrush still in his mouth.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "He gains. He leaps. The driver waves bye.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So, cunning. A daily chai, if the driver waits two minutes.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The driver drinks the chai. Leaves at eight fifteen.",
+   "rate": "+14%",
+   "pitch": "-5Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Then the guard finally speaks.",
+   "rate": "+12%",
+   "pitch": "-3Hz",
+   "gap": 0.35
+  },
+  {
+   "text": "Sir. That is a school bus.",
+   "rate": "+4%",
+   "pitch": "-8Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Your shuttle got cancelled in June. Check your email.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Thirty kids have been cheering him on. Daily.",
+   "rate": "+16%",
+   "pitch": "+4Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Lesson: the best ride is the one that waits for you.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "So the herd evolved. It got itself an app.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Four neighbours, one pool. The roster picks whose car goes.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "The live map: two hundred metres out.",
+   "rate": "+18%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan finishes brushing, strolls out. Car's right there.",
+   "rate": "+16%",
+   "pitch": "-2Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "No sprint. A rare sight in the wild.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "The school bus still slows at his gate. For the chai.",
+   "rate": "+14%",
+   "pitch": "-4Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Sprinting for your ride every morning? Try Sahyatri. Link in bio.",
+   "rate": "+14%",
+   "pitch": "+0Hz",
+   "gap": 0.2
+  }
+ ],
+ "shots": [
+  {
+   "id": "chase",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "street",
+   "at": [
+    1,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "chase",
+   "at": [
+    2,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "chase",
+   "at": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "chase",
+   "at": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "chase",
+   "at": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "chase",
+   "at": [
+    6,
+    0
+   ]
+  },
+  {
+   "id": "chai",
+   "at": [
+    7,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "guard",
+   "at": [
+    9,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "bus",
+   "at": [
+    10,
+    4
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "mail",
+   "at": [
+    11,
+    0
+   ]
+  },
+  {
+   "id": "bus",
+   "at": [
+    12,
+    0
+   ]
+  },
+  {
+   "id": "doors",
+   "at": [
+    13,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "app",
+   "at": [
+    14,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "calm",
+   "at": [
+    17,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "onecar",
+   "at": [
+    18,
+    0
+   ]
+  },
+  {
+   "id": "chai2",
+   "at": [
+    19,
+    0
+   ]
+  },
+  {
+   "id": "end",
+   "at": [
+    20,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {
+  "nose": [
+   3,
+   7
+  ],
+  "shoe": [
+   4,
+   3
+  ],
+  "leap": [
+   6,
+   3
+  ],
+  "bye": [
+   6,
+   6
+  ],
+  "drinks": [
+   8,
+   2
+  ],
+  "leaves": [
+   8,
+   5
+  ],
+  "guardTwist": [
+   10,
+   0
+  ],
+  "email": [
+   11,
+   8
+  ],
+  "kids": [
+   12,
+   4
+  ],
+  "roster": [
+   15,
+   5
+  ],
+  "driver": [
+   15,
+   8
+  ],
+  "tap": [
+   40,
+   0
+  ],
+  "ready": [
+   40,
+   0
+  ],
+  "watch": [
+   16,
+   1
+  ],
+  "live": [
+   16,
+   2
+  ],
+  "one": [
+   18,
+   0
+  ]
+ },
+ "punch": [
+  [
+   0,
+   7
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   6
+  ],
+  [
+   3,
+   7
+  ],
+  [
+   4,
+   3
+  ],
+  [
+   6,
+   3
+  ],
+  [
+   8,
+   5
+  ],
+  [
+   9,
+   3
+  ],
+  [
+   10,
+   0
+  ],
+  [
+   10,
+   4
+  ],
+  [
+   11,
+   8
+  ],
+  [
+   12,
+   4
+  ],
+  [
+   13,
+   3
+  ],
+  [
+   18,
+   0
+  ],
+  [
+   18,
+   3
+  ],
+  [
+   18,
+   6
+  ],
+  [
+   19,
+   2
+  ]
+ ],
+ "stopMusic": [
+  [
+   10,
+   0,
+   10,
+   4
+  ],
+  [
+   13,
+   0,
+   13,
+   2
+  ]
+ ],
+ "end": {
+  "headline": "Still sprinting\nfor your ride?",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "wrong",
+  "sprints",
+  "shoe",
+  "leaps",
+  "chai",
+  "school",
+  "cancelled",
+  "cheering",
+  "waits",
+  "roster",
+  "live",
+  "rare",
+  "Sahyatri"
+ ],
+ "post": {
+  "title": "He Chased the Wrong Bus for 3 Weeks",
+  "caption": "Three weeks, one lost shoe and a daily chai bribe later, the guard finally said it. Tag the friend who's always running for the bus.",
+  "hashtags": [
+   "#animatedstory",
+   "#officehumor",
+   "#commutelife",
+   "#carpool",
+   "#sahyatri"
+  ]
+ },
+ "appDriverNote": "Arjun is driving today",
+ "appSticker": "NO SPRINTING",
+ "hunt": {
+  "route": "8:15",
+  "banner": "GO UNCLE GO!",
+  "unread": "4,812",
+  "target": 2,
+  "stamp": "UNREAD",
+  "clock": "8:15 SHARP",
+  "inbox": [
+   {
+    "from": "Team standup",
+    "subject": "Daily sync moved to 9:30",
+    "date": "Nov 14"
+   },
+   {
+    "from": "Canteen",
+    "subject": "Samosa Friday is back",
+    "date": "Sep 3"
+   },
+   {
+    "from": "HR Transport",
+    "subject": "Office shuttle discontinued from June",
+    "date": "May 28"
+   },
+   {
+    "from": "IT Desk",
+    "subject": "Your password expires soon",
+    "date": "May 20"
+   }
+  ],
+  "labels": [
+   [
+    1,
+    0,
+    "THE OFFICE COMMUTER",
+    "Commutus sprintus"
+   ],
+   [
+    9,
+    0,
+    "THE GATE GUARD",
+    "Has seen everything"
+   ],
+   [
+    13,
+    0,
+    "FIELD NOTE",
+    "Rides that wait > rides that leave"
+   ],
+   [
+    18,
+    0,
+    "RARE SIGHTING",
+    "Commutus relaxus"
+   ]
+  ]
+ }
+}

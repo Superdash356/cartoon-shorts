@@ -83,7 +83,10 @@ export type ShotId = "guard" | "hook" | "leave" | "sig1" | "sig2" | "sig5" | "ye
   // lane-four forecast (2026-11-16): the colony lane under water on a sunny day (3D), and 2D overlays: the TV weather
   // forecast with the water gauge + the SUV ferry, the petrol-money fight, the paper boat sailing to the overflowing roof
   // tank, and tomorrow's dry forecast (Flood.tsx)
-  | "flood" | "forecast" | "fare" | "boat" | "dry";
+  | "flood" | "forecast" | "fare" | "boat" | "dry"
+  // wrong-bus safari (2026-11-17): wildlife-documentary 2D overlays (Hunt.tsx): Rohan chasing the yellow 8:15 bus, the chai
+  // bribe at the bus door, the SCHOOL BUS reveal, the unread inbox, the calm stroll to the pool car, the chai callback
+  | "chase" | "chai" | "bus" | "mail" | "calm" | "chai2";
 export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
 /** cut ~3 frames before line L (word k) */
@@ -95,7 +98,7 @@ export const SHOTS: Shot[] = STORY.shots.map((x, i) => {
 SHOTS[SHOTS.length - 1].b = TOTAL;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 /** shots drawn under a full-screen 2D overlay: the 3D layer just needs a soft background */
-export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true, rules: true, rules2: true, school: true, mixup: true, swap: true, early: true, forecast: true, fare: true, boat: true, dry: true };
+export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true, rules: true, rules2: true, school: true, mixup: true, swap: true, early: true, forecast: true, fare: true, boat: true, dry: true, chase: true, chai: true, bus: true, mail: true, calm: true, chai2: true };
 
 // ---------------- motion ----------------
 // four neighbours, index i lives in house i; car i is parked in front of house i
@@ -296,7 +299,7 @@ const camAt0 = (id: ShotId, f: number): Cam => {
       const L: V3 = [BOSS_X - 1.25, 1.3, LANE_Z - 0.42];
       return C(dolly([BOSS_X + 1.7, 1.5, LANE_Z - 1.9], L, push(f, a, 0.004)), L, 30, 0.03);
     }
-    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": { // soft background behind the overlays
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": case "chase": case "chai": case "bus": case "mail": case "calm": case "chai2": { // soft background behind the overlays
       const L: V3 = [0, 3, -12];
       return C(dolly([4, 4, 10], L, push(f, a, 0.001)), L, 50, 0);
     }
@@ -345,7 +348,7 @@ export const dofAt = (id: ShotId): { cInf: number; focus?: V3 } => {
     case "bro": return { cInf: 13 };
     case "signal": return { cInf: 11, focus: [STOP_X - 1.2, 1.3, 0] };
     case "doors": return { cInf: 7, focus: [-7, 1.5, -9] };
-    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": return { cInf: 22 };
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": case "chase": case "chai": case "bus": case "mail": case "calm": case "chai2": return { cInf: 22 };
     case "flood": return { cInf: 7, focus: [-7, 1.2, -6] };
     case "bosscar": return { cInf: 10 };
     case "boss": case "intern": return { cInf: 13 };

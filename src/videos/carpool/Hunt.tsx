@@ -108,7 +108,7 @@ const Bus: React.FC<{ x: number; y: number; t: number; school: boolean; kids?: n
         {driverArm > 0 ? <g transform={`translate(240 -300) rotate(${-60 + Math.sin(t * 14) * 30 * driverArm})`}><rect x={-10} y={-90} width={22} height={90} rx={11} fill="#a8744c" stroke={INK} strokeWidth={4} /><circle cx={1} cy={-96} r={18} fill="#a8744c" stroke={INK} strokeWidth={4} /></g> : null}
         {/* route board + lettering */}
         <rect x={-610} y={-118} width={150} height={56} rx={8} fill={INK} /><text x={-535} y={-76} textAnchor="middle" fontFamily={UI} fontWeight={800} fontSize={40} fill="#ffb238">{route}</text>
-        {school ? <text x={-180} y={-180} textAnchor="middle" fontFamily={UI} fontWeight={800} fontSize={86} letterSpacing={-2} fill={INK}>SCHOOL BUS</text> : null}
+        {school ? <text x={-250} y={-180} textAnchor="middle" fontFamily={UI} fontWeight={800} fontSize={76} letterSpacing={-2} fill={INK}>SCHOOL BUS</text> : null}
         {banner > 0.01 ? (
           <g transform={`translate(-260 ${-470 - 30 * banner}) rotate(${Math.sin(t * 6) * 3}) scale(${banner})`}>
             <rect x={-300} y={-60} width={600} height={110} rx={14} fill="#fff" stroke={INK} strokeWidth={7} />
@@ -196,6 +196,7 @@ export const HuntOverlay: React.FC<{ t0: number; t1: number; mode: HuntMode }> =
   return (
     <AbsoluteFill style={{ opacity: out }}>
       <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
+        <g transform={mode === "chase" ? `translate(380 1250) scale(${[1, 1, 1.1, 1.2][Math.min(3, weekAt(t))] * (1 + 0.04 * Math.min(1, u))}) translate(-380 -1250)` : undefined}>
         <Backdrop scroll={u * scrollSpeed} gate={mode === "chai2" || mode === "calm"} />
         {mode === "chase" ? (() => {
           const week = weekAt(t);
@@ -230,10 +231,10 @@ export const HuntOverlay: React.FC<{ t0: number; t1: number; mode: HuntMode }> =
           const took = t > tD - 0.2;
           return (
             <>
-              <Bus x={980 + go} y={1390} t={t} school={false} doorOpen={go > 0 ? 0 : 1} route={H.route} />
-              <Runner x={430} y={1440} run={0} amp={0} week={0} shoeGone={false} />
-              {!took ? <g transform={`translate(${520 + hand * 160} ${1080 - hand * 60})`}><circle r={16} fill={SKIN} stroke={INK} strokeWidth={4} /><Chai x={0} y={-12} t={t} /></g> : null}
-              {took && go < 300 ? <g transform={`translate(${1180 + go} ${1040 - 30 * cl(t, [tD - 0.2, tD + 0.3], [0, 1])}) rotate(${-30 * cl(t, [tD, tD + 0.4], [0, 1])})`}><Chai x={0} y={0} t={t} steam={0.6} /></g> : null}
+              <Bus x={760 + go} y={1390} t={t} school={false} doorOpen={go > 0 ? 0 : 1} route={H.route} />
+              <Runner x={600} y={1440} run={0} amp={0} week={0} shoeGone={false} />
+              {!took ? <g transform={`translate(${680 + hand * 200} ${1100 - hand * 50})`}><circle r={16} fill={SKIN} stroke={INK} strokeWidth={4} /><Chai x={0} y={-12} t={t} /></g> : null}
+              {took && go < 300 ? <g transform={`translate(${960 + go} ${1040 - 30 * cl(t, [tD - 0.2, tD + 0.3], [0, 1])}) rotate(${-30 * cl(t, [tD, tD + 0.4], [0, 1])})`}><Chai x={0} y={0} t={t} steam={0.6} /></g> : null}
               <g transform="translate(860 330)"><circle r={120} fill="#fff" stroke={INK} strokeWidth={10} />
                 {(() => { const m = cl(t, [t0, tL], [13, 15], Easing.linear); return <><path d={`M 0 0 L ${Math.sin((m / 60) * Math.PI * 2) * 90} ${-Math.cos((m / 60) * Math.PI * 2) * 90}`} stroke={INK} strokeWidth={10} strokeLinecap="round" /><path d={`M 0 0 L ${Math.sin(((8 + m / 60) / 12) * Math.PI * 2) * 55} ${-Math.cos(((8 + m / 60) / 12) * Math.PI * 2) * 55}`} stroke={INK} strokeWidth={14} strokeLinecap="round" /></>; })()}
                 <circle r={12} fill={RED} /></g>
@@ -244,7 +245,7 @@ export const HuntOverlay: React.FC<{ t0: number; t1: number; mode: HuntMode }> =
           const tk = T("kids"), wave = t > tk - 0.15 ? 1 : 0.35, ban = sp(f, fps, tk - 0.1, 10, 180);
           return (
             <>
-              <g transform={`translate(${540 + 40 * (1 - pop)} 0) scale(${0.92 + 0.08 * pop})`} style={{ transformOrigin: "540px 1400px" }}>
+              <g transform={`translate(${500 + 40 * (1 - pop)} 0)`}>
                 <Bus x={300} y={1400} t={t} school kids={6} wave={wave} banner={ban} route={H.route} />
               </g>
               <Runner x={170} y={1460} run={0} amp={0} week={3} shoeGone scale={0.75} />
@@ -271,19 +272,20 @@ export const HuntOverlay: React.FC<{ t0: number; t1: number; mode: HuntMode }> =
           );
         })() : null}
         {mode === "chai2" ? (() => {
-          const slow = cl(t, [t0, t0 + 1.2], [0, 1], Easing.out(Easing.cubic)), bx = 1500 - 520 * slow;
+          const slow = cl(t, [t0, t0 + 1.2], [0, 1], Easing.out(Easing.cubic)), bx = 1500 - 680 * slow;
           const pass = cl(t, [t0 + 1.0, t0 + 1.6], [0, 1]);
           return (
             <>
               <Bus x={bx} y={1390} t={t} school kids={6} wave={1} route={H.route} />
-              <Runner x={560} y={1440} run={0} amp={0} week={0} shoeGone={false} />
-              <g transform={`translate(${640 + pass * (bx - 760)} ${1080 - pass * 120})`}><circle r={16} fill={SKIN} stroke={INK} strokeWidth={4} /><Chai x={0} y={-12} t={t} /></g>
+              <Runner x={720} y={1440} run={0} amp={0} week={0} shoeGone={false} />
+              <g transform={`translate(${800 + pass * (bx + 180 - 800)} ${1100 - pass * 60})`}><circle r={16} fill={SKIN} stroke={INK} strokeWidth={4} /><Chai x={0} y={-12} t={t} /></g>
             </>
           );
         })() : null}
+        </g>
       </svg>
       {mode === "chai" ? <Stamp text={H.clock ?? "8:15 SHARP"} s={sp(f, fps, T("leaves") + 0.15, 9, 260)} bg={RED} x={540} y={700} rot={-7} /> : null}
-      {mode === "bus" ? <Stamp text="PLOT TWIST" s={sp(f, fps, t0 + 0.05, 9, 260)} bg={YELLOW} fg={INK} x={540} y={420} rot={-6} /> : null}
+      {mode === "bus" && T("kids") - t0 > 1.5 ? <Stamp text="PLOT TWIST" s={sp(f, fps, t0 + 0.05, 9, 260)} bg={YELLOW} fg={INK} x={540} y={420} rot={-6} /> : null}
       {mode === "chai2" ? <Stamp text="DAILY CHAI ✓" s={sp(f, fps, t0 + 1.5, 9, 260)} bg="#2f9e4f" x={540} y={560} rot={5} size={96} /> : null}
     </AbsoluteFill>
   );

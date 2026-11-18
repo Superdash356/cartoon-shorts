@@ -1,0 +1,314 @@
+{
+ "title": "Two Gym Buddies, Two Bays Apart",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.16,
+ "keepGap": 0.26,
+ "beats": {
+  "theme": "the gym buddy commute: two friends drive separately to the same 6 am gym",
+  "setting": "the gym's car park at dawn, told through Rohan's smartwatch stats",
+  "conflict": "each texts 'already inside' and secretly waits in his car for the other to go in first",
+  "failedAttempt": "a 500 rupee skip-penalty bet that both lose the same morning, so the money just swaps",
+  "twist": "they were two bays apart for three months; the parking attendant knew and funded his own gym membership with their fees",
+  "lesson": "motivation is always late, a friend at your gate isn't",
+  "appAngle": "the roster names tomorrow's driver; one tap tells you your buddy is outside with the engine running",
+  "callback": "the parking attendant lost his two best customers and still out-lifts them both",
+  "ctaLine": "Gym buddy hiding in a car park?"
+ },
+ "lines": [
+  {
+   "text": "Your gym buddy could be lying to you every morning, and you'd never find out why.",
+   "rate": "+18%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Rohan's smartwatch logged ninety gym mornings. Zero reps.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Rohan and Arjun. Six a.m. Same gym. Two cars.",
+   "rate": "+28%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Rule one: never let your buddy work out alone.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Rohan parks. Texts: inside, warming up.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "He is in his car. Scrolling.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Arjun parks. Replies: same bro, on the treadmill.",
+   "rate": "+24%",
+   "pitch": "+8Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Also in his car. Also scrolling.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Steps: twelve. Calories burned: one banana.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Week four. Rohan's seat goes fully flat.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Week seven. Arjun brings a pillow.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Week ten. Arjun's car has curtains.",
+   "rate": "+18%",
+   "pitch": "-6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So, a bet. Skip a morning, pay your buddy five hundred.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Next day, both skip. Both pay.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Net gains: zero rupees, zero muscle.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Then the parking guy knocks on both windows.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Sirs. You're two bays apart. Three months now.",
+   "rate": "+14%",
+   "pitch": "-8Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Their parking money bought his own membership.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Lesson: motivation is always late. A friend at your gate isn't.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So they switched to one car, on an app.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "The roster picks tomorrow's driver. And one tap means he's outside, engine running.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "No hiding. Both walk in.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Rohan's watch: four hundred steps. Personal best.",
+   "rate": "+18%",
+   "pitch": "+4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "The parking guy lost his two best customers. Still out lifts them both.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Gym buddy hiding in a car park? Try Sahyatri. Link in bio.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  }
+ ],
+ "shots": [
+  {
+   "id": "park",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "watch",
+   "at": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "leave",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "walk",
+   "at": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "park",
+   "at": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "park",
+   "at": [
+    6,
+    0
+   ]
+  },
+  {
+   "id": "watch",
+   "at": [
+    8,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "park",
+   "at": [
+    9,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "bet",
+   "at": [
+    12,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "park",
+   "at": [
+    15,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "flex",
+   "at": [
+    17,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "doors",
+   "at": [
+    18,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "app",
+   "at": [
+    19,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "enter",
+   "at": [
+    21,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "watch",
+   "at": [
+    22,
+    0
+   ]
+  },
+  {
+   "id": "flex",
+   "at": [
+    23,
+    0
+   ]
+  },
+  {
+   "id": "end",
+   "at": [
+    24,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {},
+ "punch": [],
+ "stopMusic": [],
+ "end": {
+  "headline": "",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [],
+ "post": {
+  "title": "",
+  "caption": "",
+  "hashtags": []
+ }
+}

@@ -23,6 +23,7 @@ import { RulesOverlay } from "./Rules";
 import { SchoolOverlay } from "./School";
 import { FloodOverlay } from "./Flood";
 import { HuntOverlay, HuntMode, DocBug } from "./Hunt";
+import { GymOverlay, GymMode } from "./Gym";
 
 export const CARPOOL_FRAMES = TOTAL;
 const HUNT = !!(STORY as unknown as { hunt?: unknown }).hunt;
@@ -252,10 +253,11 @@ export const CarpoolShort: React.FC = () => {
       {(s.id === "school" || s.id === "mixup" || s.id === "swap" || s.id === "early") && <SchoolOverlay t0={s.a / FPS} t1={s.b / FPS} mode={s.id} />}
       {(s.id === "forecast" || s.id === "fare" || s.id === "boat" || s.id === "dry") && <FloodOverlay t0={s.a / FPS} t1={s.b / FPS} mode={s.id} />}
       {(s.id === "chase" || s.id === "chai" || s.id === "bus" || s.id === "mail" || s.id === "calm" || s.id === "chai2") && <HuntOverlay t0={s.a / FPS} t1={s.b / FPS} mode={s.id as HuntMode} />}
+      {(s.id === "park" || s.id === "watch" || s.id === "bet" || s.id === "flex" || s.id === "enter") && <GymOverlay t0={s.a / FPS} t1={s.b / FPS} mode={s.id as GymMode} />}
       {HUNT && s.id !== "end" && s.id !== "app" && s.id !== "mail" && <DocBug labels={!["chase", "chai", "bus", "calm", "chai2"].includes(s.id)} />}
       {s.id === "end" && <EndCard t0={END_CARD} />}
       {s.id !== "end" && s.id !== "app" && <DayStamp />}
-      {s.id !== "end" && <Captions y={s.id === "app" ? 95 : s.id === "chat" || s.id === "meeting" || s.id === "sheet" || s.id === "gates" ? 110 : s.id === "napkin" ? 1420 : s.id === "lift" ? 1560 : s.id === "seat" ? 1610 : s.id === "toss" ? 230 : s.id === "rules" || s.id === "rules2" ? 1580 : s.id === "school" || s.id === "early" || s.id === "mixup" ? 1600 : s.id === "swap" ? 1420 : s.id === "forecast" || s.id === "fare" || s.id === "boat" || s.id === "dry" ? 1560 : s.id === "chase" || s.id === "chai" || s.id === "bus" || s.id === "calm" || s.id === "chai2" ? 1590 : s.id === "mail" ? 1520 : s.id === "clock" || s.id === "years" ? 1560 : 1240} size={s.id === "app" ? 84 : 96} />}
+      {s.id !== "end" && <Captions y={s.id === "app" ? 95 : s.id === "park" ? 1500 : s.id === "flex" ? 1560 : s.id === "enter" ? 190 : s.id === "watch" || s.id === "bet" ? 1560 : s.id === "chat" || s.id === "meeting" || s.id === "sheet" || s.id === "gates" ? 110 : s.id === "napkin" ? 1420 : s.id === "lift" ? 1560 : s.id === "seat" ? 1610 : s.id === "toss" ? 230 : s.id === "rules" || s.id === "rules2" ? 1580 : s.id === "school" || s.id === "early" || s.id === "mixup" ? 1600 : s.id === "swap" ? 1420 : s.id === "forecast" || s.id === "fare" || s.id === "boat" || s.id === "dry" ? 1560 : s.id === "chase" || s.id === "chai" || s.id === "bus" || s.id === "calm" || s.id === "chai2" ? 1590 : s.id === "mail" ? 1520 : s.id === "clock" || s.id === "years" ? 1560 : 1240} size={s.id === "app" ? 84 : 96} />}
       <Audio src={staticFile("carpool/voice_current.wav")} />
     </AbsoluteFill>
   );

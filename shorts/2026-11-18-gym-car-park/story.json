@@ -1,8 +1,8 @@
 {
  "title": "Two Gym Buddies, Two Bays Apart",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.18,
- "keepGap": 0.26,
+ "tempo": 1.22,
+ "keepGap": 0.24,
  "beats": {
   "theme": "the gym buddy commute: two friends drive separately to the same 6 am gym",
   "setting": "the gym's car park at dawn, told through Rohan's smartwatch stats",
@@ -190,7 +190,7 @@
    ]
   },
   {
-   "id": "walk",
+   "id": "hook",
    "at": [
     3,
     0
@@ -251,7 +251,7 @@
    "music": "groove"
   },
   {
-   "id": "doors",
+   "id": "lonely",
    "at": [
     18,
     0

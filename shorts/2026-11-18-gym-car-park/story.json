@@ -1,7 +1,7 @@
 {
  "title": "Two Gym Buddies, Two Bays Apart",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.16,
+ "tempo": 1.18,
  "keepGap": 0.26,
  "beats": {
   "theme": "the gym buddy commute: two friends drive separately to the same 6 am gym",
@@ -19,22 +19,22 @@
    "text": "Your gym buddy could be lying to you every morning, and you'd never find out why.",
    "rate": "+18%",
    "pitch": "-6Hz",
-   "gap": 0.2
+   "gap": 0.16
   },
   {
-   "text": "Rohan's smartwatch logged ninety gym mornings. Zero reps.",
+   "text": "Rohan's watch: ninety gym mornings. Zero reps.",
    "rate": "+20%",
    "pitch": "-4Hz",
-   "gap": 0.2
+   "gap": 0.16
   },
   {
-   "text": "Rohan and Arjun. Six a.m. Same gym. Two cars.",
+   "text": "Rohan, Arjun. Six a.m. Same gym. Two cars.",
    "rate": "+28%",
    "pitch": "+0Hz",
    "gap": 0.12
   },
   {
-   "text": "Rule one: never let your buddy work out alone.",
+   "text": "Rule: never let your buddy train alone.",
    "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -46,49 +46,49 @@
    "gap": 0.12
   },
   {
-   "text": "He is in his car. Scrolling.",
+   "text": "He's in his car. Scrolling.",
    "rate": "+16%",
    "pitch": "-6Hz",
-   "gap": 0.2
+   "gap": 0.16
   },
   {
-   "text": "Arjun parks. Replies: same bro, on the treadmill.",
+   "text": "Arjun parks. Replies: same bro, treadmill.",
    "rate": "+24%",
    "pitch": "+8Hz",
    "gap": 0.12
   },
   {
-   "text": "Also in his car. Also scrolling.",
+   "text": "Also in his car.",
    "rate": "+16%",
    "pitch": "-6Hz",
-   "gap": 0.2
+   "gap": 0.16
   },
   {
-   "text": "Steps: twelve. Calories burned: one banana.",
+   "text": "Steps: twelve. Calories: one banana.",
    "rate": "+20%",
    "pitch": "-4Hz",
-   "gap": 0.2
+   "gap": 0.16
   },
   {
-   "text": "Week four. Rohan's seat goes fully flat.",
+   "text": "Week four. Rohan's seat goes flat.",
    "rate": "+26%",
    "pitch": "+0Hz",
    "gap": 0.1
   },
   {
-   "text": "Week seven. Arjun brings a pillow.",
+   "text": "Week seven. A pillow.",
    "rate": "+26%",
    "pitch": "+2Hz",
    "gap": 0.1
   },
   {
-   "text": "Week ten. Arjun's car has curtains.",
+   "text": "Week ten. Curtains.",
    "rate": "+18%",
    "pitch": "-6Hz",
-   "gap": 0.2
+   "gap": 0.16
   },
   {
-   "text": "So, a bet. Skip a morning, pay your buddy five hundred.",
+   "text": "So, a bet: skip, and pay your buddy five hundred.",
    "rate": "+26%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -100,10 +100,10 @@
    "gap": 0.12
   },
   {
-   "text": "Net gains: zero rupees, zero muscle.",
+   "text": "Net gains: zero.",
    "rate": "+16%",
    "pitch": "-6Hz",
-   "gap": 0.22
+   "gap": 0.16
   },
   {
    "text": "Then the parking guy knocks on both windows.",
@@ -112,25 +112,25 @@
    "gap": 0.12
   },
   {
-   "text": "Sirs. You're two bays apart. Three months now.",
+   "text": "Sirs. Two bays apart. Three months.",
    "rate": "+14%",
    "pitch": "-8Hz",
-   "gap": 0.22
+   "gap": 0.16
   },
   {
    "text": "Their parking money bought his own membership.",
    "rate": "+20%",
    "pitch": "-4Hz",
-   "gap": 0.2
+   "gap": 0.16
   },
   {
    "text": "Lesson: motivation is always late. A friend at your gate isn't.",
    "rate": "+16%",
    "pitch": "-4Hz",
-   "gap": 0.22
+   "gap": 0.16
   },
   {
-   "text": "So they switched to one car, on an app.",
+   "text": "So: one car, on an app.",
    "rate": "+22%",
    "pitch": "+0Hz",
    "gap": 0.12
@@ -151,13 +151,13 @@
    "text": "Rohan's watch: four hundred steps. Personal best.",
    "rate": "+18%",
    "pitch": "+4Hz",
-   "gap": 0.2
+   "gap": 0.16
   },
   {
-   "text": "The parking guy lost his two best customers. Still out lifts them both.",
+   "text": "The parking guy lost two customers. Still out lifts them both.",
    "rate": "+20%",
    "pitch": "-4Hz",
-   "gap": 0.2
+   "gap": 0.16
   },
   {
    "text": "Gym buddy hiding in a car park? Try Sahyatri. Link in bio.",
@@ -297,18 +297,255 @@
    "music": "end"
   }
  ],
- "cues": {},
- "punch": [],
- "stopMusic": [],
+ "cues": {
+  "arrive1": [
+   4,
+   1
+  ],
+  "arrive2": [
+   6,
+   1
+  ],
+  "recline": [
+   9,
+   5
+  ],
+  "pillow": [
+   10,
+   3
+  ],
+  "curtains": [
+   11,
+   2
+  ],
+  "pay": [
+   13,
+   5
+  ],
+  "net": [
+   14,
+   0
+  ],
+  "knock": [
+   15,
+   4
+  ],
+  "bays": [
+   16,
+   1
+  ],
+  "outlift": [
+   23,
+   0
+  ],
+  "roster": [
+   20,
+   1
+  ],
+  "driver": [
+   20,
+   4
+  ],
+  "tap": [
+   20,
+   7
+  ],
+  "ready": [
+   20,
+   9
+  ],
+  "watch": [
+   40,
+   0
+  ],
+  "live": [
+   40,
+   0
+  ],
+  "name": [
+   24,
+   8
+  ],
+  "check": [
+   24,
+   9
+  ]
+ },
+ "punch": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   5
+  ],
+  [
+   2,
+   6
+  ],
+  [
+   5,
+   4
+  ],
+  [
+   7,
+   3
+  ],
+  [
+   8,
+   4
+  ],
+  [
+   9,
+   5
+  ],
+  [
+   10,
+   3
+  ],
+  [
+   11,
+   2
+  ],
+  [
+   13,
+   5
+  ],
+  [
+   14,
+   2
+  ],
+  [
+   15,
+   4
+  ],
+  [
+   16,
+   1
+  ],
+  [
+   17,
+   6
+  ],
+  [
+   21,
+   0
+  ],
+  [
+   22,
+   5
+  ],
+  [
+   23,
+   7
+  ]
+ ],
+ "stopMusic": [
+  [
+   16,
+   0,
+   16,
+   1
+  ],
+  [
+   18,
+   0,
+   18,
+   2
+  ]
+ ],
  "end": {
-  "headline": "",
+  "headline": "Gym buddy hiding\nin the car park?",
   "tagline": "Community Carpool",
   "button": "Link in bio"
  },
- "captionsBig": [],
+ "captionsBig": [
+  "zero",
+  "scrolling",
+  "banana",
+  "flat",
+  "pillow",
+  "curtains",
+  "bet",
+  "knocks",
+  "bays",
+  "membership",
+  "late",
+  "roster",
+  "outside",
+  "best",
+  "sahyatri"
+ ],
  "post": {
-  "title": "",
-  "caption": "",
-  "hashtags": []
+  "title": "2 gym buddies, 90 mornings, zero reps 💀",
+  "caption": "Both texted \"inside, warming up\". Both were in the car park, two bays apart, for three months. Tag the gym buddy who's \"on the treadmill\".",
+  "hashtags": [
+   "#gymbuddy",
+   "#animatedstory",
+   "#gymhumor",
+   "#carpool",
+   "#sahyatri"
+  ]
+ },
+ "appDriverNote": "Arjun is driving tomorrow",
+ "appSticker": "NO HIDING",
+ "gym": {
+  "name": "Pump House Gym",
+  "texts": [
+   [
+    4,
+    3,
+    0,
+    "inside, warming up"
+   ],
+   [
+    6,
+    3,
+    1,
+    "same bro, on the treadmill"
+   ]
+  ],
+  "watch": [
+   [
+    1,
+    2,
+    "GYM VISITS",
+    "90"
+   ],
+   [
+    1,
+    5,
+    "REPS",
+    "0"
+   ],
+   [
+    8,
+    1,
+    "STEPS",
+    "12"
+   ],
+   [
+    8,
+    3,
+    "CALORIES",
+    "1 banana"
+   ],
+   [
+    22,
+    2,
+    "STEPS",
+    "400"
+   ],
+   [
+    22,
+    5,
+    "PERSONAL",
+    "BEST"
+   ]
+  ],
+  "bet": "SKIP = PAY ₹500",
+  "net": "NET GAINS: ₹0",
+  "card": "PAID IN PARKING"
  }
 }

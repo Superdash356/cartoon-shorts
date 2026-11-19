@@ -1,174 +1,150 @@
 {
- "title": "Two Gym Buddies, Two Bays Apart",
+ "title": "Three Airport Drops, One Flight",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.22,
- "keepGap": 0.24,
+ "tempo": 1.25,
+ "keepGap": 0.22,
  "beats": {
-  "theme": "the gym buddy commute: two friends drive separately to the same 6 am gym",
-  "setting": "the gym's car park at dawn, told through Rohan's smartwatch stats",
-  "conflict": "each texts 'already inside' and secretly waits in his car for the other to go in first",
-  "failedAttempt": "a 500 rupee skip-penalty bet that both lose the same morning, so the money just swaps",
-  "twist": "they were two bays apart for three months; the parking attendant knew and funded his own gym membership with their fees",
-  "lesson": "motivation is always late, a friend at your gate isn't",
-  "appAngle": "the roster names tomorrow's driver; one tap tells you your buddy is outside with the engine running",
-  "callback": "the parking attendant lost his two best customers and still out-lifts them both",
-  "ctaLine": "Gym buddy hiding in a car park?"
+  "theme": "the airport drop favour: three neighbours each secretly book the same driver for a 4 a.m. airport run",
+  "setting": "a night of airport runs told as deadpan airport PA announcements and a departures board",
+  "conflict": "Rohan can't say no, so he drives to the airport and back three times before sunrise",
+  "failedAttempt": "calling all three at 3 a.m. to merge the trips, but every phone is already on airplane mode",
+  "twist": "a selfie from row 14: all three sit side by side on the same flight to the same work trip",
+  "lesson": "a favour asked in private gets driven three times",
+  "appAngle": "riders tap ready from the gate so one car fills up, and settle costs splits petrol and parking four ways",
+  "callback": "now Rohan's phone is the first one on airplane mode every Sunday night",
+  "ctaLine": "Airport runs eating your sleep?"
  },
  "lines": [
   {
-   "text": "Your gym buddy could be lying to you every morning, and you'd never find out why.",
+   "text": "You think one airport favour costs you one night.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "This guy did three before sunrise. Nobody told him why.",
    "rate": "+18%",
-   "pitch": "-6Hz",
-   "gap": 0.16
-  },
-  {
-   "text": "Rohan's watch: ninety gym mornings. Zero reps.",
-   "rate": "+20%",
    "pitch": "-4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Ding. Now boarding: a man who cannot say no.",
+   "rate": "+14%",
+   "pitch": "-2Hz",
    "gap": 0.16
   },
   {
-   "text": "Rohan, Arjun. Six a.m. Same gym. Two cars.",
-   "rate": "+28%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Rule: never let your buddy train alone.",
+   "text": "Sunday night. Priya texts: airport, four a.m.? Sure.",
    "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.12
   },
   {
-   "text": "Rohan parks. Texts: inside, warming up.",
+   "text": "Ten minutes later, Arjun: four thirty? Fine.",
    "rate": "+24%",
    "pitch": "+0Hz",
    "gap": 0.12
   },
   {
-   "text": "He's in his car. Scrolling.",
-   "rate": "+16%",
-   "pitch": "-6Hz",
-   "gap": 0.16
-  },
-  {
-   "text": "Arjun parks. Replies: same bro, treadmill.",
-   "rate": "+24%",
-   "pitch": "+8Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Also in his car.",
-   "rate": "+16%",
-   "pitch": "-6Hz",
-   "gap": 0.16
-  },
-  {
-   "text": "Steps: twelve. Calories: one banana.",
+   "text": "Then Sharma ji. Five sharp, beta. Nobody refuses that moustache.",
    "rate": "+20%",
-   "pitch": "-4Hz",
+   "pitch": "-2Hz",
    "gap": 0.16
   },
   {
-   "text": "Week four. Rohan's seat goes flat.",
+   "text": "Three a.m., Rohan gets smart. One car, everyone together.",
+   "rate": "+24%",
+   "pitch": "+4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Three calls. Three phones, already on airplane mode.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Trip one. Priya. Rohan is mostly awake.",
    "rate": "+26%",
    "pitch": "+0Hz",
    "gap": 0.1
   },
   {
-   "text": "Week seven. A pillow.",
-   "rate": "+26%",
+   "text": "Trip two. Arjun. Eyes open. Technically.",
+   "rate": "+24%",
    "pitch": "+2Hz",
    "gap": 0.1
   },
   {
-   "text": "Week ten. Curtains.",
-   "rate": "+18%",
-   "pitch": "-6Hz",
-   "gap": 0.16
+   "text": "Trip three. Sharma ji, and a suitcase the size of a fridge.",
+   "rate": "+22%",
+   "pitch": "+6Hz",
+   "gap": 0.2
   },
   {
-   "text": "So, a bet: skip, and pay your buddy five hundred.",
+   "text": "Then Priya posts a selfie. Row fourteen.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Seat A, Priya. Seat B, Arjun. Seat C, Sharma ji.",
    "rate": "+26%",
    "pitch": "+0Hz",
    "gap": 0.12
   },
   {
-   "text": "Next day, both skip. Both pay.",
-   "rate": "+24%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Net gains: zero.",
-   "rate": "+16%",
-   "pitch": "-6Hz",
-   "gap": 0.16
-  },
-  {
-   "text": "Then the parking guy knocks on both windows.",
-   "rate": "+22%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Sirs. Two bays apart. Three months.",
-   "rate": "+14%",
-   "pitch": "-8Hz",
-   "gap": 0.16
-  },
-  {
-   "text": "Their parking money bought his own membership.",
-   "rate": "+20%",
-   "pitch": "-4Hz",
-   "gap": 0.16
-  },
-  {
-   "text": "Lesson: motivation is always late. A friend at your gate isn't.",
-   "rate": "+16%",
-   "pitch": "-4Hz",
-   "gap": 0.16
-  },
-  {
-   "text": "So: one car, on an app.",
-   "rate": "+22%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "The roster picks tomorrow's driver. And one tap means he's outside, engine running.",
-   "rate": "+26%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "No hiding. Both walk in.",
-   "rate": "+20%",
-   "pitch": "+0Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Rohan's watch: four hundred steps. Personal best.",
+   "text": "Same flight. Same work trip. Each thought the others booked a cab.",
    "rate": "+18%",
-   "pitch": "+4Hz",
-   "gap": 0.16
+   "pitch": "-6Hz",
+   "gap": 0.18
   },
   {
-   "text": "The parking guy lost two customers. Still out lifts them both.",
-   "rate": "+20%",
+   "text": "Rohan paid airport parking three times.",
+   "rate": "+16%",
    "pitch": "-4Hz",
-   "gap": 0.16
+   "gap": 0.2
   },
   {
-   "text": "Gym buddy hiding in a car park? Try Sahyatri. Link in bio.",
+   "text": "Lesson: a favour asked in private gets driven three times.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So the colony made a pool on an app. Airport runs too.",
    "rate": "+20%",
    "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Next trip, three taps on ready from the gate. One car.",
+   "rate": "+22%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Petrol and parking? Settle costs splits it four ways.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.16
+  },
+  {
+   "text": "Now every Sunday night, Rohan's phone hits airplane mode first.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Airport runs eating your sleep? Sahyatri. Link in bio.",
+   "rate": "+12%",
+   "pitch": "-2Hz",
    "gap": 0.1
   }
  ],
  "shots": [
   {
-   "id": "park",
+   "id": "road",
    "at": [
     0,
     0
@@ -176,84 +152,77 @@
    "music": "groove"
   },
   {
-   "id": "watch",
-   "at": [
-    1,
-    0
-   ]
-  },
-  {
-   "id": "leave",
+   "id": "pa",
    "at": [
     2,
     0
    ]
   },
   {
-   "id": "hook",
-   "at": [
-    3,
-    0
-   ]
-  },
-  {
-   "id": "park",
-   "at": [
-    4,
-    0
-   ]
-  },
-  {
-   "id": "park",
+   "id": "calls",
    "at": [
     6,
-    0
-   ]
-  },
-  {
-   "id": "watch",
-   "at": [
-    8,
-    0
-   ],
-   "music": "pad"
-  },
-  {
-   "id": "park",
-   "at": [
-    9,
-    0
-   ],
-   "music": "groove"
-  },
-  {
-   "id": "bet",
-   "at": [
-    12,
     0
    ],
    "music": "nervous"
   },
   {
-   "id": "park",
+   "id": "road",
    "at": [
-    15,
-    0
-   ],
-   "music": "stop"
-  },
-  {
-   "id": "flex",
-   "at": [
-    17,
+    8,
     0
    ],
    "music": "groove"
   },
   {
+   "id": "road",
+   "at": [
+    9,
+    0
+   ]
+  },
+  {
+   "id": "road",
+   "at": [
+    10,
+    0
+   ]
+  },
+  {
+   "id": "row",
+   "at": [
+    11,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "row",
+   "at": [
+    12,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "row",
+   "at": [
+    13,
+    0
+   ]
+  },
+  {
+   "id": "parking",
+   "at": [
+    14,
+    0
+   ],
+   "music": "sad"
+  },
+  {
    "id": "lonely",
    "at": [
-    18,
+    15,
     0
    ],
    "music": "pad"
@@ -261,140 +230,190 @@
   {
    "id": "app",
    "at": [
-    19,
+    16,
     0
    ],
    "music": "lift"
   },
   {
-   "id": "enter",
+   "id": "sleep",
    "at": [
-    21,
+    19,
     0
    ],
    "music": "groove"
   },
   {
-   "id": "watch",
-   "at": [
-    22,
-    0
-   ]
-  },
-  {
-   "id": "flex",
-   "at": [
-    23,
-    0
-   ]
-  },
-  {
    "id": "end",
    "at": [
-    24,
+    20,
     0
    ],
    "music": "end"
   }
  ],
  "cues": {
-  "arrive1": [
-   4,
-   1
-  ],
-  "arrive2": [
-   6,
-   1
-  ],
-  "recline": [
-   9,
-   5
-  ],
-  "pillow": [
-   10,
+  "x3": [
+   1,
    3
   ],
-  "curtains": [
-   11,
+  "ding": [
+   2,
+   0
+  ],
+  "no": [
+   2,
+   7
+  ],
+  "d1": [
+   3,
    2
   ],
-  "pay": [
-   13,
+  "d2": [
+   4,
+   3
+  ],
+  "d3": [
+   5,
+   1
+  ],
+  "c1": [
+   6,
    5
   ],
-  "net": [
+  "c2": [
+   6,
+   7
+  ],
+  "c3": [
+   7,
+   1
+  ],
+  "off": [
+   7,
+   6
+  ],
+  "trip1": [
+   8,
+   0
+  ],
+  "trip2": [
+   9,
+   0
+  ],
+  "trip3": [
+   10,
+   0
+  ],
+  "sA": [
+   12,
+   1
+  ],
+  "sB": [
+   12,
+   4
+  ],
+  "sC": [
+   12,
+   7
+  ],
+  "same": [
+   13,
+   0
+  ],
+  "cab": [
+   13,
+   10
+  ],
+  "p1": [
    14,
    0
   ],
-  "knock": [
-   15,
+  "p2": [
+   14,
+   2
+  ],
+  "p3": [
+   14,
+   3
+  ],
+  "px": [
+   14,
    4
-  ],
-  "bays": [
-   16,
-   1
-  ],
-  "outlift": [
-   23,
-   0
   ],
   "roster": [
-   20,
-   1
+   40,
+   0
   ],
   "driver": [
-   20,
-   4
+   40,
+   0
   ],
   "tap": [
-   20,
-   7
+   17,
+   3
   ],
   "ready": [
-   20,
-   9
+   17,
+   5
   ],
   "watch": [
-   40,
-   0
+   17,
+   9
   ],
   "live": [
-   40,
-   0
+   17,
+   10
+  ],
+  "settle": [
+   18,
+   3
   ],
   "name": [
-   24,
-   8
+   20,
+   5
   ],
   "check": [
-   24,
-   9
+   20,
+   6
   ]
  },
  "punch": [
   [
    0,
-   1
+   8
   ],
   [
    1,
-   5
+   3
+  ],
+  [
+   1,
+   6
   ],
   [
    2,
    6
   ],
   [
+   3,
+   7
+  ],
+  [
+   4,
+   6
+  ],
+  [
    5,
-   4
+   9
   ],
   [
    7,
-   3
+   6
   ],
   [
    8,
-   4
+   5
   ],
   [
    9,
@@ -402,150 +421,126 @@
   ],
   [
    10,
-   3
+   11
   ],
   [
    11,
-   2
-  ],
-  [
-   13,
-   5
-  ],
-  [
-   14,
-   2
-  ],
-  [
-   15,
-   4
-  ],
-  [
-   16,
-   1
-  ],
-  [
-   17,
    6
   ],
   [
-   21,
-   0
+   13,
+   1
   ],
   [
-   22,
-   5
+   13,
+   11
   ],
   [
-   23,
+   14,
+   4
+  ],
+  [
+   15,
    7
+  ],
+  [
+   17,
+   10
+  ],
+  [
+   19,
+   9
   ]
  ],
  "stopMusic": [
   [
-   16,
+   13,
    0,
-   16,
-   1
+   13,
+   2
   ],
   [
-   18,
+   15,
    0,
-   18,
-   2
+   15,
+   1
   ]
  ],
  "end": {
-  "headline": "Gym buddy hiding\nin the car park?",
+  "headline": "Airport runs\neating your sleep?",
   "tagline": "Community Carpool",
   "button": "Link in bio"
  },
  "captionsBig": [
-  "zero",
-  "scrolling",
-  "banana",
-  "flat",
-  "pillow",
-  "curtains",
-  "bet",
-  "knocks",
-  "bays",
-  "membership",
-  "late",
-  "roster",
-  "outside",
-  "best",
+  "three",
+  "ding",
+  "no",
+  "sure",
+  "fine",
+  "moustache",
+  "airplane",
+  "technically",
+  "fridge",
+  "selfie",
+  "fourteen",
+  "same",
+  "cab",
+  "parking",
+  "private",
+  "ready",
+  "settle",
+  "first",
   "sahyatri"
  ],
  "post": {
-  "title": "2 gym buddies, 90 mornings, zero reps 💀",
-  "caption": "Both texted \"inside, warming up\". Both were in the car park, two bays apart, for three months. Tag the gym buddy who's \"on the treadmill\".",
+  "title": "3 airport runs, 1 flight, 0 sleep 💀",
+  "caption": "Three neighbours. Three 4 a.m. airport drops. One guy who can't say no. Then the selfie from row 14 dropped. Tag the friend who'd say yes three times.",
   "hashtags": [
-   "#gymbuddy",
+   "#airportdrop",
    "#animatedstory",
-   "#gymhumor",
+   "#neighbours",
    "#carpool",
    "#sahyatri"
   ]
  },
- "appDriverNote": "Arjun is driving tomorrow",
- "appSticker": "NO HIDING",
- "gym": {
-  "name": "Pump House Gym",
+ "appSticker": "ONE CAR",
+ "appDriverNote": "Rohan is driving · airport run",
+ "airport": {
+  "rows": [
+   [
+    "04:00",
+    "PRIYA",
+    "ROHAN"
+   ],
+   [
+    "04:30",
+    "ARJUN",
+    "ROHAN"
+   ],
+   [
+    "05:00",
+    "SHARMA JI",
+    "ROHAN"
+   ]
+  ],
+  "calls": [
+   "Priya",
+   "Arjun",
+   "Sharma ji"
+  ],
+  "clocks": [
+   "03:58",
+   "04:00",
+   "04:30",
+   "05:00"
+  ],
+  "handle": "priya.flies",
+  "flight": "Row 14 · work trip",
+  "ticket": "AIRPORT PARKING",
   "texts": [
-   [
-    4,
-    3,
-    0,
-    "inside, warming up"
-   ],
-   [
-    6,
-    3,
-    1,
-    "same bro, on the treadmill"
-   ]
-  ],
-  "watch": [
-   [
-    1,
-    2,
-    "GYM VISITS",
-    "90"
-   ],
-   [
-    1,
-    5,
-    "REPS",
-    "0"
-   ],
-   [
-    8,
-    1,
-    "STEPS",
-    "12"
-   ],
-   [
-    8,
-    3,
-    "CALORIES",
-    "1 banana"
-   ],
-   [
-    22,
-    2,
-    "STEPS",
-    "400"
-   ],
-   [
-    22,
-    5,
-    "PERSONAL",
-    "BEST"
-   ]
-  ],
-  "bet": "SKIP = PAY ₹500",
-  "net": "NET GAINS: ₹0",
-  "card": "PAID IN PARKING"
+   "airport drop? 4am 🙏",
+   "bhai, airport? 🥺",
+   "beta, five sharp"
+  ]
  }
 }

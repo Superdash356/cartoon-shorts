@@ -167,7 +167,7 @@ export const AppSequence: React.FC<{ t0: number; t1: number }> = ({ t0, t1 }) =>
         </div>
       ) : null}
       {cur.id === "roster" ? <Sticker text={STORY.appSticker ?? "NO DEBATE"} icon="checkmark-circle" t={t} t0={CUE.driver + 0.25} x={540} y={1520} rot={-5} /> : null}
-      {hasCue("settle") && cur.id === "home" ? <Sticker text="SETTLE COSTS" t={t} t0={CUE0.settle - 0.05} x={540} y={1560} rot={-4} /> : null}
+      {hasCue("settle") && (cur.id === "home" || CUE0.settle > CUE.tap) ? <Sticker text="SETTLE COSTS" t={t} t0={CUE0.settle - 0.05} x={540} y={1560} rot={-4} /> : null}
       {hasCue("skip") ? <Sticker text="SKIP TODAY" t={t} t0={CUE0.skip - 0.05} x={600} y={1260} rot={5} /> : null}
       {cur.id === "map" ? <Sticker text="LIVE" icon="navigate" t={t} t0={CUE.live - 0.05} x={760} y={1580} rot={6} /> : null}
     </AbsoluteFill>

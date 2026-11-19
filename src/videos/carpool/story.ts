@@ -89,7 +89,11 @@ export type ShotId = "guard" | "hook" | "leave" | "sig1" | "sig2" | "sig5" | "ye
   | "chase" | "chai" | "bus" | "mail" | "calm" | "chai2"
   // gym car park (2026-11-18): 2D overlays (Gym.tsx): the two buddies hiding in their cars two bays apart, Rohan's
   // smartwatch stats, the 500 rupee skip bet, the parking attendant (membership card / giant dumbbell), both walking in
-  | "park" | "watch" | "bet" | "flex" | "enter";
+  | "park" | "watch" | "bet" | "flex" | "enter"
+  // three airport drops (2026-11-19): 2D overlays (Airport.tsx): the night highway to the airport (trip counter, drooping
+  // eyelids, fridge-sized suitcase), the departures board with ROHAN as every driver, the 3 a.m. airplane-mode calls,
+  // the row-14 selfie, three airport parking tickets, and Rohan asleep beside his airplane-mode phone
+  | "road" | "pa" | "calls" | "row" | "parking" | "sleep";
 export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
 /** cut ~3 frames before line L (word k) */
@@ -101,7 +105,7 @@ export const SHOTS: Shot[] = STORY.shots.map((x, i) => {
 SHOTS[SHOTS.length - 1].b = TOTAL;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 /** shots drawn under a full-screen 2D overlay: the 3D layer just needs a soft background */
-export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true, rules: true, rules2: true, school: true, mixup: true, swap: true, early: true, forecast: true, fare: true, boat: true, dry: true, chase: true, chai: true, bus: true, mail: true, calm: true, chai2: true, park: true, watch: true, bet: true, flex: true, enter: true };
+export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true, rules: true, rules2: true, school: true, mixup: true, swap: true, early: true, forecast: true, fare: true, boat: true, dry: true, chase: true, chai: true, bus: true, mail: true, calm: true, chai2: true, park: true, watch: true, bet: true, flex: true, enter: true, road: true, pa: true, calls: true, row: true, parking: true, sleep: true };
 
 // ---------------- motion ----------------
 // four neighbours, index i lives in house i; car i is parked in front of house i
@@ -302,7 +306,7 @@ const camAt0 = (id: ShotId, f: number): Cam => {
       const L: V3 = [BOSS_X - 1.25, 1.3, LANE_Z - 0.42];
       return C(dolly([BOSS_X + 1.7, 1.5, LANE_Z - 1.9], L, push(f, a, 0.004)), L, 30, 0.03);
     }
-    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": case "chase": case "chai": case "bus": case "mail": case "calm": case "chai2": case "park": case "watch": case "bet": case "flex": case "enter": { // soft background behind the overlays
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": case "chase": case "chai": case "bus": case "mail": case "calm": case "chai2": case "park": case "watch": case "bet": case "flex": case "enter": case "road": case "pa": case "calls": case "row": case "parking": case "sleep": { // soft background behind the overlays
       const L: V3 = [0, 3, -12];
       return C(dolly([4, 4, 10], L, push(f, a, 0.001)), L, 50, 0);
     }
@@ -351,7 +355,7 @@ export const dofAt = (id: ShotId): { cInf: number; focus?: V3 } => {
     case "bro": return { cInf: 13 };
     case "signal": return { cInf: 11, focus: [STOP_X - 1.2, 1.3, 0] };
     case "doors": return { cInf: 7, focus: [-7, 1.5, -9] };
-    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": case "chase": case "chai": case "bus": case "mail": case "calm": case "chai2": case "park": case "watch": case "bet": case "flex": case "enter": return { cInf: 22 };
+    case "chat": case "app": case "napkin": case "sheet": case "gates": case "lift": case "seat": case "toss": case "rules": case "rules2": case "school": case "mixup": case "swap": case "early": case "forecast": case "fare": case "boat": case "dry": case "chase": case "chai": case "bus": case "mail": case "calm": case "chai2": case "park": case "watch": case "bet": case "flex": case "enter": case "road": case "pa": case "calls": case "row": case "parking": case "sleep": return { cInf: 22 };
     case "flood": return { cInf: 7, focus: [-7, 1.2, -6] };
     case "bosscar": return { cInf: 10 };
     case "boss": case "intern": return { cInf: 13 };

@@ -1,0 +1,269 @@
+{
+ "title": "Three Airport Drops, One Flight",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.16,
+ "keepGap": 0.26,
+ "beats": {
+  "theme": "the airport drop favour: three neighbours each secretly book the same driver for a 4 a.m. airport run",
+  "setting": "a night of airport runs told as deadpan airport PA announcements and a departures board",
+  "conflict": "Rohan can't say no, so he drives to the airport and back three times before sunrise",
+  "failedAttempt": "calling all three at 3 a.m. to merge the trips, but every phone is already on airplane mode",
+  "twist": "a selfie from row 14: all three sit side by side on the same flight to the same work trip",
+  "lesson": "a favour asked in private gets driven three times",
+  "appAngle": "riders tap ready from the gate so one car fills up, and settle costs splits petrol and parking four ways",
+  "callback": "now Rohan's phone is the first one on airplane mode every Sunday night",
+  "ctaLine": "Airport runs eating your sleep?"
+ },
+ "lines": [
+  {
+   "text": "You think one airport favour costs you one night.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "This guy did three before sunrise. Nobody told him why.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Ding. Now boarding: a man who cannot say no.",
+   "rate": "+14%",
+   "pitch": "-2Hz",
+   "gap": 0.16
+  },
+  {
+   "text": "Sunday night. Priya texts: airport, four a.m.? Sure.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Ten minutes later, Arjun: four thirty? Fine.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Then Sharma ji. Five sharp, beta. Nobody refuses that moustache.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.16
+  },
+  {
+   "text": "Three a.m., Rohan gets smart. One car, everyone together.",
+   "rate": "+24%",
+   "pitch": "+4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Three calls. Three phones, already on airplane mode.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Trip one. Priya. Rohan is mostly awake.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Trip two. Arjun. Eyes open. Technically.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Trip three. Sharma ji, and a suitcase the size of a fridge.",
+   "rate": "+22%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Then Priya posts a selfie. Row fourteen.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Seat A, Priya. Seat B, Arjun. Seat C, Sharma ji.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Same flight. Same work trip. Each thought the others booked a cab.",
+   "rate": "+18%",
+   "pitch": "-6Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Rohan paid airport parking three times.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Lesson: a favour asked in private gets driven three times.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So the colony made a pool on an app. Airport runs too.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Next trip, three taps on ready from the gate. One car.",
+   "rate": "+22%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Petrol and parking? Settle costs splits it four ways.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.16
+  },
+  {
+   "text": "Now every Sunday night, Rohan's phone hits airplane mode first.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Airport runs eating your sleep? Sahyatri. Link in bio.",
+   "rate": "+12%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  }
+ ],
+ "shots": [
+  {
+   "id": "road",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "pa",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "calls",
+   "at": [
+    6,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "road",
+   "at": [
+    8,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "road",
+   "at": [
+    9,
+    0
+   ]
+  },
+  {
+   "id": "road",
+   "at": [
+    10,
+    0
+   ]
+  },
+  {
+   "id": "row",
+   "at": [
+    11,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "row",
+   "at": [
+    12,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "row",
+   "at": [
+    13,
+    0
+   ]
+  },
+  {
+   "id": "parking",
+   "at": [
+    14,
+    0
+   ],
+   "music": "sad"
+  },
+  {
+   "id": "lonely",
+   "at": [
+    15,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "app",
+   "at": [
+    16,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "sleep",
+   "at": [
+    19,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "end",
+   "at": [
+    20,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {},
+ "punch": [],
+ "stopMusic": [],
+ "end": {
+  "headline": "",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [],
+ "post": {
+  "title": "",
+  "caption": "",
+  "hashtags": []
+ }
+}

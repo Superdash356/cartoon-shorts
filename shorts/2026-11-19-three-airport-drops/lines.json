@@ -1,0 +1,131 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "You think one airport favour costs you one night.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "This guy did three before sunrise. Nobody told him why.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Ding. Now boarding: a man who cannot say no.",
+   "rate": "+14%",
+   "pitch": "-2Hz",
+   "gap": 0.16
+  },
+  {
+   "text": "Sunday night. Priya texts: airport, four a.m.? Sure.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Ten minutes later, Arjun: four thirty? Fine.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Then Sharma ji. Five sharp, beta. Nobody refuses that moustache.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.16
+  },
+  {
+   "text": "Three a.m., Rohan gets smart. One car, everyone together.",
+   "rate": "+24%",
+   "pitch": "+4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Three calls. Three phones, already on airplane mode.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Trip one. Priya. Rohan is mostly awake.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Trip two. Arjun. Eyes open. Technically.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Trip three. Sharma ji, and a suitcase the size of a fridge.",
+   "rate": "+22%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Then Priya posts a selfie. Row fourteen.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Seat A, Priya. Seat B, Arjun. Seat C, Sharma ji.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Same flight. Same work trip. Each thought the others booked a cab.",
+   "rate": "+18%",
+   "pitch": "-6Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Rohan paid airport parking three times.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Lesson: a favour asked in private gets driven three times.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So the colony made a pool on an app. Airport runs too.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Next trip, three taps on ready from the gate. One car.",
+   "rate": "+22%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Petrol and parking? Settle costs splits it four ways.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.16
+  },
+  {
+   "text": "Now every Sunday night, Rohan's phone hits airplane mode first.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Airport runs eating your sleep? Sahyatri. Link in bio.",
+   "rate": "+12%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  }
+ ]
+}

@@ -190,19 +190,19 @@ const Wall: React.FC = () => (
 const Suv: React.FC<{ t: number; u: number; f: number; fps: number }> = ({ t, u, f, fps }) => {
   const m = (k: string) => cl(t, [T(k) - 0.1, T(k) + 0.35], [0, 1]);
   const dust = 0.35 * m("m1") + 0.35 * m("m2") + 0.3 * m("m3");
-  const zoom = 1 + 0.04 * u;
+  const zoom = 1 + 0.012 * u;
   const sFile = sp(f, fps, T("file") - 0.05, 13, 180);
   const sNever = sp(f, fps, T("never") - 0.05, 9, 260);
   const q = cl(t, [T("behind") - 0.1, T("behind") + 0.3], [0, 1]) * (1 - cl(t, [T("file") - 0.2, T("file")], [0, 1]));
   return (
     <AbsoluteFill>
       <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
-        <g transform={`translate(540 960) scale(${zoom}) translate(-540 -960)`}>
+        <g transform={`translate(600 1150) scale(${zoom}) translate(-600 -1150)`}>
           <Wall />
           {q > 0.01 ? (
-            <g opacity={q} transform="translate(170 0)">
+            <g opacity={q} transform="translate(250 0)">
               <path d="M -200 1330 L -200 1110 Q -196 1080 -150 1076 L 60 1072 L 120 1140 L 150 1160 L 150 1330 Z" fill="none" stroke="#fff" strokeWidth={8} strokeDasharray="24 16" />
-              <text x={-20} y={1260} textAnchor="middle" fontFamily={UI} fontWeight={800} fontSize={150} fill="#fff">?</text>
+              <text x={-140} y={1060} textAnchor="middle" fontFamily={UI} fontWeight={800} fontSize={190} fill="#fff" stroke={INK} strokeWidth={6}>?</text>
             </g>
           ) : null}
           <g transform="translate(600 1330) scale(1.12)">
@@ -211,7 +211,7 @@ const Suv: React.FC<{ t: number; u: number; f: number; fps: number }> = ({ t, u,
         </g>
       </svg>
       {sFile > 0.01 ? (
-        <div style={{ position: "absolute", left: 60, top: 360, transform: `translateY(${(1 - sFile) * -200}px) rotate(-3deg)`, background: "#e3c27a", border: `7px solid ${INK}`, borderRadius: "28px 28px 10px 10px",
+        <div style={{ position: "absolute", left: 60, top: 620, transform: `translateY(${(1 - sFile) * -200}px) rotate(-3deg)`, background: "#e3c27a", border: `7px solid ${INK}`, borderRadius: "28px 28px 10px 10px",
           padding: "18px 40px", fontFamily: UI, fontWeight: 800, color: INK, boxShadow: `10px 10px 0 ${INK}` }}>
           <div style={{ fontSize: 36, opacity: 0.75 }}>COLONY CASE FILE</div>
           <div style={{ fontSize: 76, letterSpacing: -2 }}>SLOT 9 · GREEN SUV</div>
@@ -264,9 +264,9 @@ const Blocked: React.FC<{ t: number; f: number; fps: number }> = ({ t, f, fps })
         <g transform={`translate(${ROW_X[3]} ${SLOT_Y})`}><CarTop col="#b9bec6" /></g>
         <g transform={`translate(${ROW_X[2] + outK * 60} ${suvY}) rotate(${suvYaw})`}><CarTop col={SUVC} w={220} h={400} /></g>
         {!rew ? (
-          <g transform={`translate(${ROW_X[2]} 1150) rotate(90)`}><CarTop col="none" dashed label="SERVICE" w={170} h={330} /></g>
+          <g transform={`translate(${ROW_X[2]} 1150)`}><CarTop col="none" dashed label="SERVICE" w={330} h={170} /></g>
         ) : (
-          <g transform={`translate(${rohanX} 1150) rotate(90)`}><CarTop col="#f2efe8" w={170} h={330} /></g>
+          <g transform={`translate(${rohanX} 1130) rotate(90)`}><CarTop col="#f2efe8" w={210} h={380} /></g>
         )}
         {rew ? <rect width={1080} height={1920} fill={`rgba(40,60,120,${tint})`} /> : null}
       </Lot>
@@ -379,7 +379,7 @@ const Pin: React.FC<{ t: number; u: number; f: number; fps: number; pop: number 
     <AbsoluteFill>
       <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
         <Wall />
-        <g transform="translate(520 1330) scale(1.0)">
+        <g transform="translate(560 1330) scale(1.2)">
           <SuvSide t={t} dust={0.9} wash={1} pigeons={1} flap={fl} />
         </g>
         {sHeart > 0.01 ? [-160, 0, 140].map((x, i) => (

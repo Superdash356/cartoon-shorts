@@ -1,0 +1,977 @@
+[
+ {
+  "word": "You'd",
+  "start": 0.032,
+  "end": 0.156
+ },
+ {
+  "word": "blame",
+  "start": 0.165,
+  "end": 0.351
+ },
+ {
+  "word": "the",
+  "start": 0.36,
+  "end": 0.439
+ },
+ {
+  "word": "owner",
+  "start": 0.448,
+  "end": 0.686
+ },
+ {
+  "word": "But",
+  "start": 0.88,
+  "end": 0.924
+ },
+ {
+  "word": "the",
+  "start": 0.933,
+  "end": 0.986
+ },
+ {
+  "word": "reason",
+  "start": 0.995,
+  "end": 1.252
+ },
+ {
+  "word": "this",
+  "start": 1.26,
+  "end": 1.419
+ },
+ {
+  "word": "SUV",
+  "start": 1.49,
+  "end": 1.906
+ },
+ {
+  "word": "never",
+  "start": 1.968,
+  "end": 2.189
+ },
+ {
+  "word": "moved",
+  "start": 2.198,
+  "end": 2.41
+ },
+ {
+  "word": "was",
+  "start": 2.419,
+  "end": 2.516
+ },
+ {
+  "word": "parked",
+  "start": 2.525,
+  "end": 2.835
+ },
+ {
+  "word": "right",
+  "start": 2.843,
+  "end": 2.958
+ },
+ {
+  "word": "behind",
+  "start": 2.967,
+  "end": 3.215
+ },
+ {
+  "word": "it",
+  "start": 3.223,
+  "end": 3.338
+ },
+ {
+  "word": "Case",
+  "start": 3.596,
+  "end": 3.744
+ },
+ {
+  "word": "file",
+  "start": 3.752,
+  "end": 4.048
+ },
+ {
+  "word": "green",
+  "start": 4.265,
+  "end": 4.483
+ },
+ {
+  "word": "SUV",
+  "start": 4.491,
+  "end": 4.891
+ },
+ {
+  "word": "slot",
+  "start": 5.048,
+  "end": 5.3
+ },
+ {
+  "word": "nine",
+  "start": 5.308,
+  "end": 5.552
+ },
+ {
+  "word": "Month",
+  "start": 5.794,
+  "end": 5.896
+ },
+ {
+  "word": "one",
+  "start": 5.905,
+  "end": 6.058
+ },
+ {
+  "word": "Dust",
+  "start": 6.252,
+  "end": 6.507
+ },
+ {
+  "word": "Month",
+  "start": 6.717,
+  "end": 6.815
+ },
+ {
+  "word": "four",
+  "start": 6.823,
+  "end": 7.051
+ },
+ {
+  "word": "Wash",
+  "start": 7.244,
+  "end": 7.415
+ },
+ {
+  "word": "me",
+  "start": 7.423,
+  "end": 7.57
+ },
+ {
+  "word": "on",
+  "start": 7.586,
+  "end": 7.643
+ },
+ {
+  "word": "the",
+  "start": 7.651,
+  "end": 7.7
+ },
+ {
+  "word": "window",
+  "start": 7.708,
+  "end": 7.952
+ },
+ {
+  "word": "Month",
+  "start": 8.161,
+  "end": 8.292
+ },
+ {
+  "word": "eight",
+  "start": 8.3,
+  "end": 8.446
+ },
+ {
+  "word": "The",
+  "start": 8.64,
+  "end": 8.672
+ },
+ {
+  "word": "guard's",
+  "start": 8.68,
+  "end": 8.867
+ },
+ {
+  "word": "laundry",
+  "start": 8.875,
+  "end": 9.225
+ },
+ {
+  "word": "on",
+  "start": 9.339,
+  "end": 9.403
+ },
+ {
+  "word": "the",
+  "start": 9.412,
+  "end": 9.46
+ },
+ {
+  "word": "bonnet",
+  "start": 9.469,
+  "end": 9.737
+ },
+ {
+  "word": "Month",
+  "start": 9.947,
+  "end": 10.081
+ },
+ {
+  "word": "eleven",
+  "start": 10.09,
+  "end": 10.333
+ },
+ {
+  "word": "Pigeons",
+  "start": 10.527,
+  "end": 10.837
+ },
+ {
+  "word": "A",
+  "start": 11.031,
+  "end": 11.065
+ },
+ {
+  "word": "whole",
+  "start": 11.073,
+  "end": 11.207
+ },
+ {
+  "word": "family",
+  "start": 11.215,
+  "end": 11.527
+ },
+ {
+  "word": "On",
+  "start": 11.72,
+  "end": 11.77
+ },
+ {
+  "word": "the",
+  "start": 11.778,
+  "end": 11.829
+ },
+ {
+  "word": "roof",
+  "start": 11.837,
+  "end": 12.098
+ },
+ {
+  "word": "So",
+  "start": 12.291,
+  "end": 12.359
+ },
+ {
+  "word": "the",
+  "start": 12.367,
+  "end": 12.426
+ },
+ {
+  "word": "colony",
+  "start": 12.434,
+  "end": 12.72
+ },
+ {
+  "word": "builds",
+  "start": 12.728,
+  "end": 12.938
+ },
+ {
+  "word": "theories",
+  "start": 12.947,
+  "end": 13.325
+ },
+ {
+  "word": "Priya",
+  "start": 13.535,
+  "end": 13.735
+ },
+ {
+  "word": "a",
+  "start": 13.982,
+  "end": 14.023
+ },
+ {
+  "word": "wedding",
+  "start": 14.031,
+  "end": 14.223
+ },
+ {
+  "word": "gift",
+  "start": 14.231,
+  "end": 14.406
+ },
+ {
+  "word": "nobody",
+  "start": 14.415,
+  "end": 14.615
+ },
+ {
+  "word": "wanted",
+  "start": 14.623,
+  "end": 14.87
+ },
+ {
+  "word": "Arjun",
+  "start": 15.064,
+  "end": 15.36
+ },
+ {
+  "word": "the",
+  "start": 15.592,
+  "end": 15.664
+ },
+ {
+  "word": "owner",
+  "start": 15.672,
+  "end": 15.856
+ },
+ {
+  "word": "is",
+  "start": 15.864,
+  "end": 15.928
+ },
+ {
+  "word": "a",
+  "start": 15.936,
+  "end": 15.968
+ },
+ {
+  "word": "spy",
+  "start": 15.976,
+  "end": 16.272
+ },
+ {
+  "word": "Sharma",
+  "start": 16.465,
+  "end": 16.648
+ },
+ {
+  "word": "ji",
+  "start": 16.656,
+  "end": 16.821
+ },
+ {
+  "word": "haunted",
+  "start": 17.015,
+  "end": 17.279
+ },
+ {
+  "word": "The",
+  "start": 17.473,
+  "end": 17.522
+ },
+ {
+  "word": "wipers",
+  "start": 17.531,
+  "end": 17.778
+ },
+ {
+  "word": "moved",
+  "start": 17.786,
+  "end": 17.952
+ },
+ {
+  "word": "once",
+  "start": 17.96,
+  "end": 18.266
+ },
+ {
+  "word": "Then",
+  "start": 18.46,
+  "end": 18.569
+ },
+ {
+  "word": "Rohan's",
+  "start": 18.577,
+  "end": 18.804
+ },
+ {
+  "word": "car",
+  "start": 18.812,
+  "end": 18.98
+ },
+ {
+  "word": "goes",
+  "start": 18.989,
+  "end": 19.148
+ },
+ {
+  "word": "for",
+  "start": 19.156,
+  "end": 19.24
+ },
+ {
+  "word": "a",
+  "start": 19.249,
+  "end": 19.274
+ },
+ {
+  "word": "service",
+  "start": 19.282,
+  "end": 19.685
+ },
+ {
+  "word": "One",
+  "start": 19.879,
+  "end": 19.972
+ },
+ {
+  "word": "weekend",
+  "start": 19.98,
+  "end": 20.265
+ },
+ {
+  "word": "Monday",
+  "start": 20.491,
+  "end": 20.76
+ },
+ {
+  "word": "the",
+  "start": 20.917,
+  "end": 20.978
+ },
+ {
+  "word": "SUV",
+  "start": 20.987,
+  "end": 21.335
+ },
+ {
+  "word": "reverses",
+  "start": 21.343,
+  "end": 21.69
+ },
+ {
+  "word": "out",
+  "start": 21.699,
+  "end": 21.908
+ },
+ {
+  "word": "First",
+  "start": 22.102,
+  "end": 22.223
+ },
+ {
+  "word": "time",
+  "start": 22.231,
+  "end": 22.379
+ },
+ {
+  "word": "ever",
+  "start": 22.388,
+  "end": 22.588
+ },
+ {
+  "word": "Rohan",
+  "start": 22.781,
+  "end": 22.961
+ },
+ {
+  "word": "had",
+  "start": 22.97,
+  "end": 23.069
+ },
+ {
+  "word": "parked",
+  "start": 23.078,
+  "end": 23.277
+ },
+ {
+  "word": "behind",
+  "start": 23.285,
+  "end": 23.537
+ },
+ {
+  "word": "it",
+  "start": 23.547,
+  "end": 23.664
+ },
+ {
+  "word": "Every",
+  "start": 23.857,
+  "end": 23.983
+ },
+ {
+  "word": "night",
+  "start": 23.992,
+  "end": 24.217
+ },
+ {
+  "word": "For",
+  "start": 24.41,
+  "end": 24.473
+ },
+ {
+  "word": "a",
+  "start": 24.483,
+  "end": 24.501
+ },
+ {
+  "word": "year",
+  "start": 24.51,
+  "end": 24.744
+ },
+ {
+  "word": "Mr",
+  "start": 24.937,
+  "end": 25.156
+ },
+ {
+  "word": "Iyer",
+  "start": 25.164,
+  "end": 25.391
+ },
+ {
+  "word": "the",
+  "start": 25.559,
+  "end": 25.643
+ },
+ {
+  "word": "owner",
+  "start": 25.652,
+  "end": 25.878
+ },
+ {
+  "word": "was",
+  "start": 26.055,
+  "end": 26.147
+ },
+ {
+  "word": "too",
+  "start": 26.156,
+  "end": 26.281
+ },
+ {
+  "word": "polite",
+  "start": 26.29,
+  "end": 26.517
+ },
+ {
+  "word": "to",
+  "start": 26.525,
+  "end": 26.592
+ },
+ {
+  "word": "knock",
+  "start": 26.601,
+  "end": 26.877
+ },
+ {
+  "word": "He",
+  "start": 27.071,
+  "end": 27.105
+ },
+ {
+  "word": "took",
+  "start": 27.113,
+  "end": 27.231
+ },
+ {
+  "word": "autos",
+  "start": 27.239,
+  "end": 27.491
+ },
+ {
+  "word": "to",
+  "start": 27.499,
+  "end": 27.567
+ },
+ {
+  "word": "Rohan's",
+  "start": 27.575,
+  "end": 27.819
+ },
+ {
+  "word": "office",
+  "start": 27.827,
+  "end": 28.163
+ },
+ {
+  "word": "So",
+  "start": 28.356,
+  "end": 28.495
+ },
+ {
+  "word": "four",
+  "start": 28.503,
+  "end": 28.681
+ },
+ {
+  "word": "uncles",
+  "start": 28.69,
+  "end": 28.918
+ },
+ {
+  "word": "guide",
+  "start": 28.926,
+  "end": 29.064
+ },
+ {
+  "word": "a",
+  "start": 29.072,
+  "end": 29.097
+ },
+ {
+  "word": "reverse",
+  "start": 29.105,
+  "end": 29.503
+ },
+ {
+  "word": "Everyone",
+  "start": 29.697,
+  "end": 29.924
+ },
+ {
+  "word": "yelling",
+  "start": 29.933,
+  "end": 30.177
+ },
+ {
+  "word": "aao",
+  "start": 30.42,
+  "end": 30.583
+ },
+ {
+  "word": "aao",
+  "start": 30.591,
+  "end": 30.852
+ },
+ {
+  "word": "Fourteen",
+  "start": 31.061,
+  "end": 31.268
+ },
+ {
+  "word": "point",
+  "start": 31.276,
+  "end": 31.433
+ },
+ {
+  "word": "turn",
+  "start": 31.441,
+  "end": 31.615
+ },
+ {
+  "word": "One",
+  "start": 31.808,
+  "end": 31.898
+ },
+ {
+  "word": "scooter",
+  "start": 31.906,
+  "end": 32.097
+ },
+ {
+  "word": "down",
+  "start": 32.105,
+  "end": 32.303
+ },
+ {
+  "word": "Back",
+  "start": 32.497,
+  "end": 32.612
+ },
+ {
+  "word": "in",
+  "start": 32.62,
+  "end": 32.67
+ },
+ {
+  "word": "slot",
+  "start": 32.678,
+  "end": 32.869
+ },
+ {
+  "word": "nine",
+  "start": 32.877,
+  "end": 33.083
+ },
+ {
+  "word": "Lesson",
+  "start": 33.277,
+  "end": 33.529
+ },
+ {
+  "word": "the",
+  "start": 33.723,
+  "end": 33.777
+ },
+ {
+  "word": "car",
+  "start": 33.785,
+  "end": 33.948
+ },
+ {
+  "word": "blocking",
+  "start": 33.956,
+  "end": 34.262
+ },
+ {
+  "word": "you",
+  "start": 34.271,
+  "end": 34.415
+ },
+ {
+  "word": "is",
+  "start": 34.496,
+  "end": 34.623
+ },
+ {
+  "word": "usually",
+  "start": 34.631,
+  "end": 34.902
+ },
+ {
+  "word": "going",
+  "start": 34.91,
+  "end": 35.073
+ },
+ {
+  "word": "your",
+  "start": 35.081,
+  "end": 35.171
+ },
+ {
+  "word": "way",
+  "start": 35.181,
+  "end": 35.352
+ },
+ {
+  "word": "So",
+  "start": 35.545,
+  "end": 35.688
+ },
+ {
+  "word": "Iyer",
+  "start": 35.696,
+  "end": 35.873
+ },
+ {
+  "word": "joined",
+  "start": 35.881,
+  "end": 36.074
+ },
+ {
+  "word": "Rohan's",
+  "start": 36.082,
+  "end": 36.318
+ },
+ {
+  "word": "carpool",
+  "start": 36.326,
+  "end": 36.662
+ },
+ {
+  "word": "Inside",
+  "start": 36.856,
+  "end": 37.074
+ },
+ {
+  "word": "an",
+  "start": 37.082,
+  "end": 37.133
+ },
+ {
+  "word": "app.",
+  "start": 37.141,
+  "end": 37.335
+ },
+ {
+  "word": "The",
+  "start": 37.544,
+  "end": 37.577
+ },
+ {
+  "word": "roster",
+  "start": 37.585,
+  "end": 37.85
+ },
+ {
+  "word": "picks",
+  "start": 37.858,
+  "end": 38.04
+ },
+ {
+  "word": "the",
+  "start": 38.048,
+  "end": 38.098
+ },
+ {
+  "word": "driver",
+  "start": 38.106,
+  "end": 38.42
+ },
+ {
+  "word": "and",
+  "start": 38.619,
+  "end": 38.652
+ },
+ {
+  "word": "that",
+  "start": 38.66,
+  "end": 38.767
+ },
+ {
+  "word": "car",
+  "start": 38.775,
+  "end": 38.924
+ },
+ {
+  "word": "sleeps",
+  "start": 38.932,
+  "end": 39.139
+ },
+ {
+  "word": "in",
+  "start": 39.147,
+  "end": 39.197
+ },
+ {
+  "word": "front",
+  "start": 39.205,
+  "end": 39.477
+ },
+ {
+  "word": "Iyer",
+  "start": 39.687,
+  "end": 39.827
+ },
+ {
+  "word": "walks",
+  "start": 39.836,
+  "end": 40.001
+ },
+ {
+  "word": "down",
+  "start": 40.01,
+  "end": 40.224
+ },
+ {
+  "word": "One",
+  "start": 40.418,
+  "end": 40.509
+ },
+ {
+  "word": "tap",
+  "start": 40.517,
+  "end": 40.765
+ },
+ {
+  "word": "he's",
+  "start": 41.013,
+  "end": 41.087
+ },
+ {
+  "word": "at",
+  "start": 41.096,
+  "end": 41.129
+ },
+ {
+  "word": "the",
+  "start": 41.137,
+  "end": 41.186
+ },
+ {
+  "word": "pickup",
+  "start": 41.195,
+  "end": 41.459
+ },
+ {
+  "word": "Pickup",
+  "start": 41.685,
+  "end": 41.859
+ },
+ {
+  "word": "point's",
+  "start": 41.868,
+  "end": 42.041
+ },
+ {
+  "word": "name",
+  "start": 42.05,
+  "end": 42.232
+ },
+ {
+  "word": "The",
+  "start": 42.426,
+  "end": 42.477
+ },
+ {
+  "word": "SUV",
+  "start": 42.486,
+  "end": 42.895
+ },
+ {
+  "word": "Still",
+  "start": 43.089,
+  "end": 43.228
+ },
+ {
+  "word": "hasn't",
+  "start": 43.236,
+  "end": 43.436
+ },
+ {
+  "word": "moved",
+  "start": 43.445,
+  "end": 43.715
+ },
+ {
+  "word": "The",
+  "start": 43.956,
+  "end": 44.001
+ },
+ {
+  "word": "pigeons",
+  "start": 44.01,
+  "end": 44.266
+ },
+ {
+  "word": "approve",
+  "start": 44.275,
+  "end": 44.585
+ },
+ {
+  "word": "Boxed",
+  "start": 44.778,
+  "end": 44.976
+ },
+ {
+  "word": "in",
+  "start": 44.985,
+  "end": 45.048
+ },
+ {
+  "word": "by",
+  "start": 45.057,
+  "end": 45.156
+ },
+ {
+  "word": "a",
+  "start": 45.165,
+  "end": 45.192
+ },
+ {
+  "word": "neighbour's",
+  "start": 45.201,
+  "end": 45.444
+ },
+ {
+  "word": "car",
+  "start": 45.453,
+  "end": 45.696
+ },
+ {
+  "word": "Try",
+  "start": 45.89,
+  "end": 46.015
+ },
+ {
+  "word": "Sahyatri",
+  "start": 46.025,
+  "end": 46.475
+ },
+ {
+  "word": "Link",
+  "start": 46.669,
+  "end": 46.785
+ },
+ {
+  "word": "in",
+  "start": 46.794,
+  "end": 46.848
+ },
+ {
+  "word": "bio",
+  "start": 46.857,
+  "end": 47.145
+ }
+]

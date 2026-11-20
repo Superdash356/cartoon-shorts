@@ -213,7 +213,7 @@ const Phone: React.FC<P> = ({ s, t }) => {
         <div style={{ position: "absolute", left: lerp(330, 40, f), top: 40, opacity: f, transform: `scale(${lerp(0.7, 1, f)})`, transformOrigin: "center top" }}>
           <VerticalClip t={t} w={520} seed={2} caption={s.caption as string} capT={tcap} />
         </div>
-        <div style={{ position: "absolute", left: 600, top: 120, display: "flex", flexDirection: "column", gap: 28 }}>
+        <div style={{ position: "absolute", left: lerp(20, 600, f), top: lerp(850, 120, f), display: "flex", flexDirection: f < 0.5 ? "row" : "column", flexWrap: "wrap", gap: 24, width: lerp(960, 400, f) }}>
           {labels.map((l, i) => <div key={i} style={appear(t, T(s, l.at, 0.5 + i * 1.2))}><Chip text={l.text} icon="check" style={{ fontSize: 32, maxWidth: 400 }} /></div>)}
         </div>
       </div>
@@ -245,7 +245,7 @@ const Posts: React.FC<P> = ({ s, t }) => {
       <div style={appear(t, s.a)}><Headline text={fill(s.headline as string)} size={100} /></div>
       <div style={{ display: "flex", gap: 24 }}>
         {apps.map((a, i) => { const ta = T(s, ats[i], 0.6 + i * 0.4); return (
-          <div key={i} style={appear(t, ta)}><Card style={{ width: 290, padding: 26 }}>
+          <div key={i} style={{ ...appear(t, s.a + 0.2 + i * 0.12), ...(t > ta ? { transform: `scale(${1 + 0.06 * Math.sin(Math.PI * clamp((t - ta) / 0.3))})` } : {}) }}><Card style={{ width: 290, padding: 26 }}>
             <div style={{ fontWeight: 800, fontSize: 42, marginBottom: 16 }}>{a}</div>
             {[1, 2, 3].map((k) => <div key={k} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontWeight: 700, fontSize: 34, padding: "12px 0", borderTop: `2px solid ${LINE}` }}>
               Clip {k}<span style={{ opacity: fadeIn(t, ta + k * 0.15) }}><Icon name="check" size={36} color={GREEN} /></span></div>)}

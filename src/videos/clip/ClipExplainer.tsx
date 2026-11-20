@@ -29,7 +29,8 @@ const PHRASES: Phrase[] = (() => {
 })();
 const HL = new Set((SCRIPT.hl ?? []).map((x) => x.toLowerCase()));
 const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9$]/g, "");
-const show = (w: string) => (norm(w) === BRAND.keyword.toLowerCase() ? BRAND.keyword : w);
+// the comment keyword is shown in caps only right after "comment" (the CTA), never elsewhere
+const show = (w: string, prev?: string) => (norm(w) === BRAND.keyword.toLowerCase() && norm(prev ?? "") === "comment" ? BRAND.keyword : w);
 
 const Captions: React.FC<{ t: number }> = ({ t }) => {
   const k = PHRASES.findIndex((p, i) => t >= p.s - 0.08 && t < (PHRASES[i + 1]?.s ?? p.e + 0.8) - 0.08);
@@ -42,7 +43,7 @@ const Captions: React.FC<{ t: number }> = ({ t }) => {
         opacity: d, transform: `translateY(${(1 - d) * 14}px)` }}>
         {p.words.map((w, i) => {
           const on = t >= w.s - 0.06, hl = HL.has(norm(w.w));
-          return <span key={i} style={{ opacity: on ? 1 : 0.18 }}>{hl ? <GradText>{show(w.w)}</GradText> : show(w.w)}{i < p.words.length - 1 ? " " : ""}</span>;
+          return <span key={i} style={{ opacity: on ? 1 : 0.18 }}>{hl ? <GradText>{show(w.w, p.words[i - 1]?.w)}</GradText> : show(w.w, p.words[i - 1]?.w)}{i < p.words.length - 1 ? " " : ""}</span>;
         })}
       </div>
     </div>
@@ -52,10 +53,10 @@ const Captions: React.FC<{ t: number }> = ({ t }) => {
 // ---------------------------------------------------------------- scene wrapper: soft slide/fade between scenes
 const SceneLayer: React.FC<{ t: number }> = ({ t }) => (
   <>
-    {SCENES.filter((s) => t >= s.a - 0.02 && t < s.b + 0.25).map((s) => {
+    {SCENES.filter((s) => t >= s.a - 0.02 && t < s.b + 0.16).map((s) => {
       const C = SCENE_TYPES[s.type];
       if (!C) return null;
-      const out = clamp((t - s.b) / 0.25), inn = s.i === 0 ? 1 : easeOut((t - s.a) / 0.3);
+      const out = clamp((t - s.b) / 0.16), inn = s.i === 0 ? 1 : easeOut((t - s.a - 0.06) / 0.28);
       const drift = 1 + 0.025 * clamp((t - s.a) / Math.max(1, s.b - s.a));
       return (
         <AbsoluteFill key={s.i} style={{ opacity: inn * (1 - out), transform: `translateY(${(1 - inn) * 40 - out * 60}px) scale(${drift})` }}>

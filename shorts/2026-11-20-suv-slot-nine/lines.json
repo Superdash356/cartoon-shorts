@@ -1,0 +1,143 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "You'd blame the owner. But the reason this SUV never moved was parked right behind it.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.16
+  },
+  {
+   "text": "Case file: green SUV, slot nine.",
+   "rate": "+16%",
+   "pitch": "-2Hz",
+   "gap": 0.14
+  },
+  {
+   "text": "Month one. Dust.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month four. Wash me, on the window.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month eight. The guard's laundry, on the bonnet.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month eleven. Pigeons. A whole family. On the roof.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "So the colony builds theories.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Priya: a wedding gift nobody wanted.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Arjun: the owner is a spy.",
+   "rate": "+26%",
+   "pitch": "+4Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Sharma ji: haunted. The wipers moved once.",
+   "rate": "+22%",
+   "pitch": "+8Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Then Rohan's car goes for a service. One weekend.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Monday, the SUV reverses out. First time ever.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Rohan had parked behind it. Every night. For a year.",
+   "rate": "+12%",
+   "pitch": "-8Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Mr Iyer, the owner, was too polite to knock. He took autos to Rohan's office.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "So four uncles guide a reverse. Everyone yelling, aao aao.",
+   "rate": "+24%",
+   "pitch": "+6Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Fourteen point turn. One scooter down. Back in slot nine.",
+   "rate": "+22%",
+   "pitch": "-4Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Lesson: the car blocking you is usually going your way.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So Iyer joined Rohan's carpool. Inside an app.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "The roster picks the driver, and that car sleeps in front.",
+   "rate": "+22%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Iyer walks down. One tap: he's at the pickup.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Pickup point's name? The SUV. Still hasn't moved.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.14
+  },
+  {
+   "text": "The pigeons approve.",
+   "rate": "+14%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Boxed in by a neighbour's car? Try Sahyatri. Link in bio.",
+   "rate": "+12%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  }
+ ]
+}

@@ -1,0 +1,514 @@
+{
+ "title": "The SUV That Never Moved",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.24,
+ "keepGap": 0.24,
+ "beats": {
+  "theme": "the neighbour's car that never leaves the colony: a green SUV parked in slot nine for a year",
+  "setting": "the colony's tight parking row, told as a deadpan case file with month-by-month evidence",
+  "conflict": "the whole colony invents theories about a spotless SUV that gathers dust, laundry and pigeons",
+  "failedAttempt": "four uncles direct a fourteen-point reverse shouting 'aao aao', knock over a scooter and end back in the slot",
+  "twist": "Rohan's own car had boxed the SUV in every night; the owner was too polite to knock and took autos to Rohan's office",
+  "lesson": "the car blocking you is usually going your way",
+  "appAngle": "the roster picks the driver so that car parks in front; the rider taps that he's at the pickup",
+  "callback": "the pickup point is named 'The SUV', which still never moves, and the pigeons approve",
+  "ctaLine": "Boxed in by your neighbour's car?"
+ },
+ "lines": [
+  {
+   "text": "You'd blame the owner. But the reason this SUV never moved was parked right behind it.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.16
+  },
+  {
+   "text": "Case file: green SUV, slot nine.",
+   "rate": "+16%",
+   "pitch": "-2Hz",
+   "gap": 0.14
+  },
+  {
+   "text": "Month one. Dust.",
+   "rate": "+18%",
+   "pitch": "-4Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month four. Wash me, on the window.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month eight. The guard's laundry, on the bonnet.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Month eleven. Pigeons. A whole family. On the roof.",
+   "rate": "+20%",
+   "pitch": "-4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "So the colony builds theories.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Priya: a wedding gift nobody wanted.",
+   "rate": "+26%",
+   "pitch": "+2Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Arjun: the owner is a spy.",
+   "rate": "+26%",
+   "pitch": "+4Hz",
+   "gap": 0.08
+  },
+  {
+   "text": "Sharma ji: haunted. The wipers moved once.",
+   "rate": "+22%",
+   "pitch": "+8Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Then Rohan's car goes for a service. One weekend.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Monday, the SUV reverses out. First time ever.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Rohan had parked behind it. Every night. For a year.",
+   "rate": "+12%",
+   "pitch": "-8Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Mr Iyer, the owner, was too polite to knock. He took autos to Rohan's office.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "So four uncles guide a reverse. Everyone yelling, aao aao.",
+   "rate": "+24%",
+   "pitch": "+6Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Fourteen point turn. One scooter down. Back in slot nine.",
+   "rate": "+22%",
+   "pitch": "-4Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Lesson: the car blocking you is usually going your way.",
+   "rate": "+12%",
+   "pitch": "-6Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So Iyer joined Rohan's carpool. Inside an app.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "The roster picks the driver, and that car sleeps in front.",
+   "rate": "+22%",
+   "pitch": "+2Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Iyer walks down. One tap: he's at the pickup.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Pickup point's name? The SUV. Still hasn't moved.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.14
+  },
+  {
+   "text": "The pigeons approve.",
+   "rate": "+14%",
+   "pitch": "+6Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Boxed in by a neighbour's car? Try Sahyatri. Link in bio.",
+   "rate": "+12%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  }
+ ],
+ "shots": [
+  {
+   "id": "suv",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "doors",
+   "at": [
+    6,
+    0
+   ]
+  },
+  {
+   "id": "theory",
+   "at": [
+    7,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "leave",
+   "at": [
+    10,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "blocked",
+   "at": [
+    11,
+    0
+   ]
+  },
+  {
+   "id": "blocked",
+   "at": [
+    12,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "iyer",
+   "at": [
+    13,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "aao",
+   "at": [
+    14,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "lonely",
+   "at": [
+    16,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "app",
+   "at": [
+    17,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "pin",
+   "at": [
+    20,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "end",
+   "at": [
+    22,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {
+  "never": [
+   0,
+   9
+  ],
+  "behind": [
+   0,
+   14
+  ],
+  "file": [
+   1,
+   0
+  ],
+  "m1": [
+   2,
+   0
+  ],
+  "m2": [
+   3,
+   0
+  ],
+  "m3": [
+   4,
+   0
+  ],
+  "m4": [
+   5,
+   2
+  ],
+  "th1": [
+   7,
+   0
+  ],
+  "th2": [
+   8,
+   0
+  ],
+  "th3": [
+   9,
+   0
+  ],
+  "wipers": [
+   9,
+   4
+  ],
+  "out": [
+   11,
+   3
+  ],
+  "first": [
+   11,
+   5
+  ],
+  "replay": [
+   12,
+   0
+  ],
+  "every": [
+   12,
+   5
+  ],
+  "year": [
+   12,
+   7
+  ],
+  "polite": [
+   13,
+   5
+  ],
+  "auto": [
+   13,
+   10
+  ],
+  "office": [
+   13,
+   13
+  ],
+  "fourteen": [
+   15,
+   0
+  ],
+  "scooter": [
+   15,
+   4
+  ],
+  "back": [
+   15,
+   6
+  ],
+  "roster": [
+   18,
+   1
+  ],
+  "driver": [
+   18,
+   4
+  ],
+  "tap": [
+   19,
+   4
+  ],
+  "ready": [
+   19,
+   5
+  ],
+  "watch": [
+   19,
+   8
+  ],
+  "live": [
+   19,
+   8
+  ],
+  "pigeons": [
+   21,
+   1
+  ],
+  "name": [
+   22,
+   7
+  ],
+  "check": [
+   22,
+   8
+  ]
+ },
+ "punch": [
+  [
+   0,
+   9
+  ],
+  [
+   0,
+   14
+  ],
+  [
+   2,
+   3
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   5,
+   2
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   8,
+   5
+  ],
+  [
+   9,
+   2
+  ],
+  [
+   9,
+   4
+  ],
+  [
+   11,
+   5
+  ],
+  [
+   12,
+   5
+  ],
+  [
+   12,
+   9
+  ],
+  [
+   13,
+   6
+  ],
+  [
+   13,
+   11
+  ],
+  [
+   14,
+   8
+  ],
+  [
+   15,
+   4
+  ],
+  [
+   16,
+   1
+  ],
+  [
+   18,
+   8
+  ],
+  [
+   20,
+   5
+  ],
+  [
+   21,
+   1
+  ]
+ ],
+ "stopMusic": [
+  [
+   12,
+   0,
+   12,
+   2
+  ],
+  [
+   16,
+   0,
+   16,
+   1
+  ]
+ ],
+ "end": {
+  "headline": "Boxed in by a\nneighbour's car?",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "dust",
+  "wash",
+  "laundry",
+  "pigeons",
+  "theories",
+  "gift",
+  "spy",
+  "haunted",
+  "wipers",
+  "service",
+  "first",
+  "every",
+  "year",
+  "polite",
+  "autos",
+  "office",
+  "aao",
+  "scooter",
+  "nine",
+  "blocking",
+  "way",
+  "tap",
+  "suv",
+  "approve",
+  "sahyatri"
+ ],
+ "post": {
+  "title": "",
+  "caption": "",
+  "hashtags": []
+ },
+ "appSticker": "FRONT CAR DRIVES",
+ "appDriverNote": "Rohan is driving \u00b7 Iyer rides"
+}

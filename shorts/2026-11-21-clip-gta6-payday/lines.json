@@ -1,0 +1,130 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "GTA 6 just dropped, and clippers are already getting paid off it.",
+   "rate": "+4%",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Here's the exact setup, step by step.",
+   "rate": "+6%",
+   "gap": 0.3
+  },
+  {
+   "text": "Every big streamer is playing it right now, for hours a day.",
+   "rate": "+8%",
+   "gap": 0.2
+  },
+  {
+   "text": "Nobody can watch all of that.",
+   "rate": "+0%",
+   "pitch": "-3Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "So brands and streamers pay people to cut the best moments into short clips.",
+   "rate": "+8%",
+   "gap": 0.15
+  },
+  {
+   "text": "That's a clipping campaign.",
+   "rate": "+0%",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "You post the clip on your own page, and they pay you for the views.",
+   "rate": "+8%",
+   "gap": 0.25
+  },
+  {
+   "text": "Most campaigns pay around one dollar for every thousand views.",
+   "rate": "+4%",
+   "gap": 0.2
+  },
+  {
+   "text": "So one clip that hits a hundred thousand views is about a hundred bucks.",
+   "rate": "+6%",
+   "pitch": "-3Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "And you don't need followers, or a face cam.",
+   "rate": "+10%",
+   "pitch": "+4Hz",
+   "gap": 0.35
+  },
+  {
+   "text": "The hard part is finding the moments.",
+   "rate": "+0%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Scrubbing an eight hour stream by hand is where most people quit.",
+   "rate": "+6%",
+   "gap": 0.3
+  },
+  {
+   "text": "So I let Clipzy watch it for me.",
+   "rate": "+2%",
+   "pitch": "-2Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "I paste the stream link, and it reads the live chat.",
+   "rate": "+6%",
+   "gap": 0.2
+  },
+  {
+   "text": "When chat suddenly goes crazy, that's a moment.",
+   "rate": "+6%",
+   "pitch": "-3Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "It cuts thirty seconds around it, puts the facecam on top, and writes captions word by word.",
+   "rate": "+12%",
+   "gap": 0.2
+  },
+  {
+   "text": "Vertical, ready to post, while the stream is still going.",
+   "rate": "+6%",
+   "gap": 0.35
+  },
+  {
+   "text": "Then post three clips a day on TikTok, Reels, and Shorts.",
+   "rate": "+8%",
+   "gap": 0.25
+  },
+  {
+   "text": "Hook in the first second, under thirty seconds, every single day.",
+   "rate": "+12%",
+   "gap": 0.35
+  },
+  {
+   "text": "Two warnings.",
+   "rate": "+0%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Never pay to join a campaign, and only clip creators who allow it.",
+   "rate": "+4%",
+   "gap": 0.35
+  },
+  {
+   "text": "The first week of GTA 6 is the biggest window you'll get.",
+   "rate": "+4%",
+   "pitch": "-3Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Comment clip, and I'll send you the setup.",
+   "rate": "+2%",
+   "gap": 0.2
+  }
+ ]
+}

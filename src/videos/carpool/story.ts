@@ -93,7 +93,11 @@ export type ShotId = "guard" | "hook" | "leave" | "sig1" | "sig2" | "sig5" | "ye
   // three airport drops (2026-11-19): 2D overlays (Airport.tsx): the night highway to the airport (trip counter, drooping
   // eyelids, fridge-sized suitcase), the departures board with ROHAN as every driver, the 3 a.m. airplane-mode calls,
   // the row-14 selfie, three airport parking tickets, and Rohan asleep beside his airplane-mode phone
-  | "road" | "pa" | "calls" | "row" | "parking" | "sleep";
+  | "road" | "pa" | "calls" | "row" | "parking" | "sleep"
+  // the SUV that never moved (2026-11-20): case-file 2D overlays (Suv.tsx): the green SUV in slot 9 gathering dust,
+  // laundry and pigeons, the theory corkboard, the top-down "blocked" rewind, Mr Iyer too polite to knock + his auto to
+  // the same office, the fourteen-point "aao aao" turn, and the "Pickup point: The SUV" map pin
+  | "suv" | "theory" | "blocked" | "iyer" | "aao" | "pin";
 export type Shot = { id: ShotId; a: number; b: number };
 const S = (id: ShotId, t0: number, t1: number): Shot => ({ id, a: Math.round(t0 * FPS), b: Math.round(t1 * FPS) });
 /** cut ~3 frames before line L (word k) */
@@ -105,7 +109,7 @@ export const SHOTS: Shot[] = STORY.shots.map((x, i) => {
 SHOTS[SHOTS.length - 1].b = TOTAL;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 /** shots drawn under a full-screen 2D overlay: the 3D layer just needs a soft background */
-export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true, rules: true, rules2: true, school: true, mixup: true, swap: true, early: true, forecast: true, fare: true, boat: true, dry: true, chase: true, chai: true, bus: true, mail: true, calm: true, chai2: true, park: true, watch: true, bet: true, flex: true, enter: true, road: true, pa: true, calls: true, row: true, parking: true, sleep: true };
+export const OVERLAY: Partial<Record<ShotId, true>> = { chat: true, app: true, end: true, meeting: true, napkin: true, sheet: true, gates: true, lift: true, seat: true, toss: true, rules: true, rules2: true, school: true, mixup: true, swap: true, early: true, forecast: true, fare: true, boat: true, dry: true, chase: true, chai: true, bus: true, mail: true, calm: true, chai2: true, park: true, watch: true, bet: true, flex: true, enter: true, road: true, pa: true, calls: true, row: true, parking: true, sleep: true, suv: true, theory: true, blocked: true, iyer: true, aao: true, pin: true };
 
 // ---------------- motion ----------------
 // four neighbours, index i lives in house i; car i is parked in front of house i

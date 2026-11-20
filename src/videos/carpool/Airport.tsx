@@ -31,7 +31,7 @@ const A = ((STORY as unknown as { airport?: AirCfg }).airport ?? {}) as AirCfg;
 const T = (k: string) => (hasCue(k) ? CUE[k] : 1e6);
 const sp = (f: number, fps: number, t: number, damping = 12, stiffness = 200) => (t > 1e5 ? 0 : spring({ frame: f - Math.round(t * fps), fps, config: { damping, stiffness } }));
 
-const Stamp: React.FC<{ text: string; s: number; bg: string; x: number; y: number; rot?: number; size?: number; fg?: string }> = ({ text, s, bg, x, y, rot = -8, size = 110, fg = "#fff" }) =>
+export const Stamp: React.FC<{ text: string; s: number; bg: string; x: number; y: number; rot?: number; size?: number; fg?: string }> = ({ text, s, bg, x, y, rot = -8, size = 110, fg = "#fff" }) =>
   s > 0.01 ? (
     <div style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) rotate(${rot}deg) scale(${2.2 - 1.2 * Math.min(1, s)})`, opacity: Math.min(1, s * 1.6),
       fontFamily: UI, fontWeight: 800, fontSize: size, letterSpacing: -3, color: fg, background: bg, border: `9px solid ${INK}`, borderRadius: 26,
@@ -39,7 +39,7 @@ const Stamp: React.FC<{ text: string; s: number; bg: string; x: number; y: numbe
   ) : null;
 
 /** a head + shoulders bust at the origin (head centre). lids: 0 open .. 1 shut. hair: short | long | white */
-const Bust: React.FC<{ who: Who; lids?: number; hair?: "short" | "long" | "white"; tache?: boolean; mouth?: "flat" | "o" | "smile" | "grin"; specs?: boolean; tilt?: number }> =
+export const Bust: React.FC<{ who: Who; lids?: number; hair?: "short" | "long" | "white"; tache?: boolean; mouth?: "flat" | "o" | "smile" | "grin"; specs?: boolean; tilt?: number }> =
   ({ who, lids = 0, hair = "short", tache, mouth = "flat", specs, tilt = 0 }) => (
     <g transform={`rotate(${tilt})`}>
       {hair === "long" ? <path d="M -52 -10 Q -60 -66 0 -66 Q 60 -66 52 -10 L 58 70 L -58 70 Z" fill={who.hair} stroke={INK} strokeWidth={5} /> : null}

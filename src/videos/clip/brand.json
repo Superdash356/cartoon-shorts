@@ -1,0 +1,16 @@
+{
+  "_note": "The clipping tool being promoted. Change these and every future video uses them. 'features' is the ONLY list of things the scripts may claim the tool does.",
+  "name": "Clipzy",
+  "spoken": "Clipzy",
+  "handle": "@clipzy",
+  "keyword": "CLIP",
+  "features": [
+    "paste a stream or video link",
+    "reads the live chat and finds the moments where chat spikes",
+    "cuts about 30 seconds around each moment",
+    "makes it vertical with the facecam on top and gameplay underneath",
+    "word-by-word captions",
+    "works on a live stream while it is still going, and on old videos / replays",
+    "you keep or skip each clip before posting"
+  ]
+}

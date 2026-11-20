@@ -1,0 +1,101 @@
+{
+  "title": "How to make money clipping GTA 6",
+  "voice": "en-US-AndrewNeural",
+  "tempo": 1.06,
+  "keepGap": 0.3,
+  "beats": {
+    "topic": "clipping GTA 6 launch streams for campaign money",
+    "hook": "GTA 6 just dropped and clippers are already getting paid",
+    "money": "about $1 per 1,000 views, 100k views is about $100",
+    "pain": "scrubbing an eight hour stream by hand",
+    "tool": "paste link, reads chat, spike = moment, cuts 30s, facecam on top, captions",
+    "rules": "hook in first second, under 30 s, every day",
+    "warnings": "never pay to join, only clip creators who allow it",
+    "cta": "comment clip for the setup"
+  },
+  "hl": ["gta", "6", "paid", "clipping", "campaign", "dollar", "hundred", "moments", "quit", "clipzy", "crazy", "moment", "facecam", "captions", "vertical", "three", "hook", "never", "allow", "biggest", "window", "clip", "setup"],
+  "lines": [
+    { "text": "GTA 6 just dropped, and clippers are already getting paid off it.", "rate": "+4%", "pitch": "-4Hz", "gap": 0.25 },
+    { "text": "Here's the exact setup, step by step.", "rate": "+6%", "gap": 0.3 },
+    { "text": "Every big streamer is playing it right now, for hours a day.", "rate": "+8%", "gap": 0.2 },
+    { "text": "Nobody can watch all of that.", "rate": "+0%", "pitch": "-3Hz", "gap": 0.3 },
+    { "text": "So brands and streamers pay people to cut the best moments into short clips.", "rate": "+8%", "gap": 0.15 },
+    { "text": "That's a clipping campaign.", "rate": "+0%", "pitch": "-4Hz", "gap": 0.25 },
+    { "text": "You post the clip on your own page, and they pay you for the views.", "rate": "+8%", "gap": 0.25 },
+    { "text": "Most campaigns pay around one dollar for every thousand views.", "rate": "+4%", "gap": 0.2 },
+    { "text": "So one clip that hits a hundred thousand views is about a hundred bucks.", "rate": "+6%", "pitch": "-3Hz", "gap": 0.25 },
+    { "text": "And you don't need followers, or a face cam.", "rate": "+10%", "pitch": "+4Hz", "gap": 0.35 },
+    { "text": "The hard part is finding the moments.", "rate": "+0%", "pitch": "-4Hz", "gap": 0.2 },
+    { "text": "Scrubbing an eight hour stream by hand is where most people quit.", "rate": "+6%", "gap": 0.3 },
+    { "text": "So I let Clipzy watch it for me.", "rate": "+2%", "pitch": "-2Hz", "gap": 0.25 },
+    { "text": "I paste the stream link, and it reads the live chat.", "rate": "+6%", "gap": 0.2 },
+    { "text": "When chat suddenly goes crazy, that's a moment.", "rate": "+6%", "pitch": "-3Hz", "gap": 0.25 },
+    { "text": "It cuts thirty seconds around it, puts the facecam on top, and writes captions word by word.", "rate": "+12%", "gap": 0.2 },
+    { "text": "Vertical, ready to post, while the stream is still going.", "rate": "+6%", "gap": 0.35 },
+    { "text": "Then post three clips a day on TikTok, Reels, and Shorts.", "rate": "+8%", "gap": 0.25 },
+    { "text": "Hook in the first second, under thirty seconds, every single day.", "rate": "+12%", "gap": 0.35 },
+    { "text": "Two warnings.", "rate": "+0%", "pitch": "-5Hz", "gap": 0.2 },
+    { "text": "Never pay to join a campaign, and only clip creators who allow it.", "rate": "+4%", "gap": 0.35 },
+    { "text": "The first week of GTA 6 is the biggest window you'll get.", "rate": "+4%", "pitch": "-3Hz", "gap": 0.3 },
+    { "text": "Comment clip, and I'll send you the setup.", "rate": "+2%", "gap": 0.2 }
+  ],
+  "scenes": [
+    { "type": "big", "at": [0, 0], "headline": "**GTA 6** is out.", "pill": { "label": "LAUNCHED", "value": "Nov 19", "at": [0, 2] }, "note": { "text": "clippers are already getting **paid**", "at": [0, 5] } },
+    { "type": "title", "at": [1, 0], "kicker": "A REAL HOW-TO", "headline": "How to make money\n**clipping GTA 6**", "sub": { "text": "step by step · no editor needed", "at": [1, 4] } },
+    { "type": "grid", "at": [2, 0], "headline": "Every streamer is **live**", "dim": { "at": [3, 0], "text": "Nobody watches it all." } },
+    { "type": "flow", "at": [4, 0], "headline": "Who actually **pays** you?",
+      "nodes": [
+        { "label": "They run campaigns", "text": "Streamers · brands", "at": [4, 1] },
+        { "label": "You post clips", "text": "Clippers **(you)**", "at": [4, 5], "hot": true }
+      ],
+      "arrow": { "text": "$ budget", "at": [4, 4] },
+      "chips": [
+        { "text": "= a clipping campaign", "at": [5, 1], "hot": true },
+        { "text": "paid per 1,000 views", "at": [6, 10] }
+      ] },
+    { "type": "stat", "at": [7, 0], "label": "Most campaigns pay", "value": "~$1", "sub": "per 1,000 views",
+      "eq": [
+        { "text": "100,000 views", "at": [8, 4] },
+        { "text": "× ~$1 per 1K", "at": [8, 8], "small": true },
+        { "text": "= ~$100", "at": [8, 12], "hot": true }
+      ],
+      "chips": [
+        { "text": "No followers needed", "at": [9, 4], "icon": "check" },
+        { "text": "No face cam", "at": [9, 7], "icon": "check" }
+      ] },
+    { "type": "scrub", "at": [10, 0], "headline": "The hard part: **finding moments**", "label": "Watching by hand", "total": "8:00:00", "quit": { "at": [11, 9], "text": "most people quit here" } },
+    { "type": "brand", "at": [12, 0], "headline": "So I let **{name}** watch it", "logoAt": [12, 3] },
+    { "type": "live", "at": [13, 0], "link": { "at": [13, 1], "text": "twitch.tv/biggeststreamer" }, "chatAt": [13, 7], "spikeAt": [14, 3], "momentAt": [14, 5] },
+    { "type": "phone", "at": [15, 0], "cutAt": [15, 1], "flipAt": [15, 6], "capsAt": [15, 12],
+      "labels": [
+        { "text": "~30 s around the spike", "at": [15, 2] },
+        { "text": "Facecam on top", "at": [15, 8] },
+        { "text": "Word-by-word captions", "at": [15, 13] }
+      ], "caption": "HE DID NOT JUST DO THAT" },
+    { "type": "clips", "at": [16, 0], "headline": "**Clips** while it's still **live**", "count": 11,
+      "chips": [
+        { "text": "Vertical", "at": [16, 0] },
+        { "text": "Captioned", "at": [16, 1] },
+        { "text": "Ready to post", "at": [16, 3] }
+      ] },
+    { "type": "posts", "at": [17, 0], "headline": "**3 clips** × **3 apps**", "apps": ["TikTok", "Reels", "Shorts"], "appAt": [[17, 7], [17, 8], [17, 10]], "total": { "text": "= 9 posts a day", "at": [17, 4] } },
+    { "type": "list", "at": [18, 0], "kicker": "3 RULES", "headline": "Post it **right**",
+      "items": [
+        { "text": "A hook in the first second", "at": [18, 0], "icon": "one" },
+        { "text": "Under 30 seconds", "at": [18, 5], "icon": "two" },
+        { "text": "Every single day", "at": [18, 8], "icon": "three" }
+      ] },
+    { "type": "list", "at": [19, 0], "kicker": "READ THIS", "headline": "**2 warnings**", "warn": true,
+      "items": [
+        { "text": "Never pay to join a campaign", "at": [20, 1], "icon": "x" },
+        { "text": "Only clip creators who allow it", "at": [20, 8], "icon": "warn" }
+      ] },
+    { "type": "bars", "at": [21, 0], "headline": "Week one = the **biggest window**", "values": [1, 0.86, 0.72, 0.4, 0.33, 0.28, 0.24], "hotAt": [21, 8], "hot": 3, "labels": ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"] },
+    { "type": "cta", "at": [22, 0], "headline": "Want my **setup**?", "typeAt": [22, 1], "postAt": [22, 2], "doneAt": [22, 4], "done": "I'll send you the link" }
+  ],
+  "post": {
+    "title": "How to make money clipping GTA 6 (step by step)",
+    "caption": "GTA 6 just dropped and clipping campaigns pay per view. Here's the whole setup. Comment CLIP and I'll send it.",
+    "hashtags": ["#gta6", "#clipping", "#sidehustle", "#makemoneyonline", "#contentcreator"]
+  }
+}

@@ -337,10 +337,50 @@ const React_: React.FC<P> = ({ s, t }) => (
   </div>
 );
 
+// ---------------------------------------------------------------- campaign submission card: brief checklist → rubber stamp
+// fields: headline, title, views, rows[] {text, at, ok:false = missing}, stamp {text, at, ok}, payout {text, at}
+const Verdict: React.FC<P> = ({ s, t }) => {
+  const rows = (s.rows ?? []) as (Item & { ok?: boolean })[], stamp = s.stamp as (Item & { ok?: boolean }) | undefined, pay = s.payout as Item | undefined;
+  const ts = stamp ? T(s, stamp.at, 99) : 99, sp = pop(t, ts, 0.35), tp = pay ? T(s, pay.at, 99) : 99;
+  const target = (s.views as number) ?? 0, v = Math.round(target * easeOut((t - s.a - 0.2) / 1.6));
+  const col = stamp?.ok ? GREEN : "#e5484d";
+  return (
+    <div style={{ ...STAGE, gap: 34 }}>
+      <div style={appear(t, s.a)}><Headline text={fill(s.headline as string)} size={92} /></div>
+      <div style={{ ...appear(t, s.a + 0.15), position: "relative" }}>
+        <Card style={{ width: 920, padding: "30px 34px" }}>
+          <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
+            <VerticalClip t={t} w={150} seed={4} />
+            <div style={{ flex: 1 }}>
+              <div style={{ fontWeight: 700, fontSize: 28, color: GREY, letterSpacing: 2 }}>CAMPAIGN SUBMISSION</div>
+              <div style={{ fontWeight: 800, fontSize: 48, letterSpacing: -1, margin: "6px 0 14px" }}>{(s.title as string) ?? "My best clip"}</div>
+              {target > 0 && <div style={{ display: "flex", alignItems: "center", gap: 12, fontWeight: 800, fontSize: 44, fontVariantNumeric: "tabular-nums" }}>
+                <Icon name="eye" size={44} color={G2} />{v.toLocaleString("en-US")} views</div>}
+              <div style={{ marginTop: 14, display: "inline-block", fontWeight: 800, fontSize: 28, padding: "8px 18px", borderRadius: 12, background: t > ts ? (stamp?.ok ? "#e3f7ec" : "#fde8e8") : "#f1edf7", color: t > ts ? col : GREY }}>
+                {t > ts ? (stamp?.ok ? "Approved" : "Rejected") : "Pending review…"}</div>
+            </div>
+          </div>
+          {rows.length > 0 && <div style={{ marginTop: 26, borderTop: `2px solid ${LINE}` }}>
+            {rows.map((r, i) => { const tr = T(s, r.at, 0.8 + i * 0.6); return (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 20, padding: "16px 4px", borderBottom: `2px solid ${LINE}`, opacity: fadeIn(t, tr), transform: `translateX(${(1 - easeOut((t - tr) / 0.3)) * 30}px)`,
+                background: r.ok === false && t > tr ? "rgba(229,72,77,.07)" : undefined, borderRadius: 10 }}>
+                <Icon name={r.ok === false ? "x" : "check"} size={44} color={r.ok === false ? "#e5484d" : GREEN} />
+                <div style={{ fontWeight: 800, fontSize: 40, color: r.ok === false ? "#e5484d" : INK }}><Rich text={r.text} /></div>
+              </div>); })}
+          </div>}
+        </Card>
+        {stamp && t > ts && <div style={{ position: "absolute", right: -24, bottom: rows.length ? 150 : -66, opacity: clamp(sp * 1.4), transform: `rotate(-12deg) scale(${lerp(1.8, 1, sp)})`,
+          border: `9px solid ${col}`, color: col, borderRadius: 22, padding: "10px 30px", fontFamily: UI, fontWeight: 800, fontSize: rows.length ? 92 : 78, letterSpacing: 4, background: "rgba(255,255,255,.88)" }}>{stamp.text}</div>}
+      </div>
+      <div style={{ minHeight: 120, marginTop: rows.length ? 0 : 90 }}>{pay && <div style={{ ...appear(t, tp), fontFamily: UI, fontWeight: 800, fontSize: 92, letterSpacing: -3 }}><Rich text={pay.text} /></div>}</div>
+    </div>
+  );
+};
+
 // GameView is used by the stream tiles; re-exported here so new scene types can draw a bare game view too.
 export { GameView };
 
 export const SCENE_TYPES: Record<string, React.FC<P>> = {
   big: Big, title: Title, grid: Grid, flow: Flow, stat: Stat, scrub: Scrub, brand: Brand, live: Live, phone: Phone,
-  clips: Clips, posts: Posts, list: List, bars: Bars, cta: Cta, term: Term, react: React_,
+  clips: Clips, posts: Posts, list: List, bars: Bars, cta: Cta, term: Term, react: React_, verdict: Verdict,
 };

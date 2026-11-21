@@ -1,0 +1,130 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "Stop posting clips until you fix these three mistakes that pay you zero.",
+   "rate": "+4%",
+   "gap": 0.3,
+   "pitch": "-4Hz"
+  },
+  {
+   "text": "Here's the fix for each, step by step.",
+   "rate": "+6%",
+   "gap": 0.3
+  },
+  {
+   "text": "Quick refresher: a campaign pays you for the views your clip gets.",
+   "rate": "+8%",
+   "gap": 0.2
+  },
+  {
+   "text": "Right now the typical rate is around one dollar per thousand views.",
+   "rate": "+4%",
+   "gap": 0.2
+  },
+  {
+   "text": "But a rejected clip earns nothing, however many views it got.",
+   "rate": "+4%",
+   "gap": 0.35,
+   "pitch": "-3Hz"
+  },
+  {
+   "text": "Mistake number three: skipping the brief.",
+   "rate": "+0%",
+   "gap": 0.2,
+   "pitch": "-4Hz"
+  },
+  {
+   "text": "Every campaign lists what it wants: a tag, a handle, a length, a disclosure.",
+   "rate": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "Miss one line, and the whole clip gets thrown out.",
+   "rate": "+4%",
+   "gap": 0.35,
+   "pitch": "-3Hz"
+  },
+  {
+   "text": "Mistake number two: using one clip twice.",
+   "rate": "+0%",
+   "gap": 0.2,
+   "pitch": "-4Hz"
+  },
+  {
+   "text": "A post can only go into one campaign, one time.",
+   "rate": "+6%",
+   "gap": 0.2
+  },
+  {
+   "text": "Same edit with a new logo still counts as reused.",
+   "rate": "+6%",
+   "gap": 0.35,
+   "pitch": "-2Hz"
+  },
+  {
+   "text": "Mistake number one, the big one: clipping the boring part.",
+   "rate": "+2%",
+   "gap": 0.2,
+   "pitch": "-4Hz"
+  },
+  {
+   "text": "People scrub a six hour stream, get tired, and cut anything.",
+   "rate": "+8%",
+   "gap": 0.25
+  },
+  {
+   "text": "The fix is letting the chat pick for you.",
+   "rate": "+2%",
+   "gap": 0.25,
+   "pitch": "-3Hz"
+  },
+  {
+   "text": "Clipzy reads the live chat and flags the second it spikes.",
+   "rate": "+6%",
+   "gap": 0.2
+  },
+  {
+   "text": "It cuts about thirty seconds around that spike, flips it vertical, and adds captions.",
+   "rate": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "Keep the good ones, skip the rest, and check each against the brief.",
+   "rate": "+8%",
+   "gap": 0.25
+  },
+  {
+   "text": "It works on old replays too, so last week's streams count.",
+   "rate": "+6%",
+   "gap": 0.35
+  },
+  {
+   "text": "And three rules that never change.",
+   "rate": "+0%",
+   "gap": 0.2,
+   "pitch": "-4Hz"
+  },
+  {
+   "text": "Only clip creators and campaigns that allow it, and never pay to join one.",
+   "rate": "+6%",
+   "gap": 0.2
+  },
+  {
+   "text": "Never buy views either, because that's a permanent ban.",
+   "rate": "+4%",
+   "gap": 0.35,
+   "pitch": "-3Hz"
+  },
+  {
+   "text": "Fix these three today, before your next clip goes up.",
+   "rate": "+4%",
+   "gap": 0.3
+  },
+  {
+   "text": "Comment clip, and I'll message you the link.",
+   "rate": "+2%",
+   "gap": 0.2
+  }
+ ]
+}

@@ -26,6 +26,7 @@ import { HuntOverlay, HuntMode, DocBug } from "./Hunt";
 import { GymOverlay, GymMode } from "./Gym";
 import { AirportOverlay, AirportMode, AIRPORT_MODES } from "./Airport";
 import { SuvOverlay, SuvMode, SUV_MODES } from "./Suv";
+import { SurgeOverlay, SurgeMode, SURGE_MODES, SURGE_CAPTION_Y } from "./Surge";
 
 export const CARPOOL_FRAMES = TOTAL;
 const HUNT = !!(STORY as unknown as { hunt?: unknown }).hunt;
@@ -258,10 +259,11 @@ export const CarpoolShort: React.FC = () => {
       {(s.id === "park" || s.id === "watch" || s.id === "bet" || s.id === "flex" || s.id === "enter") && <GymOverlay t0={s.a / FPS} t1={s.b / FPS} mode={s.id as GymMode} />}
       {AIRPORT_MODES.includes(s.id) && <AirportOverlay t0={s.a / FPS} t1={s.b / FPS} mode={s.id as AirportMode} />}
       {SUV_MODES.includes(s.id) && <SuvOverlay t0={s.a / FPS} t1={s.b / FPS} mode={s.id as SuvMode} />}
+      {SURGE_MODES.includes(s.id) && <SurgeOverlay t0={s.a / FPS} t1={s.b / FPS} mode={s.id as SurgeMode} />}
       {HUNT && s.id !== "end" && s.id !== "app" && s.id !== "mail" && <DocBug labels={!["chase", "chai", "bus", "calm", "chai2"].includes(s.id)} />}
       {s.id === "end" && <EndCard t0={END_CARD} />}
       {s.id !== "end" && s.id !== "app" && <DayStamp />}
-      {s.id !== "end" && <Captions y={s.id === "app" ? 95 : SUV_MODES.includes(s.id) ? ({ suv: 1560, theory: 1650, blocked: 1600, iyer: 1560, aao: 1760, pin: 1560 } as Record<string, number>)[s.id] : AIRPORT_MODES.includes(s.id) ? (s.id === "row" ? 1680 : s.id === "road" ? 1720 : 1600) : s.id === "park" ? 1500 : s.id === "flex" ? 1560 : s.id === "enter" ? 190 : s.id === "watch" || s.id === "bet" ? 1560 : s.id === "chat" || s.id === "meeting" || s.id === "sheet" || s.id === "gates" ? 110 : s.id === "napkin" ? 1420 : s.id === "lift" ? 1560 : s.id === "seat" ? 1610 : s.id === "toss" ? 230 : s.id === "rules" || s.id === "rules2" ? 1580 : s.id === "school" || s.id === "early" || s.id === "mixup" ? 1600 : s.id === "swap" ? 1420 : s.id === "forecast" || s.id === "fare" || s.id === "boat" || s.id === "dry" ? 1560 : s.id === "chase" || s.id === "chai" || s.id === "bus" || s.id === "calm" || s.id === "chai2" ? 1590 : s.id === "mail" ? 1520 : s.id === "clock" || s.id === "years" ? 1560 : 1240} size={s.id === "app" ? 84 : 96} />}
+      {s.id !== "end" && <Captions y={s.id === "app" ? 95 : SURGE_MODES.includes(s.id) ? SURGE_CAPTION_Y[s.id] : SUV_MODES.includes(s.id) ? ({ suv: 1560, theory: 1650, blocked: 1600, iyer: 1560, aao: 1760, pin: 1560 } as Record<string, number>)[s.id] : AIRPORT_MODES.includes(s.id) ? (s.id === "row" ? 1680 : s.id === "road" ? 1720 : 1600) : s.id === "park" ? 1500 : s.id === "flex" ? 1560 : s.id === "enter" ? 190 : s.id === "watch" || s.id === "bet" ? 1560 : s.id === "chat" || s.id === "meeting" || s.id === "sheet" || s.id === "gates" ? 110 : s.id === "napkin" ? 1420 : s.id === "lift" ? 1560 : s.id === "seat" ? 1610 : s.id === "toss" ? 230 : s.id === "rules" || s.id === "rules2" ? 1580 : s.id === "school" || s.id === "early" || s.id === "mixup" ? 1600 : s.id === "swap" ? 1420 : s.id === "forecast" || s.id === "fare" || s.id === "boat" || s.id === "dry" ? 1560 : s.id === "chase" || s.id === "chai" || s.id === "bus" || s.id === "calm" || s.id === "chai2" ? 1590 : s.id === "mail" ? 1520 : s.id === "clock" || s.id === "years" ? 1560 : 1240} size={s.id === "app" ? 84 : 96} />}
       <Audio src={staticFile("carpool/voice_current.wav")} />
     </AbsoluteFill>
   );

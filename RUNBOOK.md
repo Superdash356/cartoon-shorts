@@ -87,6 +87,8 @@ Start from `scripts/story_template.json` (never from an earlier story) and fill 
 | onecar | one car, four friends, out of the gate |
 | lot | office car park: one car parks, three bays empty |
 | late, where | Sharma ji running late for the waiting car; friends laughing + live-map card (cue everyone) |
+| market, close | (Surge.tsx) TV business-news studio charting a fare like a stock (cues hook3/anchor/ticker/m1-m3/bankrupt); "close" = closing bell, line flattens (cues flat/recover) |
+| brolly, raju, demand | (Surge.tsx) wading the flooded main road, umbrella flips (cues main/cheap/flip/still/soaked); cab driver Raju at the wheel (four/minute/techpark); four neighbours under umbrellas at one gate with four cabs (n1-n4/demand/neighbours) |
 | end | CTA end card (story.json `end`), App Store / Google Play badges, "Link in bio" |
 
 Characters: Rohan (blue shirt, white car), Priya (rose kurta, red car), Arjun (green shirt, blue car, usually today's

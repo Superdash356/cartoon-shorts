@@ -1,162 +1,138 @@
 {
- "title": "The SUV That Never Moved",
+ "title": "The Cab Fare That Crashed the Lane",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.24,
- "keepGap": 0.24,
+ "tempo": 1.19,
+ "keepGap": 0.28,
  "beats": {
-  "theme": "the neighbour's car that never leaves the colony: a green SUV parked in slot nine for a year",
-  "setting": "the colony's tight parking row, told as a deadpan case file with month-by-month evidence",
-  "conflict": "the whole colony invents theories about a spotless SUV that gathers dust, laundry and pigeons",
-  "failedAttempt": "four uncles direct a fourteen-point reverse shouting 'aao aao', knock over a scooter and end back in the slot",
-  "twist": "Rohan's own car had boxed the SUV in every night; the owner was too polite to knock and took autos to Rohan's office",
-  "lesson": "the car blocking you is usually going your way",
-  "appAngle": "the roster picks the driver so that car parks in front; the rider taps that he's at the pickup",
-  "callback": "the pickup point is named 'The SUV', which still never moves, and the pigeons approve",
-  "ctaLine": "Boxed in by your neighbour's car?"
+  "theme": "the cab surge on a rainy Monday: a girl with no car pays rising fares every wet Monday",
+  "setting": "a deadpan TV business-news bulletin, Monday Markets, charting her fare like a stock",
+  "conflict": "Priya's cab fare climbs to triple every rainy Monday and she blames the weather",
+  "failedAttempt": "wading to the main road in the rain to book from a cheaper pickup pin; umbrella flips, still triple",
+  "twist": "her cab driver reveals four people book from her gate at the same minute: her own neighbours are the demand",
+  "lesson": "when the whole lane rides alone, the whole lane pays triple",
+  "appAngle": "the live map shows how far the pool car is, so everyone stays dry indoors until it reaches the gate",
+  "callback": "closing bell: her fare flatlines and the bankrupt umbrella recovers",
+  "ctaLine": "Whole lane paying surge?"
  },
  "lines": [
   {
-   "text": "You'd blame the owner. But the reason this SUV never moved was parked right behind it.",
+   "text": "Your cab costs triple when it rains. This girl lost a month of fares before she found out why.",
    "rate": "+14%",
-   "pitch": "-6Hz",
-   "gap": 0.16
+   "pitch": "-5Hz",
+   "gap": 0.2
   },
   {
-   "text": "Case file: green SUV, slot nine.",
+   "text": "Welcome to Monday Markets.",
+   "rate": "+10%",
+   "pitch": "-7Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Today's stock: Priya's cab fare.",
    "rate": "+16%",
-   "pitch": "-2Hz",
-   "gap": 0.14
-  },
-  {
-   "text": "Month one. Dust.",
-   "rate": "+18%",
    "pitch": "-4Hz",
-   "gap": 0.1
+   "gap": 0.15
   },
   {
-   "text": "Month four. Wash me, on the window.",
-   "rate": "+24%",
+   "text": "No car. One umbrella. Same tech park as half her lane.",
+   "rate": "+22%",
    "pitch": "+0Hz",
-   "gap": 0.1
+   "gap": 0.15
   },
   {
-   "text": "Month eight. The guard's laundry, on the bonnet.",
-   "rate": "+24%",
-   "pitch": "+2Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "Month eleven. Pigeons. A whole family. On the roof.",
-   "rate": "+20%",
-   "pitch": "-4Hz",
-   "gap": 0.18
-  },
-  {
-   "text": "So the colony builds theories.",
-   "rate": "+20%",
-   "pitch": "+0Hz",
-   "gap": 0.1
-  },
-  {
-   "text": "Priya: a wedding gift nobody wanted.",
+   "text": "Rainy Monday one. One and a half times. Analysts blame drizzle.",
    "rate": "+26%",
-   "pitch": "+2Hz",
-   "gap": 0.08
+   "pitch": "+0Hz",
+   "gap": 0.12
   },
   {
-   "text": "Arjun: the owner is a spy.",
+   "text": "Monday two. Double. Extremely bullish.",
    "rate": "+26%",
    "pitch": "+4Hz",
-   "gap": 0.08
-  },
-  {
-   "text": "Sharma ji: haunted. The wipers moved once.",
-   "rate": "+22%",
-   "pitch": "+8Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "Then Rohan's car goes for a service. One weekend.",
-   "rate": "+20%",
-   "pitch": "+0Hz",
    "gap": 0.12
   },
   {
-   "text": "Monday, the SUV reverses out. First time ever.",
-   "rate": "+16%",
-   "pitch": "-4Hz",
-   "gap": 0.18
-  },
-  {
-   "text": "Rohan had parked behind it. Every night. For a year.",
-   "rate": "+12%",
-   "pitch": "-8Hz",
+   "text": "Monday three. Triple. Her umbrella files for bankruptcy.",
+   "rate": "+18%",
+   "pitch": "-6Hz",
    "gap": 0.22
   },
   {
-   "text": "Mr Iyer, the owner, was too polite to knock. He took autos to Rohan's office.",
+   "text": "So Priya wades to the main road, to book from a cheaper pin.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "The umbrella flips. Still triple. Now also soaked.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Then her driver, Raju, says the quiet part.",
    "rate": "+20%",
    "pitch": "-2Hz",
-   "gap": 0.18
+   "gap": 0.15
   },
   {
-   "text": "So four uncles guide a reverse. Everyone yelling, aao aao.",
-   "rate": "+24%",
+   "text": "Madam, four people book from your gate. Same minute. Same tech park.",
+   "rate": "+22%",
    "pitch": "+6Hz",
-   "gap": 0.1
+   "gap": 0.15
   },
   {
-   "text": "Fourteen point turn. One scooter down. Back in slot nine.",
-   "rate": "+22%",
-   "pitch": "-4Hz",
-   "gap": 0.22
-  },
-  {
-   "text": "Lesson: the car blocking you is usually going your way.",
-   "rate": "+12%",
-   "pitch": "-6Hz",
-   "gap": 0.22
-  },
-  {
-   "text": "So Iyer joined Rohan's carpool. Inside an app.",
-   "rate": "+20%",
+   "text": "Rohan. Arjun. Sharma ji. And you.",
+   "rate": "+16%",
    "pitch": "+0Hz",
-   "gap": 0.1
+   "gap": 0.2
   },
   {
-   "text": "The roster picks the driver, and that car sleeps in front.",
-   "rate": "+22%",
-   "pitch": "+2Hz",
-   "gap": 0.1
+   "text": "The demand pumping her surge? Her own neighbours.",
+   "rate": "+12%",
+   "pitch": "-8Hz",
+   "gap": 0.25
   },
   {
-   "text": "Iyer walks down. One tap: he's at the pickup.",
+   "text": "Lesson: when the whole lane rides alone, the whole lane pays triple.",
+   "rate": "+16%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So the four pooled up on an app. Arjun drives.",
    "rate": "+22%",
    "pitch": "+0Hz",
    "gap": 0.12
   },
   {
-   "text": "Pickup point's name? The SUV. Still hasn't moved.",
-   "rate": "+16%",
-   "pitch": "-6Hz",
-   "gap": 0.14
+   "text": "The live map shows exactly how far his car is.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
   },
   {
-   "text": "The pigeons approve.",
-   "rate": "+14%",
-   "pitch": "+6Hz",
+   "text": "Nobody waits in the rain. They step out when it's at the gate.",
+   "rate": "+22%",
+   "pitch": "+2Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Closing bell. Priya's fare, flat. Her umbrella, out of bankruptcy.",
+   "rate": "+16%",
+   "pitch": "-5Hz",
    "gap": 0.2
   },
   {
-   "text": "Boxed in by a neighbour's car? Try Sahyatri. Link in bio.",
-   "rate": "+12%",
+   "text": "Whole lane paying surge? Pool it on Sahyatri. Link in bio.",
+   "rate": "+18%",
    "pitch": "-2Hz",
    "gap": 0.1
   }
  ],
  "shots": [
   {
-   "id": "suv",
+   "id": "market",
    "at": [
     0,
     0
@@ -166,53 +142,38 @@
   {
    "id": "doors",
    "at": [
-    6,
+    3,
     0
    ]
   },
   {
-   "id": "theory",
+   "id": "market",
    "at": [
-    7,
+    4,
     0
    ],
    "music": "nervous"
   },
   {
-   "id": "leave",
+   "id": "brolly",
    "at": [
-    10,
+    7,
     0
    ],
    "music": "groove"
   },
   {
-   "id": "blocked",
+   "id": "raju",
    "at": [
-    11,
-    0
-   ]
-  },
-  {
-   "id": "blocked",
-   "at": [
-    12,
+    9,
     0
    ],
    "music": "stop"
   },
   {
-   "id": "iyer",
+   "id": "demand",
    "at": [
-    13,
-    0
-   ],
-   "music": "groove"
-  },
-  {
-   "id": "aao",
-   "at": [
-    14,
+    11,
     0
    ],
    "music": "nervous"
@@ -220,7 +181,7 @@
   {
    "id": "gate",
    "at": [
-    16,
+    13,
     0
    ],
    "music": "pad"
@@ -228,190 +189,205 @@
   {
    "id": "app",
    "at": [
-    17,
+    14,
     0
    ],
    "music": "lift"
   },
   {
-   "id": "pin",
+   "id": "onecar",
    "at": [
-    20,
+    16,
     0
    ],
    "music": "groove"
   },
   {
+   "id": "close",
+   "at": [
+    17,
+    0
+   ]
+  },
+  {
    "id": "end",
    "at": [
-    22,
+    18,
     0
    ],
    "music": "end"
   }
  ],
  "cues": {
-  "never": [
+  "hook3": [
    0,
-   9
+   3
   ],
-  "behind": [
-   0,
-   14
-  ],
-  "file": [
+  "anchor": [
    1,
    0
   ],
-  "m1": [
+  "ticker": [
    2,
-   0
+   2
   ],
-  "m2": [
-   3,
-   0
-  ],
-  "m3": [
+  "m1": [
    4,
    0
   ],
-  "m4": [
+  "m2": [
    5,
-   2
+   0
   ],
-  "th1": [
+  "m3": [
+   6,
+   0
+  ],
+  "bankrupt": [
+   6,
+   7
+  ],
+  "main": [
    7,
-   0
+   5
   ],
-  "th2": [
+  "cheap": [
+   7,
+   10
+  ],
+  "flip": [
    8,
-   0
+   1
   ],
-  "th3": [
-   9,
-   0
-  ],
-  "wipers": [
-   9,
-   4
-  ],
-  "out": [
-   11,
+  "still": [
+   8,
    3
   ],
-  "first": [
+  "soaked": [
+   8,
+   7
+  ],
+  "raju": [
+   9,
+   3
+  ],
+  "four": [
+   10,
+   2
+  ],
+  "minute": [
+   10,
+   8
+  ],
+  "techpark": [
+   10,
+   10
+  ],
+  "n1": [
+   11,
+   0
+  ],
+  "n2": [
+   11,
+   1
+  ],
+  "n3": [
+   11,
+   2
+  ],
+  "n4": [
    11,
    5
   ],
-  "replay": [
+  "demand": [
    12,
-   0
+   1
   ],
-  "every": [
-   12,
-   5
-  ],
-  "year": [
+  "neighbours": [
    12,
    7
   ],
-  "polite": [
-   13,
-   5
-  ],
-  "auto": [
-   13,
-   10
-  ],
-  "office": [
-   13,
-   13
-  ],
-  "fourteen": [
-   15,
-   0
-  ],
-  "scooter": [
-   15,
-   4
-  ],
-  "back": [
-   15,
-   6
-  ],
   "roster": [
-   18,
-   1
+   14,
+   7
   ],
   "driver": [
-   18,
-   4
-  ],
-  "tap": [
-   19,
-   4
-  ],
-  "ready": [
-   19,
-   5
-  ],
-  "watch": [
-   19,
+   14,
    8
   ],
   "live": [
-   19,
-   8
-  ],
-  "pigeons": [
-   21,
+   15,
    1
   ],
-  "name": [
-   22,
-   7
+  "watch": [
+   15,
+   5
   ],
-  "check": [
-   22,
-   8
+  "one": [
+   16,
+   6
+  ],
+  "flat": [
+   17,
+   4
+  ],
+  "recover": [
+   17,
+   7
   ]
  },
  "punch": [
   [
    0,
-   9
+   3
   ],
   [
    0,
-   14
+   13
   ],
   [
-   2,
-   3
+   1,
+   2
   ],
   [
    3,
+   9
+  ],
+  [
+   4,
+   4
+  ],
+  [
+   5,
+   2
+  ],
+  [
+   6,
    3
   ],
   [
-   5,
-   2
+   6,
+   7
   ],
   [
-   5,
-   5
+   7,
+   10
   ],
   [
    8,
-   5
-  ],
-  [
-   9,
    2
   ],
   [
+   8,
+   7
+  ],
+  [
    9,
-   4
+   3
+  ],
+  [
+   10,
+   2
   ],
   [
    11,
@@ -419,43 +395,23 @@
   ],
   [
    12,
-   5
-  ],
-  [
-   12,
-   9
-  ],
-  [
-   13,
-   6
+   7
   ],
   [
    13,
    11
   ],
   [
-   14,
-   8
+   15,
+   1
   ],
   [
-   15,
+   17,
    4
   ],
   [
-   16,
-   1
-  ],
-  [
-   18,
+   17,
    8
-  ],
-  [
-   20,
-   5
-  ],
-  [
-   21,
-   1
   ]
  ],
  "stopMusic": [
@@ -466,49 +422,48 @@
    2
   ],
   [
-   16,
+   13,
    0,
-   16,
+   13,
    1
   ]
  ],
  "end": {
-  "headline": "Boxed in by a\nneighbour's car?",
+  "headline": "Whole lane paying\nsurge?",
   "tagline": "Community Carpool",
   "button": "Link in bio"
  },
  "captionsBig": [
-  "dust",
-  "wash",
-  "laundry",
-  "pigeons",
-  "theories",
-  "gift",
-  "spy",
-  "haunted",
-  "wipers",
-  "service",
-  "first",
-  "every",
-  "year",
-  "polite",
-  "autos",
-  "office",
-  "aao",
-  "scooter",
-  "nine",
-  "blocking",
-  "way",
-  "tap",
-  "suv",
-  "approve",
+  "triple",
+  "markets",
+  "umbrella",
+  "double",
+  "bullish",
+  "bankruptcy",
+  "cheaper",
+  "flips",
+  "soaked",
+  "raju",
+  "four",
+  "you",
+  "neighbours",
+  "alone",
+  "live",
+  "dry",
+  "flat",
   "sahyatri"
  ],
  "post": {
-  "title": "",
-  "caption": "",
-  "hashtags": []
+  "title": "Why her cab cost 3x every rainy Monday 📈☔",
+  "caption": "Priya blamed the rain for her surge fare three Mondays in a row. Then her cab driver Raju said the quiet part out loud. Tag the neighbour who books a cab from your gate every Monday.",
+  "hashtags": [
+   "#animatedstory",
+   "#rainymonday",
+   "#officecommute",
+   "#carpool",
+   "#sahyatri"
+  ]
  },
- "appSticker": "FRONT CAR DRIVES",
- "appDriverNote": "Rohan is driving \u00b7 Iyer rides"
+ "appSticker": "ONE CAR, ONE FARE",
+ "appDriverNote": "Arjun is driving · 3 riders"
 }

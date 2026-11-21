@@ -1,0 +1,119 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "Your cab costs triple when it rains. This girl lost a month of fares before she found out why.",
+   "rate": "+14%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Welcome to Monday Markets.",
+   "rate": "+10%",
+   "pitch": "-7Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Today's stock: Priya's cab fare.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "No car. One umbrella. Same tech park as half her lane.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rainy Monday one. One and a half times. Analysts blame drizzle.",
+   "rate": "+26%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Monday two. Double. Extremely bullish.",
+   "rate": "+26%",
+   "pitch": "+4Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Monday three. Triple. Her umbrella files for bankruptcy.",
+   "rate": "+18%",
+   "pitch": "-6Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "So Priya wades to the main road, to book from a cheaper pin.",
+   "rate": "+24%",
+   "pitch": "+2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "The umbrella flips. Still triple. Now also soaked.",
+   "rate": "+18%",
+   "pitch": "-5Hz",
+   "gap": 0.22
+  },
+  {
+   "text": "Then her driver, Raju, says the quiet part.",
+   "rate": "+20%",
+   "pitch": "-2Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Madam, four people book from your gate. Same minute. Same tech park.",
+   "rate": "+22%",
+   "pitch": "+6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Rohan. Arjun. Sharma ji. And you.",
+   "rate": "+16%",
+   "pitch": "+0Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "The demand pumping her surge? Her own neighbours.",
+   "rate": "+12%",
+   "pitch": "-8Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Lesson: when the whole lane rides alone, the whole lane pays triple.",
+   "rate": "+16%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So the four pooled up on an app. Arjun drives.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "The live map shows exactly how far his car is.",
+   "rate": "+24%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Nobody waits in the rain. They step out when it's at the gate.",
+   "rate": "+22%",
+   "pitch": "+2Hz",
+   "gap": 0.18
+  },
+  {
+   "text": "Closing bell. Priya's fare, flat. Her umbrella, out of bankruptcy.",
+   "rate": "+16%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Whole lane paying surge? Pool it on Sahyatri. Link in bio.",
+   "rate": "+18%",
+   "pitch": "-2Hz",
+   "gap": 0.1
+  }
+ ]
+}

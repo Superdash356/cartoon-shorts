@@ -1,138 +1,144 @@
 {
- "title": "The Cab Fare That Crashed the Lane",
+ "title": "Her 'Two Minutes' Was Never Two Minutes",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.19,
- "keepGap": 0.28,
+ "tempo": 1.24,
+ "keepGap": 0.22,
  "beats": {
-  "theme": "the cab surge on a rainy Monday: a girl with no car pays rising fares every wet Monday",
-  "setting": "a deadpan TV business-news bulletin, Monday Markets, charting her fare like a stock",
-  "conflict": "Priya's cab fare climbs to triple every rainy Monday and she blames the weather",
-  "failedAttempt": "wading to the main road in the rain to book from a cheaper pickup pin; umbrella flips, still triple",
-  "twist": "her cab driver reveals four people book from her gate at the same minute: her own neighbours are the demand",
-  "lesson": "when the whole lane rides alone, the whole lane pays triple",
-  "appAngle": "the live map shows how far the pool car is, so everyone stays dry indoors until it reaches the gate",
-  "callback": "closing bell: her fare flatlines and the bankrupt umbrella recovers",
-  "ctaLine": "Whole lane paying surge?"
+  "theme": "the 'two minutes' friend whose two minutes never end",
+  "setting": "a deadpan dictionary entry defining 'two minutes', then Priya's phone on her nightstand",
+  "conflict": "Arjun waits outside every morning while Priya's 'two minutes' stretch from ten to forty",
+  "failedAttempt": "lying about the pickup time, earlier and earlier, while she still strolls out at 8:20",
+  "twist": "'two minutes' is an auto-reply: she was asleep and never read a single fake time",
+  "lesson": "two minutes is a feeling, not a location",
+  "appAngle": "she taps 'I'm at the pickup point' only from the real gate, and tracks his car in metres on the live map",
+  "callback": "the auto-reply still runs and just promised her boss the report in two minutes",
+  "ctaLine": "Friend stuck on two minutes?"
  },
  "lines": [
   {
-   "text": "Your cab costs triple when it rains. This girl lost a month of fares before she found out why.",
-   "rate": "+14%",
-   "pitch": "-5Hz",
+   "text": "Your friend is always two minutes away, for a reason you'd never guess.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Arjun lost twelve mornings to it.",
+   "rate": "+10%",
+   "pitch": "-7Hz",
    "gap": 0.2
   },
   {
-   "text": "Welcome to Monday Markets.",
-   "rate": "+10%",
-   "pitch": "-7Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Today's stock: Priya's cab fare.",
-   "rate": "+16%",
-   "pitch": "-4Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "No car. One umbrella. Same tech park as half her lane.",
+   "text": "He drives. Priya rides. One lane over.",
    "rate": "+22%",
    "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Every morning he texts, outside. She replies, two minutes.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
    "gap": 0.15
   },
   {
-   "text": "Rainy Monday one. One and a half times. Analysts blame drizzle.",
-   "rate": "+26%",
-   "pitch": "+0Hz",
+   "text": "Two minutes, definition one: ten minutes. Fair.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
    "gap": 0.12
   },
   {
-   "text": "Monday two. Double. Extremely bullish.",
-   "rate": "+26%",
-   "pitch": "+4Hz",
-   "gap": 0.12
-  },
-  {
-   "text": "Monday three. Triple. Her umbrella files for bankruptcy.",
+   "text": "Definition two: twenty five. The guard starts a stopwatch.",
    "rate": "+18%",
-   "pitch": "-6Hz",
-   "gap": 0.22
-  },
-  {
-   "text": "So Priya wades to the main road, to book from a cheaper pin.",
-   "rate": "+24%",
    "pitch": "+2Hz",
    "gap": 0.12
   },
   {
-   "text": "The umbrella flips. Still triple. Now also soaked.",
-   "rate": "+18%",
-   "pitch": "-5Hz",
-   "gap": 0.22
-  },
-  {
-   "text": "Then her driver, Raju, says the quiet part.",
-   "rate": "+20%",
-   "pitch": "-2Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Madam, four people book from your gate. Same minute. Same tech park.",
-   "rate": "+22%",
-   "pitch": "+6Hz",
-   "gap": 0.15
-  },
-  {
-   "text": "Rohan. Arjun. Sharma ji. And you.",
+   "text": "Definition three: forty. The guard brings Arjun a pillow.",
    "rate": "+16%",
-   "pitch": "+0Hz",
+   "pitch": "-5Hz",
    "gap": 0.2
   },
   {
-   "text": "The demand pumping her surge? Her own neighbours.",
-   "rate": "+12%",
-   "pitch": "-8Hz",
+   "text": "So Arjun tries the oldest trick: lying about the time.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Pickup's at seven forty, he says. She strolls out at eight twenty.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Seven twenty. Eight twenty. Six a.m. Eight twenty.",
+   "rate": "+30%",
+   "pitch": "+6Hz",
    "gap": 0.25
   },
   {
-   "text": "Lesson: when the whole lane rides alone, the whole lane pays triple.",
+   "text": "Morning twelve, he sends a test. The car is on fire.",
    "rate": "+16%",
-   "pitch": "-5Hz",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Reply. Two minutes.",
+   "rate": "+4%",
+   "pitch": "-8Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "It's an auto reply. She never read one fake time.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "She's not late. She's asleep. Her phone's just polite.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
    "gap": 0.2
   },
   {
-   "text": "So the four pooled up on an app. Arjun drives.",
+   "text": "Turns out, two minutes is a feeling, not a location.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So they switch to an app. Priya taps at pickup only from the actual gate.",
    "rate": "+22%",
    "pitch": "+0Hz",
    "gap": 0.12
   },
   {
-   "text": "The live map shows exactly how far his car is.",
-   "rate": "+24%",
+   "text": "Till then she watches Arjun's car on the live map. Metres, not minutes.",
+   "rate": "+20%",
    "pitch": "+0Hz",
-   "gap": 0.1
+   "gap": 0.15
   },
   {
-   "text": "Nobody waits in the rain. They step out when it's at the gate.",
-   "rate": "+22%",
-   "pitch": "+2Hz",
-   "gap": 0.18
+   "text": "No texts. No horn. No pillow.",
+   "rate": "+20%",
+   "pitch": "+4Hz",
+   "gap": 0.25
   },
   {
-   "text": "Closing bell. Priya's fare, flat. Her umbrella, out of bankruptcy.",
-   "rate": "+16%",
-   "pitch": "-5Hz",
-   "gap": 0.2
-  },
-  {
-   "text": "Whole lane paying surge? Pool it on Sahyatri. Link in bio.",
+   "text": "The auto reply still runs. Her boss just asked for the report. Two minutes.",
    "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Friend stuck on two minutes? Try Sahyatri. Link in bio.",
+   "rate": "+14%",
    "pitch": "-2Hz",
-   "gap": 0.1
+   "gap": 0.2
   }
  ],
  "shots": [
   {
-   "id": "market",
+   "id": "dict",
    "at": [
     0,
     0
@@ -140,22 +146,50 @@
    "music": "groove"
   },
   {
-   "id": "doors",
+   "id": "years",
+   "at": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "street",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "texts",
    "at": [
     3,
     0
    ]
   },
   {
-   "id": "market",
+   "id": "dict",
    "at": [
     4,
+    0
+   ]
+  },
+  {
+   "id": "guard",
+   "at": [
+    5,
+    3
+   ]
+  },
+  {
+   "id": "dict",
+   "at": [
+    6,
     0
    ],
    "music": "nervous"
   },
   {
-   "id": "brolly",
+   "id": "fake",
    "at": [
     7,
     0
@@ -163,25 +197,17 @@
    "music": "groove"
   },
   {
-   "id": "raju",
+   "id": "fire",
    "at": [
-    9,
+    10,
     0
    ],
    "music": "stop"
   },
   {
-   "id": "demand",
+   "id": "dict",
    "at": [
-    11,
-    0
-   ],
-   "music": "nervous"
-  },
-  {
-   "id": "gate",
-   "at": [
-    13,
+    14,
     0
    ],
    "music": "pad"
@@ -189,7 +215,7 @@
   {
    "id": "app",
    "at": [
-    14,
+    15,
     0
    ],
    "music": "lift"
@@ -197,161 +223,125 @@
   {
    "id": "onecar",
    "at": [
-    16,
+    17,
     0
    ],
    "music": "groove"
   },
   {
-   "id": "close",
+   "id": "reply",
    "at": [
-    17,
+    18,
     0
    ]
   },
   {
    "id": "end",
    "at": [
-    18,
+    19,
     0
    ],
    "music": "end"
   }
  ],
  "cues": {
-  "hook3": [
-   0,
-   3
-  ],
-  "anchor": [
-   1,
-   0
-  ],
-  "ticker": [
-   2,
-   2
-  ],
-  "m1": [
+  "d1": [
    4,
-   0
-  ],
-  "m2": [
-   5,
-   0
-  ],
-  "m3": [
-   6,
-   0
-  ],
-  "bankrupt": [
-   6,
-   7
-  ],
-  "main": [
-   7,
-   5
-  ],
-  "cheap": [
-   7,
-   10
-  ],
-  "flip": [
-   8,
-   1
-  ],
-  "still": [
-   8,
-   3
-  ],
-  "soaked": [
-   8,
-   7
-  ],
-  "raju": [
-   9,
-   3
-  ],
-  "four": [
-   10,
-   2
-  ],
-  "minute": [
-   10,
-   8
-  ],
-  "techpark": [
-   10,
-   10
-  ],
-  "n1": [
-   11,
-   0
-  ],
-  "n2": [
-   11,
-   1
-  ],
-  "n3": [
-   11,
-   2
-  ],
-  "n4": [
-   11,
-   5
-  ],
-  "demand": [
-   12,
-   1
-  ],
-  "neighbours": [
-   12,
-   7
-  ],
-  "roster": [
-   14,
-   7
-  ],
-  "driver": [
-   14,
-   8
-  ],
-  "live": [
-   15,
-   1
-  ],
-  "watch": [
-   15,
-   5
-  ],
-  "one": [
-   16,
-   6
-  ],
-  "flat": [
-   17,
    4
   ],
-  "recover": [
-   17,
+  "d2": [
+   5,
+   2
+  ],
+  "d3": [
+   6,
+   2
+  ],
+  "d4": [
+   14,
+   6
+  ],
+  "snap": [
+   5,
+   8
+  ],
+  "f1": [
+   8,
+   2
+  ],
+  "f2": [
+   9,
+   0
+  ],
+  "f3": [
+   9,
+   4
+  ],
+  "f4": [
+   9,
+   6
+  ],
+  "fire": [
+   10,
    7
+  ],
+  "reply": [
+   11,
+   1
+  ],
+  "auto": [
+   12,
+   2
+  ],
+  "polite": [
+   13,
+   8
+  ],
+  "roster": [
+   15,
+   5
+  ],
+  "tap": [
+   15,
+   7
+  ],
+  "ready": [
+   15,
+   14
+  ],
+  "live": [
+   16,
+   8
+  ],
+  "watch": [
+   16,
+   10
+  ],
+  "one": [
+   17,
+   2
+  ],
+  "boss": [
+   18,
+   6
+  ],
+  "boss2": [
+   18,
+   12
   ]
  },
  "punch": [
   [
    0,
-   3
+   4
   ],
   [
    0,
-   13
+   11
   ],
   [
    1,
    2
-  ],
-  [
-   3,
-   9
   ],
   [
    4,
@@ -359,23 +349,15 @@
   ],
   [
    5,
-   2
+   8
   ],
   [
    6,
-   3
-  ],
-  [
-   6,
-   7
+   8
   ],
   [
    7,
-   10
-  ],
-  [
-   8,
-   2
+   6
   ],
   [
    8,
@@ -383,87 +365,92 @@
   ],
   [
    9,
-   3
-  ],
-  [
-   10,
-   2
-  ],
-  [
-   11,
-   5
-  ],
-  [
-   12,
-   7
-  ],
-  [
-   13,
-   11
-  ],
-  [
-   15,
-   1
-  ],
-  [
-   17,
    4
   ],
   [
+   9,
+   6
+  ],
+  [
+   10,
+   10
+  ],
+  [
+   11,
+   1
+  ],
+  [
+   12,
+   2
+  ],
+  [
+   13,
+   4
+  ],
+  [
+   14,
+   6
+  ],
+  [
+   16,
+   10
+  ],
+  [
    17,
-   8
+   5
+  ],
+  [
+   18,
+   12
   ]
  ],
  "stopMusic": [
   [
-   12,
+   11,
    0,
-   12,
+   11,
    2
   ],
   [
    13,
-   0,
+   2,
    13,
-   1
+   3
   ]
  ],
  "end": {
-  "headline": "Whole lane paying\nsurge?",
+  "headline": "Friend stuck on\n'two minutes'?",
   "tagline": "Community Carpool",
   "button": "Link in bio"
  },
  "captionsBig": [
-  "triple",
-  "markets",
-  "umbrella",
-  "double",
-  "bullish",
-  "bankruptcy",
-  "cheaper",
-  "flips",
-  "soaked",
-  "raju",
-  "four",
-  "you",
-  "neighbours",
-  "alone",
+  "two",
+  "minutes",
+  "twelve",
+  "ten",
+  "forty",
+  "pillow",
+  "lying",
+  "eight",
+  "fire",
+  "auto",
+  "asleep",
+  "polite",
+  "feeling",
   "live",
-  "dry",
-  "flat",
+  "metres",
+  "boss",
   "sahyatri"
  ],
  "post": {
-  "title": "Why her cab cost 3x every rainy Monday 📈☔",
-  "caption": "Priya blamed the rain for her surge fare three Mondays in a row. Then her cab driver Raju said the quiet part out loud. Tag the neighbour who books a cab from your gate every Monday.",
+  "title": "He waited 12 mornings for her \"two minutes\" ⏳",
+  "caption": "Arjun tried everything to beat Priya's \"two minutes\", even lying about the pickup time. Then he sent one test text and found out who was really replying. Tag the friend whose two minutes is forty.",
   "hashtags": [
    "#animatedstory",
-   "#rainymonday",
-   "#officecommute",
+   "#twominutes",
    "#carpool",
-   "#sahyatri"
+   "#relatable",
+   "#officecommute"
   ]
- },
- "appSticker": "ONE CAR, ONE FARE",
- "appDriverNote": "Arjun is driving · 3 riders"
+ }
 }

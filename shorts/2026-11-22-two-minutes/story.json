@@ -1,8 +1,8 @@
 {
  "title": "Her 'Two Minutes' Was Never Two Minutes",
  "voice": "en-US-AndrewNeural",
- "tempo": 1.18,
- "keepGap": 0.28,
+ "tempo": 1.24,
+ "keepGap": 0.22,
  "beats": {
   "theme": "the 'two minutes' friend whose two minutes never end",
   "setting": "a deadpan dictionary entry defining 'two minutes', then Priya's phone on her nightstand",

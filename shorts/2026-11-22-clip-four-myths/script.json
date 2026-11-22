@@ -1,0 +1,611 @@
+{
+ "title": "4 clipping myths to drop before you quit",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.07,
+ "keepGap": 0.3,
+ "beats": {
+  "topic": "myth vs fact: 4 clipping myths busted (followers, easy money, pro editing, paying to join)",
+  "hook": "before you quit clipping, check which of these 4 myths you believed",
+  "money": "typical campaign about $1 per 1,000 views, 50k views is roughly $50, adds up with volume not luck",
+  "pain": "the editing is quick, finding the moment is what eats the day",
+  "tool": "drop a live or replay link, watches chat, marks the spike, ~30s, vertical facecam/gameplay, captions, keep or skip",
+  "rules": "real campaigns are free, permission only, post daily",
+  "warnings": "entry fee = scam, only clip streamers/campaigns that give permission",
+  "cta": "comment clip and I'll DM how I set it up"
+ },
+ "hl": [
+  "quit",
+  "myths",
+  "bust",
+  "following",
+  "views",
+  "viral",
+  "overnight",
+  "dollar",
+  "fifty",
+  "volume",
+  "editor",
+  "moment",
+  "clipzy",
+  "chat",
+  "explodes",
+  "vertical",
+  "facecam",
+  "captions",
+  "bangers",
+  "pay",
+  "free",
+  "permission",
+  "recipe",
+  "first",
+  "clip",
+  "scam",
+  "daily"
+ ],
+ "lines": [
+  {
+   "text": "Before you quit clipping, check which of these 4 myths you believed.",
+   "rate": "+4%",
+   "pitch": "-4Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "I'll bust each one, then show the setup, step by step.",
+   "rate": "+6%",
+   "gap": 0.35
+  },
+  {
+   "text": "Myth one: you need a big following first.",
+   "rate": "+0%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fact: campaigns pay for the views on each clip, not followers.",
+   "rate": "+6%",
+   "gap": 0.2
+  },
+  {
+   "text": "A brand new page can still land a viral clip.",
+   "rate": "+8%",
+   "gap": 0.35
+  },
+  {
+   "text": "Myth two: clipping is easy money overnight.",
+   "rate": "+0%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fact: the typical campaign pays about a dollar per thousand views.",
+   "rate": "+4%",
+   "gap": 0.2
+  },
+  {
+   "text": "So fifty thousand views earns roughly fifty bucks, not a fortune.",
+   "rate": "+4%",
+   "pitch": "-3Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "It adds up with volume, not with one lucky post.",
+   "rate": "+6%",
+   "gap": 0.35
+  },
+  {
+   "text": "Myth three: you need to be a pro editor.",
+   "rate": "+0%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fact: the editing is quick. Finding the moment is what eats your day.",
+   "rate": "+6%",
+   "gap": 0.3
+  },
+  {
+   "text": "That's the part I hand to Clipzy.",
+   "rate": "+2%",
+   "pitch": "-2Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Drop in a stream link, live or an old replay, and it watches the chat.",
+   "rate": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "The second chat explodes, it marks the moment and clips half a minute around it.",
+   "rate": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "Then it flips it vertical, facecam up top, gameplay below, captions word by word.",
+   "rate": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "Keep the bangers, skip the duds, then post.",
+   "rate": "+6%",
+   "gap": 0.35
+  },
+  {
+   "text": "Myth four: you have to pay to get into the good campaigns.",
+   "rate": "+2%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fact: real campaigns are free. An entry fee means a scam.",
+   "rate": "+4%",
+   "gap": 0.25
+  },
+  {
+   "text": "And only clip streamers or campaigns that clearly give permission.",
+   "rate": "+4%",
+   "pitch": "-2Hz",
+   "gap": 0.35
+  },
+  {
+   "text": "The real recipe: a free campaign, a creator who says yes, and daily posts.",
+   "rate": "+10%",
+   "gap": 0.3
+  },
+  {
+   "text": "Every day you wait, someone else posts that moment first.",
+   "rate": "+4%",
+   "pitch": "-3Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Comment clip, and I'll DM you how I set it up.",
+   "rate": "+2%",
+   "gap": 0.2
+  }
+ ],
+ "scenes": [
+  {
+   "type": "big",
+   "at": [
+    0,
+    0
+   ],
+   "headline": "Before you\n**quit clipping**",
+   "pill": {
+    "label": "MYTHS",
+    "value": "4",
+    "at": [
+     0,
+     7
+    ]
+   },
+   "note": {
+    "text": "which ones did you **believe**?",
+    "at": [
+     0,
+     9
+    ]
+   }
+  },
+  {
+   "type": "title",
+   "at": [
+    1,
+    0
+   ],
+   "kicker": "A REAL HOW-TO",
+   "headline": "4 myths,\n**busted**",
+   "sub": {
+    "text": "then the real setup · step by step",
+    "at": [
+     1,
+     6
+    ]
+   }
+  },
+  {
+   "type": "myth",
+   "at": [
+    2,
+    0
+   ],
+   "label": "MYTH #1",
+   "myth": "You need a big following first",
+   "bustAt": [
+    3,
+    0
+   ],
+   "fact": {
+    "text": "Campaigns pay per **view on the clip**",
+    "at": [
+     3,
+     1
+    ]
+   }
+  },
+  {
+   "type": "stat",
+   "at": [
+    4,
+    0
+   ],
+   "label": "A brand new page",
+   "value": "0",
+   "sub": "followers",
+   "eq": [
+    {
+     "text": "can still go **viral**",
+     "at": [
+      4,
+      10
+     ],
+     "small": true
+    }
+   ],
+   "chips": [
+    {
+     "text": "Views count, not followers",
+     "at": [
+      4,
+      11
+     ],
+     "icon": "check"
+    }
+   ]
+  },
+  {
+   "type": "myth",
+   "at": [
+    5,
+    0
+   ],
+   "label": "MYTH #2",
+   "myth": "Clipping is easy money overnight",
+   "bustAt": [
+    6,
+    0
+   ],
+   "fact": {
+    "text": "About **$1 per 1,000 views**",
+    "at": [
+     6,
+     5
+    ]
+   }
+  },
+  {
+   "type": "stat",
+   "at": [
+    7,
+    0
+   ],
+   "label": "Do the maths",
+   "value": "50K",
+   "sub": "views on one clip",
+   "eq": [
+    {
+     "text": "× ~$1 per 1K",
+     "at": [
+      7,
+      4
+     ],
+     "small": true
+    },
+    {
+     "text": "≈ $50",
+     "at": [
+      7,
+      7
+     ],
+     "hot": true
+    }
+   ],
+   "chips": [
+    {
+     "text": "Not a fortune",
+     "at": [
+      7,
+      9
+     ],
+     "icon": "warn"
+    }
+   ]
+  },
+  {
+   "type": "bars",
+   "at": [
+    8,
+    0
+   ],
+   "headline": "**Volume** beats luck",
+   "values": [
+    0.12,
+    0.24,
+    0.37,
+    0.5,
+    0.64,
+    0.8,
+    1
+   ],
+   "hotAt": [
+    8,
+    4
+   ],
+   "hot": 7,
+   "labels": [
+    "Day 1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+   ]
+  },
+  {
+   "type": "myth",
+   "at": [
+    9,
+    0
+   ],
+   "label": "MYTH #3",
+   "myth": "You need to be a pro editor",
+   "bustAt": [
+    10,
+    0
+   ],
+   "fact": {
+    "text": "Finding the **moment** is the hard part",
+    "at": [
+     10,
+     5
+    ]
+   }
+  },
+  {
+   "type": "brand",
+   "at": [
+    11,
+    0
+   ],
+   "headline": "I hand that to **{name}**",
+   "logoAt": [
+    11,
+    5
+   ]
+  },
+  {
+   "type": "live",
+   "at": [
+    12,
+    0
+   ],
+   "link": {
+    "at": [
+     12,
+     2
+    ],
+    "text": "twitch.tv/sundaymarathon"
+   },
+   "chatAt": [
+    12,
+    11
+   ],
+   "spikeAt": [
+    13,
+    1
+   ],
+   "momentAt": [
+    13,
+    5
+   ]
+  },
+  {
+   "type": "phone",
+   "at": [
+    13,
+    9
+   ],
+   "cutAt": [
+    13,
+    10
+   ],
+   "flipAt": [
+    14,
+    3
+   ],
+   "capsAt": [
+    14,
+    12
+   ],
+   "labels": [
+    {
+     "text": "~30 s around the spike",
+     "at": [
+      13,
+      11
+     ]
+    },
+    {
+     "text": "Facecam up top",
+     "at": [
+      14,
+      5
+     ]
+    },
+    {
+     "text": "Word-by-word captions",
+     "at": [
+      14,
+      12
+     ]
+    }
+   ],
+   "caption": "CHAT SAW IT FIRST"
+  },
+  {
+   "type": "clips",
+   "at": [
+    15,
+    0
+   ],
+   "headline": "**Keep** the bangers",
+   "count": 7,
+   "chips": [
+    {
+     "text": "Keep",
+     "at": [
+      15,
+      2
+     ]
+    },
+    {
+     "text": "Skip the duds",
+     "at": [
+      15,
+      6
+     ]
+    }
+   ]
+  },
+  {
+   "type": "myth",
+   "at": [
+    16,
+    0
+   ],
+   "label": "MYTH #4",
+   "myth": "You pay to get into good campaigns",
+   "bustAt": [
+    17,
+    0
+   ],
+   "fact": {
+    "text": "Real campaigns are **free**",
+    "at": [
+     17,
+     1
+    ]
+   },
+   "note": {
+    "text": "Entry fee = scam",
+    "at": [
+     17,
+     6
+    ],
+    "icon": "x"
+   }
+  },
+  {
+   "type": "list",
+   "at": [
+    18,
+    0
+   ],
+   "kicker": "ALWAYS",
+   "headline": "Clip with **permission**",
+   "warn": true,
+   "items": [
+    {
+     "text": "Only who **allows** clipping",
+     "at": [
+      18,
+      2
+     ],
+     "icon": "warn"
+    },
+    {
+     "text": "Never pay an entry fee",
+     "at": [
+      18,
+      8
+     ],
+     "icon": "x"
+    }
+   ]
+  },
+  {
+   "type": "list",
+   "at": [
+    19,
+    0
+   ],
+   "kicker": "THE REAL RECIPE",
+   "headline": "Myth-free **setup**",
+   "items": [
+    {
+     "text": "A free campaign",
+     "at": [
+      19,
+      6
+     ],
+     "icon": "one"
+    },
+    {
+     "text": "A creator who says yes",
+     "at": [
+      19,
+      9
+     ],
+     "icon": "two"
+    },
+    {
+     "text": "A post every day",
+     "at": [
+      19,
+      15
+     ],
+     "icon": "three"
+    }
+   ]
+  },
+  {
+   "type": "big",
+   "at": [
+    20,
+    0
+   ],
+   "headline": "Wait a day,\nsomeone **posts it first**",
+   "pill": {
+    "label": "POST IT",
+    "value": "today",
+    "at": [
+     20,
+     5
+    ]
+   }
+  },
+  {
+   "type": "cta",
+   "at": [
+    21,
+    0
+   ],
+   "headline": "Want my **setup**?",
+   "typeAt": [
+    21,
+    1
+   ],
+   "postAt": [
+    21,
+    2
+   ],
+   "doneAt": [
+    21,
+    4
+   ],
+   "done": "I'll DM you the setup"
+  }
+ ],
+ "post": {
+  "title": "4 clipping myths to drop before you quit",
+  "caption": "No followers, no pro editing, no entry fee. Here's what's true about clipping, and the setup I use. Comment CLIP and I'll DM it to you.",
+  "hashtags": [
+   "#clipping",
+   "#clippingmyths",
+   "#sidehustle",
+   "#streamclips",
+   "#contentcreator"
+  ]
+ }
+}

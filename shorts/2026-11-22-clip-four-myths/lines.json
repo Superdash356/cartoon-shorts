@@ -1,0 +1,124 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "Before you quit clipping, check which of these 4 myths you believed.",
+   "rate": "+4%",
+   "pitch": "-4Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "I'll bust each one, then show the setup, step by step.",
+   "rate": "+6%",
+   "gap": 0.35
+  },
+  {
+   "text": "Myth one: you need a big following first.",
+   "rate": "+0%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fact: campaigns pay for the views on each clip, not followers.",
+   "rate": "+6%",
+   "gap": 0.2
+  },
+  {
+   "text": "A brand new page can still land a viral clip.",
+   "rate": "+8%",
+   "gap": 0.35
+  },
+  {
+   "text": "Myth two: clipping is easy money overnight.",
+   "rate": "+0%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fact: the typical campaign pays about a dollar per thousand views.",
+   "rate": "+4%",
+   "gap": 0.2
+  },
+  {
+   "text": "So fifty thousand views earns roughly fifty bucks, not a fortune.",
+   "rate": "+4%",
+   "pitch": "-3Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "It adds up with volume, not with one lucky post.",
+   "rate": "+6%",
+   "gap": 0.35
+  },
+  {
+   "text": "Myth three: you need to be a pro editor.",
+   "rate": "+0%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fact: the editing is quick. Finding the moment is what eats your day.",
+   "rate": "+6%",
+   "gap": 0.3
+  },
+  {
+   "text": "That's the part I hand to Clipzy.",
+   "rate": "+2%",
+   "pitch": "-2Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Drop in a stream link, live or an old replay, and it watches the chat.",
+   "rate": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "The second chat explodes, it marks the moment and clips half a minute around it.",
+   "rate": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "Then it flips it vertical, facecam up top, gameplay below, captions word by word.",
+   "rate": "+10%",
+   "gap": 0.2
+  },
+  {
+   "text": "Keep the bangers, skip the duds, then post.",
+   "rate": "+6%",
+   "gap": 0.35
+  },
+  {
+   "text": "Myth four: you have to pay to get into the good campaigns.",
+   "rate": "+2%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Fact: real campaigns are free. An entry fee means a scam.",
+   "rate": "+4%",
+   "gap": 0.25
+  },
+  {
+   "text": "And only clip streamers or campaigns that clearly give permission.",
+   "rate": "+4%",
+   "pitch": "-2Hz",
+   "gap": 0.35
+  },
+  {
+   "text": "The real recipe: a free campaign, a creator who says yes, and daily posts.",
+   "rate": "+10%",
+   "gap": 0.3
+  },
+  {
+   "text": "Every day you wait, someone else posts that moment first.",
+   "rate": "+4%",
+   "pitch": "-3Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "Comment clip, and I'll DM you how I set it up.",
+   "rate": "+2%",
+   "gap": 0.2
+  }
+ ]
+}

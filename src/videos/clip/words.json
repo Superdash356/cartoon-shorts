@@ -1,1436 +1,1436 @@
 [
  {
-  "word": "Stop",
+  "word": "Before",
   "start": 0.037,
-  "end": 0.295,
-  "line": 0
- },
- {
-  "word": "posting",
-  "start": 0.307,
-  "end": 0.678,
-  "line": 0
- },
- {
-  "word": "clips",
-  "start": 0.689,
-  "end": 1.082,
-  "line": 0
- },
- {
-  "word": "until",
-  "start": 1.194,
-  "end": 1.419,
+  "end": 0.284,
   "line": 0
  },
  {
   "word": "you",
-  "start": 1.43,
-  "end": 1.554,
+  "start": 0.295,
+  "end": 0.386,
   "line": 0
  },
  {
-  "word": "fix",
-  "start": 1.565,
-  "end": 1.857,
+  "word": "quit",
+  "start": 0.397,
+  "end": 0.61,
+  "line": 0
+ },
+ {
+  "word": "clipping",
+  "start": 0.621,
+  "end": 0.959,
+  "line": 0
+ },
+ {
+  "word": "check",
+  "start": 1.295,
+  "end": 1.521,
+  "line": 0
+ },
+ {
+  "word": "which",
+  "start": 1.532,
+  "end": 1.711,
+  "line": 0
+ },
+ {
+  "word": "of",
+  "start": 1.722,
+  "end": 1.79,
   "line": 0
  },
  {
   "word": "these",
-  "start": 1.868,
-  "end": 2.093,
+  "start": 1.801,
+  "end": 1.992,
   "line": 0
  },
  {
-  "word": "three",
-  "start": 2.105,
-  "end": 2.374,
+  "word": "4",
+  "start": 2.003,
+  "end": 2.172,
   "line": 0
  },
  {
-  "word": "mistakes",
-  "start": 2.385,
-  "end": 2.801,
-  "line": 0
- },
- {
-  "word": "that",
-  "start": 2.812,
-  "end": 2.924,
-  "line": 0
- },
- {
-  "word": "pay",
-  "start": 2.936,
-  "end": 3.115,
+  "word": "myths",
+  "start": 2.183,
+  "end": 2.475,
   "line": 0
  },
  {
   "word": "you",
-  "start": 3.126,
-  "end": 3.239,
+  "start": 2.486,
+  "end": 2.564,
   "line": 0
  },
  {
-  "word": "zero",
-  "start": 3.25,
-  "end": 3.654,
+  "word": "believed",
+  "start": 2.576,
+  "end": 3.003,
   "line": 0
  },
  {
-  "word": "Here's",
-  "start": 3.935,
-  "end": 4.089,
+  "word": "I'll",
+  "start": 3.283,
+  "end": 3.416,
   "line": 1
  },
  {
-  "word": "the",
-  "start": 4.1,
-  "end": 4.188,
-  "line": 1
- },
- {
-  "word": "fix",
-  "start": 4.199,
-  "end": 4.431,
-  "line": 1
- },
- {
-  "word": "for",
-  "start": 4.442,
-  "end": 4.574,
+  "word": "bust",
+  "start": 3.426,
+  "end": 3.702,
   "line": 1
  },
  {
   "word": "each",
-  "start": 4.585,
-  "end": 4.905,
+  "start": 3.713,
+  "end": 3.846,
+  "line": 1
+ },
+ {
+  "word": "one",
+  "start": 3.856,
+  "end": 4.121,
+  "line": 1
+ },
+ {
+  "word": "then",
+  "start": 4.451,
+  "end": 4.562,
+  "line": 1
+ },
+ {
+  "word": "show",
+  "start": 4.573,
+  "end": 4.749,
+  "line": 1
+ },
+ {
+  "word": "the",
+  "start": 4.76,
+  "end": 4.837,
+  "line": 1
+ },
+ {
+  "word": "setup",
+  "start": 4.849,
+  "end": 5.201,
   "line": 1
  },
  {
   "word": "step",
-  "start": 5.081,
-  "end": 5.323,
+  "start": 5.378,
+  "end": 5.631,
   "line": 1
  },
  {
   "word": "by",
-  "start": 5.335,
-  "end": 5.445,
+  "start": 5.642,
+  "end": 5.752,
   "line": 1
  },
  {
   "word": "step",
-  "start": 5.456,
-  "end": 5.82,
+  "start": 5.763,
+  "end": 6.137,
   "line": 1
  },
  {
-  "word": "Quick",
-  "start": 6.1,
-  "end": 6.23,
+  "word": "Myth",
+  "start": 6.418,
+  "end": 6.605,
   "line": 2
  },
  {
-  "word": "refresher",
-  "start": 6.24,
-  "end": 6.663,
-  "line": 2
- },
- {
-  "word": "a",
-  "start": 6.943,
-  "end": 6.976,
-  "line": 2
- },
- {
-  "word": "campaign",
-  "start": 6.987,
-  "end": 7.42,
-  "line": 2
- },
- {
-  "word": "pays",
-  "start": 7.43,
-  "end": 7.711,
+  "word": "one",
+  "start": 6.617,
+  "end": 6.862,
   "line": 2
  },
  {
   "word": "you",
-  "start": 7.722,
-  "end": 7.82,
+  "start": 7.142,
+  "end": 7.189,
   "line": 2
  },
  {
-  "word": "for",
-  "start": 7.83,
-  "end": 7.928,
+  "word": "need",
+  "start": 7.2,
+  "end": 7.34,
   "line": 2
- },
- {
-  "word": "the",
-  "start": 7.938,
-  "end": 8.004,
-  "line": 2
- },
- {
-  "word": "views",
-  "start": 8.014,
-  "end": 8.284,
-  "line": 2
- },
- {
-  "word": "your",
-  "start": 8.295,
-  "end": 8.393,
-  "line": 2
- },
- {
-  "word": "clip",
-  "start": 8.404,
-  "end": 8.609,
-  "line": 2
- },
- {
-  "word": "gets",
-  "start": 8.62,
-  "end": 8.988,
-  "line": 2
- },
- {
-  "word": "Right",
-  "start": 9.324,
-  "end": 9.47,
-  "line": 3
- },
- {
-  "word": "now",
-  "start": 9.481,
-  "end": 9.605,
-  "line": 3
- },
- {
-  "word": "the",
-  "start": 9.616,
-  "end": 9.717,
-  "line": 3
- },
- {
-  "word": "typical",
-  "start": 9.728,
-  "end": 10.088,
-  "line": 3
- },
- {
-  "word": "rate",
-  "start": 10.099,
-  "end": 10.369,
-  "line": 3
- },
- {
-  "word": "is",
-  "start": 10.582,
-  "end": 10.65,
-  "line": 3
- },
- {
-  "word": "around",
-  "start": 10.661,
-  "end": 10.987,
-  "line": 3
- },
- {
-  "word": "one",
-  "start": 10.998,
-  "end": 11.189,
-  "line": 3
- },
- {
-  "word": "dollar",
-  "start": 11.2,
-  "end": 11.48,
-  "line": 3
- },
- {
-  "word": "per",
-  "start": 11.492,
-  "end": 11.616,
-  "line": 3
- },
- {
-  "word": "thousand",
-  "start": 11.627,
-  "end": 11.986,
-  "line": 3
- },
- {
-  "word": "views",
-  "start": 11.997,
-  "end": 12.379,
-  "line": 3
- },
- {
-  "word": "But",
-  "start": 12.716,
-  "end": 12.772,
-  "line": 4
  },
  {
   "word": "a",
-  "start": 12.783,
-  "end": 12.806,
-  "line": 4
- },
- {
-  "word": "rejected",
-  "start": 12.817,
-  "end": 13.289,
-  "line": 4
- },
- {
-  "word": "clip",
-  "start": 13.3,
-  "end": 13.593,
-  "line": 4
- },
- {
-  "word": "earns",
-  "start": 13.671,
-  "end": 13.884,
-  "line": 4
- },
- {
-  "word": "nothing",
-  "start": 13.895,
-  "end": 14.278,
-  "line": 4
- },
- {
-  "word": "however",
-  "start": 14.603,
-  "end": 14.951,
-  "line": 4
- },
- {
-  "word": "many",
-  "start": 14.963,
-  "end": 15.321,
-  "line": 4
- },
- {
-  "word": "views",
-  "start": 15.334,
-  "end": 15.603,
-  "line": 4
- },
- {
-  "word": "it",
-  "start": 15.614,
-  "end": 15.704,
-  "line": 4
- },
- {
-  "word": "got",
-  "start": 15.715,
-  "end": 16.052,
-  "line": 4
- },
- {
-  "word": "Mistake",
-  "start": 16.333,
-  "end": 16.707,
-  "line": 5
- },
- {
-  "word": "number",
-  "start": 16.718,
-  "end": 16.964,
-  "line": 5
- },
- {
-  "word": "three",
-  "start": 16.975,
-  "end": 17.314,
-  "line": 5
- },
- {
-  "word": "skipping",
-  "start": 17.618,
-  "end": 17.921,
-  "line": 5
- },
- {
-  "word": "the",
-  "start": 17.933,
-  "end": 18.003,
-  "line": 5
- },
- {
-  "word": "brief",
-  "start": 18.015,
-  "end": 18.4,
-  "line": 5
- },
- {
-  "word": "Every",
-  "start": 18.736,
-  "end": 18.928,
-  "line": 6
- },
- {
-  "word": "campaign",
-  "start": 18.938,
-  "end": 19.427,
-  "line": 6
- },
- {
-  "word": "lists",
-  "start": 19.437,
-  "end": 19.703,
-  "line": 6
- },
- {
-  "word": "what",
-  "start": 19.714,
-  "end": 19.82,
-  "line": 6
- },
- {
-  "word": "it",
-  "start": 19.831,
-  "end": 19.894,
-  "line": 6
- },
- {
-  "word": "wants",
-  "start": 19.905,
-  "end": 20.34,
-  "line": 6
- },
- {
-  "word": "a",
-  "start": 20.532,
-  "end": 20.574,
-  "line": 6
- },
- {
-  "word": "tag",
-  "start": 20.584,
-  "end": 21.009,
-  "line": 6
- },
- {
-  "word": "a",
-  "start": 21.328,
-  "end": 21.35,
-  "line": 6
- },
- {
-  "word": "handle",
-  "start": 21.36,
-  "end": 21.837,
-  "line": 6
- },
- {
-  "word": "a",
-  "start": 22.156,
-  "end": 22.167,
-  "line": 6
- },
- {
-  "word": "length",
-  "start": 22.178,
-  "end": 22.592,
-  "line": 6
- },
- {
-  "word": "a",
-  "start": 22.74,
-  "end": 22.793,
-  "line": 6
- },
- {
-  "word": "disclosure",
-  "start": 22.804,
-  "end": 23.356,
-  "line": 6
- },
- {
-  "word": "Miss",
-  "start": 23.693,
-  "end": 23.907,
-  "line": 7
- },
- {
-  "word": "one",
-  "start": 23.918,
-  "end": 24.108,
-  "line": 7
- },
- {
-  "word": "line",
-  "start": 24.12,
-  "end": 24.457,
-  "line": 7
- },
- {
-  "word": "and",
-  "start": 24.726,
-  "end": 24.771,
-  "line": 7
- },
- {
-  "word": "the",
-  "start": 24.782,
-  "end": 24.838,
-  "line": 7
- },
- {
-  "word": "whole",
-  "start": 24.85,
-  "end": 25.075,
-  "line": 7
- },
- {
-  "word": "clip",
-  "start": 25.086,
-  "end": 25.366,
-  "line": 7
- },
- {
-  "word": "gets",
-  "start": 25.378,
-  "end": 25.558,
-  "line": 7
- },
- {
-  "word": "thrown",
-  "start": 25.569,
-  "end": 25.816,
-  "line": 7
- },
- {
-  "word": "out",
-  "start": 25.827,
-  "end": 26.051,
-  "line": 7
- },
- {
-  "word": "Mistake",
-  "start": 26.332,
-  "end": 26.682,
-  "line": 8
- },
- {
-  "word": "number",
-  "start": 26.694,
-  "end": 26.916,
-  "line": 8
- },
- {
-  "word": "two",
-  "start": 26.928,
-  "end": 27.15,
-  "line": 8
- },
- {
-  "word": "using",
-  "start": 27.43,
-  "end": 27.71,
-  "line": 8
- },
- {
-  "word": "one",
-  "start": 27.722,
-  "end": 27.967,
-  "line": 8
- },
- {
-  "word": "clip",
-  "start": 27.979,
-  "end": 28.213,
-  "line": 8
- },
- {
-  "word": "twice",
-  "start": 28.224,
-  "end": 28.832,
-  "line": 8
- },
- {
-  "word": "A",
-  "start": 29.168,
-  "end": 29.223,
-  "line": 9
- },
- {
-  "word": "post",
-  "start": 29.235,
-  "end": 29.488,
-  "line": 9
- },
- {
-  "word": "can",
-  "start": 29.499,
-  "end": 29.632,
-  "line": 9
- },
- {
-  "word": "only",
-  "start": 29.642,
-  "end": 29.885,
-  "line": 9
- },
- {
-  "word": "go",
-  "start": 29.896,
-  "end": 30.117,
-  "line": 9
- },
- {
-  "word": "into",
-  "start": 30.127,
-  "end": 30.304,
-  "line": 9
- },
- {
-  "word": "one",
-  "start": 30.315,
-  "end": 30.524,
-  "line": 9
- },
- {
-  "word": "campaign",
-  "start": 30.536,
-  "end": 31.053,
-  "line": 9
- },
- {
-  "word": "one",
-  "start": 31.394,
-  "end": 31.505,
-  "line": 9
- },
- {
-  "word": "time",
-  "start": 31.516,
-  "end": 31.814,
-  "line": 9
- },
- {
-  "word": "Same",
-  "start": 32.15,
-  "end": 32.36,
-  "line": 10
- },
- {
-  "word": "edit",
-  "start": 32.37,
-  "end": 32.569,
-  "line": 10
- },
- {
-  "word": "with",
-  "start": 32.58,
-  "end": 32.701,
-  "line": 10
- },
- {
-  "word": "a",
-  "start": 32.712,
-  "end": 32.735,
-  "line": 10
- },
- {
-  "word": "new",
-  "start": 32.745,
-  "end": 32.965,
-  "line": 10
- },
- {
-  "word": "logo",
-  "start": 32.977,
-  "end": 33.307,
-  "line": 10
- },
- {
-  "word": "still",
-  "start": 33.319,
-  "end": 33.605,
-  "line": 10
- },
- {
-  "word": "counts",
-  "start": 33.616,
-  "end": 33.979,
-  "line": 10
- },
- {
-  "word": "as",
-  "start": 33.991,
-  "end": 34.112,
-  "line": 10
- },
- {
-  "word": "reused",
-  "start": 34.122,
-  "end": 34.663,
-  "line": 10
- },
- {
-  "word": "Mistake",
-  "start": 34.943,
-  "end": 35.252,
-  "line": 11
- },
- {
-  "word": "number",
-  "start": 35.264,
-  "end": 35.493,
-  "line": 11
- },
- {
-  "word": "one",
-  "start": 35.505,
-  "end": 35.745,
-  "line": 11
- },
- {
-  "word": "the",
-  "start": 35.997,
-  "end": 36.078,
-  "line": 11
+  "start": 7.352,
+  "end": 7.422,
+  "line": 2
  },
  {
   "word": "big",
-  "start": 36.089,
-  "end": 36.307,
-  "line": 11
+  "start": 7.434,
+  "end": 7.644,
+  "line": 2
  },
  {
-  "word": "one",
-  "start": 36.318,
-  "end": 36.523,
-  "line": 11
+  "word": "following",
+  "start": 7.656,
+  "end": 8.041,
+  "line": 2
+ },
+ {
+  "word": "first",
+  "start": 8.053,
+  "end": 8.532,
+  "line": 2
+ },
+ {
+  "word": "Fact",
+  "start": 8.868,
+  "end": 9.144,
+  "line": 3
+ },
+ {
+  "word": "campaigns",
+  "start": 9.486,
+  "end": 9.916,
+  "line": 3
+ },
+ {
+  "word": "pay",
+  "start": 9.926,
+  "end": 10.136,
+  "line": 3
+ },
+ {
+  "word": "for",
+  "start": 10.147,
+  "end": 10.246,
+  "line": 3
+ },
+ {
+  "word": "the",
+  "start": 10.257,
+  "end": 10.323,
+  "line": 3
+ },
+ {
+  "word": "views",
+  "start": 10.335,
+  "end": 10.632,
+  "line": 3
+ },
+ {
+  "word": "on",
+  "start": 10.643,
+  "end": 10.764,
+  "line": 3
+ },
+ {
+  "word": "each",
+  "start": 10.864,
+  "end": 11.029,
+  "line": 3
+ },
+ {
+  "word": "clip",
+  "start": 11.039,
+  "end": 11.359,
+  "line": 3
+ },
+ {
+  "word": "not",
+  "start": 11.591,
+  "end": 11.745,
+  "line": 3
+ },
+ {
+  "word": "followers",
+  "start": 11.756,
+  "end": 12.307,
+  "line": 3
+ },
+ {
+  "word": "A",
+  "start": 12.644,
+  "end": 12.697,
+  "line": 4
+ },
+ {
+  "word": "brand",
+  "start": 12.708,
+  "end": 12.936,
+  "line": 4
+ },
+ {
+  "word": "new",
+  "start": 12.947,
+  "end": 13.054,
+  "line": 4
+ },
+ {
+  "word": "page",
+  "start": 13.065,
+  "end": 13.401,
+  "line": 4
+ },
+ {
+  "word": "can",
+  "start": 13.411,
+  "end": 13.531,
+  "line": 4
+ },
+ {
+  "word": "still",
+  "start": 13.541,
+  "end": 13.779,
+  "line": 4
+ },
+ {
+  "word": "land",
+  "start": 13.79,
+  "end": 14.028,
+  "line": 4
+ },
+ {
+  "word": "a",
+  "start": 14.039,
+  "end": 14.061,
+  "line": 4
+ },
+ {
+  "word": "viral",
+  "start": 14.071,
+  "end": 14.385,
+  "line": 4
+ },
+ {
+  "word": "clip",
+  "start": 14.396,
+  "end": 14.678,
+  "line": 4
+ },
+ {
+  "word": "Myth",
+  "start": 14.958,
+  "end": 15.179,
+  "line": 5
+ },
+ {
+  "word": "two",
+  "start": 15.192,
+  "end": 15.495,
+  "line": 5
  },
  {
   "word": "clipping",
-  "start": 36.804,
-  "end": 37.091,
+  "start": 15.776,
+  "end": 16.173,
+  "line": 5
+ },
+ {
+  "word": "is",
+  "start": 16.324,
+  "end": 16.477,
+  "line": 5
+ },
+ {
+  "word": "easy",
+  "start": 16.617,
+  "end": 16.874,
+  "line": 5
+ },
+ {
+  "word": "money",
+  "start": 16.885,
+  "end": 17.165,
+  "line": 5
+ },
+ {
+  "word": "overnight",
+  "start": 17.178,
+  "end": 17.668,
+  "line": 5
+ },
+ {
+  "word": "Fact",
+  "start": 18.005,
+  "end": 18.307,
+  "line": 6
+ },
+ {
+  "word": "the",
+  "start": 18.543,
+  "end": 18.634,
+  "line": 6
+ },
+ {
+  "word": "typical",
+  "start": 18.645,
+  "end": 18.993,
+  "line": 6
+ },
+ {
+  "word": "campaign",
+  "start": 19.004,
+  "end": 19.476,
+  "line": 6
+ },
+ {
+  "word": "pays",
+  "start": 19.487,
+  "end": 19.813,
+  "line": 6
+ },
+ {
+  "word": "about",
+  "start": 19.824,
+  "end": 20.015,
+  "line": 6
+ },
+ {
+  "word": "a",
+  "start": 20.026,
+  "end": 20.06,
+  "line": 6
+ },
+ {
+  "word": "dollar",
+  "start": 20.071,
+  "end": 20.386,
+  "line": 6
+ },
+ {
+  "word": "per",
+  "start": 20.397,
+  "end": 20.521,
+  "line": 6
+ },
+ {
+  "word": "thousand",
+  "start": 20.532,
+  "end": 20.891,
+  "line": 6
+ },
+ {
+  "word": "views",
+  "start": 20.902,
+  "end": 21.284,
+  "line": 6
+ },
+ {
+  "word": "So",
+  "start": 21.621,
+  "end": 21.8,
+  "line": 7
+ },
+ {
+  "word": "fifty",
+  "start": 21.811,
+  "end": 22.115,
+  "line": 7
+ },
+ {
+  "word": "thousand",
+  "start": 22.126,
+  "end": 22.52,
+  "line": 7
+ },
+ {
+  "word": "views",
+  "start": 22.531,
+  "end": 22.879,
+  "line": 7
+ },
+ {
+  "word": "earns",
+  "start": 22.957,
+  "end": 23.205,
+  "line": 7
+ },
+ {
+  "word": "roughly",
+  "start": 23.216,
+  "end": 23.541,
+  "line": 7
+ },
+ {
+  "word": "fifty",
+  "start": 23.552,
+  "end": 23.879,
+  "line": 7
+ },
+ {
+  "word": "bucks",
+  "start": 23.89,
+  "end": 24.317,
+  "line": 7
+ },
+ {
+  "word": "not",
+  "start": 24.519,
+  "end": 24.642,
+  "line": 7
+ },
+ {
+  "word": "a",
+  "start": 24.653,
+  "end": 24.676,
+  "line": 7
+ },
+ {
+  "word": "fortune",
+  "start": 24.687,
+  "end": 25.08,
+  "line": 7
+ },
+ {
+  "word": "It",
+  "start": 25.361,
+  "end": 25.438,
+  "line": 8
+ },
+ {
+  "word": "adds",
+  "start": 25.449,
+  "end": 25.648,
+  "line": 8
+ },
+ {
+  "word": "up",
+  "start": 25.658,
+  "end": 25.768,
+  "line": 8
+ },
+ {
+  "word": "with",
+  "start": 25.779,
+  "end": 25.89,
+  "line": 8
+ },
+ {
+  "word": "volume",
+  "start": 25.901,
+  "end": 26.297,
+  "line": 8
+ },
+ {
+  "word": "not",
+  "start": 26.617,
+  "end": 26.761,
+  "line": 8
+ },
+ {
+  "word": "with",
+  "start": 26.772,
+  "end": 26.881,
+  "line": 8
+ },
+ {
+  "word": "one",
+  "start": 26.893,
+  "end": 27.157,
+  "line": 8
+ },
+ {
+  "word": "lucky",
+  "start": 27.168,
+  "end": 27.41,
+  "line": 8
+ },
+ {
+  "word": "post",
+  "start": 27.421,
+  "end": 27.874,
+  "line": 8
+ },
+ {
+  "word": "Myth",
+  "start": 28.154,
+  "end": 28.376,
+  "line": 9
+ },
+ {
+  "word": "three",
+  "start": 28.388,
+  "end": 28.715,
+  "line": 9
+ },
+ {
+  "word": "you",
+  "start": 28.995,
+  "end": 29.042,
+  "line": 9
+ },
+ {
+  "word": "need",
+  "start": 29.054,
+  "end": 29.182,
+  "line": 9
+ },
+ {
+  "word": "to",
+  "start": 29.194,
+  "end": 29.241,
+  "line": 9
+ },
+ {
+  "word": "be",
+  "start": 29.252,
+  "end": 29.358,
+  "line": 9
+ },
+ {
+  "word": "a",
+  "start": 29.369,
+  "end": 29.428,
+  "line": 9
+ },
+ {
+  "word": "pro",
+  "start": 29.439,
+  "end": 29.673,
+  "line": 9
+ },
+ {
+  "word": "editor",
+  "start": 29.685,
+  "end": 30.059,
+  "line": 9
+ },
+ {
+  "word": "Fact",
+  "start": 30.395,
+  "end": 30.681,
+  "line": 10
+ },
+ {
+  "word": "the",
+  "start": 30.902,
+  "end": 31.001,
+  "line": 10
+ },
+ {
+  "word": "editing",
+  "start": 31.012,
+  "end": 31.332,
+  "line": 10
+ },
+ {
+  "word": "is",
+  "start": 31.343,
+  "end": 31.431,
+  "line": 10
+ },
+ {
+  "word": "quick",
+  "start": 31.442,
+  "end": 31.817,
+  "line": 10
+ },
+ {
+  "word": "Finding",
+  "start": 32.097,
+  "end": 32.34,
+  "line": 10
+ },
+ {
+  "word": "the",
+  "start": 32.35,
+  "end": 32.406,
+  "line": 10
+ },
+ {
+  "word": "moment",
+  "start": 32.417,
+  "end": 32.792,
+  "line": 10
+ },
+ {
+  "word": "is",
+  "start": 32.968,
+  "end": 33.056,
+  "line": 10
+ },
+ {
+  "word": "what",
+  "start": 33.067,
+  "end": 33.189,
+  "line": 10
+ },
+ {
+  "word": "eats",
+  "start": 33.265,
+  "end": 33.431,
+  "line": 10
+ },
+ {
+  "word": "your",
+  "start": 33.442,
+  "end": 33.53,
+  "line": 10
+ },
+ {
+  "word": "day",
+  "start": 33.541,
+  "end": 33.773,
+  "line": 10
+ },
+ {
+  "word": "That's",
+  "start": 34.053,
+  "end": 34.202,
   "line": 11
  },
  {
   "word": "the",
-  "start": 37.102,
-  "end": 37.182,
+  "start": 34.213,
+  "end": 34.305,
   "line": 11
  },
  {
-  "word": "boring",
-  "start": 37.193,
-  "end": 37.479,
+  "word": "part I",
+  "start": 34.316,
+  "end": 34.751,
   "line": 11
  },
  {
-  "word": "part",
-  "start": 37.492,
-  "end": 37.823,
+  "word": "hand",
+  "start": 34.763,
+  "end": 35.05,
   "line": 11
  },
  {
-  "word": "People",
-  "start": 38.16,
-  "end": 38.354,
+  "word": "to",
+  "start": 35.061,
+  "end": 35.118,
+  "line": 11
+ },
+ {
+  "word": "Clipzy",
+  "start": 35.13,
+  "end": 35.53,
+  "line": 11
+ },
+ {
+  "word": "Drop",
+  "start": 35.81,
+  "end": 36.044,
   "line": 12
  },
  {
-  "word": "scrub",
-  "start": 38.365,
-  "end": 38.604,
+  "word": "in",
+  "start": 36.055,
+  "end": 36.108,
   "line": 12
  },
  {
   "word": "a",
-  "start": 38.614,
-  "end": 38.668,
-  "line": 12
- },
- {
-  "word": "six",
-  "start": 38.679,
-  "end": 38.938,
-  "line": 12
- },
- {
-  "word": "hour",
-  "start": 38.95,
-  "end": 39.144,
+  "start": 36.119,
+  "end": 36.161,
   "line": 12
  },
  {
   "word": "stream",
-  "start": 39.155,
-  "end": 39.512,
+  "start": 36.172,
+  "end": 36.491,
   "line": 12
  },
  {
-  "word": "get",
-  "start": 39.75,
-  "end": 39.891,
+  "word": "link",
+  "start": 36.501,
+  "end": 36.745,
   "line": 12
  },
  {
-  "word": "tired",
-  "start": 39.901,
-  "end": 40.269,
+  "word": "live",
+  "start": 37.053,
+  "end": 37.425,
+  "line": 12
+ },
+ {
+  "word": "or",
+  "start": 37.563,
+  "end": 37.659,
+  "line": 12
+ },
+ {
+  "word": "an",
+  "start": 37.669,
+  "end": 37.744,
+  "line": 12
+ },
+ {
+  "word": "old",
+  "start": 37.754,
+  "end": 37.956,
+  "line": 12
+ },
+ {
+  "word": "replay",
+  "start": 37.966,
+  "end": 38.445,
   "line": 12
  },
  {
   "word": "and",
-  "start": 40.539,
-  "end": 40.605,
+  "start": 38.764,
+  "end": 38.837,
   "line": 12
  },
  {
-  "word": "cut",
-  "start": 40.615,
-  "end": 40.799,
+  "word": "it",
+  "start": 38.848,
+  "end": 38.933,
   "line": 12
  },
  {
-  "word": "anything",
-  "start": 40.81,
-  "end": 41.178,
+  "word": "watches",
+  "start": 38.944,
+  "end": 39.241,
+  "line": 12
+ },
+ {
+  "word": "the",
+  "start": 39.251,
+  "end": 39.315,
+  "line": 12
+ },
+ {
+  "word": "chat",
+  "start": 39.326,
+  "end": 39.698,
   "line": 12
  },
  {
   "word": "The",
-  "start": 41.458,
-  "end": 41.504,
+  "start": 40.035,
+  "end": 40.087,
   "line": 13
- },
- {
-  "word": "fix",
-  "start": 41.516,
-  "end": 41.791,
-  "line": 13
- },
- {
-  "word": "is",
-  "start": 41.916,
-  "end": 42.031,
-  "line": 13
- },
- {
-  "word": "letting",
-  "start": 42.042,
-  "end": 42.237,
-  "line": 13
- },
- {
-  "word": "the",
-  "start": 42.249,
-  "end": 42.317,
-  "line": 13
- },
- {
-  "word": "chat",
-  "start": 42.329,
-  "end": 42.615,
-  "line": 13
- },
- {
-  "word": "pick",
-  "start": 42.626,
-  "end": 42.798,
-  "line": 13
- },
- {
-  "word": "for",
-  "start": 42.809,
-  "end": 42.97,
-  "line": 13
- },
- {
-  "word": "you",
-  "start": 42.981,
-  "end": 43.142,
-  "line": 13
- },
- {
-  "word": "Clipzy",
-  "start": 43.422,
-  "end": 43.731,
-  "line": 14
- },
- {
-  "word": "reads",
-  "start": 43.742,
-  "end": 43.995,
-  "line": 14
- },
- {
-  "word": "the",
-  "start": 44.007,
-  "end": 44.094,
-  "line": 14
- },
- {
-  "word": "live",
-  "start": 44.106,
-  "end": 44.403,
-  "line": 14
- },
- {
-  "word": "chat",
-  "start": 44.414,
-  "end": 44.745,
-  "line": 14
- },
- {
-  "word": "and",
-  "start": 44.998,
-  "end": 45.076,
-  "line": 14
- },
- {
-  "word": "flags",
-  "start": 45.086,
-  "end": 45.516,
-  "line": 14
- },
- {
-  "word": "the",
-  "start": 45.527,
-  "end": 45.615,
-  "line": 14
  },
  {
   "word": "second",
-  "start": 45.626,
-  "end": 45.924,
-  "line": 14
+  "start": 40.098,
+  "end": 40.437,
+  "line": 13
+ },
+ {
+  "word": "chat",
+  "start": 40.449,
+  "end": 40.639,
+  "line": 13
+ },
+ {
+  "word": "explodes",
+  "start": 40.65,
+  "end": 41.223,
+  "line": 13
  },
  {
   "word": "it",
-  "start": 45.935,
-  "end": 45.99,
-  "line": 14
+  "start": 41.404,
+  "end": 41.479,
+  "line": 13
  },
  {
-  "word": "spikes",
-  "start": 46.001,
-  "end": 46.53,
-  "line": 14
+  "word": "marks",
+  "start": 41.489,
+  "end": 41.722,
+  "line": 13
  },
  {
-  "word": "It",
-  "start": 46.866,
-  "end": 46.951,
-  "line": 15
+  "word": "the",
+  "start": 41.734,
+  "end": 41.797,
+  "line": 13
  },
  {
-  "word": "cuts",
-  "start": 46.962,
-  "end": 47.143,
-  "line": 15
- },
- {
-  "word": "about",
-  "start": 47.153,
-  "end": 47.377,
-  "line": 15
- },
- {
-  "word": "thirty",
-  "start": 47.387,
-  "end": 47.695,
-  "line": 15
- },
- {
-  "word": "seconds",
-  "start": 47.706,
-  "end": 48.024,
-  "line": 15
- },
- {
-  "word": "around",
-  "start": 48.035,
-  "end": 48.332,
-  "line": 15
- },
- {
-  "word": "that",
-  "start": 48.343,
-  "end": 48.47,
-  "line": 15
- },
- {
-  "word": "spike",
-  "start": 48.48,
-  "end": 48.916,
-  "line": 15
- },
- {
-  "word": "flips",
-  "start": 49.107,
-  "end": 49.341,
-  "line": 15
- },
- {
-  "word": "it",
-  "start": 49.351,
-  "end": 49.415,
-  "line": 15
- },
- {
-  "word": "vertical",
-  "start": 49.426,
-  "end": 49.84,
-  "line": 15
+  "word": "moment",
+  "start": 41.807,
+  "end": 42.137,
+  "line": 13
  },
  {
   "word": "and",
-  "start": 50.074,
-  "end": 50.18,
-  "line": 15
+  "start": 42.338,
+  "end": 42.445,
+  "line": 13
  },
  {
-  "word": "adds",
-  "start": 50.191,
-  "end": 50.393,
-  "line": 15
+  "word": "clips",
+  "start": 42.455,
+  "end": 42.774,
+  "line": 13
+ },
+ {
+  "word": "half",
+  "start": 42.785,
+  "end": 43.039,
+  "line": 13
+ },
+ {
+  "word": "a",
+  "start": 43.05,
+  "end": 43.082,
+  "line": 13
+ },
+ {
+  "word": "minute",
+  "start": 43.093,
+  "end": 43.306,
+  "line": 13
+ },
+ {
+  "word": "around",
+  "start": 43.316,
+  "end": 43.623,
+  "line": 13
+ },
+ {
+  "word": "it",
+  "start": 43.635,
+  "end": 43.783,
+  "line": 13
+ },
+ {
+  "word": "Then",
+  "start": 44.12,
+  "end": 44.193,
+  "line": 14
+ },
+ {
+  "word": "it",
+  "start": 44.205,
+  "end": 44.268,
+  "line": 14
+ },
+ {
+  "word": "flips",
+  "start": 44.279,
+  "end": 44.544,
+  "line": 14
+ },
+ {
+  "word": "it",
+  "start": 44.555,
+  "end": 44.619,
+  "line": 14
+ },
+ {
+  "word": "vertical",
+  "start": 44.629,
+  "end": 45.043,
+  "line": 14
+ },
+ {
+  "word": "facecam",
+  "start": 45.245,
+  "end": 45.66,
+  "line": 14
+ },
+ {
+  "word": "up",
+  "start": 45.67,
+  "end": 45.797,
+  "line": 14
+ },
+ {
+  "word": "top",
+  "start": 45.808,
+  "end": 46.148,
+  "line": 14
+ },
+ {
+  "word": "gameplay",
+  "start": 46.393,
+  "end": 46.732,
+  "line": 14
+ },
+ {
+  "word": "below",
+  "start": 46.743,
+  "end": 47.093,
+  "line": 14
  },
  {
   "word": "captions",
-  "start": 50.403,
-  "end": 50.955,
-  "line": 15
+  "start": 47.348,
+  "end": 47.72,
+  "line": 14
+ },
+ {
+  "word": "word",
+  "start": 47.73,
+  "end": 47.9,
+  "line": 14
+ },
+ {
+  "word": "by",
+  "start": 47.911,
+  "end": 48.038,
+  "line": 14
+ },
+ {
+  "word": "word",
+  "start": 48.049,
+  "end": 48.347,
+  "line": 14
  },
  {
   "word": "Keep",
-  "start": 51.292,
-  "end": 51.443,
+  "start": 48.683,
+  "end": 48.848,
+  "line": 15
+ },
+ {
+  "word": "the",
+  "start": 48.859,
+  "end": 48.948,
+  "line": 15
+ },
+ {
+  "word": "bangers",
+  "start": 48.958,
+  "end": 49.477,
+  "line": 15
+ },
+ {
+  "word": "skip",
+  "start": 49.631,
+  "end": 49.873,
+  "line": 15
+ },
+ {
+  "word": "the",
+  "start": 49.884,
+  "end": 49.95,
+  "line": 15
+ },
+ {
+  "word": "duds",
+  "start": 49.962,
+  "end": 50.336,
+  "line": 15
+ },
+ {
+  "word": "then",
+  "start": 50.546,
+  "end": 50.689,
+  "line": 15
+ },
+ {
+  "word": "post",
+  "start": 50.7,
+  "end": 51.151,
+  "line": 15
+ },
+ {
+  "word": "Myth",
+  "start": 51.432,
+  "end": 51.615,
+  "line": 16
+ },
+ {
+  "word": "four",
+  "start": 51.626,
+  "end": 51.936,
+  "line": 16
+ },
+ {
+  "word": "you",
+  "start": 52.216,
+  "end": 52.262,
+  "line": 16
+ },
+ {
+  "word": "have",
+  "start": 52.273,
+  "end": 52.388,
+  "line": 16
+ },
+ {
+  "word": "to",
+  "start": 52.399,
+  "end": 52.467,
+  "line": 16
+ },
+ {
+  "word": "pay",
+  "start": 52.479,
+  "end": 52.65,
+  "line": 16
+ },
+ {
+  "word": "to",
+  "start": 52.663,
+  "end": 52.743,
+  "line": 16
+ },
+ {
+  "word": "get",
+  "start": 52.754,
+  "end": 52.914,
+  "line": 16
+ },
+ {
+  "word": "into",
+  "start": 52.926,
+  "end": 53.086,
   "line": 16
  },
  {
   "word": "the",
-  "start": 51.454,
-  "end": 51.519,
+  "start": 53.097,
+  "end": 53.189,
   "line": 16
  },
  {
   "word": "good",
-  "start": 51.53,
-  "end": 51.67,
+  "start": 53.201,
+  "end": 53.361,
   "line": 16
  },
  {
-  "word": "ones",
-  "start": 51.681,
-  "end": 52.06,
+  "word": "campaigns",
+  "start": 53.373,
+  "end": 54.071,
   "line": 16
  },
  {
-  "word": "skip",
-  "start": 52.222,
-  "end": 52.471,
-  "line": 16
- },
- {
-  "word": "the",
-  "start": 52.481,
-  "end": 52.557,
-  "line": 16
- },
- {
-  "word": "rest",
-  "start": 52.568,
-  "end": 52.979,
-  "line": 16
- },
- {
-  "word": "and",
-  "start": 53.217,
-  "end": 53.293,
-  "line": 16
- },
- {
-  "word": "check",
-  "start": 53.304,
-  "end": 53.542,
-  "line": 16
- },
- {
-  "word": "each",
-  "start": 53.628,
-  "end": 53.834,
-  "line": 16
- },
- {
-  "word": "against",
-  "start": 53.845,
-  "end": 54.115,
-  "line": 16
- },
- {
-  "word": "the",
-  "start": 54.126,
-  "end": 54.191,
-  "line": 16
- },
- {
-  "word": "brief",
-  "start": 54.202,
-  "end": 54.569,
-  "line": 16
- },
- {
-  "word": "It",
-  "start": 54.85,
-  "end": 54.949,
+  "word": "Fact",
+  "start": 54.407,
+  "end": 54.689,
   "line": 17
  },
  {
-  "word": "works",
-  "start": 54.96,
-  "end": 55.169,
+  "word": "real",
+  "start": 54.958,
+  "end": 55.126,
   "line": 17
  },
  {
-  "word": "on",
-  "start": 55.18,
-  "end": 55.291,
+  "word": "campaigns",
+  "start": 55.137,
+  "end": 55.609,
   "line": 17
  },
  {
-  "word": "old",
-  "start": 55.302,
-  "end": 55.521,
+  "word": "are",
+  "start": 55.621,
+  "end": 55.688,
   "line": 17
  },
  {
-  "word": "replays",
-  "start": 55.533,
-  "end": 55.974,
+  "word": "free",
+  "start": 55.699,
+  "end": 55.992,
   "line": 17
  },
  {
-  "word": "too",
-  "start": 55.985,
-  "end": 56.293,
+  "word": "An",
+  "start": 56.272,
+  "end": 56.374,
   "line": 17
  },
  {
-  "word": "so",
-  "start": 56.558,
-  "end": 56.679,
+  "word": "entry",
+  "start": 56.385,
+  "end": 56.621,
   "line": 17
  },
  {
-  "word": "last",
-  "start": 56.69,
-  "end": 56.977,
+  "word": "fee",
+  "start": 56.632,
+  "end": 56.913,
   "line": 17
  },
  {
-  "word": "week's",
-  "start": 56.988,
-  "end": 57.186,
+  "word": "means",
+  "start": 57.036,
+  "end": 57.227,
   "line": 17
  },
  {
-  "word": "streams",
-  "start": 57.197,
-  "end": 57.517,
+  "word": "a",
+  "start": 57.238,
+  "end": 57.272,
   "line": 17
  },
  {
-  "word": "count",
-  "start": 57.528,
-  "end": 57.859,
+  "word": "scam",
+  "start": 57.283,
+  "end": 57.688,
   "line": 17
  },
  {
   "word": "And",
-  "start": 58.139,
-  "end": 58.267,
+  "start": 57.968,
+  "end": 58.114,
   "line": 18
  },
  {
-  "word": "three",
-  "start": 58.279,
-  "end": 58.56,
+  "word": "only",
+  "start": 58.125,
+  "end": 58.373,
   "line": 18
- },
- {
-  "word": "rules",
-  "start": 58.571,
-  "end": 58.887,
-  "line": 18
- },
- {
-  "word": "that",
-  "start": 58.898,
-  "end": 59.05,
-  "line": 18
- },
- {
-  "word": "never",
-  "start": 59.062,
-  "end": 59.307,
-  "line": 18
- },
- {
-  "word": "change",
-  "start": 59.319,
-  "end": 59.786,
-  "line": 18
- },
- {
-  "word": "Only",
-  "start": 60.122,
-  "end": 60.332,
-  "line": 19
  },
  {
   "word": "clip",
-  "start": 60.343,
-  "end": 60.564,
-  "line": 19
+  "start": 58.384,
+  "end": 58.597,
+  "line": 18
  },
  {
-  "word": "creators",
-  "start": 60.575,
-  "end": 61.104,
-  "line": 19
+  "word": "streamers",
+  "start": 58.608,
+  "end": 59.181,
+  "line": 18
  },
  {
-  "word": "and",
-  "start": 61.114,
-  "end": 61.203,
-  "line": 19
+  "word": "or",
+  "start": 59.26,
+  "end": 59.35,
+  "line": 18
  },
  {
   "word": "campaigns",
-  "start": 61.213,
-  "end": 61.82,
-  "line": 19
+  "start": 59.361,
+  "end": 60.001,
+  "line": 18
  },
  {
   "word": "that",
-  "start": 61.831,
-  "end": 61.93,
+  "start": 60.012,
+  "end": 60.136,
+  "line": 18
+ },
+ {
+  "word": "clearly",
+  "start": 60.148,
+  "end": 60.518,
+  "line": 18
+ },
+ {
+  "word": "give",
+  "start": 60.529,
+  "end": 60.709,
+  "line": 18
+ },
+ {
+  "word": "permission",
+  "start": 60.721,
+  "end": 61.18,
+  "line": 18
+ },
+ {
+  "word": "The",
+  "start": 61.461,
+  "end": 61.536,
   "line": 19
  },
  {
-  "word": "allow",
-  "start": 61.941,
-  "end": 62.25,
+  "word": "real",
+  "start": 61.546,
+  "end": 61.748,
   "line": 19
  },
  {
-  "word": "it",
-  "start": 62.261,
-  "end": 62.381,
+  "word": "recipe",
+  "start": 61.759,
+  "end": 62.173,
+  "line": 19
+ },
+ {
+  "word": "a",
+  "start": 62.48,
+  "end": 62.512,
+  "line": 19
+ },
+ {
+  "word": "free",
+  "start": 62.523,
+  "end": 62.725,
+  "line": 19
+ },
+ {
+  "word": "campaign",
+  "start": 62.736,
+  "end": 63.266,
+  "line": 19
+ },
+ {
+  "word": "a",
+  "start": 63.585,
+  "end": 63.617,
+  "line": 19
+ },
+ {
+  "word": "creator",
+  "start": 63.628,
+  "end": 64.01,
+  "line": 19
+ },
+ {
+  "word": "who",
+  "start": 64.021,
+  "end": 64.116,
+  "line": 19
+ },
+ {
+  "word": "says",
+  "start": 64.127,
+  "end": 64.371,
+  "line": 19
+ },
+ {
+  "word": "yes",
+  "start": 64.381,
+  "end": 64.785,
   "line": 19
  },
  {
   "word": "and",
-  "start": 62.657,
-  "end": 62.756,
+  "start": 64.977,
+  "end": 65.062,
   "line": 19
  },
  {
-  "word": "never",
-  "start": 62.767,
-  "end": 62.977,
+  "word": "daily",
+  "start": 65.072,
+  "end": 65.327,
   "line": 19
  },
  {
-  "word": "pay",
-  "start": 62.988,
-  "end": 63.164,
+  "word": "posts",
+  "start": 65.337,
+  "end": 65.815,
   "line": 19
  },
  {
-  "word": "to",
-  "start": 63.176,
-  "end": 63.241,
-  "line": 19
- },
- {
-  "word": "join",
-  "start": 63.252,
-  "end": 63.528,
-  "line": 19
- },
- {
-  "word": "one",
-  "start": 63.539,
-  "end": 63.781,
-  "line": 19
- },
- {
-  "word": "Never",
-  "start": 64.118,
-  "end": 64.331,
+  "word": "Every",
+  "start": 66.095,
+  "end": 66.287,
   "line": 20
  },
  {
-  "word": "buy",
-  "start": 64.342,
-  "end": 64.489,
+  "word": "day",
+  "start": 66.298,
+  "end": 66.466,
   "line": 20
  },
  {
-  "word": "views",
-  "start": 64.5,
-  "end": 64.803,
+  "word": "you",
+  "start": 66.478,
+  "end": 66.601,
   "line": 20
  },
  {
-  "word": "either",
-  "start": 64.814,
-  "end": 65.118,
+  "word": "wait",
+  "start": 66.612,
+  "end": 66.882,
   "line": 20
  },
  {
-  "word": "because",
-  "start": 65.342,
-  "end": 65.579,
+  "word": "someone",
+  "start": 67.151,
+  "end": 67.399,
   "line": 20
  },
  {
-  "word": "that's",
-  "start": 65.59,
-  "end": 65.758,
+  "word": "else",
+  "start": 67.41,
+  "end": 67.59,
   "line": 20
  },
  {
-  "word": "a",
-  "start": 65.769,
-  "end": 65.814,
+  "word": "posts",
+  "start": 67.601,
+  "end": 67.972,
   "line": 20
  },
  {
-  "word": "permanent",
-  "start": 65.825,
-  "end": 66.264,
+  "word": "that",
+  "start": 67.983,
+  "end": 68.129,
   "line": 20
  },
  {
-  "word": "ban",
-  "start": 66.275,
-  "end": 66.555,
+  "word": "moment",
+  "start": 68.14,
+  "end": 68.409,
   "line": 20
  },
  {
-  "word": "Fix",
-  "start": 66.836,
-  "end": 67.005,
-  "line": 21
+  "word": "first",
+  "start": 68.421,
+  "end": 68.87,
+  "line": 20
  },
  {
-  "word": "these",
-  "start": 67.016,
-  "end": 67.229,
-  "line": 21
- },
- {
-  "word": "three",
-  "start": 67.24,
-  "end": 67.476,
-  "line": 21
- },
- {
-  "word": "today",
-  "start": 67.487,
-  "end": 67.824,
-  "line": 21
- },
- {
-  "word": "before",
-  "start": 68.026,
-  "end": 68.33,
-  "line": 21
- },
- {
-  "word": "your",
-  "start": 68.341,
-  "end": 68.42,
-  "line": 21
- },
- {
-  "word": "next",
-  "start": 68.431,
-  "end": 68.644,
+  "word": "Comment",
+  "start": 69.15,
+  "end": 69.379,
   "line": 21
  },
  {
   "word": "clip",
-  "start": 68.655,
-  "end": 68.858,
+  "start": 69.392,
+  "end": 69.666,
   "line": 21
  },
  {
-  "word": "goes",
-  "start": 68.869,
-  "end": 69.093,
+  "word": "and",
+  "start": 69.952,
+  "end": 70.009,
+  "line": 21
+ },
+ {
+  "word": "I'll",
+  "start": 70.021,
+  "end": 70.101,
+  "line": 21
+ },
+ {
+  "word": "DM",
+  "start": 70.113,
+  "end": 70.421,
+  "line": 21
+ },
+ {
+  "word": "you",
+  "start": 70.434,
+  "end": 70.548,
+  "line": 21
+ },
+ {
+  "word": "how",
+  "start": 70.56,
+  "end": 70.697,
+  "line": 21
+ },
+ {
+  "word": "I",
+  "start": 70.708,
+  "end": 70.754,
+  "line": 21
+ },
+ {
+  "word": "set",
+  "start": 70.765,
+  "end": 70.949,
+  "line": 21
+ },
+ {
+  "word": "it",
+  "start": 70.96,
+  "end": 71.029,
   "line": 21
  },
  {
   "word": "up",
-  "start": 69.105,
-  "end": 69.319,
+  "start": 71.04,
+  "end": 71.247,
   "line": 21
- },
- {
-  "word": "Comment",
-  "start": 69.599,
-  "end": 69.839,
-  "line": 22
- },
- {
-  "word": "clip",
-  "start": 69.85,
-  "end": 70.125,
-  "line": 22
- },
- {
-  "word": "and",
-  "start": 70.412,
-  "end": 70.469,
-  "line": 22
- },
- {
-  "word": "I'll",
-  "start": 70.48,
-  "end": 70.572,
-  "line": 22
- },
- {
-  "word": "message",
-  "start": 70.583,
-  "end": 70.905,
-  "line": 22
- },
- {
-  "word": "you",
-  "start": 70.916,
-  "end": 70.984,
-  "line": 22
- },
- {
-  "word": "the",
-  "start": 70.996,
-  "end": 71.076,
-  "line": 22
- },
- {
-  "word": "link",
-  "start": 71.088,
-  "end": 71.42,
-  "line": 22
  }
 ]

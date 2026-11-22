@@ -176,7 +176,7 @@
     "value": "4",
     "at": [
      0,
-     7
+     8
     ]
    },
    "note": {
@@ -199,7 +199,7 @@
     "text": "then the real setup · step by step",
     "at": [
      1,
-     6
+     5
     ]
    }
   },
@@ -234,10 +234,10 @@
    "sub": "followers",
    "eq": [
     {
-     "text": "can still go **viral**",
+     "text": "can still go viral",
      "at": [
       4,
-      10
+      4
      ],
      "small": true
     }
@@ -247,7 +247,7 @@
      "text": "Views count, not followers",
      "at": [
       4,
-      11
+      8
      ],
      "icon": "check"
     }
@@ -295,7 +295,7 @@
      "text": "≈ $50",
      "at": [
       7,
-      7
+      6
      ],
      "hot": true
     }
@@ -305,7 +305,7 @@
      "text": "Not a fortune",
      "at": [
       7,
-      9
+      8
      ],
      "icon": "warn"
     }
@@ -371,7 +371,7 @@
    "headline": "I hand that to **{name}**",
    "logoAt": [
     11,
-    5
+    4
    ]
   },
   {
@@ -383,17 +383,17 @@
    "link": {
     "at": [
      12,
-     2
+     3
     ],
     "text": "twitch.tv/sundaymarathon"
    },
    "chatAt": [
     12,
-    11
+    12
    ],
    "spikeAt": [
     13,
-    1
+    2
    ],
    "momentAt": [
     13,
@@ -412,18 +412,18 @@
    ],
    "flipAt": [
     14,
-    3
+    2
    ],
    "capsAt": [
     14,
-    12
+    10
    ],
    "labels": [
     {
      "text": "~30 s around the spike",
      "at": [
       13,
-      11
+      10
      ]
     },
     {
@@ -437,7 +437,7 @@
      "text": "Word-by-word captions",
      "at": [
       14,
-      12
+      10
      ]
     }
    ],
@@ -456,14 +456,14 @@
      "text": "Keep",
      "at": [
       15,
-      2
+      0
      ]
     },
     {
      "text": "Skip the duds",
      "at": [
       15,
-      6
+      3
      ]
     }
    ]
@@ -491,7 +491,7 @@
     "text": "Entry fee = scam",
     "at": [
      17,
-     6
+     5
     ],
     "icon": "x"
    }
@@ -510,7 +510,7 @@
      "text": "Only who **allows** clipping",
      "at": [
       18,
-      2
+      1
      ],
      "icon": "warn"
     },
@@ -518,7 +518,7 @@
      "text": "Never pay an entry fee",
      "at": [
       18,
-      8
+      7
      ],
      "icon": "x"
     }
@@ -537,7 +537,7 @@
      "text": "A free campaign",
      "at": [
       19,
-      6
+      3
      ],
      "icon": "one"
     },
@@ -545,7 +545,7 @@
      "text": "A creator who says yes",
      "at": [
       19,
-      9
+      6
      ],
      "icon": "two"
     },
@@ -553,7 +553,7 @@
      "text": "A post every day",
      "at": [
       19,
-      15
+      11
      ],
      "icon": "three"
     }
@@ -571,7 +571,7 @@
     "value": "today",
     "at": [
      20,
-     5
+     6
     ]
    }
   },

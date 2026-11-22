@@ -377,10 +377,39 @@ const Verdict: React.FC<P> = ({ s, t }) => {
   );
 };
 
+// ---------------------------------------------------------------- myth vs fact: myth card gets struck + stamped BUSTED, fact card slides up
+// fields: label ("MYTH #1"), myth, bustAt, fact {text, at}, note {text, at, icon}
+const Myth: React.FC<P> = ({ s, t }) => {
+  const fact = s.fact as Item | undefined, note = s.note as Item | undefined;
+  const tb = T(s, s.bustAt, 99), tf = fact ? T(s, fact.at, 99) : 99, sp = pop(t, tb, 0.35), strike = easeOut((t - tb) / 0.35);
+  return (
+    <div style={{ ...STAGE, gap: 74 }}>
+      <div style={appear(t, s.a)}><Kicker text={(s.label as string) ?? "MYTH"} style={{ background: "linear-gradient(90deg,#ff6b3d,#e5484d)" }} /></div>
+      <div style={{ ...appear(t, s.a + 0.12), position: "relative" }}>
+        <Card style={{ width: 900, padding: "40px 44px", textAlign: "center", opacity: t > tb ? 0.62 : 1, transition: "none" }}>
+          <div style={{ fontWeight: 700, fontSize: 30, color: GREY, letterSpacing: 3, marginBottom: 10 }}>WHAT YOU HEARD</div>
+          <div style={{ fontWeight: 800, fontSize: 70, letterSpacing: -2, lineHeight: 1.12 }}>
+            <span style={{ backgroundImage: "linear-gradient(#e5484d,#e5484d)", backgroundRepeat: "no-repeat", backgroundPosition: "0 58%", backgroundSize: `${strike * 100}% 9px`, WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" }}>“{s.myth as string}”</span>
+          </div>
+        </Card>
+        {t > tb && <div style={{ position: "absolute", right: -26, bottom: -58, opacity: clamp(sp * 1.4), transform: `rotate(-8deg) scale(${lerp(1.8, 1, sp)})`,
+          border: "9px solid #e5484d", color: "#e5484d", borderRadius: 22, padding: "6px 26px", fontFamily: UI, fontWeight: 800, fontSize: 74, letterSpacing: 4, background: "rgba(255,255,255,.9)" }}>BUSTED</div>}
+      </div>
+      <div style={{ minHeight: 300 }}>{fact && <div style={appear(t, tf, 60)}>
+        <Card style={{ width: 900, padding: "34px 44px", border: `4px solid ${GREEN}`, display: "flex", alignItems: "center", gap: 28 }}>
+          <div style={{ flex: "none", width: 96, height: 96, borderRadius: 99, background: GREEN, display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name="check" size={62} color="#fff" /></div>
+          <div><div style={{ fontWeight: 800, fontSize: 30, color: GREEN, letterSpacing: 3 }}>FACT</div>
+            <div style={{ fontWeight: 800, fontSize: 60, letterSpacing: -1.5, lineHeight: 1.12 }}><Rich text={fill(fact.text)} /></div></div>
+        </Card></div>}</div>
+      <div style={{ minHeight: 80 }}>{note && <div style={appear(t, T(s, note.at, 99))}><Chip text={note.text} icon={note.icon ?? "warn"} style={{ fontSize: 36 }} /></div>}</div>
+    </div>
+  );
+};
+
 // GameView is used by the stream tiles; re-exported here so new scene types can draw a bare game view too.
 export { GameView };
 
 export const SCENE_TYPES: Record<string, React.FC<P>> = {
   big: Big, title: Title, grid: Grid, flow: Flow, stat: Stat, scrub: Scrub, brand: Brand, live: Live, phone: Phone,
-  clips: Clips, posts: Posts, list: List, bars: Bars, cta: Cta, term: Term, react: React_, verdict: Verdict,
+  clips: Clips, posts: Posts, list: List, bars: Bars, cta: Cta, term: Term, react: React_, verdict: Verdict, myth: Myth,
 };

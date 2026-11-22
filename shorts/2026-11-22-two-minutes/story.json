@@ -1,0 +1,456 @@
+{
+ "title": "Her 'Two Minutes' Was Never Two Minutes",
+ "voice": "en-US-AndrewNeural",
+ "tempo": 1.18,
+ "keepGap": 0.28,
+ "beats": {
+  "theme": "the 'two minutes' friend whose two minutes never end",
+  "setting": "a deadpan dictionary entry defining 'two minutes', then Priya's phone on her nightstand",
+  "conflict": "Arjun waits outside every morning while Priya's 'two minutes' stretch from ten to forty",
+  "failedAttempt": "lying about the pickup time, earlier and earlier, while she still strolls out at 8:20",
+  "twist": "'two minutes' is an auto-reply: she was asleep and never read a single fake time",
+  "lesson": "two minutes is a feeling, not a location",
+  "appAngle": "she taps 'I'm at the pickup point' only from the real gate, and tracks his car in metres on the live map",
+  "callback": "the auto-reply still runs and just promised her boss the report in two minutes",
+  "ctaLine": "Friend stuck on two minutes?"
+ },
+ "lines": [
+  {
+   "text": "Your friend is always two minutes away, for a reason you'd never guess.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Arjun lost twelve mornings to it.",
+   "rate": "+10%",
+   "pitch": "-7Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "He drives. Priya rides. One lane over.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Every morning he texts, outside. She replies, two minutes.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Two minutes, definition one: ten minutes. Fair.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Definition two: twenty five. The guard starts a stopwatch.",
+   "rate": "+18%",
+   "pitch": "+2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Definition three: forty. The guard brings Arjun a pillow.",
+   "rate": "+16%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So Arjun tries the oldest trick: lying about the time.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Pickup's at seven forty, he says. She strolls out at eight twenty.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Seven twenty. Eight twenty. Six a.m. Eight twenty.",
+   "rate": "+30%",
+   "pitch": "+6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Morning twelve, he sends a test. The car is on fire.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Reply. Two minutes.",
+   "rate": "+4%",
+   "pitch": "-8Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "It's an auto reply. She never read one fake time.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "She's not late. She's asleep. Her phone's just polite.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Turns out, two minutes is a feeling, not a location.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So they switch to an app. Priya taps at pickup only from the actual gate.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Till then she watches Arjun's car on the live map. Metres, not minutes.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "No texts. No horn. No pillow.",
+   "rate": "+20%",
+   "pitch": "+4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "The auto reply still runs. Her boss just asked for the report. Two minutes.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Friend stuck on two minutes? Try Sahyatri. Link in bio.",
+   "rate": "+14%",
+   "pitch": "-2Hz",
+   "gap": 0.2
+  }
+ ],
+ "shots": [
+  {
+   "id": "dict",
+   "at": [
+    0,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "years",
+   "at": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "street",
+   "at": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "texts",
+   "at": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "dict",
+   "at": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "guard",
+   "at": [
+    5,
+    3
+   ]
+  },
+  {
+   "id": "dict",
+   "at": [
+    6,
+    0
+   ],
+   "music": "nervous"
+  },
+  {
+   "id": "fake",
+   "at": [
+    7,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "fire",
+   "at": [
+    10,
+    0
+   ],
+   "music": "stop"
+  },
+  {
+   "id": "dict",
+   "at": [
+    14,
+    0
+   ],
+   "music": "pad"
+  },
+  {
+   "id": "app",
+   "at": [
+    15,
+    0
+   ],
+   "music": "lift"
+  },
+  {
+   "id": "onecar",
+   "at": [
+    17,
+    0
+   ],
+   "music": "groove"
+  },
+  {
+   "id": "reply",
+   "at": [
+    18,
+    0
+   ]
+  },
+  {
+   "id": "end",
+   "at": [
+    19,
+    0
+   ],
+   "music": "end"
+  }
+ ],
+ "cues": {
+  "d1": [
+   4,
+   4
+  ],
+  "d2": [
+   5,
+   2
+  ],
+  "d3": [
+   6,
+   2
+  ],
+  "d4": [
+   14,
+   6
+  ],
+  "snap": [
+   5,
+   8
+  ],
+  "f1": [
+   8,
+   2
+  ],
+  "f2": [
+   9,
+   0
+  ],
+  "f3": [
+   9,
+   4
+  ],
+  "f4": [
+   9,
+   6
+  ],
+  "fire": [
+   10,
+   7
+  ],
+  "reply": [
+   11,
+   1
+  ],
+  "auto": [
+   12,
+   2
+  ],
+  "polite": [
+   13,
+   8
+  ],
+  "roster": [
+   15,
+   5
+  ],
+  "tap": [
+   15,
+   7
+  ],
+  "ready": [
+   15,
+   14
+  ],
+  "live": [
+   16,
+   8
+  ],
+  "watch": [
+   16,
+   10
+  ],
+  "one": [
+   17,
+   2
+  ],
+  "boss": [
+   18,
+   6
+  ],
+  "boss2": [
+   18,
+   12
+  ]
+ },
+ "punch": [
+  [
+   0,
+   4
+  ],
+  [
+   0,
+   11
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   4,
+   4
+  ],
+  [
+   5,
+   8
+  ],
+  [
+   6,
+   8
+  ],
+  [
+   7,
+   6
+  ],
+  [
+   8,
+   7
+  ],
+  [
+   9,
+   4
+  ],
+  [
+   9,
+   6
+  ],
+  [
+   10,
+   10
+  ],
+  [
+   11,
+   1
+  ],
+  [
+   12,
+   2
+  ],
+  [
+   13,
+   4
+  ],
+  [
+   14,
+   6
+  ],
+  [
+   16,
+   10
+  ],
+  [
+   17,
+   5
+  ],
+  [
+   18,
+   12
+  ]
+ ],
+ "stopMusic": [
+  [
+   11,
+   0,
+   11,
+   2
+  ],
+  [
+   13,
+   2,
+   13,
+   3
+  ]
+ ],
+ "end": {
+  "headline": "Friend stuck on\n'two minutes'?",
+  "tagline": "Community Carpool",
+  "button": "Link in bio"
+ },
+ "captionsBig": [
+  "two",
+  "minutes",
+  "twelve",
+  "ten",
+  "forty",
+  "pillow",
+  "lying",
+  "eight",
+  "fire",
+  "auto",
+  "asleep",
+  "polite",
+  "feeling",
+  "live",
+  "metres",
+  "boss",
+  "sahyatri"
+ ],
+ "post": {
+  "title": "He waited 12 mornings for her \"two minutes\" ⏳",
+  "caption": "Arjun tried everything to beat Priya's \"two minutes\", even lying about the pickup time. Then he sent one test text and found out who was really replying. Tag the friend whose two minutes is forty.",
+  "hashtags": [
+   "#animatedstory",
+   "#twominutes",
+   "#carpool",
+   "#relatable",
+   "#officecommute"
+  ]
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "voice": "en-US-AndrewNeural",
+ "lines": [
+  {
+   "text": "Your friend is always two minutes away, for a reason you'd never guess.",
+   "rate": "+16%",
+   "pitch": "-6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Arjun lost twelve mornings to it.",
+   "rate": "+10%",
+   "pitch": "-7Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "He drives. Priya rides. One lane over.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Every morning he texts, outside. She replies, two minutes.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "Two minutes, definition one: ten minutes. Fair.",
+   "rate": "+16%",
+   "pitch": "-3Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Definition two: twenty five. The guard starts a stopwatch.",
+   "rate": "+18%",
+   "pitch": "+2Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Definition three: forty. The guard brings Arjun a pillow.",
+   "rate": "+16%",
+   "pitch": "-5Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "So Arjun tries the oldest trick: lying about the time.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Pickup's at seven forty, he says. She strolls out at eight twenty.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.1
+  },
+  {
+   "text": "Seven twenty. Eight twenty. Six a.m. Eight twenty.",
+   "rate": "+30%",
+   "pitch": "+6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Morning twelve, he sends a test. The car is on fire.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Reply. Two minutes.",
+   "rate": "+4%",
+   "pitch": "-8Hz",
+   "gap": 0.3
+  },
+  {
+   "text": "It's an auto reply. She never read one fake time.",
+   "rate": "+14%",
+   "pitch": "-6Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "She's not late. She's asleep. Her phone's just polite.",
+   "rate": "+16%",
+   "pitch": "-4Hz",
+   "gap": 0.2
+  },
+  {
+   "text": "Turns out, two minutes is a feeling, not a location.",
+   "rate": "+10%",
+   "pitch": "-6Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "So they switch to an app. Priya taps at pickup only from the actual gate.",
+   "rate": "+22%",
+   "pitch": "+0Hz",
+   "gap": 0.12
+  },
+  {
+   "text": "Till then she watches Arjun's car on the live map. Metres, not minutes.",
+   "rate": "+20%",
+   "pitch": "+0Hz",
+   "gap": 0.15
+  },
+  {
+   "text": "No texts. No horn. No pillow.",
+   "rate": "+20%",
+   "pitch": "+4Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "The auto reply still runs. Her boss just asked for the report. Two minutes.",
+   "rate": "+18%",
+   "pitch": "-3Hz",
+   "gap": 0.25
+  },
+  {
+   "text": "Friend stuck on two minutes? Try Sahyatri. Link in bio.",
+   "rate": "+14%",
+   "pitch": "-2Hz",
+   "gap": 0.2
+  }
+ ]
+}

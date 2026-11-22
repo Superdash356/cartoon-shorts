@@ -65,6 +65,8 @@ Copy the shape of the first episode (`shorts/2026-11-21-clip-gta6-payday/script.
 | cta | headline, typeAt, postAt, doneAt, done | comment box typing the keyword → Post → "I'll send you the link ✓" |
 | term | headline, command {text,at}, output[] {text,at,hot} | dark command window typing |
 | react | headline | big cartoon streamer facecam reacting |
+| verdict | headline, title, views, rows[] {text,at,ok}, stamp {text,at,ok}, payout {text,at} | campaign submission card → APPROVED/REJECTED stamp |
+| myth | label, myth, bustAt, fact {text,at}, note {text,at,icon} | myth card struck through + BUSTED stamp → green FACT card |
 If the story needs a visual the library lacks, add a new scene type in scenes.tsx (register it in SCENE_TYPES,
 typecheck, preview stills) rather than bending the story. Add at least one new scene type a week.
 
